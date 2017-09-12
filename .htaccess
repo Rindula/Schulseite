@@ -1,3 +1,3 @@
 RewriteEngine on
 
-RewriteRule ^/login$ /_hidden/login.php [NC]
+RewriteRule ^login$ /_hidden/login.php [NC]
