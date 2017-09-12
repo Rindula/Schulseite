@@ -38,6 +38,19 @@ if (!isset($_GET["section"])) {
         color: white;
         background-color: #6666ff;
     }
+
+    input[type="color"] {
+        -webkit-appearance: none;
+        border: none;
+        width: 32px;
+        height: 32px;
+    }
+    input[type="color"]::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+    input[type="color"]::-webkit-color-swatch {
+        border: none;
+    }
 </style>
 <?php
 // Passwort ändern
