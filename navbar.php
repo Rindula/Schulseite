@@ -127,8 +127,8 @@
         <?php
     }
     ?>
-    <div>
-        <form class="donation_button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <div class="donation_button">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="2LWMW9PABC4XS">
             <input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
