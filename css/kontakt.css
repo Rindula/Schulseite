@@ -1,0 +1,19 @@
+td {
+    background-color: dodgerblue;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+th {
+    background-color: red;
+    font-size: 30px;
+}
+
+td * {
+    display: block;
+    text-decoration: none;
+    color: greenyellow;
+    padding: 20px;
+}

@@ -1,0 +1,82 @@
+html {
+    background: #161616;
+    overflow-y:scroll;
+
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.center {
+    display: block;
+}
+
+.center * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageAcc {
+    cursor: pointer;
+    transition: background-color .2s linear;
+}
+.imageAcc:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+body {margin: 0;}
+
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+ul.topnav li.right {float: right;}
+.topnav, .topnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.topnav {
+    height: 58px;
+}
+.topnav li {
+    background: #292929;
+    border-bottom: 2px solid #181818;
+    border-top: 2px solid #303030;
+    min-width: 140px;
+}
+.topnav > li {
+    display: block;
+    float: left;
+    position: relative;
+}
+.topnav > li:first-child {
+    border-radius: 5px 0 0;
+}
+.topnav a {
+    border-left: 3px solid rgba(0, 0, 0, 0);
+    color: #808080;
+    display: block;
+    font-family: 'Lucida Console';
+    font-size: 18px;
+    line-height: 54px;
+    padding: 0 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.topnav:hover {
+    background: linear-gradient(to right, rgba(40,0,0,0) 0%,rgba(40,0,0,0.8) 20%,rgba(40,0,0.2,0.8) 30%,rgba(40,0,0,0.8) 70%,rgba(40,0,0.2,0.8) 80%,rgba(40,0,0,0) 100%);
+}
+.topnav .active {
+    background: linear-gradient(to right, rgba(40,0,0,0) 0%,rgba(40,0,0,0.8) 20%,rgba(40,0,0,0.8) 30%,rgba(40,0,0,0.8) 70%,rgba(40,0,0,0.8) 80%,rgba(40,0,0,0) 100%);
+}
+
+@media print {
+    ul.topnav {
+        display: none;
+    }
+}
+@page {margin:5mm; }

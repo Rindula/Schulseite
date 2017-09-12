@@ -1,0 +1,34 @@
+th {
+    font-size: 30px;
+    border: 2px solid black;
+    border-top: 0px;
+    border-radius: 10px;
+    background-color: #4cb2ab;
+}
+
+td {
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid black;
+    border-top: 0px;
+    border-radius: 10px;
+    background-color: rgba(239, 127, 0, 0.65);
+}
+
+.dringend {
+    background-color: rgba(239, 127, 0, 0.65);
+    animation: imp 2s infinite;
+}
+
+@keyframes imp {
+    0% {
+        background-color: rgba(239, 127, 0, 0.65);
+    }
+    50% {
+        background-color: rgba(255, 157, 0, 0.75);
+    }
+    100% {
+        background-color: rgba(239, 127, 0, 0.65);
+    }
+}

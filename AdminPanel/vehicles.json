@@ -1,0 +1,90 @@
+{
+	"civ": 
+	{
+		"Car":
+		{
+			"Quadbike": "B_Quadbike_01_F",
+			"Limosine": "C_Hatchback_01_F",
+			"Geländewagen": "C_Offroad_01_F",
+			"SUV": "C_SUV_01_F",
+			"Limosine (Sport)": "C_Hatchback_01_sport_F",
+			"Truck": "C_Van_01_transport_F",
+			"Truck Boxer": "C_Van_01_box_F",
+			"Zamak Transport": "I_Truck_02_transport_F",
+			"Zamak Transport (Abgedeckt)": "I_Truck_02_covered_F",
+			"HEMMT Transport": "B_Truck_01_transport_F",
+			"Tempest Transport": "O_Truck_03_transport_F",
+			"Tempest Transport (Abgedeckt)": "O_Truck_03_covered_F",
+			"HEMMT Box": "B_Truck_01_box_F",
+			"Tempest (Gerät)": "O_Truck_03_device_F",
+			"Truck (Treibstoff)": "C_Van_01_fuel_F",
+			"Zamak Treibstoff": "I_Truck_02_fuel_F",
+			"HEMMT Treibstoff": "B_Truck_01_fuel_F",
+			"Kart (Bluking)": "C_Kart_01_Blu_F",
+			"Kart (Fuel)": "C_Kart_01_Fuel_F",
+			"Kart (Redstone)": "C_Kart_01_Red_F",
+			"Kart (Vrana)": "C_Kart_01_Vrana_F"
+		},
+		
+		"Air":
+		{
+			"MH-9 Hummingbird": "B_Heli_Light_01_F",
+			"M-900": "C_Heli_Light_01_civil_F",
+			"PO-30 Orca": "O_Heli_Light_02_unarmed_F",
+			"CH-49 Mohawk": "I_Heli_Transport_02_F",
+			"==========Nur für Admins==========": "",
+			"Blackfish (Fahrzeuge)": "B_T_VTOL_01_vehicle_F",
+			"Blackfish (Infantrie)": "B_T_VTOL_01_infantry_F"
+		},
+		
+		"Ship":
+		{
+			"Schlauchboot": "C_Rubberboat",
+			"Motorboot": "C_Boat_Civil_01_F",
+			"U-Boot": "B_SDV_01_F"
+		}
+	},
+	
+	"med":
+	{
+		"Car":
+		{
+			"Geländewagen": "C_Offroad_01_F",
+			"Zamak (Medizin)": "I_Truck_02_medical_F",
+			"Tempest (Medizin)": "O_Truck_03_medical_F",
+			"HEMMT (Medizin)": "B_Truck_01_medical_F"
+		},
+		
+		"Air":
+		{
+			"MH-9 Hummingbird": "B_Heli_Light_01_F",
+			"PO-30 Orca": "O_Heli_Light_02_unarmed_F"
+		}
+	},
+	
+	"cop":
+	{
+		"Car":
+		{
+			"Geländewagen": "C_Offroad_01_F",
+			"SUV": "C_SUV_01_F",
+			"Limosine (Sport)": "C_Hatchback_01_sport_F",
+			"Hunter": "B_MRAP_01_F",
+			"Hunter (HMG)": "B_MRAP_01_hmg_F"
+		},
+		
+		"Air":
+		{
+			"MH-9 Hummingbird": "B_Heli_Light_01_F",
+			"UH-80 Ghost Hawk": "B_Heli_Transport_01_F"
+		},
+		
+		"Ship":
+		{
+			"Schlauchboot": "B_Boat_Transport_01_F",
+			"Motorboot (Polizei)": "C_Boat_Civil_01_police_F",
+			"Kampfboot": "B_Boat_Armed_01_minigun_F",
+			"U-Boot": "B_SDV_01_F"
+		}
+	}
+}

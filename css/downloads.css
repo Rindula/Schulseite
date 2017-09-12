@@ -1,0 +1,69 @@
+.list{
+    width:70%;
+    margin:0 auto;
+}
+
+.list ul{
+    list-style: none;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin-bottom: 4em;
+}
+
+.list ul ul{
+    margin: 0 0 0 2em;
+}
+
+.list a:not(.disabled){
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #11dba0;
+    color: #444;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+.list a:hover:not(.disabled){
+    background: #1161db;
+    color: #fff;
+    text-decoration:none;
+    transform: scale(1.1);
+}
+
+.list a:before{
+    content: "»";
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background:#FC756F;
+    height: 1.5em;
+    width: 1.5em;
+    line-height: 1.5em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    color:#FFF;
+}
+
+.list a.disabled{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #db1142;
+    color: #444;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+.list a.disabled:hover{
+    background: #db9611;
+    text-decoration:none;
+    transform: scale(1.1);
+}

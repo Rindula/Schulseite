@@ -1,0 +1,34 @@
+table {
+    
+}
+
+th {
+    font-size: 30px;
+    border: 2px solid black;
+    border-top: 0px;
+    border-radius: 10px;
+    background-color: #4cb2ab;
+}
+
+td {
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid black;
+    border-top: 0px;
+    border-radius: 10px;
+    background-color: rgba(172, 144, 112, 0.65);
+}
+
+@media print {
+    * {
+        background-color: white !important;
+        color: black !important;
+    }
+    .gerade, .ungerade {
+        display: block !important;
+        page-break-after: always !important;
+    }
+}
+
+@page { size: landscape;}
