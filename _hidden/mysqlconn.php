@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli("localhost", "rindula", "SiSal2002", $dbname);
+$mysqli = new mysqli("localhost", "root", "WQeYt4S8G3", $dbname);
 if ($mysqli->connect_errno) {
     die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
 }
@@ -8,7 +8,7 @@ $sql = "SET NAMES 'utf8'";
 $statement = $mysqli->prepare($sql);
 $statement->execute();
 
-$userConn = new mysqli("localhost", "rindula", "SiSal2002", "stats");
+$userConn = new mysqli("localhost", "root", "WQeYt4S8G3", "stats");
 if ($userConn->connect_errno) {
     die("Verbindung fehlgeschlagen: " . $userConn->connect_error);
 }
