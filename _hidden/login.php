@@ -163,7 +163,8 @@ if (isset($_GET['login'])) {
             .error {
                 text-align: center;
                 padding: 10px;
-                background-color: rgba(1,0,0,0.4);
+                background-color: rgba(255,0,0,0.4);
+                width: 50px;
             }
         </style>
     </head> 
