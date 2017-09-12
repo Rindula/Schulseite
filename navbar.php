@@ -105,7 +105,7 @@
         <button class="dropbtn">Download</button>
         <div class="dropdown-content">
             <a href="/downloads">Downloads</a>
-            <a href="/app">App</a>
+            <!-- <a href="/app">App</a> -->
         </div>
     </div>
     <?php
