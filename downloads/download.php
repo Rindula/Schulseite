@@ -1,4 +1,4 @@
-<?
+<?php
 $fileN = basename($_GET['file']);
 $sub = $_GET['sub'];
 $file = "./content/$sub/$fileN";
