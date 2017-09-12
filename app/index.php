@@ -1,4 +1,4 @@
-<?
+<?php
 //$exitLink = "/hausaufgaben/show";
 $needVerify = false;
 

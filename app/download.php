@@ -1,4 +1,4 @@
-<?
+<?php
 $fileN = basename($_GET['file']);
 $file = './download/'.$fileN;
 
