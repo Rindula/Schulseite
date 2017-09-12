@@ -115,7 +115,7 @@
         <div class="dropdown right" style="margin-right: 75px;">
             <button class="dropbtn"><?= $_SESSION["name"] ?></button>
             <div class="dropdown-content">
-                <a href="/settings">Einstellungen</a>
+                <a href="/settings?section=main">Einstellungen</a>
                 <div class="hr"></div>
                 <a href="/logout">Logout</a>
             </div>
