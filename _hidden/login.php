@@ -4,7 +4,7 @@ include "vars.php";
 $pageId = 7;
 include "../navbar.php";
 include "../css/controller.php";
-$pdo = new PDO('mysql:host=localhost;dbname=stats', 'stats', "iOxz56*5");
+$pdo = new PDO('mysql:host=localhost;dbname=stats', 'root', "WQeYt4S8G3");
 
 if (isset($_GET['login'])) {
     $name = $_POST['name'];
