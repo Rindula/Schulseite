@@ -159,13 +159,19 @@ if (isset($_GET['login'])) {
                 from { background:#5264AE; }
                 to 	{ width:0; background:transparent; }
             }
+
+            .error {
+                text-align: center;
+                padding: 10px;
+                background-color: rgba(1,0,0,0.4);
+            }
         </style>
     </head> 
     <body>
 
         <?php
         if (isset($errorMessage)) {
-            echo $errorMessage;
+            echo "<span class='error'>$errorMessage</span>";
         };
         ?>
 
@@ -173,7 +179,7 @@ if (isset($_GET['login'])) {
 
             <h2>Login Seite <small>Interner Bereich</small></h2>
 
-            <form action="?login=1" method="post">
+            <form action="?login" method="post">
 
                 <div class="group">
                     <input name="name" type="text" required>
