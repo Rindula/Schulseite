@@ -244,7 +244,7 @@ if ($sec == "lessons") {
                         </select>
                     </td>
                 </tr>
-                <tr><input type="submit" name="confirm"></tr>
+                <tr><td><input type="submit" name="confirm"></td></tr>
             </table>
         </form>
     </div>
