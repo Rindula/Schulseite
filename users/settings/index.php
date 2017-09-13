@@ -251,6 +251,10 @@ if ($sec == "lessons") {
 
 <?php 
 
-} 
+}
+
+if ($sec == "timetable") {
+    include "timetableSetup.php";
+}
 ?>
 
