@@ -91,9 +91,17 @@ if ($_GET["section"] == "colors" && isset($_GET["change"]) && isset($_POST["conf
 
 
 if ($_GET["section"] == "lessons" && isset($_GET["change"]) && isset($_POST["confirm"])) {
-    // $userConn->query("UPDATE users SET navbarBack = '" . $_POST["colorNavBarBack"] . "', navbarText = '" . $_POST["colorNavBarText"] . "', backgroundPage = '" . $_POST["backgroundColor"] . "' WHERE id = '" . $_SESSION["userid"] . "'");
+    $bk = $_POST["lesson_bk"];
+    $ct = $_POST["lesson_ct"];
+    $sk = $_POST["lesson_sk"];
+    $pc = $_POST["lesson_pc"];
+    $fr = $_POST["lesson_fr"];
+    $re = $_POST["lesson_re"];
+    $userConn->query("UPDATE users SET bk = $bk, ct = $ct, sk = $sk, pc = $pc, fr = $fr, re = $re");
     echo "<code>Stunden werden übernommen...</code>";
 }
+
+list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re) = $userConn->query("SELECT bk, ct, sk, pc, fr, re FROM users WHERE id = '" . $_SESSION["userid"] . "'")->fetch_assoc();
 
 if (isset($_GET["change"])) {
     echo '<meta http-equiv="refresh" content="3; URL=?section=' . $_GET["section"] . '">';
@@ -109,7 +117,7 @@ if ($sec == "main") {
         <ul style="list-style-type: none;">
             <li><a style="" href="?section=passwort">Passwort ändern</a></li>
             <li><a style="" href="?section=colors">Farben ändern</a></li>
-            <!-- <li><a style="" href="?section=lessons">Fächer einstellen</a></li> -->
+            <li><a style="" href="?section=lessons">Fächer einstellen</a></li>
         </ul>
     </div>
 <?php
@@ -182,8 +190,8 @@ if ($sec == "lessons") {
                     <td>Bildene Kunst</td>
                     <td>
                         <select name="lesson_bk" id="" disabled="disabled">
-                            <option value="0">Nicht gewählt</option>
-                            <option value="1">Gewählt</option>
+                            <option <?= ($lesson_bk == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
+                            <option <?= ($lesson_bk == 1) ? "selected" : ""; ?> value="1">Gewählt</option>
                         </select>
                     </td>
                 </tr>
@@ -191,9 +199,9 @@ if ($sec == "lessons") {
                     <td>Computertechnik</td>
                     <td>
                         <select name="lesson_ct" id="" disabled="disabled">
-                            <option value="0">Nicht gewählt</option>
-                            <option value="1">Videoschnitt</option>
-                            <option value="1">Websiten aufbau</option>
+                            <option <?= ($lesson_ct == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
+                            <option <?= ($lesson_ct == 1) ? "selected" : ""; ?> value="1">Videoschnitt</option>
+                            <option <?= ($lesson_ct == 2) ? "selected" : ""; ?> value="1">Websiten aufbau</option>
                         </select>
                     </td>
                 </tr>
@@ -201,8 +209,8 @@ if ($sec == "lessons") {
                     <td>Seminarkurs</td>
                     <td>
                         <select name="lesson_sk" id="" disabled="disabled">
-                            <option value="0">Nicht gewählt</option>
-                            <option value="1">Gewählt</option>
+                            <option <?= ($lesson_sk == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
+                            <option <?= ($lesson_sk == 0) ? "selected" : ""; ?> value="1">Gewählt</option>
                         </select>
                     </td>
                 </tr>
@@ -210,8 +218,8 @@ if ($sec == "lessons") {
                     <td>Physik/Chemie</td>
                     <td>
                         <select name="lesson_pc" id="" disabled="disabled">
-                            <option value="0">Physik</option>
-                            <option value="1">Chemie</option>
+                            <option <?= ($lesson_pc == 0) ? "selected" : ""; ?> value="0">Physik</option>
+                            <option <?= ($lesson_pc == 1) ? "selected" : ""; ?> value="1">Chemie</option>
                         </select>
                     </td>
                 </tr>
@@ -219,9 +227,9 @@ if ($sec == "lessons") {
                     <td>Zweite Fremdsprache</td>
                     <td>
                         <select name="lesson_fr" id="" disabled="disabled">
-                            <option value="0">Nicht gewählt</option>
-                            <option value="1">Spanisch</option>
-                            <option value="2">Französisch</option>
+                            <option <?= ($lesson_fr == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
+                            <option <?= ($lesson_fr == 1) ? "selected" : ""; ?> value="1">Spanisch</option>
+                            <option <?= ($lesson_fr == 2) ? "selected" : ""; ?> value="2">Französisch</option>
                         </select>
                     </td>
                 </tr>
@@ -229,9 +237,9 @@ if ($sec == "lessons") {
                     <td>Religionsunterricht</td>
                     <td>
                         <select name="lesson_re" id="" disabled="disabled">
-                            <option value="0">Ethik</option>
-                            <option value="1">Katholisch</option>
-                            <option value="2">Evangelisch</option>
+                            <option <?= ($lesson_re == 0) ? "selected" : ""; ?> value="0">Ethik</option>
+                            <option <?= ($lesson_re == 1) ? "selected" : ""; ?> value="1">Katholisch</option>
+                            <option <?= ($lesson_re == 2) ? "selected" : ""; ?> value="2">Evangelisch</option>
                         </select>
                     </td>
                 </tr>
