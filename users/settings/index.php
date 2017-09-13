@@ -124,6 +124,12 @@ if ($sec == "main") {
         </form>
     </div>
 <?php
+} else {
+    ?>
+    <form action="" method="get">
+        <button type="submit" name="main"></button>
+    </form>
+<?php
 }
 
 if ($sec == "passwort") {
