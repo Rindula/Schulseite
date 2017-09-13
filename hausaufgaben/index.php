@@ -43,24 +43,6 @@ function is_dir_empty($dir) {
 }
 ?>
 <script>
-    var interval = window.setInterval("uhr_anzeigen()", 10);
-
-    function uhr_anzeigen() {
-        var Datum = new Date();
-        var stunde = Datum.getHours();
-        var minute = Datum.getMinutes();
-        var sekunde = Datum.getSeconds();
-
-        Zeit = ((stunde < 10) ? " 0" : " ") + stunde;
-        Zeit += ((minute < 10) ? ":0" : ":") + minute;
-        Zeit += ((sekunde < 10) ? ":0" : ":") + sekunde;
-        Zeit += " Uhr";
-
-        document.getElementById('uhr').innerHTML = Zeit;
-
-    }
-// JavaScript Document
-
 function callPageH(id)
 {
 var xhr = new XMLHttpRequest();
@@ -97,7 +79,6 @@ xhr.send(null);
             Lösung verfügbar: <div class="rect erledigt">&nbsp;</div><br>
         </fieldset>
     </div>
-    <div id="uhr">&nbsp;</div>
     <div id="content">
 <?php
 $dbname = "homeworks";
@@ -124,7 +105,7 @@ include_once "../_hidden/mysqlconn.php";
             echo $tsel;
             ?>
         </select>
-        <div id="table_ha">
+        <div id="table_ha"><h1>Entweder hast du Javascript deaktivert, oder ziemlich beschissenes Internet...</h1>
         </div>
         
         <h1>Arbeiten</h1>
@@ -148,7 +129,7 @@ include_once "../_hidden/mysqlconn.php";
             echo $tsel;
             ?>
         </select>
-        <div id="table_ka">
+        <div id="table_ka"><h1>Entweder hast du Javascript deaktivert, oder ziemlich beschissenes Internet...</h1>
         </div>
         
     </div>

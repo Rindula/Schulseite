@@ -43,23 +43,6 @@ include "../../css/controller.php";
 
 </style>
 <script language="JavaScript">
-
-    var interval = window.setInterval("uhr_anzeigen()", 10);
-
-    function uhr_anzeigen() {
-        var Datum = new Date();
-        var stunde = Datum.getHours();
-        var minute = Datum.getMinutes();
-        var sekunde = Datum.getSeconds();
-
-        Zeit = ((stunde < 10) ? " 0" : " ") + stunde;
-        Zeit += ((minute < 10) ? ":0" : ":") + minute;
-        Zeit += ((sekunde < 10) ? ":0" : ":") + sekunde;
-        Zeit += " Uhr";
-
-        document.getElementById('uhr').innerHTML = Zeit;
-    }
-
     function update() {
         var textBox = document.getElementById("aufgaben2");
         var dropDown = document.getElementById("fach2");
@@ -86,8 +69,6 @@ include "../../css/controller.php";
     }
 
 </script>
-
-<div id="uhr">&nbsp;</div>
 <?php
 $dbname = "homeworks";
 include "../../_hidden/mysqlconn.php";
