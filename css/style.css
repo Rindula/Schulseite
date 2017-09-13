@@ -97,13 +97,14 @@ ul.topnav li.right {float: right;}
 #hinweis > span {
     border-bottom: 1px solid black;
     background-color: #1185E4 !important;
-    display: block;
+    display: none;
     padding: 2px;
     height: 0;
     transition: height .2s ease;
 }
 #hinweis .aktiv > span {
     height: auto;
+    display: block;
 }
 
 #hinweis > span > span {
