@@ -101,7 +101,8 @@ if ($_GET["section"] == "lessons" && isset($_GET["change"]) && isset($_POST["con
     echo "<code>Stunden werden übernommen...</code>";
 }
 
-list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re) = $userConn->query("SELECT bk, ct, sk, pc, fr, re FROM users WHERE id = '" . $_SESSION["userid"] . "'")->fetch_assoc();
+$ret = $userConn->query("SELECT bk, ct, sk, pc, fr, re FROM users WHERE id = '" . $_SESSION["userid"] . "'");
+list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re) = $ret->fetch_array();
 
 if (isset($_GET["change"])) {
     echo '<meta http-equiv="refresh" content="3; URL=?section=' . $_GET["section"] . '">';
