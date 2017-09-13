@@ -59,7 +59,7 @@
                 }, 30000);
             }
         }
-        xhr.open('GET', 'get_ka.php?q='+id, true);
+        xhr.open('GET', 'news.php', true);
         xhr.send(null);
     }
     news();
