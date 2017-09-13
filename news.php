@@ -6,9 +6,9 @@ if(empty($_SESSION["news_messages"])) {
 
 if (isset($_GET["close"])) {
     $id = $_GET["close"];
-    $array = $_SESSION["news_messages"];
+    $array = json_decode($_SESSION["news_messages"]);
     array_push($array, $id);
-    $_SESSION["news_messages"] = $array;
+    $_SESSION["news_messages"] = json_encode($array);
 } else {
     $newsConn = new mysqli("localhost", "root", "WQeYt4S8G3", "stats");
     if ($newsConn->connect_errno) {
