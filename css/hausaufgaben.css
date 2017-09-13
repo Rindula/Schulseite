@@ -115,6 +115,7 @@ h1 {
     margin-bottom: 100px;
 }
 fieldset {
+    display: none;
     float:right;
     right: 0;
     position:absolute;
