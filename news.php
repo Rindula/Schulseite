@@ -1,5 +1,9 @@
 <?php
 
+if(empty($_SESSION["news_messages"])) {
+    $_SESSION["news_messages"] = array();
+}
+
 if (isset($_GET["close"])) {
     $id = $_GET["close"];
     $array = $_SESSION["news_messages"];
