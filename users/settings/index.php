@@ -102,7 +102,7 @@ if ($_GET["section"] == "lessons" && isset($_GET["change"]) && isset($_POST["con
 }
 
 $ret = $userConn->query("SELECT bk, ct, sk, pc, fr, re FROM users WHERE id = '" . $_SESSION["userid"] . "'");
-list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re) = $ret->fetch_assoc();
+list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re) = $ret->fetch_array();
 
 if (isset($_GET["change"])) {
     echo '<meta http-equiv="refresh" content="3; URL=?section=' . $_GET["section"] . '">';
@@ -202,7 +202,7 @@ if ($sec == "lessons") {
                         <select name="lesson_ct" id="" disabled="disabled">
                             <option <?= ($lesson_ct == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
                             <option <?= ($lesson_ct == 1) ? "selected" : ""; ?> value="1">Videoschnitt</option>
-                            <option <?= ($lesson_ct == 2) ? "selected" : ""; ?> value="1">Websiten aufbau</option>
+                            <option <?= ($lesson_ct == 2) ? "selected" : ""; ?> value="2">Websiten aufbau</option>
                         </select>
                     </td>
                 </tr>
