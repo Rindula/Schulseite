@@ -7,3 +7,11 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+td, th {
+    padding: 5px;
+}
+
+th {
+    font-size: 120%;
+}
