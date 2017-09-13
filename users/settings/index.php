@@ -90,6 +90,10 @@ if ($_GET["section"] == "colors" && isset($_GET["change"]) && isset($_POST["conf
 }
 
 
+if ($_GET["section"] == "lessons" && isset($_GET["change"]) && isset($_POST["confirm"])) {
+    // $userConn->query("UPDATE users SET navbarBack = '" . $_POST["colorNavBarBack"] . "', navbarText = '" . $_POST["colorNavBarText"] . "', backgroundPage = '" . $_POST["backgroundColor"] . "' WHERE id = '" . $_SESSION["userid"] . "'");
+    echo "<code>Stunden werden übernommen...</code>";
+}
 
 if (isset($_GET["change"])) {
     echo '<meta http-equiv="refresh" content="3; URL=?section=' . $_GET["section"] . '">';
@@ -105,6 +109,7 @@ if ($sec == "main") {
         <ul style="list-style-type: none;">
             <li><a style="" href="?section=passwort">Passwort ändern</a></li>
             <li><a style="" href="?section=colors">Farben ändern</a></li>
+            <!-- <li><a style="" href="?section=lessons">Fächer einstellen</a></li> -->
         </ul>
     </div>
 <?php
@@ -160,5 +165,82 @@ if ($sec == "colors") {
             <input name="confirm" type="submit" />
         </form>
     </div>
-<?php } ?>
+<?php 
+
+} 
+if ($sec == "lessons") {
+    ?>
+    
+    <div class="content">
+        <form action="?section=lessons&change" method="post">
+            <table>
+                <tr>
+                    <th>Fach</th>
+                    <th>Auswahl</th>
+                </tr>
+                <tr>
+                    <td>Bildene Kunst</td>
+                    <td>
+                        <select name="lesson_bk" id="" disabled="disabled">
+                            <option value="0">Nicht gewählt</option>
+                            <option value="1">Gewählt</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Computertechnik</td>
+                    <td>
+                        <select name="lesson_ct" id="" disabled="disabled">
+                            <option value="0">Nicht gewählt</option>
+                            <option value="1">Videoschnitt</option>
+                            <option value="1">Websiten aufbau</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Seminarkurs</td>
+                    <td>
+                        <select name="lesson_sk" id="" disabled="disabled">
+                            <option value="0">Nicht gewählt</option>
+                            <option value="1">Gewählt</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Physik/Chemie</td>
+                    <td>
+                        <select name="lesson_pc" id="" disabled="disabled">
+                            <option value="0">Physik</option>
+                            <option value="1">Chemie</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Zweite Fremdsprache</td>
+                    <td>
+                        <select name="lesson_fr" id="" disabled="disabled">
+                            <option value="0">Nicht gewählt</option>
+                            <option value="1">Spanisch</option>
+                            <option value="2">Französisch</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Religionsunterricht</td>
+                    <td>
+                        <select name="lesson_re" id="" disabled="disabled">
+                            <option value="0">Ethik</option>
+                            <option value="1">Katholisch</option>
+                            <option value="2">Evangelisch</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+<?php 
+
+} 
+?>
 
