@@ -26,7 +26,7 @@
             foreach ($zeiten as $z) {
                 $n++;
                 $afafaf = $userConn->query("SELECT * FROM timetable_" . $_SESSION["userid"] . " WHERE id=$n");
-                $we = $afafaf->fetch_array();
+                $w = $afafaf->fetch_array();
                 for ($i=0; $i < 5; $i++) {
                     switch ($i) {
                         case 0:
