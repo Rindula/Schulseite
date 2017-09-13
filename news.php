@@ -6,11 +6,11 @@ if(empty($_SESSION["news_messages"])) {
 
 if (isset($_GET["close"])) {
     $id = $_GET["close"];
-    $array = json_decode($_SESSION["news_messages"]);
-    echo $array . PHP_EOL;    
-    array_push($array, $id);
-    echo $array . PHP_EOL;
-    $_SESSION["news_messages"] = json_encode($array);
+    $arr = json_decode($_SESSION["news_messages"]);
+    echo $arr . PHP_EOL;    
+    array_push($arr, $id);
+    echo $arr . PHP_EOL;
+    $_SESSION["news_messages"] = json_encode($arr);
     echo $_SESSION["news_messages"] . PHP_EOL;
 } else {
     $newsConn = new mysqli("localhost", "root", "WQeYt4S8G3", "stats");
