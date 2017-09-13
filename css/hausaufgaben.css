@@ -116,6 +116,7 @@ h1 {
 }
 fieldset {
     float:right;
+    right: 0;
     position:absolute;
     width: 110px; /* or whatever you want */
 }
