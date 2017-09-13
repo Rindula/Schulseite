@@ -20,7 +20,7 @@ if (isset($_GET["close"])) {
     $ret = $newsConn->query("SELECT * FROM news");
 
     while ($news = $ret->fetch_assoc()) {
-        if (!in_array($news["id"], $_SESSION["news_messages"])) {
+        if (!in_array($news["id"], json_decode($_SESSION["news_messages"]))) {
             echo "<span class='aktiv' id='message_".$news["id"]."'>" . $news["text"] . "<span onclick='closeNews(\"".$news["id"]."\")'>&#10008;</span></span>";
         }
     }
