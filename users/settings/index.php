@@ -211,7 +211,7 @@ if ($sec == "lessons") {
                     <td>
                         <select name="lesson_sk" id="">
                             <option <?= ($lesson_sk == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
-                            <option <?= ($lesson_sk == 0) ? "selected" : ""; ?> value="1">Gewählt</option>
+                            <option <?= ($lesson_sk == 1) ? "selected" : ""; ?> value="1">Gewählt</option>
                         </select>
                     </td>
                 </tr>
