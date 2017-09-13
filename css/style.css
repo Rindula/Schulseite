@@ -84,11 +84,11 @@ ul.topnav li.right {float: right;}
 #hinweis {
     display: block;
     width: 100%;
-    background-color: #1185E4;
+    background-color: #1185E4 !important;
     color: white;
     font-weight: bold;
     height: 0px;
-    transform: height .2s ease;
+    transition: height .2s ease;
     border-top: 1px solid black;
 }
 
