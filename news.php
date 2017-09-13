@@ -2,12 +2,9 @@
 
 if (isset($_GET["close"])) {
     $id = $_GET["close"];
-    $arr = (empty($_SESSION["news_messages"])) ? array('0') : json_decode($_SESSION["news_messages"]);
-    print_r( $arr . PHP_EOL );    
-    array_push($arr, $id);
-    print_r( $arr . PHP_EOL );
+    $arr = (empty($_SESSION["news_messages"])) ? array('0') : json_decode($_SESSION["news_messages"]); 
+    $arr = array_push($arr, $id);
     $_SESSION["news_messages"] = json_encode($arr);
-    echo $_SESSION["news_messages"] . PHP_EOL;
 } else {
     $newsConn = new mysqli("localhost", "root", "WQeYt4S8G3", "stats");
     if ($newsConn->connect_errno) {
