@@ -9,6 +9,12 @@
     }
 ?>
 
+<style>
+    td, th {
+        border: 1px solid black;
+    }
+</style>
+
 <div class="content">
     <form action="setup.php" method="post">
         <table>
@@ -28,9 +34,11 @@
                 $afafaf = $userConn->query("SELECT * FROM timetable_" . $_SESSION["userid"] . " WHERE id=$n");
                 $w = $afafaf->fetch_array();
                 for ($i=0; $i < 5; $i++) {
+                    $opt = "";
+                    
                     switch ($i) {
                         case 0:
-                            $mo = $w[$i];
+                            $mo = "<select name='mo_$n'></select>";
                             break;
                         
                         case 1:
@@ -70,3 +78,6 @@
         </table>
     </form>
 </div>
+<script>
+    
+</script>

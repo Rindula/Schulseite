@@ -114,7 +114,7 @@ h1 {
 #content {
     margin-bottom: 100px;
 }
-.fieldset{
+fieldset {
     float:right;
     position:relative;
     width: 110px; /* or whatever you want */
