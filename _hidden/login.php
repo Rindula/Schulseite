@@ -23,7 +23,7 @@ if (isset($_GET['login'])) {
         $_SESSION["colors"][1] = $user["navbarText"];
         $_SESSION["colors"][2] = $user["backgroundPage"];
         $success = '1';
-        $errorMessage = "<meta http-equiv='refresh' content='1; " . $_SESSION["url"] . "'><h1>Login erfolgreich. Weiterleitung erfolgt...</h1>";
+        $errorMessage = "<meta http-equiv='refresh' content='0; /settings'><h1>Login erfolgreich. Weiterleitung erfolgt...</h1>";
     } else {
         $success = '0';
         $errorMessage = "Name oder Passwort war ungültig<br>";
