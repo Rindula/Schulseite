@@ -22,7 +22,6 @@
             </tr>
             <?php
 
-            $woche = array("MONTAG", "DIENSTAG", "MITTWOCH", "DONNERSTAG", "FREITAG");
             $n = 0;
             foreach ($zeiten as $z) {
                 $n++;
@@ -30,18 +29,42 @@
                 $we = $afafaf->fetch_array();
                 $i = 0;
                 foreach ($woche as $w) {
-                    define($w, $we[$i]);
+                    switch ($i) {
+                        case 0:
+                            $mo = $w[$i];
+                            break;
+                        
+                        case 1:
+                            $di = $w[$i];
+                            break;
+                        
+                        case 2:
+                            $mi = $w[$i];
+                            break;
+                        
+                        case 3:
+                            $do = $w[$i];
+                            break;
+                        
+                        case 4:
+                            $fr = $w[$i];
+                            break;
+                        
+                        default:
+                            echo "ERROR?!";
+                            break;
+                    }
                     $i++;
                 }
 
                 ?>
                 <tr>
                     <td><?= $z ?></td>
-                    <td><?= MONTAG ?></td>
-                    <td><?= DIENSTAG ?></td>
-                    <td><?= MITTWOCH ?></td>
-                    <td><?= DONNERSTAG ?></td>
-                    <td><?= FREITAG ?></td>
+                    <td><?= $mo ?></td>
+                    <td><?= $di ?></td>
+                    <td><?= $mi ?></td>
+                    <td><?= $do ?></td>
+                    <td><?= $fr ?></td>
                 </tr>
                 <?php
             }
