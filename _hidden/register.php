@@ -1,4 +1,6 @@
-<?php //die("<h1>Derzeit nicht verfügbar!</h1>"); ?>
+<?php 
+
+die("<h1>Derzeit nicht verfügbar!</h1>"); ?>
 
 <?php
 /* Form Required Field Validation */
