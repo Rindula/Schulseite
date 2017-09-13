@@ -27,13 +27,7 @@
                 $n++;
                 $afafaf = $userConn->query("SELECT * FROM timetable_" . $_SESSION["userid"] . " WHERE id=$n");
                 $we = $afafaf->fetch_array();
-                $i = 0;
-                $mo = "";
-                $di = "";
-                $mi = "";
-                $do = "";
-                $fr = "";
-                foreach ($woche as $w) {
+                for ($i=0; $i < 5; $i++) {
                     switch ($i) {
                         case 0:
                             $mo = $w[$i];
@@ -59,7 +53,6 @@
                             echo "ERROR?!";
                             break;
                     }
-                    $i++;
                 }
 
                 ?>
