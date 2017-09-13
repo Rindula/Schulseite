@@ -3,9 +3,9 @@
 if (isset($_GET["close"])) {
     $id = $_GET["close"];
     $arr = (empty($_SESSION["news_messages"])) ? array('0') : json_decode($_SESSION["news_messages"]);
-    echo $arr . PHP_EOL;    
+    print_r( $arr . PHP_EOL );    
     array_push($arr, $id);
-    echo $arr . PHP_EOL;
+    print_r( $arr . PHP_EOL );
     $_SESSION["news_messages"] = json_encode($arr);
     echo $_SESSION["news_messages"] . PHP_EOL;
 } else {
