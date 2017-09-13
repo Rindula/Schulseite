@@ -96,9 +96,10 @@ ul.topnav li.right {float: right;}
     height: auto;
 }
 
-#hinweis span {
+#hinweis > span {
     border-bottom: 1px solid black;
     display: block;
+    padding: 2px;
 }
 
 .container {
