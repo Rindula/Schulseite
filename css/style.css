@@ -105,7 +105,7 @@ ul.topnav li.right {float: right;}
     height: auto;
 }
 
-#hinweis > span > p {
+#hinweis > span > span {
     float: right;
 }
 

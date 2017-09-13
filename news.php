@@ -18,7 +18,7 @@ if (isset($_GET["close"])) {
 
     while ($news = $ret->fetch_assoc()) {
         if (!in_array($news["id"], $_COOKIE["news_messages"])) {
-            echo "<span class='aktiv' id='message_".$news["id"]."'>" . $news["text"] . "<p onclick='closeNews(\"".$news["id"]."\")'>&#10008;</p></span>";
+            echo "<span class='aktiv' id='message_".$news["id"]."'>" . $news["text"] . "<span onclick='closeNews(\"".$news["id"]."\")'>&#10008;</span></span>";
         }
     }
 }

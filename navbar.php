@@ -62,17 +62,14 @@
         xhr.open('GET', '/news.php', true);
         xhr.send(null);
     }
-    function closeNews() {
+    function closeNews(id) {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
-                document.getElementById("hinweis").innerHTML = xhr.responseText;
-                setTimeout(function() {
-                    news();
-                }, 30000);
+                document.getElementById("message_" + id).classList.remove("aktiv")
             }
         }
-        xhr.open('GET', '/news.php?close', true);
+        xhr.open('GET', '/news.php?close='+id, true);
         xhr.send(null);
     }
     news();
