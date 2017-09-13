@@ -114,13 +114,14 @@ $sec = $_GET["section"];
 if ($sec == "main") {
     ?>
     <div class="content">
-    <form action="" method="get"></form>
+    <form action="" method="get">
         <h1>Einstellungen<br><small>Willkommen, <?= $_SESSION["name"] ?></small></h1>
         <ul style="list-style-type: none;">
             <li><button name="section" value="passwort">Passwort ändern</button></li>
             <li><button name="section" value="colors">Farben ändern</button></li>
             <li><button name="section" value="lessons">Fächer einstellen</button></li>
         </ul>
+        </form>
     </div>
 <?php
 }
@@ -175,9 +176,8 @@ if ($sec == "colors") {
             <input name="confirm" type="submit" />
         </form>
     </div>
-<?php 
-
-} 
+<?php
+}
 if ($sec == "lessons") {
     ?>
     
@@ -250,8 +250,7 @@ if ($sec == "lessons") {
         </form>
     </div>
 
-<?php 
-
+<?php
 }
 
 if ($sec == "timetable") {
