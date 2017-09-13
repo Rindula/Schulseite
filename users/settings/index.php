@@ -126,8 +126,8 @@ if ($sec == "main") {
 <?php
 } else {
     ?>
-    <form action="" method="get">
-        <button type="submit" name="main"></button>
+    <form class="button_back" action="" method="get">
+        <button type="submit" name="main">Zurück</button>
     </form>
 <?php
 }
