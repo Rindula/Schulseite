@@ -4,7 +4,7 @@ if (isset($_GET["close"])) {
     $id = $_GET["close"];
     $array = $_COOKIE["news_messages"];
     array_push($array, $id);
-    setcookie("news_messages", $array);
+    setcookie("news_messages", "$array");
 } else {
     $newsConn = new mysqli("localhost", "root", "WQeYt4S8G3", "stats");
     if ($newsConn->connect_errno) {
