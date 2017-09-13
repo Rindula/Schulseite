@@ -23,5 +23,9 @@ th {
 }
 
 button {
-    outline: none;
+    border: 2px dotted cyan;
+}
+
+button:hover {
+    border: 2px dotted red;
 }
