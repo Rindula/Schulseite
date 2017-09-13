@@ -136,3 +136,21 @@
         </form>
     </div>
 </div>
+<div class id="hinweis">
+</div>
+<script>
+    function news() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                document.getElementById("hinweis").innerHTML = xhr.responseText;
+                setTimeout(function() {
+                    news();
+                }, 30000);
+            }
+        }
+        xhr.open('GET', 'get_ka.php?q='+id, true);
+        xhr.send(null);
+    }
+    news();
+</script>
