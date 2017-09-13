@@ -1,12 +1,8 @@
 <?php
 
-if(empty($_SESSION["news_messages"])) {
-    $_SESSION["news_messages"] = array();
-}
-
 if (isset($_GET["close"])) {
     $id = $_GET["close"];
-    $arr = json_decode($_SESSION["news_messages"]);
+    $arr = (empty($_SESSION["news_messages"])) ? array('0') : json_decode($_SESSION["news_messages"]);
     echo $arr . PHP_EOL;    
     array_push($arr, $id);
     echo $arr . PHP_EOL;
