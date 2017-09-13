@@ -25,7 +25,7 @@ if (!isset($_GET["section"])) {
 }
 ?>
 <style>
-    ul li a {
+    ul li button {
         text-decoration: none;
         color: black;
         display: inline-block;
@@ -34,7 +34,7 @@ if (!isset($_GET["section"])) {
         margin: 10px;
         transition: 0.2s all linear;
     }
-    ul li a:hover {
+    ul li button:hover {
         color: white;
         background-color: #6666ff;
     }
@@ -114,11 +114,12 @@ $sec = $_GET["section"];
 if ($sec == "main") {
     ?>
     <div class="content">
+    <form action="" method="get"></form>
         <h1>Einstellungen<br><small>Willkommen, <?= $_SESSION["name"] ?></small></h1>
         <ul style="list-style-type: none;">
-            <li><a style="" href="?section=passwort">Passwort ändern</a></li>
-            <li><a style="" href="?section=colors">Farben ändern</a></li>
-            <li><a style="" href="?section=lessons">Fächer einstellen</a></li>
+            <li><button name="section" value="passwort">Passwort ändern</button></li>
+            <li><button name="section" value="colors">Farben ändern</button></li>
+            <li><button name="section" value="lessons">Fächer einstellen</button></li>
         </ul>
     </div>
 <?php

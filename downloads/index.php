@@ -35,7 +35,7 @@ if ($handle = opendir('./content/')) {
                 while (false !== ($entry = readdir($handle2))) {
                     if ($entry != "." && $entry != "..") {
                         $filesize = formatSizeUnits(filesize("./content/$e/$entry"));
-                        echo "<li><a class='$classes' href='download.php?file=" . urlencode($entry) . "&sub=$e'>" . basename($entry) . " (" . $filesize . ") | {Letzte &Auml;nderung: " . date('d.m.Y H:i:s.', filemtime("./content/$e/$entry"))."}</a></li>\n";
+                        echo "<li><a href='download.php?file=" . urlencode($entry) . "&sub=$e'>" . basename($entry) . " (" . $filesize . ") | {Letzte &Auml;nderung: " . date('d.m.Y H:i:s.', filemtime("./content/$e/$entry"))."}</a></li>\n";
                     }
                 }
                 closedir($handle2);
