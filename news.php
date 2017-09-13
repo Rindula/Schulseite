@@ -6,7 +6,9 @@ if(empty($_SESSION["news_messages"])) {
 
 if (isset($_GET["close"])) {
     $id = $_GET["close"];
+    echo $id . PHP_EOL;
     $array = json_decode($_SESSION["news_messages"]);
+    echo $array . PHP_EOL;    
     array_push($array, $id);
     $_SESSION["news_messages"] = json_encode($array);
 } else {

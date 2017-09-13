@@ -67,6 +67,7 @@
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
                 document.getElementById("message_" + id).classList.remove("aktiv");
+                alert(xhr.responseText);
             }
         }
         xhr.open('GET', '/news.php?close='+id, true);
