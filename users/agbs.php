@@ -20,7 +20,7 @@
 			color: #333;
 			border-radius: 4px;
 			padding: 20px 40px;
-			display: inline-block;
+			display: block;
 			
 		}
 	</style>
