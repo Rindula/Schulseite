@@ -87,7 +87,7 @@ include_once "../_hidden/mysqlconn.php";
                 if ($f["id"] == "-1") {
                     continue;
                 }
-                $tsel .= "<option value='".$f["id"]."'>".$f["fach"]."</option>";
+                $tsel .= "<option value='".$f["fach"]."'>".$f["fach"]."</option>";
             }
             $facher = substr($facher, 0, -1);
             echo "<option value='all'>Alle F&auml;cher</option>";

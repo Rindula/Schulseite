@@ -10,7 +10,8 @@ include "../_hidden/vars.php";
 if($query === "all") {
     $sql = "SELECT * FROM list ORDER BY Datum Asc";
 } else {
-    $sql = "SELECT * FROM list WHERE Fach = $query ORDER BY Datum Asc";
+    $query = $mysqli->real_escape_string($query);
+    $sql = "SELECT * FROM list WHERE Fach = '$query' ORDER BY Datum Asc";
 }
 
 function removeDir($dir) {
