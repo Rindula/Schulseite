@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 $query = $_REQUEST["q"];
 $o = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>";
 $out = $o;
