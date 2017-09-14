@@ -23,7 +23,7 @@ $qr = substr($qr, 0, -2);
 $sql = "SELECT * FROM list WHERE Fach IN($qr) ORDER BY Datum Asc";
 $result = $mysqli->query($sql);
 while ($ar = $result->fetch_assoc()) {
-    $IMAGEPATH = $_SERVER['DOCUMENT_ROOT'] . "hausaufgaben/loesungen/" . $ar["ID"] . "/";
+    $IMAGEPATH = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/" . $ar["ID"] . "/";
 
     $today = strtotime(date("Y-m-d"));
     $expiration_date = strtotime($ar["Datum"]);
