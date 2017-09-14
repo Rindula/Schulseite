@@ -11,15 +11,17 @@
 	<style>
 		#agbs {
 			background: #d9eeff;
-			width: 60%;
+			width: 50%;
 			border-spacing: initial;
-			margin: 2px 0px;
+			margin: auto;
 			word-break: break-word;
 			table-layout: auto;
 			line-height: 1.8em;
 			color: #333;
 			border-radius: 4px;
 			padding: 20px 40px;
+			display: inline-block;
+			
 		}
 	</style>
 </head>
