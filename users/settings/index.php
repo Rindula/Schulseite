@@ -98,7 +98,7 @@ if ($_GET["section"] == "lessons" && isset($_GET["change"]) && isset($_POST["con
     $_SESSION["lesson_pc"] = $pc = $_POST["lesson_pc"];
     $_SESSION["lesson_fr"] = $fr = $_POST["lesson_fr"];
     $_SESSION["lesson_re"] = $re = $_POST["lesson_re"];
-    $userConn->query("UPDATE users SET bk = $bk, ct = $ct, sk = $sk, pc = $pc, fr = $fr, re = $re");
+    $userConn->query("UPDATE users SET bk = $bk, ct = $ct, sk = $sk, pc = $pc, fr = $fr, re = $re WHERE id = " . $_SESSION["userid"]);
     echo "<code>Stunden werden übernommen...</code>";
 }
 
