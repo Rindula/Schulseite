@@ -8,7 +8,7 @@ include_once "../_hidden/mysqlconn.php";
 $tmp = explode(",", $query);
 $qr = "";
 foreach ($tmp as $value) {
-    $qr .= "'" . $value . "', ";
+    $qr .= $value . ", ";
 }
 
 function removeDir($dir) {
@@ -20,7 +20,7 @@ function removeDir($dir) {
 
 $qr = substr($qr, 0, -2);
 
-$sql = "SELECT * FROM list WHERE Fach IN($qr) ORDER BY Datum Asc";
+$sql = "SELECT * FROM list WHERE ID IN($qr) ORDER BY Datum Asc";
 $result = $mysqli->query($sql);
 while ($ar = $result->fetch_assoc()) {
     $IMAGEPATH = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/" . $ar["ID"] . "/";
@@ -34,7 +34,7 @@ while ($ar = $result->fetch_assoc()) {
     if ($expiration_date < $today) {
         continue;
     }
-    
+
     mkdir($IMAGEPATH);
 
     if ($expiration_date <= $today + (1 * 60 * 60 * 24)) {
