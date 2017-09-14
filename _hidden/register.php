@@ -59,7 +59,7 @@ if(!isset($error_message) && $valid) {
 	$result = $userConn->query($query);
 	if(!empty($result)) {
 		$error_message = "";
-		$success_message = "Du hast dich erfolgreich registriert! Dein Benutzername ist \"$login\"";
+		$success_message = "Du hast dich erfolgreich registriert! Dein Benutzername ist \"$login\" <a href=\"/hausaufgaben\">Zurück zu den Hausaufgaben</a>";
 		unset($_POST);
 	} else {
 		$error_message = "Es ist ein Problem aufgetreten. Bitte versuche es später nocheinmal!";	
