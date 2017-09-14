@@ -21,6 +21,17 @@ function removeDir($dir) {
     }
     rmdir($dir);
 }
+function is_dir_empty($dir) {
+    if (!is_readable($dir))
+        return NULL;
+    $handle = opendir($dir);
+    while (false !== ($entry = readdir($handle))) {
+        if ($entry != "." && $entry != "..") {
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
 
 $result = $mysqli->query($sql);
 while ($ar = $result->fetch_assoc()) {
