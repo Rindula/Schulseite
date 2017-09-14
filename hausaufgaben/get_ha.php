@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 $query = $_REQUEST["q"];
 $out = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>\n";
 $dbname = "homeworks";
@@ -12,8 +10,7 @@ include "../_hidden/vars.php";
 if($query === "all") {
     $sql = "SELECT * FROM list ORDER BY Datum Asc";
 } else {
-    $qr .= "'" . $query . "'";
-    $sql = "SELECT * FROM list WHERE ID = $qr ORDER BY Datum Asc";
+    $sql = "SELECT * FROM list WHERE ID = $query ORDER BY Datum Asc";
 }
 
 function removeDir($dir) {
@@ -77,9 +74,6 @@ while ($ar = $result->fetch_assoc()) {
         $out .= "<td class='fach'>" . $ar["Fach"] . "</td>";
         $out .= "<td class='aufgaben'>" . $aufgaben . "</td>";
         $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
-    }
-    if ($loggedIn) {
-        $out .= "<td>" . $ar["ID"] . "</td>";
     }
     $out .= "</tr>";
     $out .= "<tr class='imageDisplay'>";
