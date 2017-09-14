@@ -64,11 +64,13 @@ while ($ar = $result->fetch_assoc()) {
         $classes = "zuErledigen";
     }
     $title = "";
+    $onclick = "";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
         $classes = $classes . " imageAcc erledigt";
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
+        $onclick = "onclick='addEvent(this)'";
     }
-    $out .= "<tr title='$title' id='" . $ar['ID'] . "' class='$classes'>";
+    $out .= "<tr title='$title' id='" . $ar['ID'] . "' $onclick class='$classes'>";
 
 
     $datetime1 = date_create(date("Y-m-d"));

@@ -46,6 +46,15 @@ xhr.onreadystatechange = function() {
 xhr.open('GET', 'get_ka.php?q='+id, true);
 xhr.send(null);
 }
+
+function addEvent(click) {
+    /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+    click.classList.toggle("active");
+    /* Toggle between hiding and showing the active panel */
+    var panel = click.nextElementSibling;
+    panel.classList.toggle("shown");
+}
 </script>
 <script type="text/javascript" src="/scripts/lightbox.js"></script>
 
