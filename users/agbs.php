@@ -24,6 +24,7 @@
 			
 		}
 	</style>
+	<title>AGBs | rindula.de</title>
 </head>
 <body>
 
