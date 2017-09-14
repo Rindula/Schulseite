@@ -93,7 +93,7 @@
                 selector.innerHTML = xhr.responseText;
             }
         }
-        xhr.open('GET', '/fetchItems.php?id='+id, true);
+        xhr.open('GET', '/fetchItems.php?id='+<?= $_SESSION["userid"] ?>, true);
         xhr.send(null);
     }
 
