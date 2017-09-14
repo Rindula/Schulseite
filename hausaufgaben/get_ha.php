@@ -1,7 +1,8 @@
 <?php
 
 $query = $_REQUEST["q"];
-$out = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>\n";
+$o = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>";
+$out = $o;
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
 include "../_hidden/vars.php";
@@ -92,5 +93,5 @@ while ($ar = $result->fetch_assoc()) {
     $out .= "</tr>";
 }
 
-echo $out === "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>\n" ? "<h2>Keine Aufgaben in diesem Fach</h2>" : $out;
+echo $out === $o ? "<h2>Keine Aufgaben in diesem Fach</h2>" : $out;
 ?>
