@@ -8,7 +8,7 @@ include_once "../_hidden/mysqlconn.php";
 $tmp = explode(",", $query);
 $qr = "";
 foreach ($tmp as $value) {
-    $qr .= $value . ", ";
+    $qr .= "'" . $value . "', ";
 }
 
 function removeDir($dir) {
