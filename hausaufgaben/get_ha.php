@@ -3,7 +3,7 @@
 $query = $_REQUEST["q"];
 $out = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>\n";
 $dbname = "homeworks";
-include_once "../_hidden/mysqlconn.php";
+include "../_hidden/mysqlconn.php";
 
 
 if($query === "all") {
@@ -21,7 +21,6 @@ function removeDir($dir) {
 }
 
 $result = $mysqli->query($sql);
-$mysqli->error;
 while ($ar = $result->fetch_assoc()) {
     $IMAGEPATH = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/" . $ar["ID"] . "/";
 
