@@ -45,6 +45,7 @@ while($r = $ret->fetch_assoc()) {
 		if($r["count"] > 0) {
 			unset ($error_message);
 			$valid = true;
+			$init_group = $r["init_group"];
 			$userConn->query("UPDATE reg_keys SET uses = " . $r["uses"] + 1 .", count = " . $r["count"] - 1 . " WHERE key = '$key'");
 		} else {
 			$error_message = "Der Registrierungsschlüssel ist bereits aufgebraucht!";
@@ -54,8 +55,8 @@ while($r = $ret->fetch_assoc()) {
 }
 if(!isset($error_message) && $valid) {
 
-	$query = "INSERT INTO users (login, vorname, name, passwort) VALUES
-	('" . $login . "', '" . $_POST["firstName"] . "', '" . $_POST["lastName"] . "', '" . password_hash($_POST["password"], PASSWORD_DEFAULT) . "')";
+	$query = "INSERT INTO users (login, vorname, name, passwort, gruppe) VALUES
+	('" . $login . "', '" . $_POST["firstName"] . "', '" . $_POST["lastName"] . "', '" . password_hash($_POST["password"], PASSWORD_DEFAULT) . "', '$init_group')";
 	$result = $userConn->query($query);
 	if(!empty($result)) {
 		$error_message = "";
