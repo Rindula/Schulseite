@@ -11,7 +11,7 @@
 	<style>
 		#agbs {
 			background: #d9eeff;
-			width: 100%;
+			width: 60%;
 			border-spacing: initial;
 			margin: 2px 0px;
 			word-break: break-word;
