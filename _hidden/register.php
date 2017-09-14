@@ -72,16 +72,19 @@ if(!isset($error_message) && $valid) {
 $ret = $userConn->query("SELECT * FROM reg_keys");
 $key = $_GET["key"];
 $valid = false;
+$msg = "Ungültiger Registrierungsschlüssel!";
 while($r = $ret->fetch_assoc()) {
 	if($key == $r["key"]) {
 		if($r["count"] > 0) {
 			$valid = true;
+		} else {
+			$msg = "Keine Registrierungen mehr mit diesem Schlüssel möglich!";
 		}
 	}
 }
 
 if(!$valid) {
-	die("<h1>Ungültiger Registrierungsschlüssel!</h1>");
+	die("<h1>$msg</h1>");
 }
 
 ?>
