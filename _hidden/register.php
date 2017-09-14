@@ -46,7 +46,7 @@ while($r = $ret->fetch_assoc()) {
 			unset ($error_message);
 			$valid = true;
 			$init_group = $r["init_group"];
-			$userConn->query("UPDATE reg_keys SET uses = " . $r["uses"] + 1 .", count = " . $r["count"] - 1 . " WHERE key = '$key'");
+			$userConn->query("UPDATE reg_keys SET uses = '" . $r["uses"] + 1 ."', count = '" . $r["count"] - 1 . "' WHERE key = '$key'");
 		} else {
 			$error_message = "Der Registrierungsschlüssel ist bereits aufgebraucht!";
 		}
