@@ -1,10 +1,13 @@
 <?php 
 
-die("<h1>Derzeit nicht verfügbar!</h1>"); ?>
+// die("<h1>Derzeit nicht verfügbar!</h1>");
+require_once("mysqlconn.php");
 
-<?php
+
+
 /* Form Required Field Validation */
 if ($_POST["register-user"] == "Registrieren") {
+
 foreach($_POST as $key=>$value) {
 	if(empty($_POST[$key])) {
 	$error_message = "Du musst alle Felder ausfüllen";
@@ -33,15 +36,31 @@ if(!isset($error_message)) {
 	$error_message = "Du musst die Nutzungsbedingungen akzeptieren!";
 	}
 }
-
 if(!isset($error_message)) {
-	require_once("mysqlconn.php");
+$ret = $userConn->query("SELECT * FROM reg_keys");
+$key = $_POST["key"];
+$valid = false;
+$error_message = "Ungültiger Registrierungsschlüssel!";
+while($r = $ret->fetch_assoc()) {
+	if($key == $r["key"]) {
+		if($r["count"] > 0) {
+			unset ($error_message);
+			$valid = true;
+			$userConn->query("UPDATE reg_keys SET uses = uses + 1, count = count - 1 WHERE key = $key");
+		} else {
+			$error_message = "Der Registrierungsschlüssel ist bereits aufgebraucht!";
+		}
+	}
+}
+}
+if(!isset($error_message) && $valid) {
+
 	$query = "INSERT INTO users (login, vorname, name, passwort) VALUES
 	('" . $login . "', '" . $_POST["firstName"] . "', '" . $_POST["lastName"] . "', '" . password_hash($_POST["password"], PASSWORD_DEFAULT) . "')";
 	$result = $userConn->query($query);
 	if(!empty($result)) {
 		$error_message = "";
-		$success_message = "Du hast dich erfolgreich registriert!";	
+		$success_message = "Du hast dich erfolgreich registriert!";
 		unset($_POST);
 	} else {
 		$error_message = "Es ist ein Problem aufgetreten. Bitte versuche es später nocheinmal!";	
@@ -49,6 +68,22 @@ if(!isset($error_message)) {
 }
 
 }
+
+$ret = $userConn->query("SELECT * FROM reg_keys");
+$key = $_GET["key"];
+$valid = false;
+while($r = $ret->fetch_assoc()) {
+	if($key == $r["key"]) {
+		if($r["count"] > 0) {
+			$valid = true;
+		}
+	}
+}
+
+if(!$valid) {
+	die("<h1>Ungültiger Registrierungsschlüssel!</h1>");
+}
+
 ?>
 <style>
 .error-message {
@@ -125,4 +160,5 @@ if(!isset($error_message)) {
 			<input type="checkbox" name="terms"> Ich akzeptiere die <a target="agbs" href="/agbs">Nutzungsbedingungen</a> <input type="submit" name="register-user" value="Registrieren" class="btnRegister"></td>
 		</tr>
 	</table>
+	<input type="hidden" name="key" value="<?= $key ?>">
 </form>
