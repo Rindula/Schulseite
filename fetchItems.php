@@ -7,6 +7,7 @@ $ret = $gdvdv->query("SELECT * FROM flist ORDER BY fach");
 
 function getFach($id)
 {
+    global $edrhf;
     $ct_lessons = array(10, 11);
     $re_lessons = array(9,18,19);
     $fr_lessons = array(6,16);
