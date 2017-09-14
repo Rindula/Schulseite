@@ -5,10 +5,12 @@ $out = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>\n";
 $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
 
-$tmp = explode(",", $query);
-$qr = "";
-foreach ($tmp as $value) {
-    $qr .= "'" . $value . "', ";
+
+if($query === "all") {
+    $sql = "SELECT * FROM list ORDER BY Datum Asc";
+} else {
+    $qr .= "'" . $query . "'";
+    $sql = "SELECT * FROM list WHERE ID = $qr ORDER BY Datum Asc";
 }
 
 function removeDir($dir) {
@@ -18,9 +20,6 @@ function removeDir($dir) {
     rmdir($dir);
 }
 
-$qr = substr($qr, 0, -2);
-
-$sql = "SELECT * FROM list WHERE ID IN($qr) ORDER BY Datum Asc";
 $result = $mysqli->query($sql);
 while ($ar = $result->fetch_assoc()) {
     $IMAGEPATH = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/" . $ar["ID"] . "/";
