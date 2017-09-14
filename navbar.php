@@ -4,9 +4,9 @@
         <button class="dropbtn">Schule</button>
         <div class="dropdown-content">
             <a href="/hausaufgaben">Hausaufgaben</a>
-            <a href="/stundenplan">Stundenplan</a>
             <a href="/termine">Termine</a>
             <?php if ($loggedIn) { ?>
+                <a href="/stundenplan">Stundenplan</a>
                 <a href="/wiederholungen">Wiederholungen</a>
             <?php } ?>
         </div>
