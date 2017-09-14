@@ -1,7 +1,7 @@
 <?php
 	// Variablen initialisierung
 	$mySqlPassword = "SiSal2002";
-    define("BASEPATH", $_SERVER['DOCUMENT_ROOT']."\\");
+    define("BASEPATH", $_SERVER['DOCUMENT_ROOT']."/");
 
     function generate_password(){
         $alpha = "abcdefghijklmnopqrstuvwxyz";
