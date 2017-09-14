@@ -6,6 +6,7 @@ $query = $_REQUEST["q"];
 $out = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>\n";
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
+include "../_hidden/vars.php";
 
 
 if($query === "all") {
