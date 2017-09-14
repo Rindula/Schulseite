@@ -34,7 +34,7 @@ while ($ar = $result->fetch_assoc()) {
     if ($expiration_date < $today) {
         continue;
     }
-
+    echo $IMAGEPATH;
     mkdir($IMAGEPATH);
 
     if ($expiration_date <= $today + (1 * 60 * 60 * 24)) {
