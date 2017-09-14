@@ -1,2 +1,4 @@
 +#Eintragen von hausaufgaben#+
 Beim eintragen von Hausaufgaben wird Benutzer und IP gespeichert. Diese Informationen werden nur aus Sicherheitsgründen gespeichert, und werden nur genutzt, um falsch eingetragene Hausaufgaben, und anstößige Inhalte und deren Besitzer festzustellen. Die Informationen werden nicht an dritte weitergegeben.
++#E-Mail verkehr#+
+Mit der Registrierung erklärst du dich damit einverstanden, dass wenn du deine E-Mail eingetragen hast, Informationen wie bespielsweise wichtige Elternbriefe o.Ä. an dich gesendet werden. Dies kann nur durch austragen der E-Mail adresse abgestellt werden.
