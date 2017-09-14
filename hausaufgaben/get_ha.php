@@ -34,6 +34,15 @@ function is_dir_empty($dir) {
     }
     return TRUE;
 }
+function is_image($path) {
+    $a = getimagesize($path);
+    $image_type = $a[2];
+
+    if (in_array($image_type, array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_BMP))) {
+        return true;
+    }
+    return false;
+}
 
 $result = $mysqli->query($sql);
 while ($ar = $result->fetch_assoc()) {
