@@ -21,6 +21,7 @@ function removeDir($dir) {
 }
 
 $result = $mysqli->query($sql);
+$mysqli->error;
 while ($ar = $result->fetch_assoc()) {
     $IMAGEPATH = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/" . $ar["ID"] . "/";
 
