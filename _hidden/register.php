@@ -1,6 +1,5 @@
 <?php 
 
-// die("<h1>Derzeit nicht verfügbar!</h1>");
 require_once("mysqlconn.php");
 
 
@@ -60,7 +59,7 @@ if(!isset($error_message) && $valid) {
 	$result = $userConn->query($query);
 	if(!empty($result)) {
 		$error_message = "";
-		$success_message = "Du hast dich erfolgreich registriert!";
+		$success_message = "Du hast dich erfolgreich registriert! Dein Benutzername ist \"$login\"";
 		unset($_POST);
 	} else {
 		$error_message = "Es ist ein Problem aufgetreten. Bitte versuche es später nocheinmal!";	
