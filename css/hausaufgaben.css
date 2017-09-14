@@ -62,7 +62,6 @@ h1 {
 .imageDisplay:not(.shown) {
     opacity: 0;
     height: 0px;
-    display: none;
 }
 
 
