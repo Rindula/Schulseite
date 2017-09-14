@@ -91,15 +91,6 @@ include "../../_hidden/mysqlconn.php";
             $canChange = false;
         }
 
-        if ($perms["typ"] == "it") {
-            $allowed = array("1", "2");
-        }
-        if ($perms["typ"] == "tum") {
-            $allowed = array("1", "3");
-        }
-        if ($perms["typ"] == "all") {
-            $allowed = array("1", "2", "3");
-        }
         ?>
         <tr>
             <?php
@@ -117,7 +108,7 @@ include "../../_hidden/mysqlconn.php";
                             $statement->execute();
                             $result = $statement->get_result();
                             while ($ar = $result->fetch_assoc()) {
-                                if (in_array($ar["profil"], $allowed)) {
+                                if ($ar["profil"] > 0) {
                                     echo '<option value="' . $ar["fach"] . '">' . $ar["fach"] . '</option>';
                                 }
                             }
@@ -180,7 +171,7 @@ include "../../_hidden/mysqlconn.php";
                             $statement->execute();
                             $result = $statement->get_result();
                             while ($ar = $result->fetch_assoc()) {
-                                if (in_array($ar["profil"], $allowed)) {
+                                if ($ar["profil"] > 0) {
                                     echo '<option value="' . $ar["id"] . '">' . $ar["fach"] . '</option>';
                                 }
                             }
