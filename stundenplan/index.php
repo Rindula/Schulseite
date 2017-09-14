@@ -18,7 +18,7 @@
     // CSS Controller
     $styles[] = "stundenplan";
     include "../css/controller.php";
-
+    $zeiten = array("07:30 - 08:15", "08:15 - 09:00", "09:15 - 10:00", "10:00 - 10:45", "11:00 - 11:45", "11:45 - 12:30", "12:30 - 13:15", "13:15 - 14:00", "14:00 - 14:45", "15:00 - 15:45", "15:45 - 16:30");
 $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
 
@@ -27,10 +27,11 @@ include_once "../_hidden/mysqlconn.php";
 echo "<div class='ungerade'><table><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
 
 //Zeilen zusammenfügen
-$sqlM = "SELECT * FROM stundenplan1 ORDER BY id Asc";
-$statementM = $mysqli->prepare($sqlM);
+$sqlM = "SELECT * FROM timetable_".$_SESSION["userid"]." ORDER BY id Asc;";
+$statementM = $userConn->prepare($sqlM);
 $statementM->execute();
 $resultM = $statementM->get_result();
+$n = 0;
 while ($ar = $resultM->fetch_assoc()) 
 {
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -64,9 +65,8 @@ while ($ar = $resultM->fetch_assoc())
     list($fr, $tmp) = $statement->get_result()->fetch_array();
     if(isset($tmp)) {$mo = $mo."/".$tmp;}
     
-    list($sh, $sm) = explode(":", $ar["zeitA"]);
-    list($eh, $em) = explode(":", $ar["zeitE"]);
-    $zeit = "$sh:$sm - $eh:$em";
+    $zeit = $zeiten[$n];
+    $n++;
     
     echo "<tr><td>$zeit</td><td>$mo</td><td>$di</td><td>$mi</td><td>$do</td><td>$fr</td></tr>";
 }
