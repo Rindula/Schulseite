@@ -3,5 +3,5 @@ RewriteEngine on
 RewriteRule ^login$ /_hidden/login.php [NC]
 RewriteRule ^logout$ /_hidden/logout.php [NC]
 RewriteRule ^settings$ /users/settings/index.php [NC]
-RewriteRule ^register$ /_hidden/register.php [NC]
+RewriteRule ^register/(.*)$ /_hidden/register.php?key=$1 [NC]
 RewriteRule ^agbs$ /users/agbs.php [NC]
