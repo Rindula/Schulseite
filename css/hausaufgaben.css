@@ -65,7 +65,7 @@ h1 {
 
 .imageDisplay:not(.shown), .imageDisplay:not(.shown) img {
     opacity: 0;
-    animation: shrink 1s forwards reverse;
+    animation: grow 1s forwards reverse;
 }
 
 
