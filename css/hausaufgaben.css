@@ -46,7 +46,7 @@ th {
 
 tr {
     transform: translateX(-100%);
-    animation: flyin 1s forwards;
+    animation: flyin 1s forwards !important;
 }
 
 h1 {
