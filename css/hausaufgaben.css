@@ -94,9 +94,6 @@ h1 {
 }
 @keyframes grow {
     0% {
-        display: none;
-    }
-    1% {
         display: table-row;
         height: 0;
     }
@@ -105,15 +102,12 @@ h1 {
     }
 }
 @keyframes shrink {
-    100% {
-        display: none;
-    }
-    99% {
-        display: table-row;
-        height: 0;
-    }
     0% {
         height: auto;
+    }
+    100% {
+        display: none;
+        height: 0;
     }
 }
 .dringend:not(.erledigt) {
