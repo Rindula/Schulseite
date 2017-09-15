@@ -1,7 +1,7 @@
 <?php
 
 $query = $_REQUEST["q"];
-$o = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>";
+$o = "<table><tr class='header'><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>";
 $out = $o;
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
