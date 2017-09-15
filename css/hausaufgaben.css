@@ -49,7 +49,7 @@ h1 {
 }
 
 .imageDisplay {
-    transition: all 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .imageDisplay img {
@@ -60,13 +60,12 @@ h1 {
 
 .imageDisplay.shown {
     opacity: 1;
-    height: auto;
-    display: table-row;
+    animation: grow 1s forwards;
 }
 
 .imageDisplay:not(.shown), .imageDisplay:not(.shown) img {
     opacity: 0;
-    height: 0;
+    animation: grow 1s reverse;
 }
 
 
@@ -91,6 +90,18 @@ h1 {
     }
     100% {
         background-color: rgba(255, 167, 0, 0.25);
+    }
+}
+@keyframes grow {
+    0% {
+        display: none;
+    }
+    1% {
+        display: table-row;
+        height: 0;
+    }
+    100% {
+        height: auto;
     }
 }
 .dringend:not(.erledigt) {
