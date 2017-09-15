@@ -65,7 +65,7 @@ h1 {
 
 .imageDisplay:not(.shown), .imageDisplay:not(.shown) img {
     opacity: 0;
-    animation: grow 1s forwards reverse;
+    animation: shrink 1s forwards;
 }
 
 
@@ -101,6 +101,18 @@ h1 {
         height: 0;
     }
     100% {
+        height: auto;
+    }
+}
+@keyframes shrink {
+    100% {
+        display: none;
+    }
+    99% {
+        display: table-row;
+        height: 0;
+    }
+    0% {
         height: auto;
     }
 }
