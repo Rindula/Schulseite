@@ -53,7 +53,7 @@ h1 {
     transition: opacity 0.25s ease;
 }
 
-.imageDisplay > img {
+.imageDisplay img {
     max-width: 720px;
 }
 
