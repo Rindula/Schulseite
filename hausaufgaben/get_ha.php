@@ -71,7 +71,7 @@ while ($ar = $result->fetch_assoc()) {
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
         $onclick = "onclick='addEvent(this)'";
     }
-    $out .= "<tr style='animation-delay: $del;' title='$title' id='" . $ar['ID'] . "' $onclick class='$classes'>";
+    $out .= "<tr style='animation-delay: " . $del . "s;' title='$title' id='" . $ar['ID'] . "' $onclick class='$classes'>";
     $del = $del + 0.5;
 
     $datetime1 = date_create(date("Y-m-d"));
