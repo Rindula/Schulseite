@@ -54,6 +54,7 @@ h1 {
 }
 
 .imageDisplay img {
+    align-content: center;
     max-width: 720px;
 }
 
