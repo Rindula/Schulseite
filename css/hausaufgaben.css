@@ -41,7 +41,7 @@ th {
     color: #f47316;
 }
 
-tr:not(.imageDisplay) {
+tr:not(.imageDisplay):not(th) {
     transform: translateX(-100%);
     animation: flyin 1s forwards;
 }
