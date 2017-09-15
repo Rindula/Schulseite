@@ -49,8 +49,7 @@ h1 {
 }
 
 .imageDisplay {
-    transition: height 0.5s ease;
-    transition: opacity 0.25s ease;
+    transition: all 0.5s ease;
 }
 
 .imageDisplay img {
@@ -67,8 +66,7 @@ h1 {
 
 .imageDisplay:not(.shown) {
     opacity: 0;
-    height: 0px;
-    display: none;
+    height: 0;
 }
 
 
