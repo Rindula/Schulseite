@@ -64,7 +64,7 @@ h1 {
     display: table-row;
 }
 
-.imageDisplay:not(.shown) {
+.imageDisplay:not(.shown), .imageDisplay:not(.shown) img {
     opacity: 0;
     height: 0;
 }
