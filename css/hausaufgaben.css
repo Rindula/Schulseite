@@ -46,7 +46,7 @@ tr:not(.imageDisplay):not(.header) {
     animation: flyin 1s forwards;
 }
 .erledigt.dringend {
-    animation: impe 3s infinite, flyin 1s forwards;
+    animation: flyin 1s forwards, impe 2s infinite;
 }
 
 h1 {
