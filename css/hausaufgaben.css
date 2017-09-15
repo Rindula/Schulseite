@@ -98,12 +98,12 @@ h1 {
         height: 0;
     }
     100% {
-        height: auto;
+        height: 150px;
     }
 }
 @keyframes shrink {
     0% {
-        height: auto;
+        height: 150px;
     }
     100% {
         display: none;
