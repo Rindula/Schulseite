@@ -61,7 +61,7 @@
                             break;
                         
                         default:
-                            echo "ERROR?!";
+                            echo "!!ERROR!!";
                             break;
                     }
                 }
