@@ -8,6 +8,9 @@ body {
 .erledigt {
     background-color: rgba(255, 167, 0, 0.25);
 }
+.erledigt.dringend {
+    animation: impe 2s infinite;
+}
 .datum, .fach, .aufgaben {
     font-family: monospace;
     font-size: 20px;
@@ -41,14 +44,6 @@ th {
     color: #f47316;
 }
 
-tr:not(.imageDisplay):not(.header) {
-    transform: translateX(-100%);
-    animation: flyin 1s forwards;
-}
-.erledigt.dringend {
-    animation: flyin 1s forwards, impe 2s infinite;
-}
-
 h1 {
     color: aqua;
 }
@@ -72,7 +67,7 @@ h1 {
 
 .imageDisplay:not(.shown) {
     opacity: 0;
-    height: 0;
+    height: 0px;
     display: none;
 }
 
@@ -80,15 +75,12 @@ h1 {
 @keyframes imp {
     0% {
         background-color: rgba(255, 0, 0, 0.25);
-        transform: translateX(0px);
     }
     50% {
         background-color: rgba(255, 157, 0, 0.75);
-        transform: translateX(10px);
     }
     100% {
         background-color: rgba(255, 0, 0, 0.25);
-        transform: translateX(0px);
     }
 }
 
@@ -101,14 +93,6 @@ h1 {
     }
     100% {
         background-color: rgba(255, 167, 0, 0.25);
-    }
-}
-@keyframes flyin {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0%);
     }
 }
 .dringend:not(.erledigt) {
