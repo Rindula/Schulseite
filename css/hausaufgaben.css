@@ -100,7 +100,16 @@ h1 {
     animation: imp 2s infinite;
 }
 
-.dringend:nth-child(odd) { animation-delay: 1s !important}
+.dringend:nth-child(1) { animation-delay: .25s !important}
+.dringend:nth-child(2) { animation-delay: .5s !important}
+.dringend:nth-child(3) { animation-delay: .75s !important}
+.dringend:nth-child(4) { animation-delay: 1s !important}
+.dringend:nth-child(5) { animation-delay: 1.25s !important}
+.dringend:nth-child(6) { animation-delay: 1.5s !important}
+.dringend:nth-child(7) { animation-delay: 1.75s !important}
+.dringend:nth-child(8) { animation-delay: 2s !important}
+.dringend:nth-child(9) { animation-delay: 2.25s !important}
+.dringend:nth-child(10) { animation-delay: 2.5s !important}
 
 #uhr { margin-top: 10px; position:relative; float: right; font-family:monospace; font-size:34px; color:#00ffff; text-shadow: 0 0 5px #a6ffff; background-color: #5914dc; padding: 10px; border-radius: 10px}
 
