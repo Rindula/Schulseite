@@ -1,7 +1,7 @@
 <?php
 
 $query = $_REQUEST["q"];
-$o = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>";
+$o = "<table><tr class='header'><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>";
 $out = $o;
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
@@ -43,6 +43,7 @@ function is_image($path) {
 }
 
 $result = $mysqli->query($sql);
+$del = 0;
 while ($ar = $result->fetch_assoc()) {
     $IMAGEPATH = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/" . $ar["ID"] . "/";
 
@@ -70,8 +71,8 @@ while ($ar = $result->fetch_assoc()) {
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
         $onclick = "onclick='addEvent(this)'";
     }
-    $out .= "<tr title='$title' id='" . $ar['ID'] . "' $onclick class='$classes'>";
-
+    $out .= "<tr style='animation-delay: " . $del . "s;' title='$title' id='" . $ar['ID'] . "' $onclick class='$classes'>";
+    $del = $del + 0.2;
 
     $datetime1 = date_create(date("Y-m-d"));
     $datetime2 = date_create($ar["Datum"]);
