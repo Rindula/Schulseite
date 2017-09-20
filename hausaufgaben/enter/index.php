@@ -144,7 +144,7 @@ include "../../_hidden/mysqlconn.php";
                                     continue;
                                 }
 
-                                echo '<option zielDatum="' . $ar["Datum"] . '" topic="' . $ar["Aufgaben"] . '" value="' . $ar["ID"] . '">' . $ar["Fach"] . ' | ' . $ar["Datum"] . '</option>';
+                                echo '<option zielDatum="' . $ar["Datum"] . '" topic="' . htmlspecialchars($ar["Aufgaben"]) . '" value="' . $ar["ID"] . '">' . $ar["Fach"] . ' | ' . $ar["Datum"] . '</option>';
                             }
                             ?>
                         </select><br><br>
@@ -211,7 +211,7 @@ include "../../_hidden/mysqlconn.php";
                                 $result2 = $statement2->get_result();
                                 while ($ar2 = $result2->fetch_assoc()) {
                                     if ($ar["fach"] == $ar2["id"]) {
-                                        echo '<option zielDatum="' . $ar["datum"] . '" topic="' . $ar["themen"] . '" value="' . $ar["id"] . '">' . $ar2["fach"] . ' | ' . $ar["datum"] . '</option>';
+                                        echo '<option zielDatum="' . $ar["datum"] . '" topic="' . htmlspecialchars($ar["themen"]) . '" value="' . $ar["id"] . '">' . $ar2["fach"] . ' | ' . $ar["datum"] . '</option>';
                                         break;
                                     }
                                 }
