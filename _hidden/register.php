@@ -13,8 +13,17 @@ foreach($_POST as $key=>$value) {
 	break;
 	}
 }
+
+if (isset($_POST["secret"]) && isset($_POST["response"])) {
+	# Space for thoughts...
+} elseif (isset($error_message)) {
+	$error_message .= "\nDas Captcha wurde nicht gelöst!";
+} else {
+	$error_message .= "Das Captcha wurde nicht gelöst!";
+}
+
 /* Password Matching Validation */
-if($_POST['password'] != $_POST['confirm_password']){ 
+if($_POST['password'] != $_POST['confirm_password'] && !isset($error_message)){ 
 $error_message = 'Die Passwörte sollten gleich sein!<br>'; 
 }
 
@@ -133,7 +142,7 @@ if(!$valid) {
 	margin-left: 10px;
 }
 </style>
-
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <form name="frmRegistration" method="post" action="">
 	<table border="0" width="500" align="center" class="demo-table">
 		<?php if(!empty($success_message)) { ?>	
@@ -164,4 +173,5 @@ if(!$valid) {
 		</tr>
 	</table>
 	<input type="hidden" name="key" value="<?= $key ?>">
+	<div class="g-recaptcha" data-sitekey="6LdBTjEUAAAAABCV_6kyRvLRNWcaWBNe2nEGzotV"></div>
 </form>
