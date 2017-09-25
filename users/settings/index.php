@@ -157,6 +157,14 @@ if ($sec == "passwort") {
 <?php }
 
 if ($sec == "colors") {
+    $dagvdfva = new mysqli("localhost", "root", "74cb0A0kER", "stats");
+    if ($dagvdfva->connect_errno) {
+        die("Verbindung fehlgeschlagen: " . $dagvdfva->connect_error);
+    }
+    $sql = "SET NAMES 'utf8'";
+    $dagvdfva->query($sql);
+    $req = $dagvdfva->query("SELECT navbarBack, navbarText, backgroundPage FROM users WHERE id = '".$_SESSION["userid"]."'");
+    $r = $req->fetch_assoc();
     ?>
     <div class="content">
         <form action="?section=colors&change" method="POST" enctype="multipart/form-data">
@@ -164,16 +172,16 @@ if ($sec == "colors") {
                 <tbody>
                     <tr>
                         <td>Navigationsleistenhintergrundfarbe:</td>
-                        <td><input required="" type="color" name="colorNavBarBack" value="<?= $_SESSION["colors"][0] ?>" /></td>
+                        <td><input required="" type="color" name="colorNavBarBack" value="<?= $r["navbarBack"] ?>" /></td>
                     </tr>
                     <tr></tr>
                     <tr>
                         <td>Navigationsleistentextfarbe:</td>
-                        <td><input required="" type="color" name="colorNavBarText" value="<?= $_SESSION["colors"][1] ?>" /></td>
+                        <td><input required="" type="color" name="colorNavBarText" value="<?= $r["navbarText"] ?>" /></td>
                     </tr>
                     <tr>
                         <td>Seitenhintergrundfarbe:</td>
-                        <td><input required="" type="color" name="backgroundColor" value="<?= $_SESSION["colors"][2] ?>" /></td>
+                        <td><input required="" type="color" name="backgroundColor" value="<?= $r["backgroundPage"] ?>" /></td>
                     </tr>
                 </tbody>
             </table>
