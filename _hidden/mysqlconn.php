@@ -14,7 +14,7 @@ $statement->execute();
 
 $userConn = new mysqli("localhost", "root", "74cb0A0kER", "stats");
 if ($userConn->connect_errno) {
-    die("Verbindung fehlgeschlagen: " . $userConn->connect_error);
+    die("Userverbindung fehlgeschlagen: " . $userConn->connect_error);
 }
 $sql = "SET NAMES 'utf8'";
 $userConn->query($sql);
