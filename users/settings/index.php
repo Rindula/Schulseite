@@ -84,9 +84,6 @@ if ($_GET["section"] == "passwort" && isset($_GET["change"]) && isset($_POST["co
 
 if ($_GET["section"] == "colors" && isset($_GET["change"]) && isset($_POST["confirm"])) {
     $userConn->query("UPDATE users SET navbarBack = '" . $_POST["colorNavBarBack"] . "', navbarText = '" . $_POST["colorNavBarText"] . "', backgroundPage = '" . $_POST["backgroundColor"] . "' WHERE id = '" . $_SESSION["userid"] . "'");
-    $_SESSION["colors"][0] = $_POST["colorNavBarBack"];
-    $_SESSION["colors"][1] = $_POST["colorNavBarText"];
-    $_SESSION["colors"][2] = $_POST["backgroundColor"];
     echo "<code>Farben werden übernommen...</code>";
 }
 
