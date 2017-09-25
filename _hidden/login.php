@@ -19,9 +19,6 @@ if (isset($_GET['login'])) {
         $_SESSION['userid'] = $user['id'];
         $_SESSION['group'] = $user['gruppe'];
         $_SESSION['name'] = $user['vorname'] . " " . $user["name"];
-        $_SESSION["colors"][0] = $user["navbarBack"];
-        $_SESSION["colors"][1] = $user["navbarText"];
-        $_SESSION["colors"][2] = $user["backgroundPage"];
         $success = '1';
         $errorMessage = "<meta http-equiv='refresh' content='0; /settings?section=main'><h1>Login erfolgreich. Weiterleitung erfolgt...</h1>";
     } else {

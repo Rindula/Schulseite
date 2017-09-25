@@ -130,6 +130,12 @@ $user_os        =   getOS();
 $user_browser   =   getBrowser();
 
 
+if ($loggedIn) {
+    $sbvfdyvyd = new mysqli("localhost", "root", "74cb0A0kER", "stats");
+    $sbvfdyvyd->query("SET NAMES 'utf8'");
+    $sbvfdyvyd->query("SELECT gruppe FROM users WHERE id = '".$_SESSION["userid"]."'");
+}
+
 // Access Logging
 $date = new DateTime();
 $date = $date->format("d.m.Y H:i:s");
