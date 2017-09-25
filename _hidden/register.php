@@ -51,11 +51,13 @@ $valid = false;
 $error_message = "Ungültiger Registrierungsschlüssel!";
 while($r = $ret->fetch_assoc()) {
 	if($key == $r["key"]) {
-		if($r["count"] > 0) {
+		if($r["count"] > 0 || $r["count"] == -1) {
 			unset ($error_message);
 			$valid = true;
 			$init_group = $r["init_group"];
-			$userConn->query("UPDATE reg_keys SET uses = '" . $r["uses"] + 1 ."', count = '" . $r["count"] - 1 . "' WHERE key = '$key'");
+			$uses = $r["uses"] + 1;
+			$count = $r["count"] - 1;
+			$userConn->query("UPDATE reg_keys SET uses = '" . $uses ."', count = '" . $count . "' WHERE key = '$key'");
 		} else {
 			$error_message = "Der Registrierungsschlüssel ist bereits aufgebraucht!";
 		}
@@ -84,7 +86,7 @@ $valid = false;
 $msg = "Ungültiger Registrierungsschlüssel!";
 while($r = $ret->fetch_assoc()) {
 	if($key == $r["key"]) {
-		if($r["count"] > 0) {
+		if($r["count"] > 0 || $r["count"] == -1) {
 			$valid = true;
 		} else {
 			$msg = "Keine Registrierungen mehr mit diesem Schlüssel möglich!";
