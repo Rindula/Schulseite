@@ -1,7 +1,7 @@
 <div class="container">
     <a href="/">Startseite</a>
     <div class="dropdown">
-        <button class="dropbtn">Schule</button>
+        <a class="dropbtn">Schule</a>
         <div class="dropdown-content">
             <a href="/hausaufgaben">Hausaufgaben</a>
             <a href="/termine">Termine</a>
@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="dropdown">
-        <button class="dropbtn">Download</button>
+        <a class="dropbtn">Download</a>
         <div class="dropdown-content">
             <a href="/downloads">Downloads</a>
             <!-- <a href="/app">App</a> -->
@@ -23,7 +23,7 @@
         ?>
         <a href="/hausaufgaben/enter">Eintragen</a>
         <div class="dropdown right" style="margin-right: 75px;">
-            <button class="dropbtn"><?= $_SESSION["name"] ?></button>
+            <a class="dropbtn"><?= $_SESSION["name"] ?></a>
             <div class="dropdown-content">
                 <a href="/settings?section=main">Einstellungen</a>
                 <div class="hr"></div>
