@@ -89,12 +89,12 @@ if ($_GET["section"] == "colors" && isset($_GET["change"]) && isset($_POST["conf
 
 
 if ($_GET["section"] == "lessons" && isset($_GET["change"]) && isset($_POST["confirm"])) {
-    $_SESSION["lesson_bk"] = $bk = $_POST["lesson_bk"];
-    $_SESSION["lesson_ct"] = $ct = $_POST["lesson_ct"];
-    $_SESSION["lesson_sk"] = $sk = $_POST["lesson_sk"];
-    $_SESSION["lesson_pc"] = $pc = $_POST["lesson_pc"];
-    $_SESSION["lesson_fr"] = $fr = $_POST["lesson_fr"];
-    $_SESSION["lesson_re"] = $re = $_POST["lesson_re"];
+    $bk = $_POST["lesson_bk"];
+    $ct = $_POST["lesson_ct"];
+    $sk = $_POST["lesson_sk"];
+    $pc = $_POST["lesson_pc"];
+    $fr = $_POST["lesson_fr"];
+    $re = $_POST["lesson_re"];
     $userConn->query("UPDATE users SET bk = $bk, ct = $ct, sk = $sk, pc = $pc, fr = $fr, re = $re WHERE id = " . $_SESSION["userid"]);
     echo "<code>Stunden werden übernommen...</code>";
 }
@@ -103,7 +103,7 @@ $ret = $userConn->query("SELECT bk, ct, sk, pc, fr, re FROM users WHERE id = '" 
 list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re) = $ret->fetch_array();
 
 if (isset($_GET["change"])) {
-    echo '<meta http-equiv="refresh" content="3; URL=?section=' . $_GET["section"] . '">';
+    echo '<meta http-equiv="refresh" content="1; URL=?section=' . $_GET["section"] . '">';
 }
 
 $sec = $_GET["section"];
