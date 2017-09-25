@@ -1,7 +1,7 @@
 <?php
 
 if (isset($dbname)) {
-$mysqli = new mysqli("localhost", "root", "WQeYt4S8G3", $dbname);
+$mysqli = new mysqli("localhost", "root", "74cb0A0kER", $dbname);
 if ($mysqli->connect_errno) {
     die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
 }
@@ -12,7 +12,7 @@ $statement->execute();
     $mysqli = false;
 }
 
-$userConn = new mysqli("localhost", "root", "WQeYt4S8G3", "stats");
+$userConn = new mysqli("localhost", "root", "74cb0A0kER", "stats");
 if ($userConn->connect_errno) {
     die("Verbindung fehlgeschlagen: " . $userConn->connect_error);
 }

@@ -14,13 +14,13 @@ foreach($_POST as $key=>$value) {
 	}
 }
 
-if (isset($_POST["secret"]) && isset($_POST["response"])) {
-	# Space for thoughts...
-} elseif (isset($error_message)) {
-	$error_message .= "\nDas Captcha wurde nicht gelöst!";
-} else {
-	$error_message .= "Das Captcha wurde nicht gelöst!";
-}
+// if (isset($_POST["secret"]) && isset($_POST["response"])) {
+// 	# Space for thoughts...
+// } elseif (isset($error_message)) {
+// 	$error_message .= "\nDas Captcha wurde nicht gelöst!";
+// } else {
+// 	$error_message .= "Das Captcha wurde nicht gelöst!";
+// }
 
 /* Password Matching Validation */
 if($_POST['password'] != $_POST['confirm_password'] && !isset($error_message)){ 
