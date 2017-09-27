@@ -10,7 +10,7 @@ $files = scandir("content");
 foreach ($files as $key => $value) {
     if($value != ".." || $value != ".") {
         $s = explode("_", explode(".", $value)[0]);
-        print_r($s);
+        print($value);
         // $i = $s[0];
         // $n = $s[1];
         // $sql = "SELECT name FROM flist WHERE id = '$i'";
