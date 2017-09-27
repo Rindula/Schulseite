@@ -13,7 +13,7 @@ foreach ($files as $key => $value) {
         $sql = "SELECT fach FROM flist WHERE id = '$i'";
         $ret = $mysqli->query($sql);
         $r = $ret->fetch_assoc();
-        $i = $r["name"];
+        $i = $r["fach"];
         echo "$i - $n";
     }
 }
