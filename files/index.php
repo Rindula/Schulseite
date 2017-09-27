@@ -7,7 +7,7 @@ include "../_hidden/mysqlconn.php";
 
 $files = scandir("content");
 
-foreach ($c as $key => $value) {
+foreach ($files as $key => $value) {
     $s = explode("_", explode(".", $value)[0]);
     $i = $s[0];
     $n = $s[1];
