@@ -10,7 +10,7 @@ foreach ($files as $key => $value) {
         $s = explode("_", explode(".", $value)[0]);
         $i = $s[0];
         $n = $s[1];
-        $sql = "SELECT name FROM flist WHERE id = '$i'";
+        $sql = "SELECT fach FROM flist WHERE id = '$i'";
         $ret = $mysqli->query($sql);
         $r = $ret->fetch_assoc();
         $i = $r["name"];
