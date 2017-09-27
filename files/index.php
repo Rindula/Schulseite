@@ -14,6 +14,6 @@ foreach ($files as $key => $value) {
         $ret = $mysqli->query($sql);
         $r = $ret->fetch_assoc();
         $i = $r["fach"];
-        echo "$i - $n";
+        echo "$i - $n<br><img style='max-width: 50%' src='content/$value'>";
     }
 }
