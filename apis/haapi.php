@@ -15,7 +15,7 @@ try {
     logger("Abfrage von: ");
     if (isset($_GET["hausaufgaben"])) {
         $dbname = "homeworks";
-        include_once "../_hidden/mysqlconn.php";
+        include "../_hidden/mysqlconn.php";
         try {
             $sqlHausaufgaben = "SELECT * FROM list ORDER BY Datum Asc";
             $resultHausaufgaben = $mysqli->query($sqlHausaufgaben);
