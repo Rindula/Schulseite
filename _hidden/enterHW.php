@@ -9,6 +9,8 @@ include "mysqlconn.php";
 
 list($fach, $aufgabe, $datum, $zeit) = array($mysqli->real_escape_string($_POST["fach"]), $mysqli->real_escape_string($_POST["aufgaben"]), $mysqli->real_escape_string($_POST["datum"]), $mysqli->real_escape_string($_POST["time"]));
 
+$aufgabe = str_replace("; ", ";");
+
 if (isset($_POST["type"])) {
     if ($_POST["type"] == "0") {
         $sql = "INSERT INTO `list` (`ID`, `Fach`, `Aufgaben`, `Datum`) VALUES (NULL, '$fach', '$aufgabe', '$datum')";
