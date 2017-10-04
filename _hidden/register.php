@@ -46,19 +46,18 @@ if(!isset($error_message)) {
 }
 if(!isset($error_message)) {
 $ret = $userConn->query("SELECT * FROM reg_keys");
-$key = $_POST["key"];
+$reg_key = $_POST["reg_key"];
 $valid = false;
 $error_message = "Ungültiger Registrierungsschlüssel!";
 while($r = $ret->fetch_assoc()) {
-	if($key == $r["key"]) {
+	if($reg_key == $r["reg_key"]) {
 		if($r["count"] > 0 || $r["count"] == -1) {
 			unset ($error_message);
 			$valid = true;
 			$init_group = $r["init_group"];
 			$uses = $r["uses"] + 1;
 			if ($r["count"] != -1) $count = $r["count"] - 1;
-			$error_message = $count . " --- " . $uses;
-			$userConn->query("UPDATE reg_keys SET uses = '" . $uses ."', count = '" . $count . "' WHERE key = '$key'");
+			$userConn->query("UPDATE reg_keys SET uses = '" . $uses ."', count = '" . $count . "' WHERE reg_key = '$reg_key'");
 		} else {
 			$error_message = "Der Registrierungsschlüssel ist bereits aufgebraucht!";
 		}
@@ -82,11 +81,11 @@ if(!isset($error_message) && $valid) {
 }
 
 $ret = $userConn->query("SELECT * FROM reg_keys");
-$key = $_GET["key"];
+$reg_key = $_GET["reg_key"];
 $valid = false;
 $msg = "Ungültiger Registrierungsschlüssel!";
 while($r = $ret->fetch_assoc()) {
-	if($key == $r["key"]) {
+	if($reg_key == $r["reg_key"]) {
 		if($r["count"] > 0 || $r["count"] == -1) {
 			$valid = true;
 		} else {
@@ -175,6 +174,6 @@ if(!$valid) {
 			<input type="checkbox" name="terms"> Ich akzeptiere die <a target="agbs" href="/agbs">Nutzungsbedingungen</a> <input type="submit" name="register-user" value="Registrieren" class="btnRegister"></td>
 		</tr>
 	</table>
-	<input type="hidden" name="key" value="<?= $key ?>">
+	<input type="hidden" name="reg_key" value="<?= $reg_key ?>">
 	<div class="g-recaptcha" data-sitekey="6LdBTjEUAAAAABCV_6kyRvLRNWcaWBNe2nEGzotV"></div>
 </form>
