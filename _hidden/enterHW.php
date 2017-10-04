@@ -9,7 +9,7 @@ include "mysqlconn.php";
 
 list($fach, $aufgabe, $datum, $zeit) = array($mysqli->real_escape_string($_POST["fach"]), $mysqli->real_escape_string($_POST["aufgaben"]), $mysqli->real_escape_string($_POST["datum"]), $mysqli->real_escape_string($_POST["time"]));
 
-$aufgabe = str_replace("; ", ";");
+$aufgabe = str_replace("; ", ";", $aufgabe);
 
 if (isset($_POST["type"])) {
     if ($_POST["type"] == "0") {
