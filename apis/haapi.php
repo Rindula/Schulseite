@@ -148,7 +148,7 @@ try {
         logger("====================\n");
     }
 
-    $fpLog = fopen("C:\\inetpub\\vhosts\\diemalztiere.de\\httpdocs\\apis\\logs\\log_" . date("Y-m-d") . ".txt", 'a');
+    $fpLog = fopen($_SERVER['DOCUMENT_ROOT'] . "/apis/logs/log_" . date("Y-m-d") . ".txt", 'a');
     fwrite($fpLog, $logText . "\n");
     fclose($fpLog);
 } catch (Exception $exc) {
