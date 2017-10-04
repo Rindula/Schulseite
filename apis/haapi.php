@@ -35,7 +35,16 @@ try {
                 $aufgaben = $row['Aufgaben'];
                 $datum = strtotime($row["Datum"]);
 
-                $posts[] = array("$id" => array("fach" => $fach, "aufgaben" => $aufgaben, "datum" => $datum));
+                $datetime1 = date_create(date("Y-m-d"));
+                $datetime2 = date_create($row["Datum"]);
+                $interval = date_diff($datetime1, $datetime2);
+                if ($interval->format('%a') == "1") {
+                    $days = $interval->format('%a Tag');
+                } else {
+                    $days = $interval->format('%a Tage');
+                }
+
+                $posts[] = array("$id" => array("fach" => $fach, "aufgaben" => $aufgaben, "datum" => $datum, "timeLeft" => $days));
                 logger(str_pad($row["ID"], $nLenght, '0', STR_PAD_LEFT) . " ($datum | $fach) gelistet...\n");
             }
             $resultHausaufgaben->close();
@@ -70,7 +79,16 @@ try {
                 $aufgaben = $row['themen'];
                 $datum = strtotime($row["datum"]);
 
-                $posts[] = array("$id" => array("fach" => $fach, "themen" => $aufgaben, "datum" => $datum));
+                $datetime1 = date_create(date("Y-m-d"));
+                $datetime2 = date_create($row["datum"]);
+                $interval = date_diff($datetime1, $datetime2);
+                if ($interval->format('%a') == "1") {
+                    $days = $interval->format('%a Tag');
+                } else {
+                    $days = $interval->format('%a Tage');
+                }
+
+                $posts[] = array("$id" => array("fach" => $fach, "themen" => $aufgaben, "datum" => $datum, "timeLeft" => $days));
                 logger(str_pad($row["id"], $nLenght, '0', STR_PAD_LEFT) . " ($datum | $fach) gelistet...\n");
             }
             $resultArbeiten->close();
