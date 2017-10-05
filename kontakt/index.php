@@ -1,4 +1,4 @@
-<?php include "../_hidden/verify.php" ?>
+<?php $needVerify = false; include "../_hidden/verify.php" ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
