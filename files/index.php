@@ -21,6 +21,6 @@ foreach ($files as $key => $value) {
         $ret = $mysqli->query($sql);
         $r = $ret->fetch_assoc();
         $i = $r["fach"];
-        echo "<h1>$i - $n</h1><a href='content/$value' data-lightbox='$i-$n' data-title='$n'></a>";
+        echo "<a href='content/$value' data-lightbox='$i-$n' data-title='$n'><h1>$i - $n</h1></a>";
     }
 }
