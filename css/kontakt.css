@@ -19,10 +19,14 @@ td * {
 }
 
 #part-1 a, #part-2 a, #part-3 a, #part-4 a {
+    padding: 50%;
     width: 100%;
     height: 100%;
     display: block;
     text-align: center;
+    text-decoration: none;
+    color: white;
+    border: 2px dashed orangered;
 }
 
 #part-1 {
