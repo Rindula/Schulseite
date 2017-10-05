@@ -26,6 +26,7 @@ td * {
 }
 
 #part-1 {
+    display: inline-block;
     left: 0;
     top: 0;
     height: 25%;
@@ -33,6 +34,7 @@ td * {
 }
 
 #part-2 {
+    display: inline-block;
     right: 0;
     top: 0;
     height: 25%;
@@ -40,6 +42,7 @@ td * {
 }
 
 #part-3 {
+    display: inline-block;
     left: 0;
     bottom: 0;
     height: 25%;
@@ -47,6 +50,7 @@ td * {
 }
 
 #part-4 {
+    display: inline-block;
     right: 0;
     bottom: 0;
     height: 25%;
