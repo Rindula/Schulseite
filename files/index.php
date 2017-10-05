@@ -1,4 +1,11 @@
+<head>
+    <script src="../scripts/lightbox.js"></script>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>
+</head>
 <?php
+
+$styles[] = "lightbox";
+include "../css/controller.php";
 
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
@@ -14,6 +21,6 @@ foreach ($files as $key => $value) {
         $ret = $mysqli->query($sql);
         $r = $ret->fetch_assoc();
         $i = $r["fach"];
-        echo "<h1>$i - $n</h1><img style='max-width: 50%' src='content/$value'>";
+        echo "<h1>$i - $n</h1><a href='content/$value' data-lightbox='$i-$n' data-title='$n'></a>";
     }
 }
