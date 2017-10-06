@@ -25,32 +25,25 @@ td * {
     color: white;
     border: 2px dashed orangered;
     padding: 25%;
+    position: absolute;
 }
 
 #part-1 {
-    display: block;
-    position: absolute;
     left: 0px;
     top: 0px;
 }
 
 #part-2 {
-    display: block;
-    position: absolute;
     right: 0px;
     top: 0px;
 }
 
 #part-3 {
-    display: block;
-    position: absolute;
     left: 0px;
     bottom: 0px;
 }
 
 #part-4 {
-    display: block;
-    position: absolute;
     right: 0px;
     bottom: 0px;
 }
