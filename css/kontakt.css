@@ -21,10 +21,11 @@ td * {
 #part-1, #part-2, #part-3, #part-4 {
     vertical-align: middle;
     text-align: center;
+    display: inline-block;
     text-decoration: none;
     color: white;
     border: 2px dashed orangered;
-    padding: 25%;
+    padding: 12.5%;
     position: absolute;
 }
 
