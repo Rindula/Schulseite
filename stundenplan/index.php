@@ -3,7 +3,7 @@
     $needVerify = false;
 
     // Verifikation des Clients
-	include "../_hidden/verify.php";
+	require "../_hidden/verify.php";
 	
     // Navigationsleiste
     $pageId = 2;
