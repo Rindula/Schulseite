@@ -1,6 +1,6 @@
 <?php
     //$exitLink = "/hausaufgaben/show";
-    $needVerify = false;
+    $needVerify = true;
 
     // Verifikation des Clients
 	include $_SERVER['DOCUMENT_ROOT'] . "/_hidden/verify.php";
