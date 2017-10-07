@@ -131,11 +131,18 @@ $user_browser   =   getBrowser();
 
 
 if ($loggedIn) {
+    // Gruppe
     $sbvfdyvyd = new mysqli("localhost", "root", "74cb0A0kER", "stats");
     $sbvfdyvyd->query("SET NAMES 'utf8'");
     $ret = $sbvfdyvyd->query("SELECT gruppe FROM users WHERE id = '".$_SESSION["userid"]."'");
     $r = $ret->fetch_assoc();
     $gruppe = $r["gruppe"];
+
+    // Wahlfächer
+    $ret = $sbvfdyvyd->query("SELECT bk,ct,pc,re,fr,sk FROM users WHERE id = '".$_SESSION["userid"]."'");
+    list($bk, $ct, $pc, $re, $fr, $sk) = $ret->fetch_array();
+
+    $bks = ($bk == 0) ? "" : "Bildende Kunst";
 }
 
 // Access Logging

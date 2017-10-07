@@ -27,7 +27,7 @@ include_once "../_hidden/mysqlconn.php";
 echo "<div class='ungerade'><table><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
 
 //Zeilen zusammenfügen
-$sqlM = "SELECT * FROM timetable_".$_SESSION["userid"]." ORDER BY id Asc;";
+$sqlM = "SELECT * FROM timetable_u ORDER BY id Asc;";
 $statementM = $userConn->prepare($sqlM);
 $statementM->execute();
 $resultM = $statementM->get_result();
@@ -36,34 +36,143 @@ while ($ar = $resultM->fetch_assoc())
 {
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", $ar["montag"]);
+    $arr = $ar["montag"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($mo, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
+    
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", $ar["dienstag"]);
+    $arr = $ar["dienstag"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($di, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
+    
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", $ar["mittwoch"]);
+    $arr = $ar["mittwoch"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($mi, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
+    
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", $ar["donnerstag"]);
+    $arr = $ar["donnerstag"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($do, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
+    
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", $ar["freitag"]);
+    $arr = $ar["freitag"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($fr, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
     
     $zeit = $zeiten[$n];
     $n++;
@@ -72,13 +181,14 @@ while ($ar = $resultM->fetch_assoc())
 }
 echo "</table></div>";
 
+$n = 0;
 
 // Tabelle erstellen
 echo "<div class='gerade'><table><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
 
 
 //Zeilen zusammenfügen
-$sqlM = "SELECT * FROM stundenplan2 ORDER BY id Asc";
+$sqlM = "SELECT * FROM timetable_g ORDER BY id Asc";
 $statementM = $mysqli->prepare($sqlM);
 $statementM->execute();
 $resultM = $statementM->get_result();
@@ -86,38 +196,146 @@ while ($ar = $resultM->fetch_assoc())
 {
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", str_replace (",", " AND ", $ar["montag"]));
+    $arr = $ar["montag"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($mo, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
+    
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", str_replace (",", " AND ", $ar["dienstag"]));
+    $arr = $ar["dienstag"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($di, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
+    
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", str_replace (",", " AND ", $ar["mittwoch"]));
+    $arr = $ar["mittwoch"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($mi, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
+    
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", str_replace (",", " AND ", $ar["donnerstag"]));
+    $arr = $ar["donnerstag"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($do, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
+    
     $sql = "SELECT fach FROM flist WHERE id IN (?)";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param("s", str_replace (",", " AND ", $ar["freitag"]));
+    $arr = $ar["freitag"];
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+        if ($arr == "bk") {
+            $statement->bind_param("s", $bks);
+        }
+        if ($arr == "ct") {
+            $statement->bind_param("s", $cts);
+        }
+        if ($arr == "fr") {
+            $statement->bind_param("s", $frs);
+        }
+        if ($arr == "pc") {
+            $statement->bind_param("s", $pcs);
+        }
+        if ($arr == "re") {
+            $statement->bind_param("s", $res);
+        }
+        if ($arr == "sk") {
+            $statement->bind_param("s", $sks);
+        }
+    } else {
+        $statement->bind_param("s", $arr);
+    }
     $statement->execute();
     list($fr, $tmp) = $statement->get_result()->fetch_array();
-    if(isset($tmp)) {$mo = $mo."/".$tmp;}
     
-    list($sh, $sm) = explode(":", $ar["zeitA"]);
-    list($eh, $em) = explode(":", $ar["zeitE"]);
-    $zeit = "$sh:$sm - $eh:$em";
+    $zeit = $zeiten[$n];
+    $n++;
     
     echo "<tr><td>$zeit</td><td>$mo</td><td>$di</td><td>$mi</td><td>$do</td><td>$fr</td></tr>";
 }
