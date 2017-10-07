@@ -154,6 +154,7 @@ if ($loggedIn) {
     $pcs = ($pc == 0) ? "Physik" : "Chemie";
     $res = ($re == 0) ? "Ethik" : "Religion";
     $sks = ($sk == 0) ? "" : "Seminarkurs";
+    global $bks, $cts, $frs, $pcs, $res, $sks;
 }
 
 // Access Logging

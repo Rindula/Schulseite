@@ -129,7 +129,7 @@ echo "<div class='gerade'><table><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag
 
 //Zeilen zusammenfügen
 $sqlM = "SELECT * FROM timetable_g ORDER BY id Asc";
-$statementM = $mysqli->prepare($sqlM);
+$statementM = $userConn->prepare($sqlM);
 $statementM->execute();
 $resultM = $statementM->get_result();
 while ($ar = $resultM->fetch_assoc()) 
