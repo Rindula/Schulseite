@@ -57,56 +57,58 @@ $resultM = $statementM->get_result();
 $n = 0;
 while ($ar = $resultM->fetch_assoc()) 
 {
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
     $arr = $ar["montag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $mo = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($mo, $tmp) = $statement->get_result()->fetch_array();
     }
     
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
     $arr = $ar["dienstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $di = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($di, $tmp) = $statement->get_result()->fetch_array();
     }
     
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
     $arr = $ar["mittwoch"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $mi = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($mi, $tmp) = $statement->get_result()->fetch_array();
     }
     
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
+
     $arr = $ar["donnerstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $do = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($do, $tmp) = $statement->get_result()->fetch_array();
     }
     
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
+
     $arr = $ar["freitag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $fr = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($fr, $tmp) = $statement->get_result()->fetch_array();
@@ -132,56 +134,58 @@ $statementM->execute();
 $resultM = $statementM->get_result();
 while ($ar = $resultM->fetch_assoc()) 
 {
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
     $arr = $ar["montag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $mo = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($mo, $tmp) = $statement->get_result()->fetch_array();
     }
     
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
     $arr = $ar["dienstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $di = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($di, $tmp) = $statement->get_result()->fetch_array();
     }
     
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
     $arr = $ar["mittwoch"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $mi = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($mi, $tmp) = $statement->get_result()->fetch_array();
     }
     
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
+
     $arr = $ar["donnerstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $do = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($do, $tmp) = $statement->get_result()->fetch_array();
     }
     
-    $sql = "SELECT fach FROM flist WHERE id IN (?)";
-    $statement = $mysqli->prepare($sql);
+
     $arr = $ar["freitag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
         $fr = sonderfach($arr);
     } else {
+        $sql = "SELECT fach FROM flist WHERE id IN (?)";
+        $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
         list($fr, $tmp) = $statement->get_result()->fetch_array();
