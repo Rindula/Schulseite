@@ -129,6 +129,13 @@ function getBrowser() {
 $user_os        =   getOS();
 $user_browser   =   getBrowser();
 
+$bks = "---";
+$cts = "---";
+$frs = "---";
+$pcs = "---";
+$res = "---";
+$sks = "---";
+
 
 if ($loggedIn) {
     // Gruppe
