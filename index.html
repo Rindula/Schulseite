@@ -5,6 +5,20 @@
 <title>Startseite</title>
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/start.css" rel="stylesheet" type="text/css">
+<script>
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == XMLHttpRequest.DONE) {
+			if (xhttp.response == 200) {
+				document.getElementById("changelog").innerHTML = xhttp.responseText;
+			} else {
+				document.getElementById("changelog").innerHTML = "<h1>Fehler beim laden des Changelogs!</h1>";
+			}
+		}
+	}
+	xhttp.open("GET", "https://api.github.com/repos/Rindula/Schulseite/commits", true);
+	xhttp.send(null);
+</script>
 </head>
 
 <body>
@@ -15,5 +29,6 @@
 		<li><a href="login">Login</a></li>
 	</ul>
 </div>
+<div id="changelog"></div>
 </body>
 </html>
