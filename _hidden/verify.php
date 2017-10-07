@@ -144,7 +144,7 @@ if ($loggedIn) {
 
     $bks = ($bk == 0) ? "" : "Bildende Kunst";
     $cts = ($ct == 0) ? "" : "Computertechnik";
-    $frs = ($fr == 0) ? "" : (($fr == 1) ? "Spanisch" : "Französisch");
+    $frs = ($fr == 0 ? "" : ($fr == 1 ? "Spanisch" : "Französisch"));
     $pcs = ($pc == 0) ? "Physik" : "Chemie";
     $res = ($re == 0) ? "Ethik" : "Religion";
     $sks = ($sk == 0) ? "" : "Seminarkurs";
