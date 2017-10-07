@@ -9,7 +9,17 @@
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == XMLHttpRequest.DONE) {
-			document.getElementById("changelog").innerHTML = xhttp.responseText;
+			if (xhttp.status == 200) {
+				myObj = JSON.parse(this.responseText);
+				txt += "<table border='1'>"
+				for (x in myObj) {
+					txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+				}
+				txt += "</table>";
+				document.getElementById("changelog").innerHTML = txt;
+			} else {
+				document.getElementById("changelog").innerHTML = "<h1>Fehler beim laden des Changelogs!</h1>";
+			}
 		}
 	}
 	xhttp.open("GET", "https://api.github.com/repos/Rindula/Schulseite/commits", true);
