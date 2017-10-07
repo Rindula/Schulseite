@@ -23,7 +23,7 @@ $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
 
 function sonderfach($fach) {
-    require $_SERVER['DOCUMENT_ROOT'] . "/_hidden/verify.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/_hidden/verify.php";
     if ($fach == "bk") {
         return $bks;
     }
