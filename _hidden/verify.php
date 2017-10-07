@@ -135,7 +135,7 @@ $frs = "---";
 $pcs = "---";
 $res = "---";
 $sks = "---";
-
+global $bks, $cts, $frs, $pcs, $res, $sks;
 
 if ($loggedIn) {
     // Gruppe
