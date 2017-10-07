@@ -22,6 +22,29 @@
 $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
 
+function sonderfach($fach) {
+    if ($fach == "bk") {
+        return $bks;
+    }
+    if ($fach == "ct") {
+        return $cts;
+    }
+    if ($fach == "fr") {
+        return $frs;
+    }
+    if ($fach == "pc") {
+        return $pcs;
+    }
+    if ($fach == "re") {
+        return $res;
+    }
+    if ($fach == "sk") {
+        return $sks;
+    }
+
+    return "FEHLER!";
+}
+
 
 // Tabelle erstellen
 echo "<div class='ungerade'><table><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
@@ -38,24 +61,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["montag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -66,24 +72,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["dienstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -94,24 +83,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["mittwoch"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -122,24 +94,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["donnerstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -150,24 +105,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["freitag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -198,24 +136,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["montag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -226,24 +147,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["dienstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -254,24 +158,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["mittwoch"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -282,24 +169,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["donnerstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -310,24 +180,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["freitag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        if ($arr == "bk") {
-            $statement->bind_param("s", $bks);
-        }
-        if ($arr == "ct") {
-            $statement->bind_param("s", $cts);
-        }
-        if ($arr == "fr") {
-            $statement->bind_param("s", $frs);
-        }
-        if ($arr == "pc") {
-            $statement->bind_param("s", $pcs);
-        }
-        if ($arr == "re") {
-            $statement->bind_param("s", $res);
-        }
-        if ($arr == "sk") {
-            $statement->bind_param("s", $sks);
-        }
+        sonderfach($arr);
     } else {
         $statement->bind_param("s", $arr);
     }
