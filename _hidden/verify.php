@@ -133,7 +133,9 @@ $user_browser   =   getBrowser();
 if ($loggedIn) {
     $sbvfdyvyd = new mysqli("localhost", "root", "74cb0A0kER", "stats");
     $sbvfdyvyd->query("SET NAMES 'utf8'");
-    $sbvfdyvyd->query("SELECT gruppe FROM users WHERE id = '".$_SESSION["userid"]."'");
+    $ret = $sbvfdyvyd->query("SELECT gruppe FROM users WHERE id = '".$_SESSION["userid"]."'");
+    $r = $ret->fetch_assoc();
+    $gruppe = $r["gruppe"];
 }
 
 // Access Logging

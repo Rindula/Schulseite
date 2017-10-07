@@ -76,7 +76,7 @@ include "../../_hidden/mysqlconn.php";
 <div id="content">
     <table class="center">
         <?php
-        $result = $userConn->query("SELECT * from groups WHERE id = " . $_SESSION["group"]);
+        $result = $userConn->query("SELECT * from groups WHERE id = $gruppe");
         $perms = $result->fetch_assoc();
 
         if ($perms["canEnter"] == 1) {
