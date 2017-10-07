@@ -11,7 +11,7 @@
 		if (xhttp.readyState == XMLHttpRequest.DONE) {
 			if (xhttp.status == 200) {
 				myObj = JSON.parse(this.responseText);
-				txt += "<table border='1'>"
+				txt = "<table border='1'>"
 				for (x in myObj) {
 					txt += "<tr><td>" + myObj[x].name + "</td></tr>";
 				}
