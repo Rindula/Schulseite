@@ -61,7 +61,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["montag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -72,7 +72,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["dienstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -83,7 +83,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["mittwoch"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -94,7 +94,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["donnerstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -105,7 +105,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["freitag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -136,7 +136,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["montag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -147,7 +147,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["dienstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -158,7 +158,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["mittwoch"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -169,7 +169,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["donnerstag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
@@ -180,7 +180,7 @@ while ($ar = $resultM->fetch_assoc())
     $statement = $mysqli->prepare($sql);
     $arr = $ar["freitag"];
     if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
-        sonderfach($arr);
+        $statement->bind_param("s", sonderfach($arr));
     } else {
         $statement->bind_param("s", $arr);
     }
