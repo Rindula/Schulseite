@@ -19,7 +19,7 @@ function showErrors() {
     error_reporting(E_ALL);
 }
 
-// showErrors();
+showErrors();
 
 if (!isset($needVerify)) {
     $needVerify = true;
