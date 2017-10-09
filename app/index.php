@@ -1,7 +1,6 @@
 <?php
 
 header("HTTP/1.0 404 Not Found");
-header("Connection: Close");
 
 //$exitLink = "/hausaufgaben/show";
 $needVerify = false;
