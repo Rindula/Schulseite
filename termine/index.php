@@ -20,7 +20,7 @@
     include "../css/controller.php";
 
 
-    $dbname = "stats";
+    $dbname = "homeworks";
     include "../_hidden/mysqlconn.php";
 
 ?>
@@ -34,7 +34,7 @@
             </thead>
             <tbody>
 <?php
-        $sql = "SELECT * FROM termine ORDER BY Datum Asc";
+        $sql = "SELECT * FROM termine ORDER BY datum Asc";
         $result = $mysqli->query($sql);
                 $cnt = 0;
     while ($ar = $result->fetch_assoc()) 
