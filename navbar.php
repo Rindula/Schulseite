@@ -43,7 +43,7 @@
             <input type="hidden" name="hosted_button_id" value="2LWMW9PABC4XS">
             <input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
             <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-        </form>
+        </form>        
     </div>
 </div>
 <div class id="hinweis">
