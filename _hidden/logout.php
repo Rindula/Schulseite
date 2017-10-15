@@ -2,6 +2,8 @@
 session_start();
 session_unset();
 session_destroy();
+session_write_close();
+session_abort();
 $pageId = 3;
 include "../navbar.php";
  
