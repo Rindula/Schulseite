@@ -2,17 +2,7 @@
 //set cookie lifetime for 100 days (60sec * 60mins * 24hours * 1000days)
 ini_set('session.cookie_lifetime', 60 * 60 * 24 * 1000);
 ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 1000);
-// **PREVENTING SESSION HIJACKING**
-// Prevents javascript XSS attacks aimed to steal the session ID
-ini_set('session.cookie_httponly', 1);
-
-// **PREVENTING SESSION FIXATION**
-// Session ID cannot be passed through URLs
-ini_set('session.use_only_cookies', 1);
-
-// Uses a secure connection (HTTPS) if possible
-ini_set('session.cookie_secure', 1);
-session_set_cookie_params(60 * 60 * 24 * 1000);
+session_set_cookie_params(60 * 60 * 24 * 1000, '/', "schule.rindula.de", true, true);
 session_start();
 
 //$now = time();
