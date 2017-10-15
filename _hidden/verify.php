@@ -2,6 +2,7 @@
 //set cookie lifetime for 100 days (60sec * 60mins * 24hours * 1000days)
 ini_set('session.cookie_lifetime', 60 * 60 * 24 * 1000);
 ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 1000);
+session_set_cookie_params(60 * 60 * 24 * 1000);
 session_start();
 
 //$now = time();
