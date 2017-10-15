@@ -1,6 +1,7 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../scripts/lightbox.js"></script>
+    <title>Materialien | rindula.de</title>
 </head>
 <?php
 
@@ -21,6 +22,6 @@ foreach ($files as $key => $value) {
         $ret = $mysqli->query($sql);
         $r = $ret->fetch_assoc();
         $i = $r["fach"];
-        echo "<a href='content/$value' data-lightbox='image_$i' data-title='$n ($i)'><h1>$i - $n</h1></a>";
+        echo "<a href='content/$value' data-lightbox='image_$i' data-title='Fach: $i, Material: $n'><h1>$i - $n</h1></a>";
     }
 }
