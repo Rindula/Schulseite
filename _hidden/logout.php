@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_unset();
 session_destroy();
 $pageId = 3;
 include "../navbar.php";
