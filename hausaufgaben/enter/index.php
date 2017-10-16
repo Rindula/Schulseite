@@ -119,6 +119,7 @@ include "../../_hidden/mysqlconn.php";
                         <label for="datum">Zieldatum:</label>
                         <input required type="date" id="datum" name="datum" min="<?php echo date('Y-m-d'); ?>" /><br><br><br>
                         <button type="submit" formtarget="_blank">Eintragen</button>
+                        <button type="reset">Felder leeren</button>
                     </form>
                 </td>
                 <?php
@@ -182,6 +183,7 @@ include "../../_hidden/mysqlconn.php";
                         <label for="datum">Datum:</label>
                         <input required type="date" id="datum" name="datum" min="<?= date('Y-m-d') ?>" /><br><br><br>
                         <button type="submit" formtarget="_blank">Eintragen</button>
+                        <button type="reset">Felder leeren</button>
                     </form>
                 </td>
                 <?php
