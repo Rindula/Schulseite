@@ -69,8 +69,11 @@ function formatSizeUnits($bytes)
 
 echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>";
 echo "<script type='text/javascript' src='/scripts/main.js'></script>";
-echo "<script type='text/javascript' charset='UTF-8' src='http://chs03.cookie-script.com/s/eb6a14590ee8033f4ef01055a2ff972f.js'></script>";
 ?>
+<script type="text/javascript">
+window.cookieconsent_options = {"message":"Wir baken auch für deinen Browser Kekse!","dismiss":"Macht nur...","learnMore":"Mehr Infos","link":null,"theme":"dark-top"};
+</script>
+<script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
 <!-- <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
 <script>
 	var miner = new CoinHive.Anonymous('GIoaIxGbl6vKvaabbiDkxGKfl5QfYmjv', {
