@@ -67,9 +67,9 @@ function formatSizeUnits($bytes)
 }
 
 
-echo "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>";
+echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>";
 echo "<script type='text/javascript' src='/scripts/main.js'></script>";
-echo "<script type='text/javascript' src='/scripts/cookiePolicy.js'></script>";
+echo "<script type='text/javascript' charset='UTF-8' src='http://chs03.cookie-script.com/s/eb6a14590ee8033f4ef01055a2ff972f.js'></script>";
 ?>
 <!-- <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
 <script>
