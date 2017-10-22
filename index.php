@@ -14,7 +14,7 @@
 				txt = "<table class='table table-light table-striped'><thead><tr><th>Änderung</th><th>Zeitpunkt</th></tr></thead><tbody>"
 				for (x in myObj) {
 					var date = new Date(myObj[x].commit.author.date)
-					var d = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear() + ", " + date.getHours() + ":" + date.getMinutes()
+					var d = ("0" + date.getDate()).slice(-2) + "." + ("0" + (date.getMonth() + 1)).slice(-2) + "." + date.getFullYear() + ", " + ("0" + date.getHour()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2)
 					txt += "<tr><td>" + myObj[x].commit.message + "</td><td>" + d + "</td></tr>";
 				}
 				txt += "</tbody></table>";
