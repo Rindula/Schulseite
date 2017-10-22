@@ -12,7 +12,7 @@ if($query === "all") {
     $sql = "SELECT h.ID, h.Aufgaben, h.Datum, f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Datum >= adddate(now(), interval 1 day) ORDER BY h.Datum Asc";
 } else {
     $query = $mysqli->real_escape_string($query);
-    $sql = "SELECT h.ID, h.Aufgaben, h.Datum, f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Fach = '$query' AND h.Datum >= adddate(now(), interval 1 day) ORDER BY h.Datum Asc";
+    $sql = "SELECT h.ID, h.Aufgaben, h.Datum, f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Fach = '$query' AND h.Datum >= adddate(now(), interval -1 day) ORDER BY h.Datum Asc";
 }
 
 function removeDir($dir) {
