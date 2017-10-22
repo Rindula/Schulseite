@@ -17,7 +17,7 @@ try {
         $dbname = "homeworks";
         include "../_hidden/mysqlconn.php";
         try {
-            $sqlHausaufgaben = "SELECT h.ID, h.Aufgaben, h.Datum f.fach FROM list as h inner join flist as f on h.Fach = f.id ORDER BY Datum Asc";
+            $sqlHausaufgaben = "SELECT h.ID, h.Aufgaben, h.Datum f.fach FROM list as h inner join flist as f on h.Fach = f.id ORDER BY h.Datum Asc";
             $resultHausaufgaben = $mysqli->query($sqlHausaufgaben);
             logger("Hausaufgaben\n\n");
             if (gettype($resultHausaufgaben) == "boolean") {
