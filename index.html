@@ -13,7 +13,9 @@
 				myObj = JSON.parse(this.responseText);
 				txt = "<table border='1'>"
 				for (x in myObj) {
-					txt += "<tr><td>" + myObj[x].commit.message + "</td><td>" + myObj[x].commit.author.date + "</td></tr>";
+					var date = new Date(myObj[x].commit.author.date)
+					var d = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear() + ", " + date.getHours() + ":" + date.getMinutes()
+					txt += "<tr><td>" + myObj[x].commit.message + "</td><td>" + d + "</td></tr>";
 				}
 				txt += "</table>";
 				document.getElementById("changelog").innerHTML = txt;
