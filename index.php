@@ -1,3 +1,4 @@
+<?php include "_hidden/verify.php" ?>
 <!doctype html>
 <html>
 <head>
