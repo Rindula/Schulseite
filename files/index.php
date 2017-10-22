@@ -29,3 +29,4 @@ foreach ($files as $key => $value) {
 }
 ?>
 </div>
+<?php include "../_hidden/bottomScripts.php" ?>
