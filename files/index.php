@@ -3,6 +3,7 @@
     <script src="../scripts/lightbox.js"></script>
     <title>Materialien | rindula.de</title>
 </head>
+<div class="list-group">
 <?php
 
 $styles[] = "lightbox";
@@ -22,6 +23,8 @@ foreach ($files as $key => $value) {
         $ret = $mysqli->query($sql);
         $r = $ret->fetch_assoc();
         $i = $r["fach"];
-        echo "<a href='content/$value' data-lightbox='image_$i' data-title='Fach: $i<br>Material: $n'><h1>$i - $n</h1></a>";
+        echo "<a class='list-group-item list-group-item-action' href='content/$value' data-lightbox='image_$i' data-title='Fach: $i<br>Material: $n'><h1>$i - $n</h1></a>";
     }
 }
+?>
+</div>
