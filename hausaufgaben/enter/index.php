@@ -226,11 +226,11 @@ include "../../_hidden/mysqlconn.php";
                         </select></div><br>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-edit"></span>
-                        <textarea class="form-control" required id="aufgaben3" name="aufgaben"></textarea>
+                        <textarea class="form-control" required id="aufgaben2" name="aufgaben"></textarea>
                         </div><br>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-calendar"></span>
-                        <input class="form-control" required type="date" id="datum3" name="datum" min="<?php echo date('Y-m-d'); ?>" />
+                        <input class="form-control" required type="date" id="datum2" name="datum" min="<?php echo date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
                         <button class="btn btn-primary" type="submit" formtarget="_blank">Ändern</button>
