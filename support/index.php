@@ -1,5 +1,5 @@
 <?php $needVerify = false; include "../_hidden/verify.php" ?>
-<?php include "../css/controller.php"; $title = "Bugtracer"; include "../header.php" ?>
+<?php include "../css/controller.php"; $page = "bugtracer"; $title = "Bugtracer"; include "../header.php" ?>
 <?php include "../navbar.php" ?>
 <?php
 

@@ -1,4 +1,4 @@
-<?php include "../_hidden/verify.php" ?>
+<?php include "../_hidden/verify.php"; $page = "bugtracer"; ?>
 <!DOCTYPE html>
 <html class="bg-light" lang="de">
 <head>

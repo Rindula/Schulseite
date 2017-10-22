@@ -60,7 +60,7 @@
         <li class="nav-item">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="help" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hilfe?</a>
             <div class="dropdown-menu" aria-labelledby="hrlp">
-                <a class="dropdown-item" href="/support">Bugtracer</a>
+                <a class="dropdown-item" id="bugtracer" href="/support">Bugtracer</a>
             </div>
         </li>
     </ul>
