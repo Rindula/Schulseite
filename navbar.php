@@ -42,12 +42,12 @@
                 <label for="password">Passwort</label>
                 <input type="password" name="passwort" class="form-control" id="password" placeholder="Passwort">
             </div>
-            <div class="form-check">
+            <!-- <div class="form-check">
                 <label class="form-check-label">
                 <input type="checkbox" class="form-check-input">
                 Remember me
                 </label>
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-primary">Anmelden</button>
             </form>
         </li>
