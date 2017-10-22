@@ -1,9 +1,4 @@
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="../scripts/lightbox.js"></script>
-    <title>Materialien | rindula.de</title>
-</head>
-<?php $needVerify = false; include "../_hidden/verify.php"; include "../navbar.php" ?>
+<?php $needVerify = false; include "../_hidden/verify.php"; $title = "Materialien"; include "../header.php"; include "../navbar.php" ?>
 <div class="list-group">
 <?php
 

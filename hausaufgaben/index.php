@@ -10,6 +10,7 @@ $pageId = 1;
 include "../navbar.php";
 
 // Global Header
+$title="Hausaufgaben";
 include "../header.php";
 
 // Benötigte Variablen

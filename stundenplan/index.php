@@ -10,6 +10,7 @@
 	include "../navbar.php";
 
     // Global Header
+    $title="Stundenplan";
 	include "../header.php";
 
     // Benötigte Variablen

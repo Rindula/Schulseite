@@ -11,6 +11,7 @@ $pageId = 6;
 include "../../navbar.php";
 
 // Global Header
+$title = "Eintragen - Hausaufgaben";
 include "../../header.php";
 
 // Benötigte Variablen
