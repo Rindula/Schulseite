@@ -31,7 +31,8 @@
 
 <body>
 <?php include "navbar.php" ?>
-<h1 class="display-1">Changelog</h1>
+<h1 class="display-1">Willkommen in dem Schulbereich von rindula.de</h1>
+<h2 class="display-2">Changelog</h2>
 <div id="changelog"></div>
 <?php include "_hidden/bottomScripts.php" ?>
 </body>
