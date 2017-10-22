@@ -106,7 +106,7 @@ while ($ar = $result->fetch_assoc()) {
         foreach (glob($IMAGEPATH . '*') as $filename) {
             if (is_image($filename)) {
                 $lnk++;
-                $out .= "<a data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'><img style='padding: 1%; border .2% solid black;' src='loesungen/" . $ar["ID"] . "/" . basename($filename) . "' /></a>\n";
+                $out .= "<a data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'><img class='img-fluid' src='loesungen/" . $ar["ID"] . "/" . basename($filename) . "' /></a>\n";
             }
         }
         $out .= "</td>";
