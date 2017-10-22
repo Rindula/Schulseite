@@ -56,12 +56,16 @@ while ($ar = $result->fetch_assoc()) {
     if (!is_dir($IMAGEPATH))
         mkdir($IMAGEPATH);
 
-    if ($expiration_date <= $today + (1 * 60 * 60 * 24)) {
+
+    if ($expiration_date > $today + (1 * 60 * 60 * 24)) {
+        $classes = "";
+        $list = "";
+    } elseif ($expiration_date == $today + (1 * 60 * 60 * 24)) {
         $classes = "table-danger";
         $list = "list-group-item-danger";
     } else {
-        $classes = "";
-        $list = "";
+        $classes = "table-dark";
+        $list = "list-group-item-dark";
     }
     $title = "";
     $onclick = "";
@@ -89,15 +93,11 @@ while ($ar = $result->fetch_assoc()) {
     }
 
 
-    if (($expiration_date == $today)) {
-        $out .= "<td class='fach fertig'>" . $ar["fach"] . "</td>";
-        $out .= "<td class='aufgaben fertig'><ul class='list-group'>" . $aufgaben . "</ul></td>";
-        $out .= "<td class='datum fertig'>$day.$month.$year ($days)</td>";
-    } else {
-        $out .= "<td class='fach'>" . $ar["fach"] . "</td>";
-        $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
-        $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
-    }
+
+    $out .= "<td class='fach' title='".$ar["ID"]."'>" . $ar["fach"] . "</td>";
+    $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
+    $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
+
     $out .= "</tr>";
     $out .= "<tr class='collapse' id='".$ar["ID"]."'>";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
