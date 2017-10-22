@@ -6,6 +6,7 @@ $title = "Einstellungen";
 // Verifikation des Clients
 include "../../_hidden/verify.php";
 
+$page = "settings";
 include "../../navbar.php";
 
 // Global Header

@@ -6,7 +6,7 @@
 	include "../_hidden/verify.php";
 	
     // Navigationsleiste
-    $pageId = 4;
+    $page = "termine";
 	include "../navbar.php";
 
     // Global Header

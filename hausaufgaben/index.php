@@ -6,7 +6,7 @@ $needVerify = false;
 include "../_hidden/verify.php";
 
 // Navigationsleiste
-$pageId = 1;
+$page = "hausaufgaben";
 include "../navbar.php";
 
 // Global Header

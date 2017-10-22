@@ -1,4 +1,4 @@
-<?php $needVerify = false; include "../_hidden/verify.php"; $title = "Materialien"; include "../header.php"; include "../navbar.php" ?>
+<?php $needVerify = false; include "../_hidden/verify.php"; $title = "Materialien"; include "../header.php"; $page = "files"; include "../navbar.php" ?>
 <div class="list-group">
 <?php
 

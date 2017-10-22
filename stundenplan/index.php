@@ -6,7 +6,7 @@
 	include $_SERVER['DOCUMENT_ROOT'] . "/_hidden/verify.php";
 	
     // Navigationsleiste
-    $pageId = 2;
+    $page = "stundenplan";
 	include "../navbar.php";
 
     // Global Header

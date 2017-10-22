@@ -7,7 +7,7 @@ $title = "Verwaltung";
 include "../../_hidden/verify.php";
 
 // Navigationsleiste
-$pageId = 6;
+$page = "enter";
 include "../../navbar.php";
 
 // Global Header

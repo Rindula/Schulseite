@@ -6,7 +6,7 @@ $vLevel = 1;
 include "../_hidden/verify.php";
 
 // Navigationsleiste
-$pageId = 1;
+$page = "wiederholungen";
 include "../navbar.php";
 
 // Global Header
@@ -72,7 +72,6 @@ function is_image($path) {
     return false;
 }
 ?>
-<script type="text/javascript" src="/scripts/lightbox.js"></script>
 <?php
 dirToArray(".");
 ?> 

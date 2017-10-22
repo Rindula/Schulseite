@@ -1,24 +1,24 @@
 <ul class="nav nav-tabs">
 <li class="nav-item">
-  <a class="nav-link" href="/">Startseite</a>
+  <a class="nav-link" id="startseite" href="/">Startseite</a>
 </li>
 <li class="nav-item">
   <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Schule</a>
   <div class="dropdown-menu" aria-labelledby="navDropdown">
-    <a class="dropdown-item" href="/hausaufgaben">Hausaufgaben</a>
-    <a class="dropdown-item" href="/termine">Termine</a>
+    <a class="dropdown-item" id="hausaufgaben" href="/hausaufgaben">Hausaufgaben</a>
+    <a class="dropdown-item" id="termine" href="/termine">Termine</a>
     <?php if ($loggedIn) { ?>
-    <a class="dropdown-item" href="/stundenplan">Stundenplan</a>
+    <a class="dropdown-item" id="stundenplan" href="/stundenplan">Stundenplan</a>
     <?php } ?>
     <div class="dropdown-divider"></div>
     <?php if ($loggedIn) { ?>
-    <a class="dropdown-item" href="/wiederholungen">Wiederholungen</a>
+    <a class="dropdown-item" id="wiederholungen" href="/wiederholungen">Wiederholungen</a>
     <?php } ?>
-    <a class="dropdown-item" href="/files">Wichtige Materialien</a>
+    <a class="dropdown-item" id="files" href="/files">Wichtige Materialien</a>
   </div>
 </li>
 <li class="nav-item">
-  <a class="nav-link <?= ($loggedIn) ? "" : "disabled" ?>" href="/hausaufgaben/enter">Eintragen</a>
+  <a class="nav-link <?= ($loggedIn) ? "" : "disabled" ?>" id="enter" href="/hausaufgaben/enter">Eintragen</a>
 </li>
     <?php
     if ($loggedIn) {
@@ -26,7 +26,7 @@
         <li>
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?= $_SESSION["name"] ?></a>
         <div class="dropdown-menu" aria-labelledby="navDropdown">
-            <a class="dropdown-item" href="/settings?section=main">Einstellungen</a>
+            <a class="dropdown-item" id="settings" href="/settings?section=main">Einstellungen</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/logout">Abmelden</a>
         </div>
