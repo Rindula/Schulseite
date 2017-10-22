@@ -9,9 +9,12 @@
     <a class="dropdown-item" href="/termine">Termine</a>
     <?php if ($loggedIn) { ?>
     <a class="dropdown-item" href="/stundenplan">Stundenplan</a>
+    <?php } ?>
     <div class="dropdown-divider"></div>
+    <?php if ($loggedIn) { ?>
     <a class="dropdown-item" href="/wiederholungen">Wiederholungen</a>
     <?php } ?>
+    <a class="dropdown-item" href="/files">Wichtige Materialien</a>
   </div>
 </li>
 <li class="nav-item">
