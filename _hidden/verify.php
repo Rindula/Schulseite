@@ -30,7 +30,7 @@ if ($needVerify && !isset($_SESSION['userid'])) {
     if (isset($exitLink)) {
         die("<meta http-equiv='refresh' content='0; $exitLink'>");
     } else {
-        die("<meta http-equiv='refresh' content='2; /login'><h1 style=\"cursor: pointer;\" title=\"Zum Login...\" onclick=\"location.assign('/login')\">Du musst eingeloggt sein, um auf diese Seite zugreifen zu dürfen!</h1>");
+        die("<meta http-equiv='refresh' content='2; /hausaufgaben'><h1 style=\"cursor: pointer;\" title=\"Zum Login...\" onclick=\"location.assign('/hausaufgaben')\">Du musst eingeloggt sein, um auf diese Seite zugreifen zu dürfen!</h1>");
     }
 }
 
