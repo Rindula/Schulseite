@@ -292,3 +292,4 @@
 [22.10.2017 13:43:37] Zugriff von ::1 auf /settings?section=main | OS: Windows 10 | Browser: Chrome
 [22.10.2017 13:44:59] Zugriff von ::1 auf / | OS: Windows 10 | Browser: Chrome
 [22.10.2017 14:04:15] Zugriff von 192.168.1.18 auf /hausaufgaben/ | OS: Android | Browser: Handheld Browser
+[22.10.2017 14:21:14] Zugriff von ::1 auf /hausaufgaben/ | OS: Windows 10 | Browser: Chrome
