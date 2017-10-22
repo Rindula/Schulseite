@@ -71,16 +71,14 @@ include_once "../_hidden/mysqlconn.php";
             <?php
             $result2 = $mysqli->query("SELECT * FROM flist ORDER BY fach");
             
-            $facher = "";
             $tsel = "";
             
             while ($f = $result2->fetch_assoc()) {
                 if ($f["id"] == "-1") {
                     continue;
                 }
-                $tsel .= "<option value='".$f["fach"]."'>".$f["fach"]."</option>";
+                $tsel .= "<option value='".$f["id"]."'>".$f["fach"]."</option>";
             }
-            $facher = substr($facher, 0, -1);
             echo "<option value='all'>Alle F&auml;cher</option>";
             echo $tsel;
             ?>
@@ -96,18 +94,15 @@ include_once "../_hidden/mysqlconn.php";
             <?php
             $result2 = $mysqli->query("SELECT * FROM flist ORDER BY fach");
             
-            $facher = "";
             $tsel = "";
             
             while ($f = $result2->fetch_assoc()) {
                 if ($f["id"] == "-1") {
                     continue;
                 }
-                $facher .= $f["id"].",";
                 $tsel .= "<option value='".$f["id"]."'>".$f["fach"]."</option>";
             }
-            $facher = substr($facher, 0, -1);
-            echo "<option value='$facher'>Alle F&auml;cher</option>";
+            echo "<option value='all'>Alle F&auml;cher</option>";
             echo $tsel;
             ?>
         </select>

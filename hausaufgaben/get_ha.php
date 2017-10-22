@@ -9,10 +9,10 @@ include "../_hidden/vars.php";
 
 
 if($query === "all") {
-    $sql = "SELECT * FROM list ORDER BY Datum Asc";
+    $sql = "SELECT h.ID, h.Aufgaben, h.Datum, f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Datum > now() ORDER BY h.Datum Asc";
 } else {
     $query = $mysqli->real_escape_string($query);
-    $sql = "SELECT * FROM list WHERE Fach = '$query' ORDER BY Datum Asc";
+    $sql = "SELECT h.ID, h.Aufgaben, h.Datum, f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Fach = '$query' AND h.Datum > now() ORDER BY h.Datum Asc";
 }
 
 function removeDir($dir) {
@@ -53,9 +53,6 @@ while ($ar = $result->fetch_assoc()) {
     if ($expiration_date < ($today - (86400 * 7))) {
         removeDir($IMAGEPATH);
     }
-    if ($expiration_date < $today) {
-        continue;
-    }
     if (!is_dir($IMAGEPATH))
         mkdir($IMAGEPATH);
 
@@ -94,11 +91,11 @@ while ($ar = $result->fetch_assoc()) {
 
 
     if (($expiration_date == $today)) {
-        $out .= "<td class='fach fertig'>" . $ar["Fach"] . "</td>";
+        $out .= "<td class='fach fertig'>" . $ar["fach"] . "</td>";
         $out .= "<td class='aufgaben fertig'><ul class='list-group'>" . $aufgaben . "</ul></td>";
         $out .= "<td class='datum fertig'>$day.$month.$year ($days)</td>";
     } else {
-        $out .= "<td class='fach'>" . $ar["Fach"] . "</td>";
+        $out .= "<td class='fach'>" . $ar["fach"] . "</td>";
         $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
         $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
     }
