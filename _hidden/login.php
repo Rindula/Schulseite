@@ -16,7 +16,7 @@ if (isset($_GET['login'])) {
         $_SESSION['group'] = $user['gruppe'];
         $_SESSION['name'] = $user['vorname'] . " " . $user["name"];
         $success = '1';
-        header("Location: /hausaufgaben");
+        header("Location: /settings?section=main");
     } else {
         $success = '0';
         $errorMessage = "Name oder Passwort war ungültig<br>";
