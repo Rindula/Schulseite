@@ -57,7 +57,6 @@ function addEvent(click) {
     panel.classList.toggle("shown");
 }
 </script>
-<script type="text/javascript" src="/scripts/lightbox.js"></script>
 
 <body class="" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
     <div id="content">
