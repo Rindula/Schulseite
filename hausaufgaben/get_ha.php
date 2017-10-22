@@ -68,9 +68,8 @@ while ($ar = $result->fetch_assoc()) {
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
         $classes = $classes . " imageAcc text-info";
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
-        $onclick = "onclick='addEvent(this)'";
     }
-    $out .= "<tr title='$title' id='" . $ar['ID'] . "' $onclick class='$classes'>";
+    $out .= "<tr title='$title' id='" . $ar['ID'] . "' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'>";
 
 
     $datetime1 = date_create(date("Y-m-d"));
@@ -100,7 +99,7 @@ while ($ar = $result->fetch_assoc()) {
         $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
     }
     $out .= "</tr>";
-    $out .= "<tr class='imageDisplay'>";
+    $out .= "<tr class='collapse' id='".$ar["ID"]."'>";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
         $out .= "<td colspan='3' style='background-color: rgba(60, 209, 163, 0.5);'>";
         $lnk = 0;
