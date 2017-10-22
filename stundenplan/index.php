@@ -16,7 +16,7 @@
 	include "../_hidden/vars.php";
 
     // CSS Controller
-    $styles[] = "stundenplan";
+    // $styles[] = "stundenplan";
     include "../css/controller.php";
     $zeiten = array("07:30 - 08:15", "08:15 - 09:00", "09:15 - 10:00", "10:00 - 10:45", "11:00 - 11:45", "11:45 - 12:30", "12:30 - 13:15", "13:15 - 14:00", "14:00 - 14:45", "15:00 - 15:45", "15:45 - 16:30");
 $dbname = "homeworks";
@@ -48,7 +48,7 @@ function sonderfach($fach) {
 
 
 // Tabelle erstellen
-echo "<div class='ungerade'><table><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
+echo "<div class='ungerade'><table class='table table-striped'><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
 
 //Zeilen zusammenfügen
 $sqlM = "SELECT * FROM timetable_u ORDER BY id Asc;";
@@ -66,7 +66,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($mo, $tmp) = $statement->get_result()->fetch_array();
+        list($mo) = $statement->get_result()->fetch_array();
     }
     
     $arr = $ar["dienstag"];
@@ -77,7 +77,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($di, $tmp) = $statement->get_result()->fetch_array();
+        list($di) = $statement->get_result()->fetch_array();
     }
     
     $arr = $ar["mittwoch"];
@@ -88,7 +88,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($mi, $tmp) = $statement->get_result()->fetch_array();
+        list($mi) = $statement->get_result()->fetch_array();
     }
     
 
@@ -100,7 +100,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($do, $tmp) = $statement->get_result()->fetch_array();
+        list($do) = $statement->get_result()->fetch_array();
     }
     
 
@@ -112,7 +112,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($fr, $tmp) = $statement->get_result()->fetch_array();
+        list($fr) = $statement->get_result()->fetch_array();
     }
     
     $zeit = $zeiten[$n];
@@ -125,7 +125,7 @@ echo "</table></div>";
 $n = 0;
 
 // Tabelle erstellen
-echo "<div class='gerade'><table><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
+echo "<div class='gerade'><table class='table table-striped table-bordered'><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
 
 
 //Zeilen zusammenfügen
@@ -143,7 +143,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($mo, $tmp) = $statement->get_result()->fetch_array();
+        list($mo) = $statement->get_result()->fetch_array();
     }
     
     $arr = $ar["dienstag"];
@@ -154,7 +154,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($di, $tmp) = $statement->get_result()->fetch_array();
+        list($di) = $statement->get_result()->fetch_array();
     }
     
     $arr = $ar["mittwoch"];
@@ -165,7 +165,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($mi, $tmp) = $statement->get_result()->fetch_array();
+        list($mi) = $statement->get_result()->fetch_array();
     }
     
 
@@ -177,7 +177,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($do, $tmp) = $statement->get_result()->fetch_array();
+        list($do) = $statement->get_result()->fetch_array();
     }
     
 
@@ -189,7 +189,7 @@ while ($ar = $resultM->fetch_assoc())
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("s", $arr);
         $statement->execute();
-        list($fr, $tmp) = $statement->get_result()->fetch_array();
+        list($fr) = $statement->get_result()->fetch_array();
     }
     
     $zeit = $zeiten[$n];
@@ -201,3 +201,4 @@ echo "</table></div>";
 ?>
 
 <script type="text/javascript" src="/scripts/weekController.js"></script>
+<?php include "../_hidden/bottomScripts.php" ?>

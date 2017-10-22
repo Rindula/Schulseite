@@ -76,3 +76,5 @@ function is_image($path) {
 <?php
 dirToArray(".");
 ?> 
+
+<?php include "../_hidden/bottomScripts.php" ?>

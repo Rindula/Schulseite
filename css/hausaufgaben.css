@@ -33,17 +33,6 @@ body {
     background-color: rgba(0, 57, 163, 0.5);
 }
 
-td {
-    border-radius: 10px;
-    transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-    border: 2px solid black;
-}
-
-th {
-    font-size: 30px;
-    color: #f47316;
-}
-
 h1 {
     color: aqua;
 }

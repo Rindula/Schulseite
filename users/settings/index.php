@@ -17,7 +17,7 @@ $dbname = "homeworks";
 include "../../_hidden/mysqlconn.php";
 
 // CSS Controller
-$styles[] = "settings";
+// $styles[] = "settings";
 include "../../css/controller.php";
 
 
@@ -25,34 +25,6 @@ if (!isset($_GET["section"])) {
     header("Location: ?section=main");
 }
 ?>
-<style>
-    ul li button {
-        text-decoration: none;
-        color: black;
-        display: inline-block;
-        background-color: #ff6666;
-        padding: 10px;
-        margin: 10px;
-        transition: 0.2s all linear;
-    }
-    ul li button:hover {
-        color: white;
-        background-color: #6666ff;
-    }
-
-    input[type="color"] {
-        -webkit-appearance: none;
-        border: none;
-        width: 32px;
-        height: 32px;
-    }
-    input[type="color"]::-webkit-color-swatch-wrapper {
-        padding: 0;
-    }
-    input[type="color"]::-webkit-color-swatch {
-        border: none;
-    }
-</style>
 <?php
 // Passwort ändern
 if ($_GET["section"] == "passwort" && isset($_GET["change"]) && isset($_POST["confirm"])) {
@@ -82,11 +54,6 @@ if ($_GET["section"] == "passwort" && isset($_GET["change"]) && isset($_POST["co
     }
 }
 
-if ($_GET["section"] == "colors" && isset($_GET["change"]) && isset($_POST["confirm"])) {
-    $userConn->query("UPDATE users SET navbarBack = '" . $_POST["colorNavBarBack"] . "', navbarText = '" . $_POST["colorNavBarText"] . "', backgroundPage = '" . $_POST["backgroundColor"] . "' WHERE id = '" . $_SESSION["userid"] . "'");
-    echo "<code>Farben werden übernommen...</code>";
-}
-
 
 if ($_GET["section"] == "lessons" && isset($_GET["change"]) && isset($_POST["confirm"])) {
     $bk = $_POST["lesson_bk"];
@@ -111,21 +78,20 @@ $sec = $_GET["section"];
 
 if ($sec == "main") {
     ?>
-    <div class="content">
-    <form action="" method="get">
-        <h1>Einstellungen<br><small>Willkommen, <?= $_SESSION["name"] ?></small></h1>
-        <ul style="list-style-type: none;">
-            <li><button name="section" value="passwort">Passwort ändern</button></li>
-            <li><button name="section" value="colors">Farben ändern</button></li>
-            <li><button name="section" value="lessons">Fächer einstellen</button></li>
-        </ul>
+    <div class="content text-center">
+    <form class="form" action="" method="get">
+        <h1 class="display-4">Einstellungen<br><small>Willkommen, <?= $_SESSION["name"] ?></small></h1>
+        <div class="list-group">
+            <button class="list-group-item list-group-item-action" name="section" value="passwort">Passwort ändern</button>
+            <button class="list-group-item list-group-item-action" name="section" value="lessons">Fächer einstellen</button>
+</div>
         </form>
     </div>
 <?php
 } else {
     ?>
     <form class="button_back" action="" method="get">
-        <button type="submit" name="section" value="main">Zurück</button>
+        <button class="btn btn-outline-danger btn-block" type="submit" name="section" value="main">Zurück</button>
     </form>
 <?php
 }
@@ -133,77 +99,34 @@ if ($sec == "main") {
 if ($sec == "passwort") {
     ?>
     <div class="content">
-        <form action="?section=passwort&change" method="POST" enctype="multipart/form-data">
-            <table border="0">
-                <tbody>
-                    <tr>
-                        <td>Altes Passwort:</td>
-                        <td><input required="" type="password" name="oldpass" value="" /></td>
-                    </tr>
-                    <tr></tr>
-                    <tr>
-                        <td>Neues Passwort</td>
-                        <td><input required="" type="password" name="newpass" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Passwort Wiederholen:</td>
-                        <td><input required="" type="password" name="newpass2" value="" /></td>
-                    </tr>
-                </tbody>
-            </table>
-            <input name="confirm" type="submit" />
+        <form class="form p-4" action="?section=passwort&change" method="POST" enctype="multipart/form-data">
+                        <label for="oldPass">Altes Passwort:</label>
+                        <input autocomplete="off" id="oldPass" class="form-control" required="" type="password" name="oldpass" value="" />
+                        <label for="newPass">Neues Passwort:</label>
+                        <input autocomplete="off" id="newPass" class="form-control" required="" type="password" name="newpass" value="" />
+                        <label for="newPass2">Passwort Wiederholen:</label>
+                        <input autocomplete="off" id="newPass2" class="form-control" required="" type="password" name="newpass2" value="" />
+            <input class="btn btn-outline-success m-4" name="confirm" type="submit" />
         </form>
     </div>
 <?php }
-
-if ($sec == "colors") {
-    $dagvdfva = new mysqli("localhost", "root", "74cb0A0kER", "stats");
-    if ($dagvdfva->connect_errno) {
-        die("Verbindung fehlgeschlagen: " . $dagvdfva->connect_error);
-    }
-    $sql = "SET NAMES 'utf8'";
-    $dagvdfva->query($sql);
-    $req = $dagvdfva->query("SELECT navbarBack, navbarText, backgroundPage FROM users WHERE id = '".$_SESSION["userid"]."'");
-    $r = $req->fetch_assoc();
-    ?>
-    <div class="content">
-        <form action="?section=colors&change" method="POST" enctype="multipart/form-data">
-            <table border="0">
-                <tbody>
-                    <tr>
-                        <td>Navigationsleistenhintergrundfarbe:</td>
-                        <td><input required="" type="color" name="colorNavBarBack" value="<?= $r["navbarBack"] ?>" /></td>
-                    </tr>
-                    <tr></tr>
-                    <tr>
-                        <td>Navigationsleistentextfarbe:</td>
-                        <td><input required="" type="color" name="colorNavBarText" value="<?= $r["navbarText"] ?>" /></td>
-                    </tr>
-                    <tr>
-                        <td>Seitenhintergrundfarbe:</td>
-                        <td><input required="" type="color" name="backgroundColor" value="<?= $r["backgroundPage"] ?>" /></td>
-                    </tr>
-                </tbody>
-            </table>
-            <input name="confirm" type="submit" />
-        </form>
-    </div>
-<?php
-}
 if ($sec == "lessons") {
     ?>
     
     <div class="content">
-        <form action="?section=lessons&change" method="post">
-            <table>
+        <form class="form" action="?section=lessons&change" method="post">
+            <table class="table table-striped">
+                <thead>
                 <tr>
                     <th>Fach</th>
                     <th>Auswahl</th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>Bildene Kunst</td>
                     <td>
-                        <select name="lesson_bk" id="">
+                        <select class="form-control" name="lesson_bk" id="">
                             <option <?= ($lesson_bk == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
                             <option <?= ($lesson_bk == 1) ? "selected" : ""; ?> value="1">Gewählt</option>
                         </select>
@@ -212,7 +135,7 @@ if ($sec == "lessons") {
                 <tr>
                     <td>Computertechnik</td>
                     <td>
-                        <select name="lesson_ct" id="">
+                        <select class="form-control" name="lesson_ct" id="">
                             <option <?= ($lesson_ct == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
                             <option <?= ($lesson_ct == 1) ? "selected" : ""; ?> value="1">Videoschnitt</option>
                             <option <?= ($lesson_ct == 2) ? "selected" : ""; ?> value="2">Websiten aufbau</option>
@@ -222,7 +145,7 @@ if ($sec == "lessons") {
                 <tr>
                     <td>Seminarkurs</td>
                     <td>
-                        <select name="lesson_sk" id="">
+                        <select class="form-control" name="lesson_sk" id="">
                             <option <?= ($lesson_sk == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
                             <option <?= ($lesson_sk == 1) ? "selected" : ""; ?> value="1">Gewählt</option>
                         </select>
@@ -231,7 +154,7 @@ if ($sec == "lessons") {
                 <tr>
                     <td>Physik/Chemie</td>
                     <td>
-                        <select name="lesson_pc" id="">
+                        <select class="form-control" name="lesson_pc" id="">
                             <option <?= ($lesson_pc == 0) ? "selected" : ""; ?> value="0">Physik</option>
                             <option <?= ($lesson_pc == 1) ? "selected" : ""; ?> value="1">Chemie</option>
                         </select>
@@ -240,7 +163,7 @@ if ($sec == "lessons") {
                 <tr>
                     <td>Zweite Fremdsprache</td>
                     <td>
-                        <select name="lesson_fr" id="">
+                        <select class="form-control" name="lesson_fr" id="">
                             <option <?= ($lesson_fr == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
                             <option <?= ($lesson_fr == 1) ? "selected" : ""; ?> value="1">Spanisch</option>
                             <option <?= ($lesson_fr == 2) ? "selected" : ""; ?> value="2">Französisch</option>
@@ -250,14 +173,17 @@ if ($sec == "lessons") {
                 <tr>
                     <td>Religionsunterricht</td>
                     <td>
-                        <select name="lesson_re" id="">
+                        <select class="form-control" name="lesson_re" id="">
                             <option <?= ($lesson_re == 0) ? "selected" : ""; ?> value="0">Ethik</option>
                             <option <?= ($lesson_re == 1) ? "selected" : ""; ?> value="1">Katholisch</option>
                             <option <?= ($lesson_re == 2) ? "selected" : ""; ?> value="2">Evangelisch</option>
                         </select>
                     </td>
                 </tr>
-                <tr><td><input type="submit" name="confirm"></td></tr>
+                </tbody>
+                <tfoot>
+                <tr><td><input class="btn btn-outline-success" type="submit" name="confirm"></td></tr>
+                </tfoot>
             </table>
         </form>
     </div>
@@ -265,8 +191,6 @@ if ($sec == "lessons") {
 <?php
 }
 
-if ($sec == "timetable") {
-    include "timetableSetup.php";
-}
+include "../../_hidden/bottomScripts.php";
 ?>
 

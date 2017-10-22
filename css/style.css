@@ -21,10 +21,6 @@ html {
 
 .imageAcc {
     cursor: pointer;
-    transition: background-color .2s linear;
-}
-.imageAcc:hover {
-    background-color: rgba(0, 255, 255, 0.2);
 }
 
 body {
@@ -199,4 +195,5 @@ ul.topnav li.right {float: right;}
     right: 0;
     bottom: 0;
     position: fixed;
+    width: 85px;
 }

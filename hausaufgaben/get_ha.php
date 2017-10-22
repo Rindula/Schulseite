@@ -1,7 +1,7 @@
 <?php
 
 $query = $_REQUEST["q"];
-$o = "<table><tr><th>Fach</th><th>Aufgaben</th><th>Zieldatum</th></tr>";
+$o = "<table class='table table-striped'><thead><tr><th scope='col'>Fach</th><th scope='col'>Aufgaben</th><th scope='col'>Zieldatum</th></tr></thead>";
 $out = $o;
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
@@ -9,17 +9,18 @@ include "../_hidden/vars.php";
 
 
 if($query === "all") {
-    $sql = "SELECT * FROM list ORDER BY Datum Asc";
+    $sql = "SELECT h.ID, h.Aufgaben, h.Datum, f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Datum > now() ORDER BY h.Datum Asc";
 } else {
     $query = $mysqli->real_escape_string($query);
-    $sql = "SELECT * FROM list WHERE Fach = '$query' ORDER BY Datum Asc";
+    $sql = "SELECT h.ID, h.Aufgaben, h.Datum, f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Fach = '$query' AND h.Datum > now() ORDER BY h.Datum Asc";
 }
 
 function removeDir($dir) {
     foreach (glob($dir . '*') as $filename) {
         unlink($filename);
     }
-    rmdir($dir);
+    if (is_dir($dir))
+        rmdir($dir);
 }
 function is_dir_empty($dir) {
     if (!is_readable($dir))
@@ -52,21 +53,20 @@ while ($ar = $result->fetch_assoc()) {
     if ($expiration_date < ($today - (86400 * 7))) {
         removeDir($IMAGEPATH);
     }
-    if ($expiration_date < $today) {
-        continue;
-    }
-
-    mkdir($IMAGEPATH);
+    if (!is_dir($IMAGEPATH))
+        mkdir($IMAGEPATH);
 
     if ($expiration_date <= $today + (1 * 60 * 60 * 24)) {
-        $classes = "dringend";
+        $classes = "table-danger";
+        $list = "list-group-item-danger";
     } else {
-        $classes = "zuErledigen";
+        $classes = "";
+        $list = "";
     }
     $title = "";
     $onclick = "";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
-        $classes = $classes . " imageAcc erledigt";
+        $classes = $classes . " imageAcc text-info";
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
         $onclick = "onclick='addEvent(this)'";
     }
@@ -85,18 +85,18 @@ while ($ar = $result->fetch_assoc()) {
     $aufgaben = "";
     if ($ar["Aufgaben"] != "") {
         foreach (explode(";", $ar["Aufgaben"]) as $a) {
-            $aufgaben .= "<li>$a</li>";
+            $aufgaben .= "<li class='list-group-item $list'>$a</li>";
         }
     }
 
 
     if (($expiration_date == $today)) {
-        $out .= "<td class='fach fertig'>" . $ar["Fach"] . "</td>";
-        $out .= "<td class='aufgaben fertig'>" . $aufgaben . "</td>";
+        $out .= "<td class='fach fertig'>" . $ar["fach"] . "</td>";
+        $out .= "<td class='aufgaben fertig'><ul class='list-group'>" . $aufgaben . "</ul></td>";
         $out .= "<td class='datum fertig'>$day.$month.$year ($days)</td>";
     } else {
-        $out .= "<td class='fach'>" . $ar["Fach"] . "</td>";
-        $out .= "<td class='aufgaben'>" . $aufgaben . "</td>";
+        $out .= "<td class='fach'>" . $ar["fach"] . "</td>";
+        $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
         $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
     }
     $out .= "</tr>";

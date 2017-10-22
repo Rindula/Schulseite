@@ -1,42 +1,60 @@
-<div class="container">
-    <a href="/">Startseite</a>
-    <div class="dropdown">
-        <a class="dropbtn">Schule</a>
-        <div class="dropdown-content">
-            <a href="/hausaufgaben">Hausaufgaben</a>
-            <a href="/termine">Termine</a>
-            <?php if ($loggedIn) { ?>
-                <a href="/stundenplan">Stundenplan</a>
-                <a href="/wiederholungen">Wiederholungen</a>
-            <?php } ?>
-        </div>
-    </div>
-    <div class="dropdown">
-        <a class="dropbtn">Download</a>
-        <div class="dropdown-content">
-            <a href="/downloads">Downloads</a>
-            <!-- <a href="/app">App</a> -->
-        </div>
-    </div>
+<ul class="nav nav-pills">
+<li class="nav-item">
+  <a class="nav-link" href="/">Startseite</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Schule</a>
+  <div class="dropdown-menu" aria-labelledby="navDropdown">
+    <a class="dropdown-item" href="/hausaufgaben">Hausaufgaben</a>
+    <a class="dropdown-item" href="/termine">Termine</a>
+    <?php if ($loggedIn) { ?>
+    <a class="dropdown-item" href="/stundenplan">Stundenplan</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="/wiederholungen">Wiederholungen</a>
+    <?php } ?>
+  </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link <?= ($loggedIn) ? "" : "disabled" ?>" href="/hausaufgaben/enter">Eintragen</a>
+</li>
     <?php
     if ($loggedIn) {
         ?>
-        <a href="/hausaufgaben/enter">Eintragen</a>
-        <div class="dropdown right" style="margin-right: 75px;">
-            <a class="dropbtn"><?= $_SESSION["name"] ?></a>
-            <div class="dropdown-content">
-                <a href="/settings?section=main">Einstellungen</a>
-                <div class="hr"></div>
-                <a href="/logout">Logout</a>
-            </div>
+        <li>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?= $_SESSION["name"] ?></a>
+        <div class="dropdown-menu" aria-labelledby="navDropdown">
+            <a class="dropdown-item" href="/settings?section=main">Einstellungen</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Abmelden</a>
         </div>
+        </li>
         <?php
     } else {
         ?>
-        <a class="right" href="/login">Login</a>
+        <li class="nav-item">
+        <a class="nav-link dropdown-toggle" id="loginDropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+        <form action="/login?login" method="post" class="dropdown-menu p-4" aria-labelledby="loginDropdown">
+            <div class="form-group">
+                <label for="username">Benutzername</label>
+                <input type="text" name="name" class="form-control" id="username" placeholder="NachnameV(orname)">
+            </div>
+            <div class="form-group">
+                <label for="password">Passwort</label>
+                <input type="password" name="passwort" class="form-control" id="password" placeholder="Passwort">
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input">
+                Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Anmelden</button>
+            </form>
+        </li>
         <?php
     }
     ?>
+    </ul>
     <div class="donation_button">
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
@@ -45,7 +63,6 @@
             <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
         </form>        
     </div>
-</div>
 <div class id="hinweis">
 </div>
 <script>
