@@ -17,7 +17,7 @@ try {
         $dbname = "homeworks";
         include "../_hidden/mysqlconn.php";
         try {
-            $sqlHausaufgaben = "SELECT h.ID, h.Aufgaben, h.Datum f.fach FROM list as h inner join flist as f on h.Fach = f.id ORDER BY h.Datum Asc";
+            $sqlHausaufgaben = "SELECT h.ID, h.Aufgaben, h.Datum f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Datum > now() ORDER BY h.Datum Asc";
             $resultHausaufgaben = $mysqli->query($sqlHausaufgaben);
             logger("Hausaufgaben\n\n");
             if (gettype($resultHausaufgaben) == "boolean") {
@@ -26,10 +26,6 @@ try {
             while ($row = $resultHausaufgaben->fetch_assoc()) {
                 $today = strtotime(date("Y-m-d"));
                 $expiration_date = strtotime($row["Datum"]);
-                if ($expiration_date < $today) {
-                    //logger(str_pad($row["ID"], $nLenght, '0', STR_PAD_LEFT) . " uebersprungen...\n");
-                    continue;
-                }
                 $id = $row['ID'];
                 $fach = $row['fach'];
                 $aufgaben = $row['Aufgaben'];
