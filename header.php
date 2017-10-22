@@ -7,7 +7,7 @@ if (isset($title)) {
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		<title>$title | $pageTitle</title>
-		<link rel='shortcut icon' href='http://edge.sf.hitbox.tv/static/img/channel/Rindula_54848ba194189_large.jpg'>
+		<link rel='shortcut icon' href='/favicon.ico'>
 	</head>";
 } else {
 echo "<!DOCTYPE html>
@@ -15,7 +15,7 @@ echo "<!DOCTYPE html>
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		<title>$pageTitle</title>
-		<link rel='shortcut icon' href='http://edge.sf.hitbox.tv/static/img/channel/Rindula_54848ba194189_large.jpg'>
+		<link rel='shortcut icon' href='/favicon.ico'>
 	</head>";
 };
 header('Content-Type: text/html; charset=utf-8');
