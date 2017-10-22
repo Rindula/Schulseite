@@ -3,7 +3,7 @@
     <script src="../scripts/lightbox.js"></script>
     <title>Materialien | rindula.de</title>
 </head>
-<?php session_start(); include "../navbar.php" ?>
+<?php $needVerify = false; include "../verify.php"; include "../navbar.php" ?>
 <div class="list-group">
 <?php
 
