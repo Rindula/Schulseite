@@ -20,28 +20,6 @@ include "../../_hidden/vars.php";
 include "../../css/controller.php";
 ?>
 
-<style>
-    html {
-        background-color: #5a5a5a;
-        color: white;
-    }
-
-    form, h1 {
-        text-align: center;
-    }
-
-    h1 {
-        color: #f47316;
-    }
-
-    #uhr { position:fixed; bottom:10px; right:10px; font-family:monospace; font-size:34px; color:#00ffff; text-shadow: 0 0 5px #a6ffff; background-color: #5914dc; padding: 10px; border-radius: 10px}
-
-    #content {
-        margin-bottom: 100px;
-    }
-
-
-</style>
 <script language="JavaScript">
     function update() {
         var textBox = document.getElementById("aufgaben2");
@@ -74,7 +52,7 @@ $dbname = "homeworks";
 include "../../_hidden/mysqlconn.php";
 ?>
 <div id="content">
-    <table class="center">
+    <table class="table">
         <?php
         $result = $userConn->query("SELECT * from groups WHERE id = $gruppe");
         $perms = $result->fetch_assoc();
@@ -97,11 +75,12 @@ include "../../_hidden/mysqlconn.php";
             if ($canEnter) {
                 ?>
                 <td>
-                    <h1>Hausaufgaben eintragen</h1>
-                    <form action="../../_hidden/enterHW.php" method="post">
+                    <h1 class="display-4">Hausaufgaben eintragen</h1>
+                    <form class="form" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="0" name="type"/>
-                        <label for="fach">Fach:</label>
-                        <select required id="fach" name="fach">
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-book"></span>
+                        <select class="form-control" required id="fach" name="fach">
                             <?php
                             $sql = "SELECT * FROM flist ORDER BY fach Asc";
                             $statement = $mysqli->prepare($sql);
@@ -113,13 +92,22 @@ include "../../_hidden/mysqlconn.php";
                                 }
                             }
                             ?>
-                        </select><br><br>
-                        <label for="aufgaben">Aufgaben:</label>
-                        <textarea required id="aufgaben" name="aufgaben"></textarea><br><br>
-                        <label for="datum">Zieldatum:</label>
-                        <input required type="date" id="datum" name="datum" min="<?php echo date('Y-m-d'); ?>" /><br><br><br>
-                        <button type="submit" formtarget="_blank">Eintragen</button>
-                        <button type="reset">Felder leeren</button>
+                        </select>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-edit"></span>
+                        <textarea class="form-control" required id="aufgaben" name="aufgaben"></textarea>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-calendar"></span>
+                        <input class="form-control" required type="date" id="datum" name="datum" min="<?php echo date('Y-m-d'); ?>" />
+                        </div><br>
+                        <div class="btn-group" role="group">
+                        <button class="btn btn-primary" type="submit" formtarget="_blank">Eintragen</button>
+                        <button class="btn btn-outline-secondary" type="reset">Felder leeren</button>
+                        </div>
                     </form>
                 </td>
                 <?php
@@ -127,13 +115,14 @@ include "../../_hidden/mysqlconn.php";
             if ($canChange) {
                 ?>
                 <td>
-                    <h1>Hausaufgaben ändern</h1>
-                    <form action="../../_hidden/enterHW.php" method="post">
+                    <h1 class="display-4">Hausaufgaben ändern</h1>
+                    <form class="form" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="3" name="type"/>
-                        <label for="fach3">Arbeit:</label>
-                        <select onchange="update2()" required id="fach3" name="fach">
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-book"></span>
+                        <select class="form-control" onchange="update2()" required id="fach3" name="fach">
                             <?php
-                            $sql = "SELECT * FROM list ORDER BY Datum Asc";
+                            $sql = "SELECT h.Datum, h.Aufgaben, h.ID, f.fach FROM list as h inner join flist as f on h.Fach = f.id ORDER BY Datum Asc";
                             $statement = $mysqli->prepare($sql);
                             $statement->execute();
                             $result = $statement->get_result();
@@ -145,15 +134,21 @@ include "../../_hidden/mysqlconn.php";
                                     continue;
                                 }
 
-                                echo '<option zielDatum="' . $ar["Datum"] . '" topic="' . htmlspecialchars($ar["Aufgaben"]) . '" value="' . $ar["ID"] . '">' . $ar["Fach"] . ' | ' . $ar["Datum"] . '</option>';
+                                echo '<option zielDatum="' . $ar["Datum"] . '" topic="' . htmlspecialchars($ar["Aufgaben"]) . '" value="' . $ar["ID"] . '">' . $ar["fach"] . ' | ' . $ar["Datum"] . '</option>';
                             }
                             ?>
-                        </select><br><br>
-                        <label for="aufgaben3">Themen:</label>
-                        <textarea id="aufgaben3" name="aufgaben"></textarea><br><br>
-                        <label for="datum3">Datum:</label>
-                        <input required type="date" id="datum3" name="datum" /><br><br><br>
-                        <button type="submit" formtarget="_blank">Eintragen</button>
+                        </select></div><br>
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-edit"></span>
+                        <textarea class="form-control" required id="aufgaben3" name="aufgaben"></textarea>
+                        </div><br>
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-calendar"></span>
+                        <input class="form-control" required type="date" id="datum3" name="datum" min="<?php echo date('Y-m-d'); ?>" />
+                        </div><br>
+                        <div class="btn-group" role="group">
+                        <button class="btn btn-primary" type="submit" formtarget="_blank">Ändern</button>
+                        </div>
                     </form>
                 </td></tr>
             <?php
@@ -161,11 +156,12 @@ include "../../_hidden/mysqlconn.php";
         if ($canEnter) {
             ?>
             <tr><td>
-                    <h1>Arbeiten eintragen</h1>
-                    <form action="../../_hidden/enterHW.php" method="post">
+                    <h1 class="display-4">Arbeiten eintragen</h1>
+                    <form class="form" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="1" name="type"/>
-                        <label for="fach">Fach:</label>
-                        <select required id="fach" name="fach">
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-book"></span>
+                        <select class="form-control" required id="fach" name="fach">
                             <?php
                             $sql = "SELECT * FROM flist ORDER BY fach Asc";
                             $statement = $mysqli->prepare($sql);
@@ -177,13 +173,20 @@ include "../../_hidden/mysqlconn.php";
                                 }
                             }
                             ?>
-                        </select><br><br>
-                        <label for="aufgaben">Themen:</label>
-                        <textarea id="aufgaben" name="aufgaben"></textarea><br><br>
-                        <label for="datum">Datum:</label>
-                        <input required type="date" id="datum" name="datum" min="<?= date('Y-m-d') ?>" /><br><br><br>
-                        <button type="submit" formtarget="_blank">Eintragen</button>
-                        <button type="reset">Felder leeren</button>
+                        </select></div><br>
+                        
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-edit"></span>
+                        <textarea class="form-control" required id="aufgaben" name="aufgaben"></textarea>
+                        </div><br>
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-calendar"></span>
+                        <input class="form-control" required type="date" id="datum" name="datum" min="<?php echo date('Y-m-d'); ?>" />
+                        </div><br>
+                        <div class="btn-group" role="group">
+                        <button class="btn btn-primary" type="submit" formtarget="_blank">Eintragen</button>
+                        <button class="btn btn-outline-secondary" type="reset">Felder leeren</button>
+                        </div>
                     </form>
                 </td>
                 <?php
@@ -191,11 +194,12 @@ include "../../_hidden/mysqlconn.php";
             if ($canChange) {
                 ?>
                 <td>
-                    <h1>Arbeitthema ändern</h1>
-                    <form action="../../_hidden/enterHW.php" method="post">
+                    <h1 class="display-4">Arbeitthema ändern</h1>
+                    <form class="form" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="2" name="type"/>
-                        <label for="fach2">Arbeit:</label>
-                        <select onchange="update()" required id="fach2" name="fach">
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-book"></span>
+                        <select class="form-control" onchange="update()" required id="fach2" name="fach">
                             <?php
                             $sql = "SELECT * FROM arbeiten ORDER BY datum Asc";
                             $statement = $mysqli->prepare($sql);
@@ -219,12 +223,18 @@ include "../../_hidden/mysqlconn.php";
                                 }
                             }
                             ?>
-                        </select><br><br>
-                        <label for="aufgaben2">Themen:</label>
-                        <textarea id="aufgaben2" name="aufgaben"></textarea><br><br>
-                        <label for="datum2">Datum:</label>
-                        <input required type="date" id="datum2" name="datum" /><br><br><br>
-                        <button type="submit" formtarget="_blank">Eintragen</button>
+                        </select></div><br>
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-edit"></span>
+                        <textarea class="form-control" required id="aufgaben3" name="aufgaben"></textarea>
+                        </div><br>
+                        <div class="input-group">
+                        <span class="input-group-addon fa fa-calendar"></span>
+                        <input class="form-control" required type="date" id="datum3" name="datum" min="<?php echo date('Y-m-d'); ?>" />
+                        </div><br>
+                        <div class="btn-group" role="group">
+                        <button class="btn btn-primary" type="submit" formtarget="_blank">Ändern</button>
+                        </div>
                     </form>
                 </td></tr>
             <?php
@@ -232,3 +242,4 @@ include "../../_hidden/mysqlconn.php";
         ?>
     </table>
 </div>
+<?php include "../../_hidden/bottomScripts.php" ?>
