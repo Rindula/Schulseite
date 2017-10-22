@@ -1,4 +1,4 @@
-<ul class="nav nav-pills">
+<ul class="nav nav-tabs">
 <li class="nav-item">
   <a class="nav-link" href="/">Startseite</a>
 </li>
