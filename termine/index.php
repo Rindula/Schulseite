@@ -75,3 +75,4 @@
 
             </tbody>
         </table>
+        <?php include "../_hidden/bottomScripts.php" ?>
