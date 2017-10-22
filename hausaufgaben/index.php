@@ -16,7 +16,7 @@ include "../header.php";
 include "../_hidden/vars.php";
 
 // CSS Controller
-$styles[] = "hausaufgaben";
+// $styles[] = "hausaufgaben";
 $styles[] = "lightbox";
 include "../css/controller.php";
 
@@ -58,24 +58,16 @@ function addEvent(click) {
 </script>
 <script type="text/javascript" src="/scripts/lightbox.js"></script>
 
-<body class="Hausaufgaben" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
-    <div class="legend">
-        <fieldset>
-            <legend>Farben</legend>
-            Bis heute: <div class="rect fertig">&nbsp;</div><br>
-            Bis morgen: <div class="rect dringend">&nbsp;</div><br>
-            Normale Hausaufgabe: <div class="rect zuErledigen">&nbsp;</div><br>
-            Lösung verfügbar: <div class="rect erledigt">&nbsp;</div><br>
-        </fieldset>
-    </div>
+<body class="" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
     <div id="content">
 <?php
 $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
 ?>
-        <h1>Hausaufgaben</h1>
-        <label for="ha_sel">Fach ausw&auml;hlen: </label>
-        <select id="ha_sel" onchange="callPageH(this.value)">
+        <h1 class="display-4">Hausaufgaben</h1>
+        <div class="input-group">
+        <span class="input-group-addon fa fa-book"></span>
+        <select id="ha_sel" class="form-control" onchange="callPageH(this.value)">
             <?php
             $result2 = $mysqli->query("SELECT * FROM flist ORDER BY fach");
             
@@ -93,12 +85,14 @@ include_once "../_hidden/mysqlconn.php";
             echo $tsel;
             ?>
         </select>
+        </div>
         <div id="table_ha"><h1>Entweder hast du Javascript deaktivert, oder ziemlich beschissenes Internet...</h1>
         </div>
         
-        <h1>Arbeiten</h1>
-        <label for="ka_sel">Fach ausw&auml;hlen: </label>
-        <select id="ka_sel" onchange="callPageK(this.value)">
+        <h1 class="display-4">Arbeiten</h1>
+        <div class="input-group">
+        <span class="input-group-addon fa fa-book"></span>
+        <select id="ka_sel" class="form-control" onchange="callPageK(this.value)">
             <?php
             $result2 = $mysqli->query("SELECT * FROM flist ORDER BY fach");
             
@@ -117,8 +111,11 @@ include_once "../_hidden/mysqlconn.php";
             echo $tsel;
             ?>
         </select>
+        </div>
         <div id="table_ka"><h1>Entweder hast du Javascript deaktivert, oder ziemlich beschissenes Internet...</h1>
         </div>
-        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     </div>
 </body>

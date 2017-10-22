@@ -6,7 +6,7 @@ if (isset($_GET["close"])) {
     $arr = array_push($arr, $id);
     $_SESSION["news_messages"] = json_encode($arr);
 } else {
-    $newsConn = new mysqli("localhost", "root", "WQeYt4S8G3", "stats");
+    $newsConn = new mysqli("localhost", "root", "74cb0A0kER", "stats");
     if ($newsConn->connect_errno) {
         die("<span>Verbindung fehlgeschlagen: " . $newsConn->connect_error . "</span>");
     }
@@ -14,11 +14,12 @@ if (isset($_GET["close"])) {
     $statement = $newsConn->prepare($sql);
     $statement->execute();
 
-    $ret = $newsConn->query("SELECT * FROM news");
+    if($ret = $newsConn->query("SELECT * FROM news") !== FALSE) {
 
     while ($news = $ret->fetch_assoc()) {
         if (!in_array($news["id"], json_decode($_SESSION["news_messages"]))) {
             echo "<span class='aktiv' id='message_".$news["id"]."'>" . $news["text"] . "<span onclick='closeNews(\"".$news["id"]."\")'>&#10008;</span></span>";
         }
     }
+}
 }

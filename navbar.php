@@ -1,27 +1,29 @@
-<div class="container">
-    <a href="/">Startseite</a>
-    <div class="dropdown">
-        <a class="dropbtn">Schule</a>
-        <div class="dropdown-content">
-            <a href="/hausaufgaben">Hausaufgaben</a>
-            <a href="/termine">Termine</a>
-            <?php if ($loggedIn) { ?>
-                <a href="/stundenplan">Stundenplan</a>
-                <a href="/wiederholungen">Wiederholungen</a>
-            <?php } ?>
-        </div>
-    </div>
-    <div class="dropdown">
-        <a class="dropbtn">Download</a>
-        <div class="dropdown-content">
-            <a href="/downloads">Downloads</a>
-            <!-- <a href="/app">App</a> -->
-        </div>
-    </div>
+<ul class="nav nav-pills">
+<li class="nav-item">
+  <a class="nav-link" href="/">Startseite</a>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link disabled" href="#">Disabled</a>
+</li>
     <?php
     if ($loggedIn) {
         ?>
-        <a href="/hausaufgaben/enter">Eintragen</a>
+        <li class="nav-item">
+            <a class="nav-link" href="/hausaufgaben/enter">Eintragen</a>
+        </li>
         <div class="dropdown right" style="margin-right: 75px;">
             <a class="dropbtn"><?= $_SESSION["name"] ?></a>
             <div class="dropdown-content">
@@ -33,10 +35,13 @@
         <?php
     } else {
         ?>
-        <a class="right" href="/login">Login</a>
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
         <?php
     }
     ?>
+    </ul>
     <div class="donation_button">
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
@@ -45,7 +50,6 @@
             <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
         </form>        
     </div>
-</div>
 <div class id="hinweis">
 </div>
 <script>

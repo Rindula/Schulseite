@@ -37,18 +37,6 @@ while ($ar = $result->fetch_assoc()) {
     $result2 = $query->get_result();
     $fach = $result2->fetch_assoc();
 
-    $break = false;
-    $jsonfile = file_get_contents('./dayInfos.json');
-    $jsonarray = json_decode($jsonfile, true);
-    foreach ($jsonarray[0] as $key => $value) {
-        if ($expiration_date == $today) {
-            if ((intval(date("G")) >= intval($value["maxHour"]))) {
-                $break = true;
-            }
-        }
-    }
-
-    if (!$break) {
 
         if ($expiration_date <= ($today + (1 * 60 * 60 * 24))) {
             $out .= "<tr id='" . $ar['ID'] . "' class='dringend'>";
@@ -99,7 +87,6 @@ while ($ar = $result->fetch_assoc()) {
             }
         }
         $out .= "</tr>";
-    }
 }
 
 echo $out === "<table><tr><th>Fach</th><th>Thema</th><th>Datum</th></tr>\n" ? "<h2>Keine Arbeiten in diesem Fach</h2>" : $out;
