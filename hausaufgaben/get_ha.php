@@ -69,7 +69,7 @@ while ($ar = $result->fetch_assoc()) {
         $classes = $classes . " imageAcc text-info";
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
     }
-    $out .= "<tr title='$title' id='" . $ar['ID'] . "' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'>";
+    $out .= "<tr title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'>";
 
 
     $datetime1 = date_create(date("Y-m-d"));
