@@ -85,7 +85,7 @@ include "../../_hidden/mysqlconn.php";
                             $result = $statement->get_result();
                             while ($ar = $result->fetch_assoc()) {
                                 if ($ar["profil"] > 0) {
-                                    echo '<option value="' . $ar["fach"] . '">' . $ar["fach"] . '</option>';
+                                    echo '<option value="' . $ar["id"] . '">' . $ar["fach"] . '</option>';
                                 }
                             }
                             ?>

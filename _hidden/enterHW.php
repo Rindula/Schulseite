@@ -33,5 +33,5 @@ if (isset($_POST["type"])) {
 }
 
 
-// echo '<script>window.close()</script>';
+echo '<script>window.close()</script>';
 ?>
