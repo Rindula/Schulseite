@@ -49,7 +49,7 @@
         }
         
         if ($expiration_date < $today + (2*60*60*24)) {
-            $classes = "dringend";
+            $classes = "table-warning";
         }
         $title = $ar["raum"];
         echo "<tr title='$title' id='".$ar['id']."' class='$classes'>";
