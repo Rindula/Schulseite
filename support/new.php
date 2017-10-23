@@ -43,7 +43,7 @@ function listEnum($table, $column) {
             <span class="input-group-addon fa fa-bug"></span>
             <select required name="system">
                 <option disabled selected>--- Bitte Auswählen ---</option>
-                <?php listEnum("tickets", "system") ?>
+                <?= listEnum("tickets", "system") ?>
             </select>
         </div>
         <br>
