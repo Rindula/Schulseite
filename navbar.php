@@ -26,7 +26,7 @@
         <li>
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?= $_SESSION["name"] ?></a>
         <div class="dropdown-menu" aria-labelledby="navDropdown">
-            <a class="dropdown-item" id="settings" href="/settings?section=main">Einstellungen</a>
+            <a class="dropdown-item fa fa-cog" id="settings" href="/settings?section=main"> Einstellungen</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/logout">Abmelden</a>
         </div>
@@ -60,7 +60,7 @@
         <li class="nav-item">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="help" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hilfe?</a>
             <div class="dropdown-menu" aria-labelledby="hrlp">
-                <a class="dropdown-item" id="bugtracker" href="/support">Bugtracker</a>
+                <a class="dropdown-item fa fa-bug" id="bugtracker" href="/support"> Bugtracker</a>
             </div>
         </li>
     </ul>
