@@ -178,7 +178,7 @@ include "../../_hidden/mysqlconn.php";
                         
                         <div class="input-group">
                         <span class="input-group-addon fa fa-edit"></span>
-                        <textarea class="form-control" required id="aufgaben" name="aufgaben"></textarea>
+                        <textarea class="form-control" id="aufgaben" name="aufgaben"></textarea>
                         </div><br>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-calendar"></span>
@@ -227,7 +227,7 @@ include "../../_hidden/mysqlconn.php";
                         </select></div><br>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-edit"></span>
-                        <textarea class="form-control" required id="aufgaben2" name="aufgaben"></textarea>
+                        <textarea class="form-control" id="aufgaben2" name="aufgaben"></textarea>
                         </div><br>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-calendar"></span>
