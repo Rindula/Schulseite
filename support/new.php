@@ -1,4 +1,20 @@
 <?php include "../_hidden/verify.php"; $page = "bugtracer"; ?>
+
+<?php
+
+function listEnum($table, $column) {
+    $conn = new mysqli("25.83.12.108", "root", "SiSal2002", "support");
+    $result = $conn->query('SHOW COLUMNS FROM '.$table.' WHERE field="'.$column.'"');
+    $out = "";
+    while ($row = $result->fetch_row()) {
+        foreach(explode("','",substr($row[1],6,-2)) as $option) {
+            $out .= "<option value='$option'>$option</option>";
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html class="bg-light" lang="de">
 <head>
@@ -20,6 +36,14 @@
         <div class="input-group">
             <span class="input-group-addon fa fa-bug"></span>
             <textarea class="form-control" type="text" placeholder="Dein Problem/gefundener Bug" name="text"></textarea>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon fa fa-bug"></span>
+            <select name="system">
+                <option disabled selected>--- Bitte Auswählen ---</option>
+                <?php listEnum("tickets", "system") ?>
+            </select>
         </div>
         <br>
         <div class="btn-group">
