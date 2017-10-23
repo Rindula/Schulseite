@@ -11,6 +11,7 @@ function listEnum($table, $column) {
             $out .= "<option value='$option'>$option</option>";
         }
     }
+    return $out;
 }
 
 ?>
