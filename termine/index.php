@@ -16,7 +16,7 @@
 	include "../_hidden/vars.php";
 
     // CSS Controller
-    $styles[] = "termine";
+    // $styles[] = "termine";
     include "../css/controller.php";
 
 
@@ -25,7 +25,7 @@
 
 ?>
         <h1>Termine</h1>
-        <table>
+        <table class="table table-striped">
             <thead>
                 <th>Raum</th>
                 <th>Termin</th>
