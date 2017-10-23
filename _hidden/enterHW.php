@@ -1,7 +1,5 @@
 <?php
 
-
-include "vars.php";
 include "verify.php";
 $sql = "";
 $dbname = "homeworks";
@@ -13,11 +11,11 @@ $aufgabe = str_replace("; ", ";", $aufgabe);
 
 if (isset($_POST["type"])) {
     if ($_POST["type"] == "0") {
-        $sql = "INSERT INTO `list` (`ID`, `Fach`, `Aufgaben`, `Datum`) VALUES (NULL, '$fach', '$aufgabe', '$datum')";
+        $sql = "INSERT INTO `list` (`Fach`, `Aufgaben`, `Datum`) VALUES ('$fach', '$aufgabe', '$datum')";
         $mysqli->query($sql);
     }
     if ($_POST["type"] == "1") {
-        $sql = "INSERT INTO `arbeiten` (`id`, `fach`, `themen`, `datum`) VALUES (NULL, '$fach', '$aufgabe', '$datum')";
+        $sql = "INSERT INTO `arbeiten` (`fach`, `themen`, `datum`) VALUES ('$fach', '$aufgabe', '$datum')";
         $mysqli->query($sql);
     }
     if ($_POST["type"] == "2") {
@@ -29,11 +27,11 @@ if (isset($_POST["type"])) {
         $mysqli->query($sql);
     }
     if ($_POST["type"] == "4") {
-        $sql = "INSERT INTO `termine` (`id`, `raum`, `typ`, `datum`) VALUES (NULL, '$fach', '$aufgabe', '$datum $zeit')";
+        $sql = "INSERT INTO `termine` (`raum`, `typ`, `datum`) VALUES ('$fach', '$aufgabe', '$datum $zeit')";
         $mysqli->query($sql);
     }
 }
 
 
-echo '<script>window.close()</script>';
+// echo '<script>window.close()</script>';
 ?>

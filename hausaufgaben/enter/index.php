@@ -72,7 +72,7 @@ include "../../_hidden/mysqlconn.php";
                 ?>
                 <td>
                     <h1 class="display-4">Hausaufgaben eintragen</h1>
-                    <form class="form" action="../../_hidden/enterHW.php" method="post">
+                    <form class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="0" name="type"/>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
@@ -102,7 +102,7 @@ include "../../_hidden/mysqlconn.php";
                         <input class="form-control" required type="date" id="datum" name="datum" min="<?php echo date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary" type="submit" formtarget="_blank">Eintragen</button>
+                        <button class="btn btn-primary" type="submit">Eintragen</button>
                         <button class="btn btn-outline-secondary" type="reset">Felder leeren</button>
                         </div>
                     </form>
@@ -113,7 +113,7 @@ include "../../_hidden/mysqlconn.php";
                 ?>
                 <td>
                     <h1 class="display-4">Hausaufgaben ändern</h1>
-                    <form class="form" action="../../_hidden/enterHW.php" method="post">
+                    <form class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="3" name="type"/>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
@@ -145,7 +145,7 @@ include "../../_hidden/mysqlconn.php";
                         <input class="form-control" required type="date" id="datum3" name="datum" min="<?php echo date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary" type="submit" formtarget="_blank">Ändern</button>
+                        <button class="btn btn-primary" type="submit">Ändern</button>
                         </div>
                     </form>
                 </td></tr>
@@ -155,7 +155,7 @@ include "../../_hidden/mysqlconn.php";
             ?>
             <tr><td>
                     <h1 class="display-4">Arbeiten eintragen</h1>
-                    <form class="form" action="../../_hidden/enterHW.php" method="post">
+                    <form class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="1" name="type"/>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
@@ -183,7 +183,7 @@ include "../../_hidden/mysqlconn.php";
                         <input class="form-control" required type="date" id="datum" name="datum" min="<?php echo date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary" type="submit" formtarget="_blank">Eintragen</button>
+                        <button class="btn btn-primary" type="submit">Eintragen</button>
                         <button class="btn btn-outline-secondary" type="reset">Felder leeren</button>
                         </div>
                     </form>
@@ -194,7 +194,7 @@ include "../../_hidden/mysqlconn.php";
                 ?>
                 <td>
                     <h1 class="display-4">Arbeitthema ändern</h1>
-                    <form class="form" action="../../_hidden/enterHW.php" method="post">
+                    <form class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="2" name="type"/>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
@@ -233,7 +233,7 @@ include "../../_hidden/mysqlconn.php";
                         <input class="form-control" required type="date" id="datum2" name="datum" min="<?php echo date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary" type="submit" formtarget="_blank">Ändern</button>
+                        <button class="btn btn-primary" type="submit">Ändern</button>
                         </div>
                     </form>
                 </td></tr>
