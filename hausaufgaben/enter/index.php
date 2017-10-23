@@ -42,11 +42,6 @@ include "../../css/controller.php";
 
     }
 
-    window.onload = function () {
-        update();
-        update2();
-    }
-
 </script>
 <?php
 $dbname = "homeworks";
@@ -82,6 +77,7 @@ include "../../_hidden/mysqlconn.php";
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
                         <select class="form-control" required id="fach" name="fach">
+                            <option disabled>--- Fach Auswählen ---</option>
                             <?php
                             $sql = "SELECT * FROM flist ORDER BY fach Asc";
                             $statement = $mysqli->prepare($sql);
@@ -122,6 +118,7 @@ include "../../_hidden/mysqlconn.php";
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
                         <select class="form-control" onchange="update2()" required id="fach3" name="fach">
+                            <option disabled>--- Aufgabe Auswählen ---</option>
                             <?php
                             $sql = "SELECT h.Datum, h.Aufgaben, h.ID, f.fach FROM list as h inner join flist as f on h.Fach = f.id ORDER BY Datum Asc";
                             $statement = $mysqli->prepare($sql);
@@ -163,6 +160,7 @@ include "../../_hidden/mysqlconn.php";
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
                         <select class="form-control" required id="fach" name="fach">
+                            <option disabled>--- Fach Auswählen ---</option>
                             <?php
                             $sql = "SELECT * FROM flist ORDER BY fach Asc";
                             $statement = $mysqli->prepare($sql);
@@ -201,6 +199,7 @@ include "../../_hidden/mysqlconn.php";
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
                         <select class="form-control" onchange="update()" required id="fach2" name="fach">
+                            <option disabled>--- Arbeit Auswählen ---</option>
                             <?php
                             $sql = "SELECT * FROM arbeiten ORDER BY datum Asc";
                             $statement = $mysqli->prepare($sql);
