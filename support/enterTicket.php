@@ -9,3 +9,5 @@ $text = $conn->real_escape_string($_POST["text"]);
 $system = $conn->real_escape_string($_POST["system"]);
 
 $conn->query("INSERT INTO tickets (text, system, von) VALUES ('$text', '$system', '$von')");
+
+header("Refresh:0; /support");
