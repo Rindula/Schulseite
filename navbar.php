@@ -62,6 +62,7 @@
             <div class="dropdown-menu" aria-labelledby="hrlp">
                 <a class="dropdown-item fa fa-bug" id="bugtracker" href="/support"> Bugtracker</a>
                 <a class="dropdown-item" href="https://discord.gg/wHYgQxU">
+                    <i class="fa fa-discord"></i>
                     <img class="img-fluid" src="/img/discord-banner-highres.gif" alt="Join my Discord Server">
                 </a>
             </div>
