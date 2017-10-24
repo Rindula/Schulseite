@@ -65,6 +65,9 @@
         </li>
     </ul>
     <div class="donation_button">
+        <a href="https://discord.gg/wHYgQxU">
+            <img src="/img/discord-banner-highres.gif" alt="Join my Discord Server">
+        </a>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="2LWMW9PABC4XS">
