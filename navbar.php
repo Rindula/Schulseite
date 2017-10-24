@@ -61,7 +61,7 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="help" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hilfe?</a>
             <div class="dropdown-menu" aria-labelledby="hrlp">
                 <a class="dropdown-item fa fa-bug" id="bugtracker" href="/support"> Bugtracker</a>
-                <a class="dropdown-item" href="https://discord.gg/wHYgQxU">
+                <a class="dropdown-item" target="_blank" href="https://discord.gg/wHYgQxU">
                     <i class="fa fa-gamepad"></i>
                     <img class="img-fluid" src="/img/discord-banner-highres.gif" alt="Join my Discord Server">
                 </a>
