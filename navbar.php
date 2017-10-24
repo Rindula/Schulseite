@@ -61,13 +61,13 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="help" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hilfe?</a>
             <div class="dropdown-menu" aria-labelledby="hrlp">
                 <a class="dropdown-item fa fa-bug" id="bugtracker" href="/support"> Bugtracker</a>
+                <a class="dropdown-item" href="https://discord.gg/wHYgQxU">
+                    <img class="img-fluid" src="/img/discord-banner-highres.gif" alt="Join my Discord Server">
+                </a>
             </div>
         </li>
     </ul>
     <div class="donation_button">
-        <a href="https://discord.gg/wHYgQxU">
-            <img src="/img/discord-banner-highres.gif" alt="Join my Discord Server">
-        </a>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="2LWMW9PABC4XS">
