@@ -70,7 +70,7 @@ while ($ar = $result->fetch_assoc()) {
     $title = "";
     $onclick = "";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
-        $classes = $classes . " imageAcc text-info";
+        $classes = $classes . " imageAcc text-warning";
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
     }
     $out .= "<tr title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'>";
@@ -101,7 +101,7 @@ while ($ar = $result->fetch_assoc()) {
     $out .= "</tr>";
     $out .= "<tr class='collapse' id='".$ar["ID"]."'>";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
-        $out .= "<td colspan='3' style='background-color: rgba(60, 209, 163, 0.5);'>";
+        $out .= "<td colspan='3' class='p-3'>";
         $lnk = 0;
         foreach (glob($IMAGEPATH . '*') as $filename) {
             if (is_image($filename)) {
