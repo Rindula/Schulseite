@@ -23,7 +23,6 @@ include "../css/controller.php";
 
 
 ?>
-<link rel="stylesheet" href="loader.css">
 <script>
 function callPageH(id)
 {
@@ -31,8 +30,6 @@ var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
         document.getElementById("table_ha").innerHTML = xhr.responseText;
-    } else {
-        document.getElementById("table_ha").innerHTML = "<ul class=\"drops blue\"><li></li><li></li><li></li><li></li><li></li></ul>";
     }
 }
 xhr.open('GET', 'get_ha.php?q='+id, true);
@@ -45,8 +42,6 @@ var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
         document.getElementById("table_ka").innerHTML = xhr.responseText;
-    } else {
-        document.getElementById("table_ka").innerHTML = "<ul class=\"drops blue\"><li></li><li></li><li></li><li></li><li></li></ul>";
     }
 }
 xhr.open('GET', 'get_ka.php?q='+id, true);
