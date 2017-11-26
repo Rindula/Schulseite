@@ -9,10 +9,10 @@ include "../_hidden/vars.php";
 
 
 if($query === "all") {
-    $sql = "SELECT a.id, a.themen, a.datum, f.fach FROM arbeiten as a inner join flist as f on a.fach = f.id WHERE a.datum > now() ORDER BY a.datum Asc";
+    $sql = "SELECT a.id, a.themen, a.datum, f.fach FROM arbeiten as a inner join flist as f on a.fach = f.id WHERE a.datum >= adddate(now(), interval -16 hour) ORDER BY a.datum Asc";
 } else {
     $query = $mysqli->real_escape_string($query);
-    $sql = "SELECT a.id, a.themen, a.datum, f.fach FROM arbeiten as a inner join flist as f on a.fach = f.id WHERE a.fach = '$query' AND a.datum > now() ORDER BY a.datum Asc";
+    $sql = "SELECT a.id, a.themen, a.datum, f.fach FROM arbeiten as a inner join flist as f on a.fach = f.id WHERE a.fach = '$query' AND a.datum >= adddate(now(), interval -16 hour) ORDER BY a.datum Asc";
 }
 
 $result = $mysqli->query($sql);
