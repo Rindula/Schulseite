@@ -61,8 +61,8 @@ while ($ar = $result->fetch_assoc()) {
         $classes = "";
         $list = "";
     } elseif ($expiration_date == $today + (1 * 60 * 60 * 24)) {
-        $classes = "table-danger";
-        $list = "list-group-item-danger";
+        $classes = "table-success";
+        $list = "list-group-item-success";
     } else {
         $classes = "table-dark";
         $list = "list-group-item-dark";
