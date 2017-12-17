@@ -59,7 +59,7 @@ function addEvent(click) {
 </script>
 
 <body class="" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
-    <div id="content" class="container">
+    <div id="content" class="content">
 <?php
 $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
