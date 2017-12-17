@@ -79,7 +79,7 @@ $sec = $_GET["section"];
 
 if ($sec == "main") {
     ?>
-    <div class="content text-center">
+    <div class="container text-center">
     <form class="form" action="" method="get">
         <h1 class="display-4">Einstellungen<br><small>Willkommen, <?= $_SESSION["name"] ?></small></h1>
         <div class="list-group">
@@ -99,7 +99,7 @@ if ($sec == "main") {
 
 if ($sec == "passwort") {
     ?>
-    <div class="content">
+    <div class="container">
         <form class="form p-4" action="?section=passwort&change" method="POST" enctype="multipart/form-data">
                         <label for="oldPass">Altes Passwort:</label>
                         <input autocomplete="off" id="oldPass" class="form-control" required="" type="password" name="oldpass" value="" />
@@ -114,7 +114,7 @@ if ($sec == "passwort") {
 if ($sec == "lessons") {
     ?>
     
-    <div class="content">
+    <div class="container">
         <form class="form" action="?section=lessons&change" method="post">
             <table class="table table-striped">
                 <thead>
