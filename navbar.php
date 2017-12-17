@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg">
-<ul class="nav nav-tabs">
+<ul class="navbar-nav nav nav-tabs">
 <li class="nav-item">
   <a class="nav-link" id="startseite" href="/">Startseite</a>
 </li>
