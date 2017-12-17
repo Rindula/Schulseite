@@ -4,7 +4,7 @@
   </button>
   <a class="navbar-brand" href="#">rindula.de</a>
   <div class="collapse navbar-collapse" id="mainNav">
-<ul class="navbar-nav nav nav-tabs">
+<ul class="navbar-nav">
 <li class="nav-item">
   <a class="nav-link" id="startseite" href="/">Startseite</a>
 </li>
