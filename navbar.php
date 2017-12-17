@@ -1,3 +1,4 @@
+<nav class="navbar navbar-expand-lg">
 <ul class="nav nav-tabs">
 <li class="nav-item">
   <a class="nav-link" id="startseite" href="/">Startseite</a>
@@ -68,6 +69,7 @@
             </div>
         </li>
     </ul>
+    </nav>
     <div class="donation_button">
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">

@@ -7,6 +7,7 @@ include "../_hidden/verify.php";
 
 // Navigationsleiste
 $page = "hausaufgaben";
+include "../navbar.php";
 
 // Global Header
 $title="Hausaufgaben";
@@ -60,7 +61,6 @@ function addEvent(click) {
 <body class="" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
     <div id="content" class="container">
 <?php
-include "../navbar.php";
 $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
 ?>
