@@ -1,10 +1,4 @@
-<nav class="navbar navbar-expand-lg">
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">rindula.de</a>
-  <div class="collapse navbar-collapse" id="mainNav">
-<ul class="navbar-nav">
+<ul class="nav nav-tabs">
 <li class="nav-item">
   <a class="nav-link" id="startseite" href="/">Startseite</a>
 </li>
@@ -74,8 +68,6 @@
             </div>
         </li>
     </ul>
-    </div>
-    </nav>
     <div class="donation_button">
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
