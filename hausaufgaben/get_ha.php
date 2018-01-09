@@ -99,7 +99,8 @@ while ($ar = $result->fetch_assoc()) {
     $out .= "<td class='fach' title='".$ar["ID"]."'>" . $ar["fach"] . "</td>";
     $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
     $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
-    $out .= "<td class='btn btn-success d-lg-none'><a href=\"whatsapp://send?text=*Hausaufgabe*\nFach: _".$ar["fach"]."_\nAufgabe(n):\n$tasks\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a></td>";
+    $text = htmlentities("whatsapp://send?text=*Hausaufgabe*\nFach: _".$ar["fach"]."_\nAufgabe(n):\n$tasks");
+    $out .= "<td class='btn btn-success d-lg-none'><a href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a></td>";
 
     $out .= "</tr>";
     $out .= "<tr class='collapse' id='".$ar["ID"]."'>";
