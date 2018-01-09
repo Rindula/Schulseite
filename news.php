@@ -9,7 +9,7 @@ $sql = "SET NAMES 'utf8'";
 $statement = $newsConn->prepare($sql);
 $statement->execute();
 
-if($ret = $newsConn->query("SELECT * FROM news WHERE expdate >= now()") !== FALSE) {
+if($ret = $newsConn->query("SELECT * FROM news WHERE DATE(expdate) >= DATE(now())") !== FALSE) {
 
     while ($news = $ret->fetch_assoc()) {
         echo "<span class='aktiv' id='message_".$news["id"]."'>" . $news["text"] . "</span>";
