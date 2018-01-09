@@ -67,6 +67,14 @@ function formatSizeUnits($bytes)
 }
 
 
+function whatsNewLine($text) {
+    return urlencode($text);
+    $text = str_replace("\n", "%0A", $text);
+    $text = str_replace(" ", "%20", $text);
+    return $text;
+}
+
+
 echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>";
 echo "<script type='text/javascript' src='/scripts/main.js'></script>";
 ?>

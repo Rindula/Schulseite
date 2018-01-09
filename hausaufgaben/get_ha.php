@@ -21,12 +21,6 @@ function removeDir($dir) {
     if (is_dir($dir))
         rmdir($dir);
 }
-function whatsNewLine($text) {
-    return urlencode($text);
-    $text = str_replace("\n", "%0A", $text);
-    $text = str_replace(" ", "%20", $text);
-    return $text;
-}
 function is_dir_empty($dir) {
     if (!is_readable($dir))
         return NULL;
