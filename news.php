@@ -12,7 +12,7 @@ $statement->execute();
 if($ret = $newsConn->query("SELECT * FROM news WHERE expdate >= now()") !== FALSE) {
 
     while ($news = $ret->fetch_assoc()) {
-        echo "<span class='aktiv' id='message_".$news["id"]."'>" . $news["text"] . "<span onclick='closeNews(\"".$news["id"]."\")'>&#10008;</span></span>";
+        echo "<span class='aktiv' id='message_".$news["id"]."'>" . $news["text"] . "</span>";
     }
 
 }
