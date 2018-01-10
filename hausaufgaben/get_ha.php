@@ -98,7 +98,7 @@ while ($ar = $result->fetch_assoc()) {
     $out .= "<td class='fach' title='".$ar["ID"]."'>" . $ar["fach"] . "</td>";
     $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
     $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
-    $text = "whatsapp://send?text=".whatsNewLine("*Hausaufgabe*\nFach: _".$ar["fach"]."_\nZu erledigen bis: *$day.$month.$year*\n\nAufgabe(n):$tasks");
+    $text = "whatsapp://send?text=".whatsNewLine("*Hausaufgabe*\nFach: _".$ar["fach"]."_\nZu erledigen bis: *$day.$month.$year*" . (!empty($tasks)) ? "\n\nAufgabe(n):$tasks" : "");
     $out .= "<td class='d-lg-none'><a class='btn btn-success' href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a></td>";
 
     $out .= "</tr>";
