@@ -1,2 +1,3 @@
 log/
-npm_modules/
+npm_modules/*
+package-lock.json
