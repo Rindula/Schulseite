@@ -19,7 +19,7 @@ function onLoad() {
 
     var result = getWeekNumber(new Date(new Date().getTime() + 24 * 60 * 60 * 1000));
 
-    if (result[1] % 2 != 0) {
+    if (result[1] % 2 != 1) {
         gerade.innerHTML = "";
     } else {
         ungerade.innerHTML = "";
