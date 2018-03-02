@@ -11,7 +11,7 @@ $newsConn->query($sql);
 if($ret = $newsConn->query("SELECT * FROM news WHERE DATE(expdate) >= DATE(now()) AND DATE(showdate) <= DATE(now())")) {
 
     while ($news = $ret->fetch_assoc()) {
-        echo "<span class='border-bottom d-block text-light' id='message_".$news["id"]."'>" . $news["text"] . "</span>";
+        echo "<div class='border-bottom d-block text-light' id='message_".$news["id"]."'>" . $news["text"] . "</div>";
     }
 
 }
