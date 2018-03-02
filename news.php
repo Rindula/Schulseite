@@ -8,7 +8,7 @@ if ($newsConn->connect_errno) {
 $sql = "SET NAMES 'utf8'";
 $newsConn->query($sql);
 
-if($ret = $newsConn->query("SELECT * FROM news WHERE DATE(expdate) >= DATE(now()) AND DATE(showdate) <= DATE(now())")) {
+if($ret = $newsConn->query("SELECT * FROM news WHERE expdate >= now() AND showdate <= now()")) {
 
     while ($news = $ret->fetch_assoc()) {
         echo "<div class='border-bottom d-block text-light' id='message_".$news["id"]."'>" . $news["text"] . "</div>";
