@@ -25,7 +25,7 @@
 		}
 	</style>
 	<title>AGBs | rindula.de</title>
-	<?php include "../css/controller.php"; include "../_hidden/vars.php"; ?>
+	<?php include "../css/controller.php"; include "../_hidden/vars.php"; include "../_hidden/verify.php"; ?>
 </head>
 <body>
 	<?php include "../navbar.php" ?>
