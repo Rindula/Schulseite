@@ -76,7 +76,7 @@ function addEvent(click) {
 <script src="/scripts/push.min.js"></script>
 
 <body class="" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
-    <div id="content" class="content">
+    <div id="content" class="content m-2">
 <?php
 $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
