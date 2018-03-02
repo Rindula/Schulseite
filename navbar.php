@@ -123,5 +123,5 @@
         xhr.open('GET', '/news.php?close='+id, true);
         xhr.send(null);
     }
-    news();
+    <?= ($loggedIn) ? "news();" : ""; ?>
 </script>
