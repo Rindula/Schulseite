@@ -35,7 +35,7 @@
     } else {
         ?>
         <li class="nav-item">
-        <a class="nav-link dropdown-toggle" id="loginDropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+        <a class="nav-link" id="login" data-toggle="modal" href="#" data-target="loginModal" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
         </li>
         <?php
     }
@@ -54,27 +54,8 @@
     <!-- Hier Donation Button einfügen :D -->
 <div class id="hinweis">
 </div>
-<div id="overlay">
-    <form action="/login?login" method="post" class="p-4">
-        <div class="form-group">
-            <label for="username">Benutzername</label>
-            <input type="text" name="name" class="form-control" id="username" placeholder="NachnameV(orname)">
-        </div>
-        <div class="form-group">
-            <label for="password">Passwort</label>
-            <input type="password" name="passwort" class="form-control" id="password" placeholder="Passwort">
-        </div>
-        <!-- <div class="form-check">
-            <label class="form-check-label">
-            <input type="checkbox" class="form-check-input">
-            Angemeldet bleiben
-            </label>
-        </div> -->
-        <button type="submit" class="btn btn-primary">Anmelden</button>
-    </form>
-</div>
 
-<div class="modal" tabindex="-1" role="dialog">
+<div class="modal" id="loginModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
     
