@@ -27,7 +27,7 @@
 	<title>AGBs | rindula.de</title>
 </head>
 <body>
-
+	<?php include "navbar.php" ?>
 	<div id="agbs">
 		<?= $agbText ?>
 	</div>
