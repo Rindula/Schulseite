@@ -24,7 +24,7 @@ $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
 
 function sonderfach($fach) {
-    global $bks, $cts, $frs, $pcs, $res, $sks;
+    global $bks, $cts, $frs, $pcs, $res, $sks, $tags;
     if ($fach == "bk") {
         return $bks;
     }
