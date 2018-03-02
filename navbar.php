@@ -35,7 +35,7 @@
     } else {
         ?>
         <li class="nav-item">
-        <a class="nav-link" id="login" data-toggle="modal" data-target="#loginModal" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+        <a class="nav-link" id="login" href="#" data-toggle="modal" data-target="#loginModal" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
         </li>
         <?php
     }
