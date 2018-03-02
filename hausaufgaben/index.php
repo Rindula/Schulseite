@@ -24,8 +24,22 @@ include "../css/controller.php";
 
 ?>
 <script>
+
+function newHa(title = "Neue Hausaufgaben", text = "") {
+    Push.create(title, {
+    body: text,
+    icon: '/icon.png',
+    timeout: 4000,
+    onClick: function () {
+        window.focus();
+        this.close();
+    }
+});
+}
+
 function callPageH(id)
 {
+document.getElementById("table_ha").innerHTML = "Lade...";
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -38,6 +52,7 @@ xhr.send(null);
 
 function callPageK(id)
 {
+document.getElementById("table_ka").innerHTML = "Lade...";
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -57,6 +72,8 @@ function addEvent(click) {
     panel.classList.toggle("shown");
 }
 </script>
+
+<script src="/scripts/push.min.js"></script>
 
 <body class="" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
     <div id="content" class="content">
@@ -84,7 +101,7 @@ include_once "../_hidden/mysqlconn.php";
             ?>
         </select>
         </div>
-        <div id="table_ha"><h1>Entweder hast du Javascript deaktivert, oder ziemlich beschissenes Internet...</h1>
+        <div id="table_ha"><h1>Bitte aktiviere Javascript, um die Website nutzen zu können!</h1>
         </div>
         
         <h1 class="display-4">Arbeiten</h1>
@@ -107,7 +124,7 @@ include_once "../_hidden/mysqlconn.php";
             ?>
         </select>
         </div>
-        <div id="table_ka"><h1>Entweder hast du Javascript deaktivert, oder ziemlich beschissenes Internet...</h1>
+        <div id="table_ka"><h1>Bitte aktiviere Javascript, um die Website nutzen zu können!</h1>
         </div>
     </div>
     <?php include "../_hidden/bottomScripts.php" ?>
