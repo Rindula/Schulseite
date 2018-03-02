@@ -185,7 +185,7 @@ if ($sec == "lessons") {
                 <tr>
                     <td>Theater AG</td>
                     <td>
-                        <select class="form-control" name="lesson_re" id="">
+                        <select class="form-control" name="lesson_tag" id="">
                             <option <?= ($lesson_tag == 0) ? "selected" : ""; ?> value="0">Nicht dabei</option>
                             <option <?= ($lesson_tag == 1) ? "selected" : ""; ?> value="1">Verrückt genug mitzumachen</option>
                         </select>
