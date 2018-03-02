@@ -18,7 +18,7 @@
   </div>
 </li>
 <li class="nav-item">
-  <a class="nav-link <?= ($loggedIn) ? "" : "disabled" ?>" id="enter" href="/hausaufgaben/enter">Eintragen</a>
+  <a class="nav-link <?= ($loggedIn) ? "" : "disabled" ?>" id="enter" href="<?= ($loggedIn) ? "/hausaufgaben/enter" : "#" ?>">Eintragen</a>
 </li>
     <?php
     if ($loggedIn) {
@@ -35,7 +35,7 @@
     } else {
         ?>
         <li class="nav-item">
-        <button class="nav-link" id="login" data-toggle="modal" data-target="#loginModal" role="button" aria-haspopup="true" aria-expanded="false">Login</button>
+        <a class="nav-link" id="login" data-toggle="modal" data-target="#loginModal" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
         </li>
         <?php
     }
