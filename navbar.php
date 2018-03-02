@@ -100,6 +100,11 @@
                 setTimeout(function() {
                     news();
                 }, 30000);
+                if (document.getElementById("hinweis").innerHTML == "") {
+                    document.getElementById("hinweis").style.display = "none";
+                } else {
+                    document.getElementById("hinweis").style.display = "block";
+                }
             }
         }
         xhr.open('GET', '/news.php', true);
