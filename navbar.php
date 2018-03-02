@@ -35,7 +35,7 @@
     } else {
         ?>
         <li class="nav-item">
-        <a class="nav-link" id="login" data-toggle="modal" href="#" data-target="loginModal" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+        <button class="nav-link" id="login" data-toggle="modal" data-target="loginModal" role="button" aria-haspopup="true" aria-expanded="false">Login</button>
         </li>
         <?php
     }
@@ -55,7 +55,7 @@
 <div class id="hinweis">
 </div>
 
-<div class="modal" id="loginModal" tabindex="-1" role="dialog">
+<div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
     
@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Passwort</label>
-                        <input type="password" name="passwort" class="form-control" id="password" placeholder="Passwort">
+                        <input type="password" autocomplete="current-password" name="passwort" class="form-control" id="password" placeholder="Passwort">
                     </div>
             <!--    <div class="form-check">
                         <label class="form-check-label">
