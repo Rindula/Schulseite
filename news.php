@@ -8,10 +8,10 @@ if ($newsConn->connect_errno) {
 $sql = "SET NAMES 'utf8'";
 $newsConn->query($sql);
 
-if($ret = $newsConn->query("SELECT * FROM news WHERE DATE(expdate) >= DATE(now())")) {
+if($ret = $newsConn->query("SELECT * FROM news WHERE DATE(expdate) >= DATE(now()) AND DATE(showdatedate) <= DATE(now())")) {
 
     while ($news = $ret->fetch_assoc()) {
-        echo "<span onclick='this.classlist.remove(\"aktiv\")' class='aktiv border-bottom' id='message_".$news["id"]."'>" . $news["text"] . "</span>";
+        echo "<span class='border-bottom text-light' id='message_".$news["id"]."'>" . $news["text"] . "</span>";
     }
 
 }
