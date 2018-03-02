@@ -42,6 +42,11 @@ include "../../css/controller.php";
 
     }
 
+    $(":submit").click(function() {
+        $(this).parent("form").submit();
+        $(this).parent("form").reset();
+    });
+
 </script>
 <?php
 $dbname = "homeworks";
