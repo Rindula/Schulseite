@@ -32,5 +32,5 @@
 	<div id="agbs">
 		<?= $agbText ?>
 	</div>
-
+<?php include "../_hidden/bottomScripts.php"; ?>
 </body>
