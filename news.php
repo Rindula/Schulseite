@@ -11,7 +11,7 @@ $newsConn->query($sql);
 if($ret = $newsConn->query("SELECT * FROM news WHERE DATE(expdate) >= DATE(now())")) {
 
     while ($news = $ret->fetch_assoc()) {
-        echo "<span class='aktiv' id='message_".$news["id"]."'>" . $news["text"] . "</span>";
+        echo "<span onclick='this.classlist.remove(\"aktiv\")' class='aktiv' id='message_".$news["id"]."'>" . $news["text"] . "</span>";
     }
 
 }

@@ -36,23 +36,6 @@
         ?>
         <li class="nav-item">
         <a class="nav-link dropdown-toggle" id="loginDropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
-        <form action="/login?login" method="post" class="dropdown-menu p-4" aria-labelledby="loginDropdown">
-            <div class="form-group">
-                <label for="username">Benutzername</label>
-                <input type="text" name="name" class="form-control" id="username" placeholder="NachnameV(orname)">
-            </div>
-            <div class="form-group">
-                <label for="password">Passwort</label>
-                <input type="password" name="passwort" class="form-control" id="password" placeholder="Passwort">
-            </div>
-            <!-- <div class="form-check">
-                <label class="form-check-label">
-                <input type="checkbox" class="form-check-input">
-                Remember me
-                </label>
-            </div> -->
-            <button type="submit" class="btn btn-primary">Anmelden</button>
-            </form>
         </li>
         <?php
     }
@@ -71,6 +54,62 @@
     <!-- Hier Donation Button einfügen :D -->
 <div class id="hinweis">
 </div>
+<div id="overlay">
+    <form action="/login?login" method="post" class="p-4">
+        <div class="form-group">
+            <label for="username">Benutzername</label>
+            <input type="text" name="name" class="form-control" id="username" placeholder="NachnameV(orname)">
+        </div>
+        <div class="form-group">
+            <label for="password">Passwort</label>
+            <input type="password" name="passwort" class="form-control" id="password" placeholder="Passwort">
+        </div>
+        <!-- <div class="form-check">
+            <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            Angemeldet bleiben
+            </label>
+        </div> -->
+        <button type="submit" class="btn btn-primary">Anmelden</button>
+    </form>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+    
+            <form action="/login?login" method="post" class="p-4">
+                <div class="modal-header">
+                    <h5 class="modal-title">Anmelden</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="username">Benutzername</label>
+                        <input type="text" name="name" class="form-control" id="username" placeholder="NachnameV(orname)">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Passwort</label>
+                        <input type="password" name="passwort" class="form-control" id="password" placeholder="Passwort">
+                    </div>
+            <!--    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Angemeldet bleiben
+                        </label>
+                    </div> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Anmelden</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script>
     function news() {
         var xhr = new XMLHttpRequest();
