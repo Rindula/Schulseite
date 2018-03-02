@@ -55,7 +55,7 @@
 <div class="p-2" id="hinweis">
 </div>
 
-<div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
     
