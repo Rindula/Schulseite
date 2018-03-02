@@ -61,29 +61,6 @@ $dbname = "homeworks";
 include "../../_hidden/mysqlconn.php";
 ?>
 <div id="content">
-<!--
-Alerts
--->
-
-<div id="ha_alert" class="alert alert-success fade" role="alert">
-  <h4 class="alert-heading">Erfolgreich eingetragen!</h4>
-  <p>Du hast die Hausaufgaben erfolgreich eingetragen.</p>
-  <hr>
-  <p class="mb-0">Wenn du noch etwas hast, kannst du das ebenfalls eintragen.</p>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
-<div id="ka_alert" class="alert alert-success fade" role="alert">
-  <h4 class="alert-heading">Erfolgreich eingetragen!</h4>
-  <p>Du hast die Klassenarbeit erfolgreich eingetragen.</p>
-  <hr>
-  <p class="mb-0">Wenn du noch etwas hast, kannst du das ebenfalls eintragen.</p>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
 
     <table class="table">
         <?php
