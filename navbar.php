@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs sticky-top bg-light">
 <li class="nav-item">
   <a class="nav-link" id="startseite" href="/">Startseite</a>
 </li>
