@@ -170,10 +170,10 @@ if(!$valid) {
 			<td><input type="password" class="demoInputBox" name="confirm_password" value=""></td>
 		</tr>
 		<tr>
+			<td><div class="g-recaptcha" data-sitekey="6LdBTjEUAAAAABCV_6kyRvLRNWcaWBNe2nEGzotV"></div></td>
 			<td colspan=2>
 			<input type="checkbox" name="terms"> Ich akzeptiere die <a target="agbs" href="/agbs">Nutzungsbedingungen</a> <input type="submit" name="register-user" value="Registrieren" class="btnRegister"></td>
 		</tr>
 	</table>
 	<input type="hidden" name="reg_key" value="<?= $reg_key ?>">
-	<div class="g-recaptcha" data-sitekey="6LdBTjEUAAAAABCV_6kyRvLRNWcaWBNe2nEGzotV"></div>
 </form>
