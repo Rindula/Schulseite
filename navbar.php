@@ -81,6 +81,8 @@
                         Angemeldet bleiben
                         </label>
                     </div> -->
+                    <hr>
+                    <p>Noch keinen Account? <a href="/register/guest">Jetzt Registrieren</a></p>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Anmelden</button>
