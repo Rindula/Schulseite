@@ -52,7 +52,7 @@
         </li>
     </ul>
     <!-- Hier Donation Button einfügen :D -->
-<div class="p-2 bg-info" id="hinweis">
+<div class="p-2" id="hinweis">
 </div>
 
 <div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
