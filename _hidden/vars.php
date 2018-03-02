@@ -21,6 +21,16 @@
       return $pw;
     }
 
+
+    function log_rin($filename, $loggingtext) {
+        $date = new DateTime();
+        $date = $date->format("d.m.Y H:i:s");
+        $logText = "[".$date."] ".$loggingtext;
+
+        $fpLog = fopen($_SERVER['DOCUMENT_ROOT']."/log/" . $filename . ".log", 'a');
+        fwrite($fpLog, $logText . "\n");
+        fclose($fpLog);
+    }
     
 
     function sonderzeichen($string)
