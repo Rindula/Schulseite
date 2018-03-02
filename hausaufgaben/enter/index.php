@@ -45,6 +45,14 @@ include "../../css/controller.php";
     $(":submit").click(function() {
         $(this).parent("form").submit();
         $(this).parent("form").reset();
+
+        if ($(this).parent("form").attr("enter-type") == "ha") {
+            $("#ha_alert").alert();
+        }
+
+        if ($(this).parent("form").attr("enter-type") == "ka") {
+            $("#ha_alert").alert();            
+        }
     });
 
 </script>
@@ -53,6 +61,30 @@ $dbname = "homeworks";
 include "../../_hidden/mysqlconn.php";
 ?>
 <div id="content">
+<!--
+Alerts
+-->
+
+<div id="ha_alert" class="alert alert-success fade" role="alert">
+  <h4 class="alert-heading">Erfolgreich eingetragen!</h4>
+  <p>Du hast die Hausaufgaben erfolgreich eingetragen.</p>
+  <hr>
+  <p class="mb-0">Wenn du noch etwas hast, kannst du das ebenfalls eintragen.</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div id="ka_alert" class="alert alert-success fade" role="alert">
+  <h4 class="alert-heading">Erfolgreich eingetragen!</h4>
+  <p>Du hast die Klassenarbeit erfolgreich eingetragen.</p>
+  <hr>
+  <p class="mb-0">Wenn du noch etwas hast, kannst du das ebenfalls eintragen.</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
     <table class="table">
         <?php
         $result = $userConn->query("SELECT * from groups WHERE id = $gruppe");
@@ -77,7 +109,7 @@ include "../../_hidden/mysqlconn.php";
                 ?>
                 <td>
                     <h1 class="display-4">Hausaufgaben eintragen</h1>
-                    <form class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
+                    <form enter-type="ha" class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="0" name="type"/>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
@@ -160,7 +192,7 @@ include "../../_hidden/mysqlconn.php";
             ?>
             <tr><td>
                     <h1 class="display-4">Arbeiten eintragen</h1>
-                    <form class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
+                    <form enter-type="ka" class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="1" name="type"/>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-book"></span>
