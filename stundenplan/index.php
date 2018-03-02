@@ -43,6 +43,9 @@ function sonderfach($fach) {
     if ($fach == "sk") {
         return $sks;
     }
+    if ($fach == "tag") {
+        return $tags;
+    }
 
     return "FEHLER!";
 }
@@ -60,7 +63,7 @@ $n = 0;
 while ($ar = $resultM->fetch_assoc()) 
 {
     $arr = $ar["montag"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $mo = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -71,7 +74,7 @@ while ($ar = $resultM->fetch_assoc())
     }
     
     $arr = $ar["dienstag"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $di = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -82,7 +85,7 @@ while ($ar = $resultM->fetch_assoc())
     }
     
     $arr = $ar["mittwoch"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $mi = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -94,7 +97,7 @@ while ($ar = $resultM->fetch_assoc())
     
 
     $arr = $ar["donnerstag"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $do = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -106,7 +109,7 @@ while ($ar = $resultM->fetch_assoc())
     
 
     $arr = $ar["freitag"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $fr = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -137,7 +140,7 @@ $resultM = $statementM->get_result();
 while ($ar = $resultM->fetch_assoc()) 
 {
     $arr = $ar["montag"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $mo = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -148,7 +151,7 @@ while ($ar = $resultM->fetch_assoc())
     }
     
     $arr = $ar["dienstag"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $di = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -159,7 +162,7 @@ while ($ar = $resultM->fetch_assoc())
     }
     
     $arr = $ar["mittwoch"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $mi = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -171,7 +174,7 @@ while ($ar = $resultM->fetch_assoc())
     
 
     $arr = $ar["donnerstag"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $do = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";
@@ -183,7 +186,7 @@ while ($ar = $resultM->fetch_assoc())
     
 
     $arr = $ar["freitag"];
-    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct"))) {
+    if (in_array($arr, array("pc", "re", "fr", "bk", "sk", "ct", "tag"))) {
         $fr = sonderfach($arr);
     } else {
         $sql = "SELECT fach FROM flist WHERE id IN (?)";

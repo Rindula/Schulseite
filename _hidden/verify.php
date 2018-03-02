@@ -147,8 +147,8 @@ if ($loggedIn) {
     $gruppe = $r["gruppe"];
 
     // Wahlfächer
-    $ret = $sbvfdyvyd->query("SELECT bk,ct,pc,re,fr,sk FROM users WHERE id = '".$_SESSION["userid"]."'");
-    list($bk, $ct, $pc, $re, $fr, $sk) = $ret->fetch_array();
+    $ret = $sbvfdyvyd->query("SELECT bk,ct,pc,re,fr,sk,tag FROM users WHERE id = '".$_SESSION["userid"]."'");
+    list($bk, $ct, $pc, $re, $fr, $sk, $tag) = $ret->fetch_array();
 
     $bks = ($bk == 0) ? "" : "Bildende Kunst";
     $cts = ($ct == 0) ? "" : "Computertechnik";
@@ -162,6 +162,7 @@ if ($loggedIn) {
     $pcs = ($pc == 0) ? "Physik" : "Chemie";
     $res = ($re == 0) ? "Ethik" : "Religion";
     $sks = ($sk == 0) ? "" : "Seminarkurs";
+    $tags = ($tag == 0) ? "" : "Theater AG";
 }
 
 // Access Logging

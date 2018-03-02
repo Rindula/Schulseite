@@ -63,12 +63,13 @@ if ($_GET["section"] == "lessons" && isset($_GET["change"]) && isset($_POST["con
     $pc = $_POST["lesson_pc"];
     $fr = $_POST["lesson_fr"];
     $re = $_POST["lesson_re"];
-    $userConn->query("UPDATE users SET bk = $bk, ct = $ct, sk = $sk, pc = $pc, fr = $fr, re = $re WHERE id = " . $_SESSION["userid"]);
+    $tag = $_POST["lesson_tag"];
+    $userConn->query("UPDATE users SET bk = $bk, ct = $ct, sk = $sk, pc = $pc, fr = $fr, re = $re, tag = $tag WHERE id = " . $_SESSION["userid"]);
     echo "<code>Stunden werden übernommen...</code>";
 }
 
-$ret = $userConn->query("SELECT bk, ct, sk, pc, fr, re FROM users WHERE id = '" . $_SESSION["userid"] . "'");
-list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re) = $ret->fetch_array();
+$ret = $userConn->query("SELECT bk, ct, sk, pc, fr, re, tag FROM users WHERE id = '" . $_SESSION["userid"] . "'");
+list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re, $lesson_tag) = $ret->fetch_array();
 
 if (isset($_GET["change"])) {
     echo '<meta http-equiv="refresh" content="1; URL=?section=' . $_GET["section"] . '">';
@@ -178,6 +179,15 @@ if ($sec == "lessons") {
                             <option <?= ($lesson_re == 0) ? "selected" : ""; ?> value="0">Ethik</option>
                             <option <?= ($lesson_re == 1) ? "selected" : ""; ?> value="1">Katholisch</option>
                             <option <?= ($lesson_re == 2) ? "selected" : ""; ?> value="2">Evangelisch</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Theater AG</td>
+                    <td>
+                        <select class="form-control" name="lesson_re" id="">
+                            <option <?= ($lesson_tag == 0) ? "selected" : ""; ?> value="0">Nicht dabei</option>
+                            <option <?= ($lesson_tag == 1) ? "selected" : ""; ?> value="1">Verrückt genug mitzumachen</option>
                         </select>
                     </td>
                 </tr>
