@@ -14,13 +14,13 @@ if (isset($_POST["type"])) {
     if ($_POST["type"] == "0") {
         $sql = "INSERT INTO `list` (`Fach`, `Aufgaben`, `Datum`) VALUES ('$fach', '$aufgabe', '$datum')";
         $mysqli->query($sql);
-        $last_id = $conn->insert_id;
+        $last_id = $mysqli->insert_id;
         log_rin("ha_enter","Hausaufgaben (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
     }
     if ($_POST["type"] == "1") {
         $sql = "INSERT INTO `arbeiten` (`fach`, `themen`, `datum`) VALUES ('$fach', '$aufgabe', '$datum')";
         $mysqli->query($sql);
-        $last_id = $conn->insert_id;
+        $last_id = $mysqli->insert_id;
         log_rin("ha_enter","Klassenarbeit (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
     }
     if ($_POST["type"] == "2") {
@@ -34,7 +34,7 @@ if (isset($_POST["type"])) {
     if ($_POST["type"] == "4") {
         $sql = "INSERT INTO `termine` (`raum`, `typ`, `datum`) VALUES ('$fach', '$aufgabe', '$datum $zeit')";
         $mysqli->query($sql);
-        $last_id = $conn->insert_id;
+        $last_id = $mysqli->insert_id;
         log_rin("ha_enter","Termin (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
     }
 }
