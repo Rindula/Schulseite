@@ -59,7 +59,7 @@ while ($ar = $result->fetch_assoc()) {
 
 
     if ($expiration_date > $today + (1 * 60 * 60 * 24)) {
-        $classes = ($darkMode) ? "table-dark" : "";
+        $classes = "";
         $list = "";
     } elseif ($expiration_date == $today + (1 * 60 * 60 * 24)) {
         $classes = "table-warning";
