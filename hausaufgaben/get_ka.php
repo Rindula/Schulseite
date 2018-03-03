@@ -28,6 +28,8 @@ while ($ar = $result->fetch_assoc()) {
         $classes = "";
         $list = "";
     }
+    $classes .= ($darkMode) ? " table-dark" : "";
+    $list .= ($darkMode) ? " list-group-item-dark" : "";
     $out .= "<tr id='" . $ar['id'] . "' class='$classes'>";
 
 

@@ -173,3 +173,6 @@ $logText = "[".$date."] Zugriff von ".$_SERVER['REMOTE_ADDR']." auf ".$_SERVER['
 $fpLog = fopen($_SERVER['DOCUMENT_ROOT']."/log/accesslog_" . date("Y-m-d") . ".txt", 'a');
 fwrite($fpLog, $logText . "\n");
 fclose($fpLog);
+
+
+$darkMode = ($_COOKIE["darkmode"] == "true") ? true : false;

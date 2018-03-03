@@ -60,12 +60,14 @@ while ($ar = $result->fetch_assoc()) {
         $classes = "";
         $list = "";
     } elseif ($expiration_date == $today + (1 * 60 * 60 * 24)) {
+        $classes = "table-warning";
+        $list = "list-group-item-warning";
+    } else {
         $classes = "table-danger";
         $list = "list-group-item-danger";
-    } else {
-        $classes = "table-dark";
-        $list = "list-group-item-dark";
     }
+    $clasess .= ($darkMode) ? " table-dark" : "";
+    $list .= ($darkMode) ? " list-group-item-dark" : "";
     $title = "";
     $onclick = "";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
