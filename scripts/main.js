@@ -11,6 +11,13 @@ $(document).ready(function () {
             panel.classList.toggle("shown");
         };
     }
+
+    if ($("#designBox").val == "1") {
+        $(".table").addClass("table-dark");
+        $("body").addClass("bg-dark");
+        $("body").addClass("text-light");
+        $(".bg-light").removeClass("bg-light").addClass("bg-dark");
+    }
 }
 );
 $('body').ready(function () {

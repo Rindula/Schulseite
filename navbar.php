@@ -50,6 +50,12 @@
                 </a>
             </div>
         </li>
+        <li class="nav-item">
+            <select onchange="updateDesign(this)" class="form-control form-control-sm" id="designBox">
+                <option <?= ($_COOKIE["darkmode"] == "false") ? "selected" : "" ?> value="0">Helles Design</option>
+                <option <?= ($_COOKIE["darkmode"] == "false") ? "" : "selected" ?> value="1">Dunkles Design</option>
+            </select>
+        </li>
     </ul>
     <!-- Hier Donation Button einfügen :D -->
 <div class="p-2" id="hinweis">
