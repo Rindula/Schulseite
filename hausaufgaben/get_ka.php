@@ -3,7 +3,7 @@
 $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false;
 
 $query = $_REQUEST["q"];
-$o = "<table class='table table-striped'><thead><tr><th scope='col'>Fach</th><th scope='col'>Aufgaben</th><th scope='col'>Zieldatum</th></tr></thead>";
+$o = "<table class='table table-striped".($darkMode) ? " table-dark" : ""."'><thead><tr><th scope='col'>Fach</th><th scope='col'>Aufgaben</th><th scope='col'>Zieldatum</th></tr></thead>";
 $out = $o;
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
@@ -30,7 +30,6 @@ while ($ar = $result->fetch_assoc()) {
         $classes = "";
         $list = "";
     }
-    $classes .= ($darkMode) ? " table-dark" : "";
     $list .= ($darkMode) ? " list-group-item-dark" : "";
     $out .= "<tr id='" . $ar['id'] . "' class='$classes'>";
 

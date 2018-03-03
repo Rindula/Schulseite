@@ -3,7 +3,7 @@
 $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false;
 
 $query = $_REQUEST["q"];
-$o = "<table class='table table-striped'><thead><tr><th scope='col'>Fach</th><th scope='col'>Aufgaben</th><th scope='col'>Zieldatum</th></tr></thead>";
+$o = "<table class='table table-striped".($darkMode) ? " table-dark" : ""."'><thead><tr><th scope='col'>Fach</th><th scope='col'>Aufgaben</th><th scope='col'>Zieldatum</th></tr></thead>";
 $out = $o;
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
@@ -59,7 +59,7 @@ while ($ar = $result->fetch_assoc()) {
 
 
     if ($expiration_date > $today + (1 * 60 * 60 * 24)) {
-        $classes = "";
+        $classes = ($darkMode) ? "table-dark" : "";
         $list = "";
     } elseif ($expiration_date == $today + (1 * 60 * 60 * 24)) {
         $classes = "table-warning";
@@ -68,7 +68,6 @@ while ($ar = $result->fetch_assoc()) {
         $classes = "table-danger";
         $list = "list-group-item-danger";
     }
-    $clasess .= ($darkMode) ? " table-dark" : "";
     $list .= ($darkMode) ? " list-group-item-dark" : "";
     $title = "";
     $onclick = "";
