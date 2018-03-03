@@ -17,7 +17,7 @@ $(document).ready(function () {
         };
     }
 
-    if ($("#designBox").val == "1") {
+    if (getCookie("darkmode") == "true") {
         $(".table").addClass("table-dark");
         $("body").addClass("bg-dark");
         $("body").addClass("text-light");
