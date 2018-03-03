@@ -75,7 +75,7 @@ function addEvent(click) {
 
 <script src="/scripts/push.min.js"></script>
 
-<body class="" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
+<body class="<?= ($darkMode) ? "bg-dark text-light" : ""?>" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
     <div id="content" class="content m-2">
 <?php
 $dbname = "homeworks";
@@ -83,8 +83,8 @@ include_once "../_hidden/mysqlconn.php";
 ?>
         <h1 class="display-4">Hausaufgaben</h1>
         <div class="input-group">
-        <span class="input-group-addon fa fa-book"></span>
-        <select id="ha_sel" class="form-control" onchange="callPageH(this.value)">
+        <span class="input-group-addon fa fa-book<?= ($darkmode) ? " bg-dark text-light" : "" ; ?>"></span>
+        <select id="ha_sel" class="form-control<?= ($darkmode) ? " bg-dark text-light" : "" ; ?>" onchange="callPageH(this.value)">
             <?php
             $result2 = $mysqli->query("SELECT * FROM flist ORDER BY fach");
             
@@ -106,8 +106,8 @@ include_once "../_hidden/mysqlconn.php";
         
         <h1 class="display-4">Arbeiten</h1>
         <div class="input-group">
-        <span class="input-group-addon fa fa-book"></span>
-        <select id="ka_sel" class="form-control" onchange="callPageK(this.value)">
+        <span class="input-group-addon fa fa-book<?= ($darkmode) ? " bg-dark text-light" : "" ; ?>"></span>
+        <select id="ka_sel" class="form-control<?= ($darkmode) ? " bg-dark text-light" : "" ; ?>" onchange="callPageK(this.value)">
             <?php
             $result2 = $mysqli->query("SELECT * FROM flist ORDER BY fach");
             

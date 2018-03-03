@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs sticky-top bg-light">
+<ul class="nav nav-tabs sticky-top <?= ($darkMode) ? "bg-dark" : "bg-light"?>">
 <li class="nav-item">
   <a class="nav-link" id="startseite" href="/">Startseite</a>
 </li>
@@ -51,7 +51,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <select onchange="updateDesign(this)" class="form-control form-control-sm" id="designBox">
+            <select onchange="updateDesign(this)" class="form-control form-control-sm<?= ($darkmode) ? " bg-dark text-light" : "" ; ?>" id="designBox">
                 <option <?= ($_COOKIE["darkmode"] == "false") ? "selected" : "" ?> value="0">Helles Design</option>
                 <option <?= ($_COOKIE["darkmode"] == "false") ? "" : "selected" ?> value="1">Dunkles Design</option>
             </select>
