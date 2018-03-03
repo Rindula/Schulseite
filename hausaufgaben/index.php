@@ -83,8 +83,8 @@ include_once "../_hidden/mysqlconn.php";
 ?>
         <h1 class="display-4">Hausaufgaben</h1>
         <div class="input-group">
-        <span class="input-group-addon fa fa-book<?= ($darkmode) ? " bg-dark text-light" : "" ; ?>"></span>
-        <select id="ha_sel" class="form-control<?= ($darkmode) ? " bg-dark text-light" : "" ; ?>" onchange="callPageH(this.value)">
+        <span class="input-group-addon fa fa-book<?= ($darkMode) ? " bg-dark text-light" : "" ; ?>"></span>
+        <select id="ha_sel" class="form-control<?= ($darkMode) ? " bg-dark text-light" : "" ; ?>" onchange="callPageH(this.value)">
             <?php
             $result2 = $mysqli->query("SELECT * FROM flist ORDER BY fach");
             
@@ -106,8 +106,8 @@ include_once "../_hidden/mysqlconn.php";
         
         <h1 class="display-4">Arbeiten</h1>
         <div class="input-group">
-        <span class="input-group-addon fa fa-book<?= ($darkmode) ? " bg-dark text-light" : "" ; ?>"></span>
-        <select id="ka_sel" class="form-control<?= ($darkmode) ? " bg-dark text-light" : "" ; ?>" onchange="callPageK(this.value)">
+        <span class="input-group-addon fa fa-book<?= ($darkMode) ? " bg-dark text-light" : "" ; ?>"></span>
+        <select id="ka_sel" class="form-control<?= ($darkMode) ? " bg-dark text-light" : "" ; ?>" onchange="callPageK(this.value)">
             <?php
             $result2 = $mysqli->query("SELECT * FROM flist ORDER BY fach");
             
