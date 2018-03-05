@@ -1,4 +1,4 @@
-<?php $needVerify = false; include "_hidden/verify.php"; include "_hidden/vars.php" ?>
+<?php $needVerify = false; include "_hidden/verify.php"; include "_hidden/vars.php"; $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false; ?>
 <!doctype html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 		if (xhttp.readyState == XMLHttpRequest.DONE) {
 			if (xhttp.status == 200) {
 				myObj = JSON.parse(this.responseText);
-				txt = "<table class='table table-light table-striped'><thead><tr><th>Änderung</th><th>Zeitpunkt</th></tr></thead><tbody>"
+				txt = "<table class='table <?= ($darkMode) ? "table-dark" : "table-light"; ?> table-striped'><thead><tr><th>Änderung</th><th>Zeitpunkt</th></tr></thead><tbody>"
 				for (x in myObj) {
 					var date = new Date(myObj[x].commit.author.date)
 					var d = ("0" + date.getDate()).slice(-2) + "." + ("0" + (date.getMonth() + 1)).slice(-2) + "." + date.getFullYear() + ", " + ("0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2)
