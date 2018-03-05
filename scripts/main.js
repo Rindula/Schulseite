@@ -18,6 +18,7 @@ $(document).ready(function () {
     }
 
     if (getCookie("darkmode") == "true") {
+        $(".table-light").removeClass("table-light");
         $(".table").addClass("table-dark");
         $(".list-group-item").addClass("list-group-item-dark");
         $("body").addClass("bg-dark");
