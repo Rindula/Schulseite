@@ -1,4 +1,4 @@
-<?php $needVerify = false; include "_hidden/verify.php" ?>
+<?php $needVerify = false; include "_hidden/verify.php"; include "_hidden/vars.php" ?>
 <!doctype html>
 <html>
 <head>
