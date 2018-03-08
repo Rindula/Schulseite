@@ -3,8 +3,8 @@
 	$mySqlPassword = "SiSal2002";
     define("BASEPATH", $_SERVER['DOCUMENT_ROOT']."/");
 
-    setlocale(LC_TIME, 'de_DE', 'deu_deu');
-    
+    setlocale(LC_ALL, 'de_DE', 'deu_deu');
+
     function generate_password(){
         $alpha = "abcdefghijklmnopqrstuvwxyz";
         $alpha_upper = strtoupper($alpha);
