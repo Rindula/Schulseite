@@ -102,8 +102,8 @@ while ($ar = $result->fetch_assoc()) {
     $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
     $text = "whatsapp://send?text=".whatsNewLine("*Hausaufgabe*\nFach: _".$ar["fach"]."_\nZu erledigen bis: *$day.$month.$year*" . ((!empty($tasks)) ? "\n\nAufgabe(n):$tasks" : ""));
     $out .= "<td class='d-lg-none'><a class='btn btn-success' href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a></td>";
+    $out .= "<td>";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
-        $out .= "<td>";
         $lnk = 0;
         foreach (glob($IMAGEPATH . '*') as $filename) {
             if (is_image($filename)) {
@@ -111,9 +111,9 @@ while ($ar = $result->fetch_assoc()) {
                 $out .= "<a data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'>Lösung Seite " . $lnk . "</a><br>";
             }
         }
-        $out .= "</td>";
     }
 
+    $out .= "</td>";
     $out .= "</tr>";
 }
 
