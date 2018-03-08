@@ -72,11 +72,10 @@ while ($ar = $result->fetch_assoc()) {
     $title = "";
     $onclick = "";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
-        $classes = $classes . " imageAcc text-warning";
+        $classes = $classes . " imageAcc text-info";
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
     }
     $out .= "<tr title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'>";
-
 
     $datetime1 = date_create(date("Y-m-d"));
     $datetime2 = date_create($ar["Datum"]);
@@ -103,20 +102,18 @@ while ($ar = $result->fetch_assoc()) {
     $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
     $text = "whatsapp://send?text=".whatsNewLine("*Hausaufgabe*\nFach: _".$ar["fach"]."_\nZu erledigen bis: *$day.$month.$year*" . ((!empty($tasks)) ? "\n\nAufgabe(n):$tasks" : ""));
     $out .= "<td class='d-lg-none'><a class='btn btn-success' href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a></td>";
-
-    $out .= "</tr>";
-    $out .= "<tr class='collapse' id='".$ar["ID"]."'>";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
-        $out .= "<td colspan='3' class='p-3'>";
+        echo "<td>";
         $lnk = 0;
         foreach (glob($IMAGEPATH . '*') as $filename) {
             if (is_image($filename)) {
                 $lnk++;
-                $out .= "<a data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'><img class='img-fluid img-thumbnail' src='loesungen/" . $ar["ID"] . "/" . basename($filename) . "' /></a>\n";
+                $out .= "<a data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'>Lösung Seite " . $lnk . "</a><br>";
             }
         }
-        $out .= "</td>";
+        echo "</td>";
     }
+
     $out .= "</tr>";
 }
 
