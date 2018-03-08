@@ -99,8 +99,8 @@ while ($ar = $result->fetch_assoc()) {
 
     $out .= "<td class='fach' title='".$ar["ID"]."'>" . $ar["fach"] . "</td>";
     $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
-    $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
-    $text = "whatsapp://send?text=".whatsNewLine("*Hausaufgabe*\nFach: _".$ar["fach"]."_\nZu erledigen bis: *$day.$month.$year*" . ((!empty($tasks)) ? "\n\nAufgabe(n):$tasks" : ""));
+    $out .= "<td class='datum'>".strftime($ar["Datum"]).", $day.$month.$year ($days)</td>";
+    $text = "whatsapp://send?text=".whatsNewLine("*Hausaufgabe*\nFach: _".$ar["fach"]."_\nZu erledigen bis: *".strftime($ar["Datum"]).", $day.$month.$year*" . ((!empty($tasks)) ? "\n\nAufgabe(n):$tasks" : ""));
     $out .= "<td class='d-lg-none'><a class='btn btn-success' href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a></td>";
     $out .= "<td>";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
@@ -108,7 +108,7 @@ while ($ar = $result->fetch_assoc()) {
         foreach (glob($IMAGEPATH . '*') as $filename) {
             if (is_image($filename)) {
                 $lnk++;
-                $out .= "<a data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'>Lösung Seite " . $lnk . "</a><br>";
+                $out .= "<a data-title='".$ar["fach"]." Hausaufgabe bis zum ".strftime($ar["Datum"]).", $day.$month.$year' data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'>Lösung Seite " . $lnk . "</a><br>";
             }
         }
     }
