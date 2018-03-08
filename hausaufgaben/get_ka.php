@@ -24,7 +24,7 @@ while ($ar = $result->fetch_assoc()) {
     $expiration_date = strtotime($ar["datum"]);
     list($year, $month, $day) = explode("-", $ar["datum"]);
     if ($expiration_date <= $today + (1 * 60 * 60 * 24)) {
-        $classes = "table-danger";
+        $classes = "table-danger text-dark";
         $list = "list-group-item-danger";
     } else {
         $classes = "";
