@@ -56,13 +56,13 @@ while ($ar = $result->fetch_assoc()) {
     if (($expiration_date == $today)) {
         $out .= "<td class='fach fertig'>" . $ar["fach"] . "</td>";
         $out .= "<td class='aufgaben fertig'><ul class='list-group'>" . $aufgaben . "</ul></td>";
-        $out .= "<td class='datum fertig'>$day.$month.$year ($days)</td>";
+        $out .= "<td class='datum fertig'>".strftime("%A", strtotime($ar["datum"])).", $day.$month.$year ($days)</td>";
     } else {
         $out .= "<td class='fach'>" . $ar["fach"] . "</td>";
         $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
-        $out .= "<td class='datum'>$day.$month.$year ($days)</td>";
+        $out .= "<td class='datum'>".strftime("%A", strtotime($ar["datum"])).", $day.$month.$year ($days)</td>";
     }
-    $text = "whatsapp://send?text=".whatsNewLine("*Klassenarbeit*\nFach: _".$ar["fach"]."_\nTermin am: *$day.$month.$year*" . ((!empty($tasks)) ? "\n\nThemen:$tasks" : ""));
+    $text = "whatsapp://send?text=".whatsNewLine("*Klassenarbeit*\nFach: _".$ar["fach"]."_\nTermin am: *".strftime("%A", strtotime($ar["datum"])).", $day.$month.$year*" . ((!empty($tasks)) ? "\n\nThemen:$tasks" : ""));
     $out .= "<td class='d-lg-none'><a class='btn btn-success' href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a></td>";
     $out .= "</tr>";
 }
