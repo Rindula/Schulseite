@@ -108,7 +108,7 @@ while ($ar = $result->fetch_assoc()) {
         foreach (glob($IMAGEPATH . '*') as $filename) {
             if (is_image($filename)) {
                 $lnk++;
-                $out .= "<a data-title='".$ar["fach"]." Hausaufgabe bis zum ".strftime("%A", strtotime($ar["Datum"])).", $day.$month.$year' data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'>Lösung Seite " . $lnk . "</a><br>";
+                $out .= "<a data-title='".$ar["fach"]." Hausaufgabe bis zum ".strftime("%A", strtotime($ar["Datum"])).", $day.$month.$year<br><small>Keine Haftung für Fehler!</small>' data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'>Lösung Seite " . $lnk . "</a><br>";
             }
         }
     }
