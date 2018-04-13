@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs sticky-top <?= ($darkMode) ? "bg-dark" : "bg-light"?>">
+<ul class="d-print-none nav nav-tabs sticky-top <?= ($darkMode) ? "bg-dark" : "bg-light"?>">
 <li class="nav-item">
   <a class="nav-link" id="startseite" href="/">Startseite</a>
 </li>
@@ -50,7 +50,7 @@
                     <img class="img-fluid" src="/img/discord-banner-highres.gif" alt="Join my Discord Server">
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/kontakt/datenschutz.php">Datenschutzerklärung</a>
+                <a class="dropdown-item" id="datenschutz" href="/kontakt/datenschutz.php">Datenschutzerklärung</a>
             </div>
         </li>
         <li class="nav-item">

@@ -9,7 +9,7 @@ $needVerify = false;
 include "../_hidden/verify.php";
 
 // Navigationsleiste
-$page = "hausaufgaben";
+$page = "datenschutz";
 include "../navbar.php";
 
 // Global Header
