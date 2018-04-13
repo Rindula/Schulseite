@@ -15,6 +15,8 @@ if (isset($_GET['login'])) {
         $_SESSION['userid'] = $user['id'];
         $_SESSION['group'] = $user['gruppe'];
         $_SESSION['name'] = $user['vorname'] . " " . $user["name"];
+        $_SESSION['vorname'] = $user['vorname'];
+        $_SESSION['nachname'] = $user["name"];
         $success = '1';
         header("Location: /settings?section=main");
     } else {
