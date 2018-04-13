@@ -68,15 +68,16 @@ include "../css/controller.php";
     </script>
 </head>
 <body>
-    <img style="position: absolute; height: 297mm; width: 210mm" src="form.png" alt="Fehler bei laden des Bildes!">
-    <input type="text" value="<?= (loggedIn) ? $_SESSION["nachname"] . ", " . $_SESSION["vorname"] : "" ?>" name="name" id="name" style="position: absolute; top: 31.3mm; left: 80.5mm; width: 11.85cm; height: .95cm; font-size: 18pt;">
-    <input type="text" name="klasse" id="klasse" style="text-align: center; position: absolute; top: 41.3mm; left: 80.5mm; width: 4cm; height: .95cm; font-size: 18pt;">
-    <input type="text" name="lehrer" id="lehrer" style="position: absolute; top: 41.3mm; left: 120.5mm; width: 7.85cm; height: .95cm; font-size: 18pt;">
-    <input type="date" name="von" id="von" style="position: absolute; top: 51.3mm; left: 85.5mm; width: 5.35cm; height: .95cm; font-size: 18pt;">
-    <input type="date" name="bis" id="bis" style="position: absolute; top: 51.3mm; left: 135.5mm; width: 5.35cm; height: .95cm; font-size: 18pt;">
-    <output name="tage" id="tage" style="position: absolute; top: 51.3mm; left: 185.5mm; width: 5.35cm; height: .95cm; font-size: 18pt;">1</output>
-    <textarea name="grund" id="grund" style="position: absolute; top: 67.75mm; left: 27.5mm; width: 17cm; height: 3.3cm; font-size: 18pt;"></textarea>
-
+    <div class="container">
+        <img style="position: absolute; height: 297mm; width: 210mm" src="form.png" alt="Fehler bei laden des Bildes!">
+        <input type="text" value="<?= (loggedIn) ? $_SESSION["nachname"] . ", " . $_SESSION["vorname"] : "" ?>" name="name" id="name" style="position: relative; top: 29.5mm; left: 78.5mm; width: 11.85cm; height: .95cm; font-size: 18pt;">
+        <input type="text" name="klasse" id="klasse" style="text-align: center; position: relative; top: 39.5mm; left: -41mm; width: 4cm; height: .95cm; font-size: 18pt;">
+        <input type="text" name="lehrer" id="lehrer" style="position: relative; top: 39.5mm; left: -42mm; width: 7.85cm; height: .95cm; font-size: 18pt;">
+        <input type="date" name="von" id="von" style="position: relative; top: 39.5mm; left: 85.5mm; width: 5.35cm; height: .95cm; font-size: 18pt;">
+        <input type="date" name="bis" id="bis" style="position: relative; top: 39.5mm; left: 80mm; width: 5.35cm; height: .95cm; font-size: 18pt;">
+        <output name="tage" id="tage" style="color: black; position: relative; top: 38.5mm; left: 70.5mm; width: 5.35cm; height: .95cm; font-size: 18pt;">1</output>
+        <textarea name="grund" id="grund" style="position: relative; top: 47.5mm; left: 25.5mm; width: 17.15cm; height: 3.3cm; font-size: 18pt;"></textarea>
+    </div>
     <?php include "../_hidden/bottomScripts.php" ?>
 </body>
 </html>
