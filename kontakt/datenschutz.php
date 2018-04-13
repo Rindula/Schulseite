@@ -136,17 +136,6 @@ include "../css/controller.php";
     <p>Wir behalten uns vor, diese Datenschutzerklärung gelegentlich anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen
         entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z. B. bei der Einführung
         neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
-    <h2>
-        <strong>Fragen an den Datenschutzbeauftragten</strong>
-    </h2>
-    <p>Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an unseren Datenschutzbeauftragten:</p>
-    <p>
-        <em>Die Datenschutzerklärung wurde mit dem </em>
-        <a href="https://www.activemind.de/datenschutz/datenschutzhinweis-generator/">
-            <em>Datenschutzerklärungs-Generator der activeMind AG erstellt</em>
-        </a>
-        <em>.</em>
-    </p>
     </div>
     <?php include "../_hidden/bottomScripts.php" ?>
 
