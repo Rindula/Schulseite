@@ -172,7 +172,7 @@ if(!$valid) {
 		<tr>
 			<td><div class="g-recaptcha" data-sitekey="6LdBTjEUAAAAABCV_6kyRvLRNWcaWBNe2nEGzotV"></div></td>
 			<td colspan=2>
-			<input type="checkbox" name="terms"> Ich akzeptiere die <a target="agbs" href="/agbs">Nutzungsbedingungen</a> <input type="submit" name="register-user" value="Registrieren" class="btnRegister"></td>
+			<input type="checkbox" name="terms"> Ich akzeptiere die <a target="datenschutz" href="/kontakt/datenschutz.php">Datenschutzbestimmungen</a> <input type="submit" name="register-user" value="Registrieren" class="btnRegister"></td>
 		</tr>
 	</table>
 	<input type="hidden" name="reg_key" value="<?= $reg_key ?>">
