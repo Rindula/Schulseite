@@ -31,8 +31,15 @@ include "../css/controller.php";
             border: transparent !important;
             resize: none;
         }
+
+        @media print {
+            .container {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
     </style>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script>
         const setup = () => {
             let firstDate = $('#von').val();

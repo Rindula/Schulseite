@@ -13,7 +13,7 @@
     <div class="dropdown-divider"></div>
     <?php if ($loggedIn) { ?>
     <a class="dropdown-item" id="wiederholungen" href="/wiederholungen">Wiederholungen</a>
-    <a class="dropdown-item" id="entschuldigungen" href="/entschuldigungen">Entschuldigung ausfüllen</a>
+    <a class="dropdown-item disabled" id="entschuldigungen" href="/entschuldigungen">Entschuldigung ausfüllen</a>
     <?php } ?>
     <a class="dropdown-item" id="files" href="/files">Wichtige Materialien</a>
   </div>
