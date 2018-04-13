@@ -13,6 +13,7 @@
     <div class="dropdown-divider"></div>
     <?php if ($loggedIn) { ?>
     <a class="dropdown-item" id="wiederholungen" href="/wiederholungen">Wiederholungen</a>
+    <a class="dropdown-item" id="entschuldigungen" href="/entschuldigungen">Entschuldigung ausfüllen</a>
     <?php } ?>
     <a class="dropdown-item" id="files" href="/files">Wichtige Materialien</a>
   </div>
@@ -48,6 +49,8 @@
                     <i class="fa fa-gamepad"></i>
                     <img class="img-fluid" src="/img/discord-banner-highres.gif" alt="Join my Discord Server">
                 </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/kontakt/datenschutz.php">Datenschutzerklärung</a>
             </div>
         </li>
         <li class="nav-item">
