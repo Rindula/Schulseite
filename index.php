@@ -31,8 +31,10 @@
 
 <body>
 <?php include "navbar.php" ?>
+<div class="container">
 <h2 class="display-2">Changelog</h2>
 <div id="changelog"></div>
+</div>
 <?php include "_hidden/bottomScripts.php" ?>
 </body>
 </html>

@@ -50,6 +50,8 @@ function sonderfach($fach) {
     return "FEHLER!";
 }
 
+// Container
+echo "<div class='container'>";
 
 // Tabelle erstellen
 echo "<div class='ungerade'><table class='table table-striped'><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
@@ -202,6 +204,9 @@ while ($ar = $resultM->fetch_assoc())
     echo "<tr><td>$zeit</td><td>$mo</td><td>$di</td><td>$mi</td><td>$do</td><td>$fr</td></tr>";
 }
 echo "</table></div>";
+
+// //Container
+echo "</div>";
 ?>
 
 <script type="text/javascript" src="/scripts/weekController.js"></script>

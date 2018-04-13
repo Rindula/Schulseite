@@ -1,9 +1,10 @@
 <?php $needVerify = false; include "../_hidden/verify.php"; $title = "Materialien"; include "../header.php"; $page = "files"; include "../navbar.php" ?>
-<div class="list-group">
+<div class="container list-group">
 <?php
 
 $styles[] = "lightbox";
 include "../css/controller.php";
+include "../_hidden/vars.php";
 
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";

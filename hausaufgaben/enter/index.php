@@ -60,7 +60,7 @@ include "../../css/controller.php";
 $dbname = "homeworks";
 include "../../_hidden/mysqlconn.php";
 ?>
-<div id="content">
+<div id="content" class="container">
 
     <table class="table">
         <?php

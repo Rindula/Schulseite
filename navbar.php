@@ -55,7 +55,7 @@
                 <a class="dropdown-item" id="impressum" href="/kontakt/impressum.php">Impressum</a>
             </div>
         </li>
-        <li class="nav-item">
+        <li class="nav-item float-right">
             <select onchange="updateDesign(this)" class="form-control form-control-sm<?= ($darkMode) ? " bg-dark text-light" : "" ; ?>" id="designBox">
                 <option <?= ($_COOKIE["darkmode"] == "false") ? "selected" : "" ?> value="0">Helles Design</option>
                 <option <?= ($_COOKIE["darkmode"] == "true") ? "selected" : "" ?> value="1">Dunkles Design</option>
