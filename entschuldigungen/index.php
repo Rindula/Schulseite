@@ -69,7 +69,7 @@ include "../css/controller.php";
 </head>
 <body>
     <div class="container">
-        <img style="position: absolute; height: 297mm; width: 210mm" src="form.png" alt="Fehler bei laden des Bildes!">
+        <img style="z-index: -1; position: absolute; height: 297mm; width: 210mm" src="form.png" alt="Fehler bei laden des Bildes!">
         <input type="text" value="<?= (loggedIn) ? $_SESSION["nachname"] . ", " . $_SESSION["vorname"] : "" ?>" name="name" id="name" style="position: relative; top: 29.5mm; left: 78.5mm; width: 11.85cm; height: .95cm; font-size: 18pt;">
         <input type="text" name="klasse" id="klasse" style="text-align: center; position: relative; top: 39.5mm; left: -41mm; width: 4cm; height: .95cm; font-size: 18pt;">
         <input type="text" name="lehrer" id="lehrer" style="position: relative; top: 39.5mm; left: -42mm; width: 7.85cm; height: .95cm; font-size: 18pt;">
