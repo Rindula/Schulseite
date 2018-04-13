@@ -52,6 +52,7 @@
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" id="datenschutz" href="/kontakt/datenschutz.php">Datenschutzerklärung</a>
+                <a class="dropdown-item" id="impressum" href="/kontakt/impressum.php">Impressum</a>
             </div>
         </li>
         <li class="nav-item">
