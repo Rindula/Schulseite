@@ -56,8 +56,7 @@ include "../css/controller.php";
         zudem die Möglichkeit, bei Bedarf die bei Registrierung angegebenen Daten jederzeit zu ändern oder zu löschen. Selbstverständlich
         erteilen wir Ihnen darüber hinaus jederzeit Auskunft über die von uns über Sie gespeicherten personenbezogenen Daten.
         Gerne berichtigen bzw. löschen wir diese auch auf Ihren Wunsch, soweit keine gesetzlichen Aufbewahrungspflichten
-        entgegenstehen. Zur Kontaktaufnahme in diesem Zusammenhang nutzen Sie bitte die am Ende dieser Datenschutzerklärung
-        angegebenen Kontaktdaten.</p>
+        entgegenstehen. Zur Kontaktaufnahme in diesem Zusammenhang nutzen Sie bitte die im Impressum angegebenen Kontaktdaten.</p>
     <h2>SSL-Verschlüsselung</h2>
     <p>Um die Sicherheit Ihrer Daten bei der Übertragung zu schützen, verwenden wir dem aktuellen Stand der Technik entsprechende
         Verschlüsselungsverfahren (z. B. SSL) über HTTPS.</p>
@@ -72,8 +71,7 @@ include "../css/controller.php";
         und nicht an Dritte weitergegeben.</p>
     <p>Die Einwilligung zur Speicherung Ihrer persönlichen Daten und ihrer Nutzung für den Newsletterversand können Sie jederzeit
         widerrufen. In jedem Newsletter findet sich dazu ein entsprechender Link. Außerdem können Sie sich jederzeit auch
-        direkt auf dieser Webseite abmelden oder uns Ihren entsprechenden Wunsch über die am Ende dieser Datenschutzhinweise
-        angegebene Kontaktmöglichkeit mitteilen.</p>
+        direkt auf dieser Webseite abmelden oder uns Ihren entsprechenden Wunsch über die im Impressum angegebene Kontaktmöglichkeit mitteilen.</p>
     <h2>Verwendung von Scriptbibliotheken (Google Webfonts)</h2>
     <p>Um unsere Inhalte browserübergreifend korrekt und grafisch ansprechend darzustellen, verwenden wir auf dieser Website
         Scriptbibliotheken und Schriftbibliotheken wie z. B. Google Webfonts (
@@ -124,7 +122,7 @@ include "../css/controller.php";
     <p>Sie haben das Recht, jederzeit Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten. Ebenso haben
         Sie das Recht auf Berichtigung, Sperrung oder, abgesehen von der vorgeschriebenen Datenspeicherung zur Geschäftsabwicklung,
         Löschung Ihrer personenbezogenen Daten. Bitte wenden Sie sich dazu an unseren Datenschutzbeauftragten. Die Kontaktdaten
-        finden Sie ganz unten.</p>
+        finden Sie im Impressum.</p>
     <p>Damit eine Sperre von Daten jederzeit berücksichtigt werden kann, müssen diese Daten zu Kontrollzwecken in einer Sperrdatei
         vorgehalten werden. Sie können auch die Löschung der Daten verlangen, soweit keine gesetzliche Archivierungsverpflichtung
         besteht. Soweit eine solche Verpflichtung besteht, sperren wir Ihre Daten auf Wunsch.</p>
