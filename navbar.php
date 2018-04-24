@@ -32,7 +32,7 @@
     <?php
     if ($loggedIn) {
         ?>
-        <li>
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?= $_SESSION["name"] ?></a>
         <div class="dropdown-menu" aria-labelledby="navDropdown">
             <a class="dropdown-item fa fa-cog" id="settings" href="/settings?section=main"> Einstellungen</a>
@@ -49,7 +49,7 @@
         <?php
     }
     ?>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="help" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hilfe?</a>
             <div class="dropdown-menu" aria-labelledby="hrlp">
                 <a class="dropdown-item fa fa-bug" id="bugtracker" href="/support"> Bugtracker</a>
