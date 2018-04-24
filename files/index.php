@@ -1,5 +1,5 @@
 <?php $needVerify = false; include "../_hidden/verify.php"; $title = "Materialien"; include "../header.php"; $page = "files"; include "../navbar.php" ?>
-<div class="container list-group">
+<body class="container list-group">
 <?php
 
 $styles[] = "lightbox";
@@ -8,6 +8,7 @@ include "../_hidden/vars.php";
 
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
+
 
 $files = scandir("content");
 
@@ -24,5 +25,5 @@ foreach ($files as $key => $value) {
     }
 }
 ?>
-</div>
+</body>
 <?php include "../_hidden/bottomScripts.php" ?>

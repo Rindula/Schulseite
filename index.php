@@ -29,9 +29,9 @@
 </script>
 </head>
 
-<body>
+<body class="container">
 <?php include "navbar.php" ?>
-<div class="container">
+<div>
 <h2 class="display-2">Changelog</h2>
 <div id="changelog"></div>
 </div>

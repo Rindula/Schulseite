@@ -25,8 +25,8 @@ include "../css/controller.php";
 
 ?>
 
-<body>
-    <div class="container">
+<body class="container">
+    <div>
     <h1>Datenschutzerklärung</h1>
     <h2>Erfassung allgemeiner Informationen</h2>
     <p>Wenn Sie auf unsere Webseite zugreifen, werden automatisch Informationen allgemeiner Natur erfasst. Diese Informationen

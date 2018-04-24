@@ -26,7 +26,7 @@ if (!isset($_GET["section"])) {
     header("Location: ?section=main");
 }
 ?>
-<div class="container">
+<body class="container">
 <?php
 // Passwort ändern
 if ($_GET["section"] == "passwort" && isset($_GET["change"]) && isset($_POST["confirm"])) {
@@ -199,7 +199,7 @@ if ($sec == "lessons") {
             </table>
         </form>
     </div>
-</div>
+</body>
 <?php
 }
 echo "</div>";

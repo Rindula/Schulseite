@@ -23,8 +23,8 @@ include "../css/controller.php";
 
 
 ?>
-<body>
-<div class='container'><h1>Impressum</h1><p>Angaben gemäß § 5 TMG</p><p>Sven Nolting <br> 
+<body class="container">
+<div><h1>Impressum</h1><p>Angaben gemäß § 5 TMG</p><p>Sven Nolting <br> 
 Hinterer Hettenberg 16<br> 
 74889 Sinsheim <br> 
 </p><p> <strong>Vertreten durch: </strong><br>

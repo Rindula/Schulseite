@@ -24,6 +24,7 @@
     include "../_hidden/mysqlconn.php";
 
 ?>
+<body class="container">
         <h1>Termine</h1>
         <table class="table table-striped">
             <thead>
@@ -76,3 +77,4 @@
             </tbody>
         </table>
         <?php include "../_hidden/bottomScripts.php" ?>
+        </body>
