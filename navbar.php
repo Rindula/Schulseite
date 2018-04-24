@@ -5,7 +5,7 @@
   </button>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="d-print-none nav nav-tabs sticky-top <?= ($darkMode) ? "bg-dark" : "bg-light"?>">
+<ul class="d-print-none navbar-nav mr-auto sticky-top <?= ($darkMode) ? "bg-dark" : "bg-light"?>">
 <li class="nav-item">
   <a class="nav-link" id="startseite" href="/">Startseite</a>
 </li>
