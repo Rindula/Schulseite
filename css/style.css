@@ -4,3 +4,7 @@
     position: fixed;
     width: 85px;
 }
+
+body {
+    background-image: url("/img/bgtile.jpg");
+}

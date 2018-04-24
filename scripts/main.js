@@ -22,6 +22,7 @@ $(document).ready(function () {
         $(".list-group-item").addClass("list-group-item-dark");
         $("body").addClass("bg-dark");
         $("body").addClass("text-light");
+        $("body").css("opacity", "0.7");
         $(".form-control, .modal-content").addClass("bg-dark");
         $(".form-control").addClass("text-light");
         $(".bg-light").removeClass("bg-light").addClass("bg-dark");
