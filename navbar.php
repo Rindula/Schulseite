@@ -1,3 +1,10 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#">rindula.de</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
 <ul class="d-print-none nav nav-tabs sticky-top <?= ($darkMode) ? "bg-dark" : "bg-light"?>">
 <li class="nav-item">
   <a class="nav-link" id="startseite" href="/">Startseite</a>
@@ -62,6 +69,8 @@
             </select>
         </li>
     </ul>
+    </div>
+    </nav>
     <!-- Hier Donation Button einfügen :D -->
 <div class="p-2" id="hinweis">
 </div>
