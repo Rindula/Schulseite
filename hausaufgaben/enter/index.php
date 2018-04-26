@@ -61,7 +61,7 @@ $dbname = "homeworks";
 include "../../_hidden/mysqlconn.php";
 ?>
 <body class="container">
-<div id="content" class="container">
+<div id="content" class="">
 
     <table class="table">
         <?php
