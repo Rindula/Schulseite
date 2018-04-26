@@ -19,7 +19,6 @@
     <?php } ?>
     <div class="dropdown-divider"></div>
     <?php if ($loggedIn) { ?>
-    <a class="dropdown-item" id="wiederholungen" href="/wiederholungen">Wiederholungen</a>
     <a class="dropdown-item disabled" id="entschuldigungen" href="#">Entschuldigung ausfüllen</a>
     <!-- /entschuldigungen -->
     <?php } ?>
