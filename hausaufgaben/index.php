@@ -76,7 +76,7 @@ function addEvent(click) {
 <script src="/scripts/push.min.js"></script>
 
 <body class="container<?= ($darkMode) ? " bg-dark text-light" : ""?>" onload="callPageH(ha_sel.value); callPageK(ka_sel.value)">
-    <div id="content" class="container">
+    <div id="content" class="">
 <?php
 $dbname = "homeworks";
 include_once "../_hidden/mysqlconn.php";
