@@ -89,7 +89,6 @@ function whatsNewLine($text) {
 function replaceLink($text = "") {
 // The Regular Expression filter
 $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-// Check if there is a url in the text
 if(preg_match($reg_exUrl, $text, $url)) {
 // make the urls hyper links
 return preg_replace($reg_exUrl, "<a href="{$url[0]}">{$url[0]}</a> ", $text);
@@ -98,7 +97,6 @@ return preg_replace($reg_exUrl, "<a href="{$url[0]}">{$url[0]}</a> ", $text);
 return $text;
 }
 }
-
 
 echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>";
 echo "<script type='text/javascript' src='/scripts/main.js'></script>";
