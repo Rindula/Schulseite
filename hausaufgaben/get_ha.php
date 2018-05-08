@@ -1,9 +1,12 @@
 <?php
 if (isset($_GET["mobil"])) {
+    $mobil = true;
     ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <?php
+} else {
+    $mobil = false;
 }
 
 $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false;
@@ -11,6 +14,7 @@ $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false;
 $query = $_REQUEST["q"];
 $o = "<table class='table table-striped".(($darkMode) ? " table-dark" : "")."'><thead><tr><th scope='col'>Fach</th><th scope='col'>Aufgaben</th><th scope='col'>Zieldatum</th></tr></thead>";
 $out = $o;
+$om = "";
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
 include "../_hidden/vars.php";
@@ -82,6 +86,7 @@ while ($ar = $result->fetch_assoc()) {
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
     }
     $out .= "<tr title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'>";
+    $om .= "<div title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes list-group'>";
 
     $datetime1 = date_create(date("Y-m-d"));
     $datetime2 = date_create($ar["Datum"]);
@@ -102,6 +107,9 @@ while ($ar = $result->fetch_assoc()) {
     }
 
 
+    $om .= "<li class='fach' title='".$ar["ID"]."'>" . $ar["fach"] . "</li>";
+    $om .= "<li class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></li>";
+    $om .= "<li class='datum'>".strftime("%A", strtotime($ar["Datum"])).", $day.$month.$year ($days)</li>";
 
     $out .= "<td class='fach' title='".$ar["ID"]."'>" . $ar["fach"] . "</td>";
     $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
@@ -120,8 +128,12 @@ while ($ar = $result->fetch_assoc()) {
     }
 
     $out .= "</td>";
+    $om .= "</div>";
     $out .= "</tr>";
 }
-
-echo $out === $o ? "<h2>Keine Aufgaben in diesem Fach</h2>" : $out;
+if ($mobil) {
+    echo $om;
+} else {
+    echo $out === $o ? "<h2>Keine Aufgaben in diesem Fach</h2>" : $out;
+}
 ?>
