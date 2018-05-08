@@ -107,7 +107,7 @@ while ($ar = $result->fetch_assoc()) {
     }
 
 
-    $om .= "<li class='fach' title='".$ar["ID"]."'>" . $ar["fach"] . "</li>";
+    $om .= "<li class='fach' title='".$ar["ID"]."'><h3>" . $ar["fach"] . "</h3></li>";
     $om .= "<li class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></li>";
     $om .= "<li class='datum'>".strftime("%A", strtotime($ar["Datum"])).", $day.$month.$year ($days)</li>";
 
