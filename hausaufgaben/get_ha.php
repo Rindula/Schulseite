@@ -86,7 +86,7 @@ while ($ar = $result->fetch_assoc()) {
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
     }
     $out .= "<tr title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'>";
-    $om .= "<div title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes list-group'>";
+    $om .= "<div title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'><ul class='list-group'>";
 
     $datetime1 = date_create(date("Y-m-d"));
     $datetime2 = date_create($ar["Datum"]);
@@ -128,7 +128,7 @@ while ($ar = $result->fetch_assoc()) {
     }
 
     $out .= "</td>";
-    $om .= "</div>";
+    $om .= "</ul></div>";
     $out .= "</tr>";
 }
 if ($mobil) {
