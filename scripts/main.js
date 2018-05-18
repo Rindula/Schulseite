@@ -89,8 +89,8 @@ function navLoaded() {
 
     // Material
     var pinkMat = new THREE.MeshPhongMaterial({
-        color      :  new THREE.Color("rgb(35,226,213)"),
-        emissive   :  new THREE.Color("#641aaf"),
+        color      :  new THREE.Color("#641aaf"),
+        emissive   :  new THREE.Color("#000000"),
         specular   :  new THREE.Color("rgba(255,155,255,1)"),
         shininess  :  1000,
         shading    :  THREE.FlatShading,
