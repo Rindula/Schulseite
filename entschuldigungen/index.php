@@ -64,14 +64,33 @@ include "../css/controller.php";
 </head>
 <body>
     <div class="container">
-        <img style="z-index: -1; position: absolute; height: 297mm; width: 210mm" src="form.png" alt="Fehler bei laden des Bildes!">
-        <input type="text" value="<?= ($loggedIn) ? $_SESSION["nachname"] . ", " . $_SESSION["vorname"] : "" ?>" name="name" id="name" style="position: relative; top: 29.5mm; left: 78.5mm; width: 11.85cm; height: .95cm; font-size: 18pt;">
-        <input type="text" name="klasse" id="klasse" style="text-align: center; position: relative; top: 39.5mm; left: -41mm; width: 4cm; height: .95cm; font-size: 18pt;">
-        <input type="text" name="lehrer" id="lehrer" style="position: relative; top: 39.5mm; left: -42mm; width: 7.85cm; height: .95cm; font-size: 18pt;">
-        <input type="date" name="von" id="von" style="position: relative; top: 39.5mm; left: 85.5mm; width: 5.35cm; height: .95cm; font-size: 18pt;">
-        <input type="date" name="bis" id="bis" style="position: relative; top: 39.5mm; left: 80mm; width: 5.35cm; height: .95cm; font-size: 18pt;">
-        <output name="tage" id="tage" style="color: black; z-index: -1; position: relative; top: 38.5mm; left: 70.5mm; width: 5.35cm; height: .95cm; font-size: 18pt;">1</output>
-        <textarea name="grund" id="grund" style="position: relative; top: 47.5mm; left: 25.5mm; width: 17.15cm; height: 3.3cm; font-size: 18pt;"></textarea>
+        <form action="generate.php" method="get">
+            <div class="form-group">
+                <label for="name">Name, Vorname</label>
+                <input class="form-control" type="text" value="<?= ($loggedIn) ? $_SESSION["nachname"] . ", " . $_SESSION["vorname"] : "" ?>" name="name" id="name">
+            </div>
+            <div class="form-group">
+                <label for="klasse">Klasse</label>
+                <input class="form-control" type="text" name="klasse" id="klasse">
+            </div>
+            <div class="form-group">
+                <label for="lehrer">Lehrer</label>
+                <input class="form-control" type="text" name="lehrer" id="lehrer">
+            </div>
+            <div class="form-group">
+                <label for="von">Von</label>
+                <input class="form-control" type="date" name="von" id="von">
+            </div>
+            <div class="form-group">
+                <label for="bis">Bis</label>
+                <input class="form-control" type="date" name="bis" id="bis">
+            </div>
+            <div class="form-group">
+                <label for="grund">Grund</label>
+                <input class="form-control" type="text" name="grund" id="grund"></input>
+            </div>
+            <button type="submit">Formular erstellen</button>
+        </form>
     </div>
     <?php include "../_hidden/bottomScripts.php" ?>
 </body>
