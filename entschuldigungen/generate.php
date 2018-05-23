@@ -14,13 +14,13 @@ $rImg = imagecreatefrompng("form.png");
 $cor = imagecolorallocate($rImg, 0, 0, 0);
 
 
-imagettftext($rImg, 48, 0, 620, 240, $cor, "arial.ttf", $name);
-imagettftext($rImg, 48, 0, 620, 330, $cor, "arial.ttf", $klasse);
-imagettftext($rImg, 48, 0, 940, 330, $cor, "arial.ttf", $lehrer);
-imagettftext($rImg, 48, 0, 670, 430, $cor, "arial.ttf", $date_von);
-imagettftext($rImg, 48, 0, 1040, 430, $cor, "arial.ttf", $date_bis);
-imagettftext($rImg, 48, 0, 230, 550, $cor, "arial.ttf", $grund);
-imagettftext($rImg, 48, 0, 1410, 540, $cor, "arial.ttf", $days);
+imagettftext($rImg, 40, 0, 620, 260, $cor, "arial.ttf", $name);
+imagettftext($rImg, 40, 0, 620, 350, $cor, "arial.ttf", $klasse);
+imagettftext($rImg, 40, 0, 940, 350, $cor, "arial.ttf", $lehrer);
+imagettftext($rImg, 40, 0, 670, 450, $cor, "arial.ttf", $date_von);
+imagettftext($rImg, 40, 0, 1040, 450, $cor, "arial.ttf", $date_bis);
+imagettftext($rImg, 40, 0, 230, 570, $cor, "arial.ttf", $grund);
+imagettftext($rImg, 40, 0, 1410, 560, $cor, "arial.ttf", $days);
  
 //Header output
 header('Content-type: image/png');
