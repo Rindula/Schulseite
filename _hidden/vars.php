@@ -102,7 +102,7 @@ echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min
 echo "<script type='text/javascript' src='/scripts/main.js'></script>";
 ?>
 <script type="text/javascript">
-window.cookieconsent_options = {"message":"Wir backen auch für deinen Browser Kekse!","dismiss":"Macht nur...","learnMore":"Mehr Infos","link":null,"theme":"dark-top"};
+window.cookieconsent_options = {"message":"Wir backen auch für deinen Browser Kekse!","dismiss":"Macht nur...","learnMore":"Mehr Infos","link":"/kontakt/datenschutz.php","theme":"dark-top"};
 
 function removeHA(id, user) {
     var id = id.getAttribute("selectedId");
