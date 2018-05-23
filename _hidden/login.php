@@ -4,11 +4,11 @@ list($user, $pass) = array('root', '74cb0A0kER');
 $pdo = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 
 if (isset($_GET['login'])) {
-    $name = $_POST['name'];
+    $email = $_POST['email'];
     $passwort = $_POST['passwort'];
 
-    $statement = $pdo->prepare("SELECT * FROM users WHERE login = :name");
-    $result = $statement->execute(array('name' => $name));
+    $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+    $result = $statement->execute(array('email' => $email));
     $user = $statement->fetch();
 
     //Überprüfung des Passworts

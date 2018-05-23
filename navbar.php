@@ -87,8 +87,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="username">Benutzername</label>
-                        <input type="text" name="name" class="form-control" id="username" autocomplete="username" placeholder="NachnameV(orname)">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" autocomplete="email" placeholder="example@example.com">
                     </div>
                     <div class="form-group">
                         <label for="password">Passwort</label>

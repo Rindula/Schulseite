@@ -14,6 +14,12 @@ foreach($_POST as $key=>$value) {
 	}
 }
 
+$email = $_POST["email"];
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+	$error_message = "E-Mail Addresse ungültig!";
+}
+
 // if (isset($_POST["secret"]) && isset($_POST["response"])) {
 // 	# Space for thoughts...
 // } elseif (isset($error_message)) {
@@ -24,11 +30,8 @@ foreach($_POST as $key=>$value) {
 
 /* Password Matching Validation */
 if($_POST['password'] != $_POST['confirm_password'] && !isset($error_message)){ 
-$error_message = 'Die Passwörte sollten gleich sein!<br>'; 
+	$error_message = 'Die Passwörte sollten gleich sein!<br>'; 
 }
-
-/* Login Name Creator */
-$login = $_POST["lastName"] . substr($_POST["firstName"], 0, 1);
 
 /* Email Validation 
 if(!isset($error_message)) {
@@ -41,23 +44,23 @@ if(!isset($error_message)) {
 /* Validation to check if Terms and Conditions are accepted */
 if(!isset($error_message)) {
 	if(!isset($_POST["terms"])) {
-	$error_message = "Du musst die Nutzungsbedingungen akzeptieren!";
+		$error_message = "Du musst die Nutzungsbedingungen akzeptieren!";
 	}
 }
 if(!isset($error_message)) {
-$ret = $userConn->query("SELECT * FROM reg_keys");
 $reg_key = $_POST["reg_key"];
 $valid = false;
 $error_message = "Ungültiger Registrierungsschlüssel!";
-while($r = $ret->fetch_assoc()) {
+foreach ($dbs->query('SELECT * FROM reg_keys') as $r) {
 	if($reg_key == $r["reg_key"]) {
-		if($r["count"] > 0 || $r["count"] == -1) {
+		if($r["counting"] > 0 || $r["counting"] == -1) {
 			unset ($error_message);
 			$valid = true;
 			$init_group = $r["init_group"];
 			$uses = $r["uses"] + 1;
-			if ($r["count"] != -1) $count = $r["count"] - 1;
-			$userConn->query("UPDATE reg_keys SET uses = '" . $uses ."', count = '" . $count . "' WHERE reg_key = '$reg_key'");
+			$count = ($r["counting"] == -1) ? - 1 : $r["counting"] - 1;
+			$prep = $dbs->prepare("UPDATE reg_keys SET uses = '" . $uses ."', counting = '" . $count . "' WHERE reg_key = :reg_key");
+			$prep->execute(array(":reg_key" => $reg_key));
 		} else {
 			$error_message = "Der Registrierungsschlüssel ist bereits aufgebraucht!";
 		}
@@ -66,12 +69,12 @@ while($r = $ret->fetch_assoc()) {
 }
 if(!isset($error_message) && $valid) {
 
-	$query = "INSERT INTO users (login, vorname, name, passwort, gruppe) VALUES
-	('" . $login . "', '" . $_POST["firstName"] . "', '" . $_POST["lastName"] . "', '" . password_hash($_POST["password"], PASSWORD_DEFAULT) . "', '$init_group')";
+	$query = "INSERT INTO users (email, vorname, name, passwort, gruppe) VALUES
+	('" . $email . "', '" . $_POST["firstName"] . "', '" . $_POST["lastName"] . "', '" . password_hash($_POST["password"], PASSWORD_DEFAULT) . "', '$init_group')";
 	$result = $userConn->query($query);
 	if(!empty($result)) {
 		$error_message = "";
-		$success_message = "Du hast dich erfolgreich registriert! Dein Benutzername ist \"$login\" <a href=\"/hausaufgaben\">Zurück zu den Hausaufgaben</a>";
+		$success_message = "Du hast dich erfolgreich registriert! Deine E-Mail ($email) ist aktiviert. <a href=\"/hausaufgaben\">Zurück zu den Hausaufgaben</a>";
 		unset($_POST);
 	} else {
 		$error_message = "Es ist ein Problem aufgetreten. Bitte versuche es später nocheinmal!";	
@@ -80,23 +83,18 @@ if(!isset($error_message) && $valid) {
 
 }
 
-$ret = $userConn->query("SELECT * FROM reg_keys");
 $reg_key = $_GET["reg_key"];
 $valid = false;
-$msg = "Ungültiger Registrierungsschlüssel!";
-while($r = $ret->fetch_assoc()) {
+foreach ($dbs->query('SELECT reg_key,counting FROM reg_keys') as $r) {
 	if($reg_key == $r["reg_key"]) {
-		if($r["count"] > 0 || $r["count"] == -1) {
+		if($r["counting"] > 0 || $r["counting"] == -1) {
 			$valid = true;
 		} else {
-			$msg = "Keine Registrierungen mehr mit diesem Schlüssel möglich!";
+			$error_message = "Keine Registrierungen mit diesem Schlüssel möglich!";
 		}
 	}
 }
 
-if(!$valid) {
-	die("<h1>$msg</h1>");
-}
 
 ?>
 <style>
@@ -114,7 +112,7 @@ if(!$valid) {
 	color: #027506;
 	border-radius: 4px;
 }
-.demo-table {
+.register-table {
 	background: #d9eeff;
 	width: 100%;
 	border-spacing: initial;
@@ -126,10 +124,10 @@ if(!$valid) {
 	border-radius: 4px;
 	padding: 20px 40px;
 }
-.demo-table td {
+.register-table td {
 	padding: 15px 0px;
 }
-.demoInputBox {
+.registerInputBox {
 	padding: 10px 30px;
 	border: #a9a9a9 1px solid;
 	border-radius: 4px;
@@ -146,7 +144,7 @@ if(!$valid) {
 </style>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <form name="frmRegistration" method="post" action="">
-	<table border="0" width="500" align="center" class="demo-table">
+	<table border="0" width="500" align="center" class="register-table">
 		<?php if(!empty($success_message)) { ?>	
 		<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
 		<?php } ?>
@@ -155,22 +153,27 @@ if(!$valid) {
 		<?php } ?>
 		<tr>
 			<td>Vorname</td>
-			<td><input type="text" class="demoInputBox" name="firstName" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>"></td>
+			<td><input type="text" <?= ($valid) ? "required" : "disabled"; ?> class="registerInputBox" autocomplete="given-name" name="firstName" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>"></td>
 		</tr>
 		<tr>
 			<td>Nachname</td>
-			<td><input type="text" class="demoInputBox" name="lastName" value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName']; ?>"></td>
+			<td><input type="text" <?= ($valid) ? "required" : "disabled"; ?> class="registerInputBox" autocomplete="family-name" name="lastName" value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName']; ?>"></td>
+		</tr>
+		</tr>
+		<tr>
+			<td>Email Addresse</td>
+			<td><input type="email" <?= ($valid) ? "required" : "disabled"; ?> class="registerInputBox" autocomplete="email" name="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>"></td>
 		</tr>
 		<tr>
 			<td>Passwort</td>
-			<td><input type="password" class="demoInputBox" name="password" value=""></td>
+			<td><input type="password" <?= ($valid) ? "required" : "disabled"; ?> class="registerInputBox" name="password" value=""></td>
 		</tr>
 		<tr>
 			<td>Passwort wiederholen</td>
-			<td><input type="password" class="demoInputBox" name="confirm_password" value=""></td>
+			<td><input type="password" <?= ($valid) ? "required" : "disabled"; ?> class="registerInputBox" name="confirm_password" value=""></td>
 		</tr>
 		<tr>
-			<td><div class="g-recaptcha" data-sitekey="6LdBTjEUAAAAABCV_6kyRvLRNWcaWBNe2nEGzotV"></div></td>
+			<!-- <td><div class="g-recaptcha" data-sitekey="6LdBTjEUAAAAABCV_6kyRvLRNWcaWBNe2nEGzotV"></div></td> -->
 			<td colspan=2>
 			<input type="checkbox" name="terms"> Ich akzeptiere die <a target="datenschutz" href="/kontakt/datenschutz.php">Datenschutzbestimmungen</a> <input type="submit" name="register-user" value="Registrieren" class="btnRegister"></td>
 		</tr>

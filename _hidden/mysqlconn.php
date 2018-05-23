@@ -18,4 +18,10 @@ if ($userConn->connect_errno) {
 }
 $sql = "SET NAMES 'utf8'";
 $userConn->query($sql);
+
+
+list($user, $pass) = array('root', '74cb0A0kER');
+$dbs = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
+
+
 ?>
