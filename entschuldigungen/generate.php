@@ -51,8 +51,8 @@ $rImg = imagecreatefrompng("form.png");
 $cor = imagecolorallocate($rImg, 0, 0, 0);
 
 
-imagettftext($rImg, 40, 0, 620, 280, $cor, "arial.ttf", $name);
-imagettftext($rImg, 40, 0, 620, 360, $cor, "arial.ttf", $klasse);
+imagettftext($rImg, 40, 0, 630, 290, $cor, "arial.ttf", $name);
+imagettftext($rImg, 40, 0, 630, 370, $cor, "arial.ttf", $klasse);
 imagettftext($rImg, 40, 0, 940, 360, $cor, "arial.ttf", $lehrer);
 imagettftext($rImg, 40, 0, 670, 450, $cor, "arial.ttf", date("d.m.Y", strtotime($date_von)));
 imagettftext($rImg, 40, 0, 1040, 450, $cor, "arial.ttf", date("d.m.Y", strtotime($date_bis)));
