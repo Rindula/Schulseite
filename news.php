@@ -1,17 +1,16 @@
 <?php
 
+list($user, $pass) = array('root', '74cb0A0kER');
+$dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 
-$newsConn = new mysqli("localhost", "root", "74cb0A0kER", "stats");
-if ($newsConn->connect_errno) {
-    die("<span>Verbindung fehlgeschlagen: " . $newsConn->connect_error . "</span>");
-}
 $sql = "SET NAMES 'utf8'";
-$newsConn->query($sql);
+$dbh->query($sql);
 
-if($ret = $newsConn->query("SELECT * FROM news WHERE expdate >= now() AND showdate <= now()")) {
-
-    while ($news = $ret->fetch_assoc()) {
+foreach ($dbh->query('SELECT * FROM news WHERE expdate >= now() AND showdate <= now() AND needLogin = 0') as $row) {
+    echo "<div class='alert alert-info fade show' id='message_".$news["id"]."'>" . $news["text"] . "</div>";
+}
+if ($loggedIn) {
+    foreach ($dbh->query('SELECT * FROM news WHERE expdate >= now() AND showdate <= now() AND needLogin = 1') as $row) {
         echo "<div class='alert alert-info fade show' id='message_".$news["id"]."'>" . $news["text"] . "</div>";
     }
-
 }
