@@ -63,35 +63,33 @@ include "../css/controller.php";
     </script>
 </head>
 <body class="container">
-    <div>
-        <form action="generate.php" method="get">
-            <div class="form-group">
-                <label for="name">Name, Vorname</label>
-                <input class="form-control" type="text" value="<?= ($loggedIn) ? $_SESSION["nachname"] . ", " . $_SESSION["vorname"] : "" ?>" name="name" id="name">
-            </div>
-            <div class="form-group">
-                <label for="klasse">Klasse</label>
-                <input class="form-control" type="text" name="klasse" id="klasse">
-            </div>
-            <div class="form-group">
-                <label for="lehrer">Lehrer</label>
-                <input class="form-control" type="text" name="lehrer" id="lehrer">
-            </div>
-            <div class="form-group">
-                <label for="von">Von</label>
-                <input class="form-control" type="date" name="von" id="von">
-            </div>
-            <div class="form-group">
-                <label for="bis">Bis</label>
-                <input class="form-control" type="date" name="bis" id="bis">
-            </div>
-            <div class="form-group">
-                <label for="grund">Grund</label>
-                <input class="form-control" type="text" name="grund" id="grund"></input>
-            </div>
-            <button type="submit">Formular drucken</button>
-        </form>
-    </div>
+    <form action="generate.php" method="get">
+        <div class="form-group">
+            <label for="name">Name, Vorname</label>
+            <input class="form-control" type="text" value="<?= ($loggedIn) ? $_SESSION["nachname"] . ", " . $_SESSION["vorname"] : "" ?>" name="name" id="name">
+        </div>
+        <div class="form-group">
+            <label for="klasse">Klasse</label>
+            <input class="form-control" type="text" name="klasse" id="klasse">
+        </div>
+        <div class="form-group">
+            <label for="lehrer">Lehrer</label>
+            <input class="form-control" type="text" name="lehrer" id="lehrer">
+        </div>
+        <div class="form-group">
+            <label for="von">Von</label>
+            <input class="form-control" type="date" name="von" id="von">
+        </div>
+        <div class="form-group">
+            <label for="bis">Bis</label>
+            <input class="form-control" type="date" name="bis" id="bis">
+        </div>
+        <div class="form-group">
+            <label for="grund">Grund</label>
+            <input class="form-control" type="text" name="grund" id="grund"></input>
+        </div>
+        <button type="submit">Formular drucken</button>
+    </form>
     <?php include "../_hidden/bottomScripts.php" ?>
 </body>
 </html>
