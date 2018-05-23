@@ -57,7 +57,7 @@ imagettftext($rImg, 40, 0, 940, 360, $cor, "arial.ttf", $lehrer);
 imagettftext($rImg, 40, 0, 670, 450, $cor, "arial.ttf", date("d.m.Y", strtotime($date_von)));
 imagettftext($rImg, 40, 0, 1040, 450, $cor, "arial.ttf", date("d.m.Y", strtotime($date_bis)));
 imagettftext($rImg, 40, 0, 230, 570, $cor, "arial.ttf", $grund);
-imagettftext($rImg, 40, 0, 1410, 560, $cor, "arial.ttf", dateDiff($date_von, $date_bis));
+imagettftext($rImg, 40, 0, 1410, 440, $cor, "arial.ttf", dateDiff($date_von, $date_bis));
  
 //Header output
 header('Content-type: image/png');
