@@ -103,6 +103,17 @@ echo "<script type='text/javascript' src='/scripts/main.js'></script>";
 ?>
 <script type="text/javascript">
 window.cookieconsent_options = {"message":"Wir backen auch für deinen Browser Kekse!","dismiss":"Macht nur...","learnMore":"Mehr Infos","link":null,"theme":"dark-top"};
+
+function removeHA(id) {
+    var xhr_removeHA = new XMLHttpRequest();
+    xhr_removeHA.onreadystatechange = function() {
+        if (xhr_removeHA.readyState == XMLHttpRequest.DONE && xhr_removeHA.status == 200) {
+            location.reload();
+        }
+    }
+    xhr_removeHA.open('GET', '/hausaufgaben/enter/removeHA.php?id='+id, true);
+    xhr_removeHA.send(null);
+}
 </script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
 <script type="text/javascript" src="/scripts/three.min.js"></script>

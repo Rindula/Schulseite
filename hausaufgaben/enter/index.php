@@ -28,7 +28,7 @@ include "../../css/controller.php";
         var dateField = document.getElementById("datum2");
 
         textBox.value = dropDown.options[dropDown.selectedIndex].getAttribute("topic");
-                dateField.value = dropDown.options[dropDown.selectedIndex].getAttribute("zielDatum");
+        dateField.value = dropDown.options[dropDown.selectedIndex].getAttribute("zielDatum");
 
     }
 
@@ -36,9 +36,12 @@ include "../../css/controller.php";
         var textBox = document.getElementById("aufgaben3");
         var dropDown = document.getElementById("fach3");
         var dateField = document.getElementById("datum3");
+        var removeButton = document.getElementById("removeButtonHa");
 
         textBox.value = dropDown.options[dropDown.selectedIndex].getAttribute("topic");
-                dateField.value = dropDown.options[dropDown.selectedIndex].getAttribute("zielDatum");
+        dateField.value = dropDown.options[dropDown.selectedIndex].getAttribute("zielDatum");
+
+        removeButton.selectedId = dropDown.options[dropDown.selectedIndex].value;
 
     }
 
@@ -78,6 +81,12 @@ include "../../_hidden/mysqlconn.php";
             $canChange = true;
         } else {
             $canChange = false;
+        }
+
+        if ($perms["canRemove"] == 1) {
+            $canRemove = true;
+        } else {
+            $canRemove = false;
         }
 
         ?>
@@ -160,7 +169,8 @@ include "../../_hidden/mysqlconn.php";
                         <input class="form-control" required type="date" id="datum3" name="datum" min="<?php echo date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary" type="submit">Ändern</button>
+                            <button class="btn btn-primary" type="submit">Ändern</button>
+                            <?= ($canRemove) ? '<button class="btn btn-outline-danger" id="removeButtonHa" type="button" selectedId onclick="removeHA(this.selectedId)">Entfernen</button>' : '<button class="btn btn-outline-danger disabled" id="removeButtonHa" type="button" selectedId disabled>Entfernen</button>' ; ?>
                         </div>
                     </form>
                 </td></tr>
@@ -248,7 +258,7 @@ include "../../_hidden/mysqlconn.php";
                         <input class="form-control" required type="date" id="datum2" name="datum" min="<?php echo date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary" type="submit">Ändern</button>
+                            <button class="btn btn-primary" type="submit">Ändern</button>
                         </div>
                     </form>
                 </td></tr>

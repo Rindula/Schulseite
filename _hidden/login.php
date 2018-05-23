@@ -1,6 +1,7 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=stats', 'root', "74cb0A0kER");
+list($user, $pass) = array('root', '74cb0A0kER');
+$pdo = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 
 if (isset($_GET['login'])) {
     $name = $_POST['name'];
@@ -22,6 +23,7 @@ if (isset($_GET['login'])) {
     } else {
         $success = '0';
         $errorMessage = "Name oder Passwort war ungültig<br>";
+        header("Location: /hausaufgaben");
     }
     $log = "Details: " . $_SERVER['REMOTE_ADDR'] . ' - ' . date("F j, Y, g:i a") . PHP_EOL .
             "Attempt: " . ($success == '1' ? 'Erfolgreich' : '<<Fehlgeschlagen>>') . PHP_EOL .
