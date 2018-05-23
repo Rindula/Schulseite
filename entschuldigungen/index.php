@@ -88,7 +88,9 @@ include "../css/controller.php";
             <label for="grund">Grund</label>
             <input class="form-control" type="text" name="grund" id="grund"></input>
         </div>
-        <button type="submit">Formular drucken</button>
+        <div class="btn-group">
+            <button class="btn btn-outline-info" type="submit" name="print">Formular drucken</button><button class="btn btn-secondary" type="submit">Formular anzeigen</button>
+        </div>
     </form>
     <?php include "../_hidden/bottomScripts.php" ?>
 </body>
