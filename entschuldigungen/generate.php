@@ -11,7 +11,7 @@ $grund = $_GET["grund"];
 $rImg = ImageCreateFromPNG("form.png");
  
 //define color
-$cor = imagecolorallocate($rImg, 0, 0, 0);
+$cor = imagecolorallocate($rImg, 255, 255, 255);
  
 //define image, font style, location of string, String, color.
 imagestring($rImg,5,620,240,$name,$cor);
