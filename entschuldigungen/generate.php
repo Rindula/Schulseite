@@ -8,7 +8,7 @@ $date_bis = $_GET["bis"];
 $grund = $_GET["grund"];
 
 //select a base image
-$rImg = ImageCreateFromPNG("form.png");
+$rImg = imagecreatefrompng("form.png");
  
 //define color
 $cor = imagecolorallocate($rImg, 255, 255, 255);
@@ -24,4 +24,4 @@ imagestring($rImg,5,1410,540,$days,$cor);
  
 //Header output
 header('Content-type: image/png');
-imagepng($rImg,NULL,100);
+imagepng($rImg);
