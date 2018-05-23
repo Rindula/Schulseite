@@ -1,5 +1,15 @@
 <?php
 
+if(isset($_GET["print"])) {
+?>
+
+<script type="text/javascript">
+    window.onload = function() { window.print(); }
+</script>
+
+<?php
+}
+
 $name = $_GET["name"];
 $klasse= $_GET["klasse"];
 $lehrer = $_GET["lehrer"];
@@ -62,7 +72,3 @@ imagettftext($rImg, 40, 0, 1410, 440, $cor, "arial.ttf", dateDiff($date_von, $da
 //Header output
 header('Content-type: image/png');
 imagepng($rImg);
-
-if(isset($_GET["print"])) {
-    echo "<script>window.print()</script>";
-}
