@@ -89,7 +89,7 @@ include "../css/controller.php";
                 <label for="grund">Grund</label>
                 <input class="form-control" type="text" name="grund" id="grund"></input>
             </div>
-            <button type="submit">Formular erstellen</button>
+            <button type="submit">Formular drucken</button>
         </form>
     </div>
     <?php include "../_hidden/bottomScripts.php" ?>
