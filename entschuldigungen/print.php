@@ -2,7 +2,7 @@
     foreach ($_GET as $key => $value) {
         if(is_array($value)) {
             foreach ($value as $k => $v) {
-                $str[] = urlencode($key)."=".urlencode($v);
+                $str[] = urlencode($key."[]")."=".urlencode($v);
             }
         } else {
             $str[] = urlencode($key)."=".urlencode($value);
