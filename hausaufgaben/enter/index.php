@@ -41,7 +41,7 @@ include "../../css/controller.php";
         textBox.value = dropDown.options[dropDown.selectedIndex].getAttribute("topic");
         dateField.value = dropDown.options[dropDown.selectedIndex].getAttribute("zielDatum");
 
-        removeButton.selectedId = dropDown.options[dropDown.selectedIndex].value;
+        removeButton.setAttribute("selectedid", dropDown.options[dropDown.selectedIndex].value);
 
     }
 
@@ -170,7 +170,7 @@ include "../../_hidden/mysqlconn.php";
                         </div><br>
                         <div class="btn-group" role="group">
                             <button class="btn btn-primary" type="submit">Ändern</button>
-                            <?= ($canRemove) ? '<button class="btn btn-outline-danger" id="removeButtonHa" type="button" selectedId onclick="removeHA(this.selectedId)">Entfernen</button>' : '<button class="btn btn-outline-danger disabled" id="removeButtonHa" type="button" selectedId disabled>Entfernen</button>' ; ?>
+                            <?= ($canRemove) ? '<button class="btn btn-outline-danger" id="removeButtonHa" type="button" selectedId onclick="removeHA(this,'.$_SESSION['userid'].')">Entfernen</button>' : '<button class="btn btn-outline-danger disabled" id="removeButtonHa" type="button" selectedId disabled>Entfernen</button>' ; ?>
                         </div>
                     </form>
                 </td></tr>

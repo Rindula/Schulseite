@@ -1,27 +1,42 @@
 <?php
+
+if (!isset($_GET["id"]) || !isset($_GET["user"])) {
+    http_response_code(400);
+    die();
+}
+
+
 $needVerify = false;
-include "../../verify.php";
+include "../../_hidden/verify.php";
+
+$userVar = $_GET["user"];
 
 list($user, $pass) = array('root', '74cb0A0kER');
-$dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
+$dbh1 = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 
-foreach ($dbh->query('SELECT * from groups WHERE id = ' . $gruppe) as $row) {
+$sth1 = $dbh1->prepare("SELECT g.canRemove from groups as g inner join users as u on u.gruppe = g.id WHERE u.id = :username");
+$sth1->bindParam(":username", $userVar);
+$sth1->execute();
+
+foreach ($sth1->fetchAll() as $row) {
     $allowed = ($row["canRemove"] == 1) ? true : false;
 }
 
 
-if(!$loggedIn || !$allowed) {
+if(!isset($_SESSION['userid']) || !$allowed) {
     http_response_code(403);
     die();
 }
+$sth1 = null;
+$dbh1 = null;
 
-list($user, $pass) = array('root', '74cb0A0kER');
-$dbh = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
+$dbh2 = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
 
 
-$sth = $dbh->prepare("DELETE FROM list WHERE id = :id");
-$sth->execute(array(":id" => $_GET["id"]));
+$sth2 = $dbh2->prepare("DELETE FROM list WHERE id = :id");
+$sth2->bindParam(":id", $_GET["id"]);
+$sth2->execute();
 
-echo $sth->fetchAll();
-
+$sth2 = null;
+$dbh2 = null;
 http_response_code(200);

@@ -104,14 +104,18 @@ echo "<script type='text/javascript' src='/scripts/main.js'></script>";
 <script type="text/javascript">
 window.cookieconsent_options = {"message":"Wir backen auch für deinen Browser Kekse!","dismiss":"Macht nur...","learnMore":"Mehr Infos","link":null,"theme":"dark-top"};
 
-function removeHA(id) {
+function removeHA(id, user) {
+    var id = id.getAttribute("selectedId");
     var xhr_removeHA = new XMLHttpRequest();
     xhr_removeHA.onreadystatechange = function() {
-        if (xhr_removeHA.readyState == XMLHttpRequest.DONE && xhr_removeHA.status == 200) {
-            location.reload();
+        if (xhr_removeHA.readyState == XMLHttpRequest.DONE) {
+            console.log(xhr_removeHA.text);
+            if (xhr_removeHA.status == 200) {
+                location.reload();
+            }
         }
     }
-    xhr_removeHA.open('GET', '/hausaufgaben/enter/removeHA.php?id='+id, true);
+    xhr_removeHA.open('GET', '/hausaufgaben/enter/removeHA.php?id='+id+"&user="+user, true);
     xhr_removeHA.send(null);
 }
 </script>

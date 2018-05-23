@@ -176,7 +176,6 @@ if (file_exists($logfilename)) {
     $fh = fopen($logfilename, 'a');
     fwrite($fh, $logText);
 } else {
-    echo "sfaf";
     $fh = fopen($logfilename, 'wb');
     fwrite($fh, $logText);
 }
