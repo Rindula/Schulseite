@@ -26,6 +26,7 @@ $(document).ready(function () {
         $(".form-control").addClass("text-light");
         $(".bg-light").removeClass("bg-light").addClass("bg-dark");
         $(".navbar-light").removeClass("navbar-light").addClass("navbar-dark");
+        $("choices").addClass("bg-dark");
     }
 }
 );
