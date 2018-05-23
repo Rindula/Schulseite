@@ -168,11 +168,19 @@ if ($loggedIn) {
 // Access Logging
 $date = new DateTime();
 $date = $date->format("d.m.Y H:i:s");
-$logText = "[".$date."] Zugriff von ".$_SERVER['REMOTE_ADDR']." auf ".$_SERVER['REQUEST_URI']." | OS: ".$user_os." | Browser: ".$user_browser;
+$logText = "[".$date."] Zugriff von ".$_SERVER['REMOTE_ADDR']." auf ".$_SERVER['REQUEST_URI']." | OS: ".$user_os." | Browser: ".$user_browser."\n";
 
-$fpLog = fopen($_SERVER['DOCUMENT_ROOT']."/log/accesslog_" . date("Y-m-d") . ".txt", 'a');
-fwrite($fpLog, $logText . "\n");
-fclose($fpLog);
+$logfilename = $_SERVER['DOCUMENT_ROOT']."/log/accesslog_" . date("Y-m-d") . ".txt";
+
+if (file_exists($logfilename)) {
+    $fh = fopen($logfilename, 'a');
+    fwrite($fh, $logText);
+} else {
+    echo "sfaf";
+    $fh = fopen($logfilename, 'wb');
+    fwrite($fh, $logText);
+}
+fclose($fh);
 
 
 $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false;
