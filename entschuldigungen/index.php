@@ -25,20 +25,7 @@ include "../css/controller.php";
 ?>
 <head>
     <style>
-        input, textarea {
-            box-shadow: none !important;
-            background: transparent;
-            border: transparent !important;
-            resize: none;
-        }
-
-        @media print {
-            .container {
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }
+        
     </style>
     <script>
         const setup = () => {
@@ -71,13 +58,14 @@ include "../css/controller.php";
             $('#von, #bis').on("change", function () {
                 setup();
             })
+            setup();
         });
     </script>
 </head>
 <body>
     <div class="container">
         <img style="z-index: -1; position: absolute; height: 297mm; width: 210mm" src="form.png" alt="Fehler bei laden des Bildes!">
-        <input type="text" value="<?= (loggedIn) ? $_SESSION["nachname"] . ", " . $_SESSION["vorname"] : "" ?>" name="name" id="name" style="position: relative; top: 29.5mm; left: 78.5mm; width: 11.85cm; height: .95cm; font-size: 18pt;">
+        <input type="text" value="<?= ($loggedIn) ? $_SESSION["nachname"] . ", " . $_SESSION["vorname"] : "" ?>" name="name" id="name" style="position: relative; top: 29.5mm; left: 78.5mm; width: 11.85cm; height: .95cm; font-size: 18pt;">
         <input type="text" name="klasse" id="klasse" style="text-align: center; position: relative; top: 39.5mm; left: -41mm; width: 4cm; height: .95cm; font-size: 18pt;">
         <input type="text" name="lehrer" id="lehrer" style="position: relative; top: 39.5mm; left: -42mm; width: 7.85cm; height: .95cm; font-size: 18pt;">
         <input type="date" name="von" id="von" style="position: relative; top: 39.5mm; left: 85.5mm; width: 5.35cm; height: .95cm; font-size: 18pt;">

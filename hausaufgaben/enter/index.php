@@ -26,9 +26,12 @@ include "../../css/controller.php";
         var textBox = document.getElementById("aufgaben2");
         var dropDown = document.getElementById("fach2");
         var dateField = document.getElementById("datum2");
+        var removeButton = document.getElementById("removeButtonKa");
 
         textBox.value = dropDown.options[dropDown.selectedIndex].getAttribute("topic");
         dateField.value = dropDown.options[dropDown.selectedIndex].getAttribute("zielDatum");
+
+        removeButton.setAttribute("selectedid", dropDown.options[dropDown.selectedIndex].value);
 
     }
 
@@ -259,6 +262,7 @@ include "../../_hidden/mysqlconn.php";
                         </div><br>
                         <div class="btn-group" role="group">
                             <button class="btn btn-primary" type="submit">Ändern</button>
+                            <?= ($canRemove) ? '<button class="btn btn-outline-danger" id="removeButtonKa" type="button" selectedId onclick="removeKA(this,'.$_SESSION['userid'].')">Entfernen</button>' : '<button class="btn btn-outline-danger disabled" id="removeButtonKa" type="button" selectedId disabled>Entfernen</button>' ; ?>
                         </div>
                     </form>
                 </td></tr>

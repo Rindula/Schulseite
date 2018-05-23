@@ -118,6 +118,20 @@ function removeHA(id, user) {
     xhr_removeHA.open('GET', '/hausaufgaben/enter/removeHA.php?id='+id+"&user="+user, true);
     xhr_removeHA.send(null);
 }
+function removeKA(id, user) {
+    var id = id.getAttribute("selectedId");
+    var xhr_removeHA = new XMLHttpRequest();
+    xhr_removeHA.onreadystatechange = function() {
+        if (xhr_removeHA.readyState == XMLHttpRequest.DONE) {
+            console.log(xhr_removeHA.text);
+            if (xhr_removeHA.status == 200) {
+                location.reload();
+            }
+        }
+    }
+    xhr_removeHA.open('GET', '/hausaufgaben/enter/removeKA.php?id='+id+"&user="+user, true);
+    xhr_removeHA.send(null);
+}
 </script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
 <script type="text/javascript" src="/scripts/three.min.js"></script>
