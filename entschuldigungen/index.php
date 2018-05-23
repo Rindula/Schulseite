@@ -62,8 +62,8 @@ include "../css/controller.php";
         });
     </script>
 </head>
-<body>
-    <div class="container">
+<body class="container">
+    <div>
         <form action="generate.php" method="get">
             <div class="form-group">
                 <label for="name">Name, Vorname</label>
