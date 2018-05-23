@@ -11,17 +11,17 @@ $grund = $_GET["grund"];
 $rImg = ImageCreateFromPNG("form.png");
  
 //define color
-$cor = imagecolorallocate($rImg, 255, 255, 255);
+$cor = imagecolorallocate($rImg, 0, 0, 0);
  
 //define image, font style, location of string, String, color.
 imagestring($rImg,5,620,240,$name,$cor);
-imagestring($rImg,5,620,240,$klasse,$cor);
-imagestring($rImg,5,620,240,$lehrer,$cor);
-imagestring($rImg,5,620,240,$date_von,$cor);
-imagestring($rImg,5,620,240,$date_bis,$cor);
-imagestring($rImg,5,620,240,$grund,$cor);
-imagestring($rImg,5,620,240,$days,$cor);
+imagestring($rImg,5,620,330,$klasse,$cor);
+imagestring($rImg,5,940,330,$lehrer,$cor);
+imagestring($rImg,5,670,430,$date_von,$cor);
+imagestring($rImg,5,1040,430,$date_bis,$cor);
+imagestring($rImg,5,230,550,$grund,$cor);
+imagestring($rImg,5,1410,540,$days,$cor);
  
 //Header output
-header('Content-type: image/jpeg');
-imagejpeg($rImg,NULL,100);
+header('Content-type: image/png');
+imagepng($rImg,NULL,100);
