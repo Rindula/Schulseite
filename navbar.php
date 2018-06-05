@@ -17,16 +17,16 @@
 <li class="nav-item">
   <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Schule</a>
   <div class="dropdown-menu<?= $dark ?>" aria-labelledby="navDropdown">
-    <a class="dropdown-item" id="hausaufgaben" href="/hausaufgaben">Hausaufgaben</a>
-    <a class="dropdown-item" id="termine" href="/termine">Termine</a>
+    <a class="dropdown-item<?= $dark ?>" id="hausaufgaben" href="/hausaufgaben">Hausaufgaben</a>
+    <a class="dropdown-item<?= $dark ?>" id="termine" href="/termine">Termine</a>
     <?php if ($loggedIn) { ?>
-    <a class="dropdown-item" id="stundenplan" href="/stundenplan">Stundenplan</a>
+    <a class="dropdown-item<?= $dark ?>" id="stundenplan" href="/stundenplan">Stundenplan</a>
     <?php } ?>
     <div class="dropdown-divider"></div>
     <?php if ($loggedIn) { ?>
-    <a class="dropdown-item" id="entschuldigungen" href="/entschuldigungen">Entschuldigung ausfüllen</a>
+    <a class="dropdown-item<?= $dark ?>" id="entschuldigungen" href="/entschuldigungen">Entschuldigung ausfüllen</a>
     <?php } ?>
-    <a class="dropdown-item" id="files" href="/files">Wichtige Materialien</a>
+    <a class="dropdown-item<?= $dark ?>" id="files" href="/files">Wichtige Materialien</a>
   </div>
 </li>
 <li class="nav-item">
@@ -38,9 +38,9 @@
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?= $_SESSION["name"] ?></a>
         <div class="dropdown-menu<?= $dark ?>" aria-labelledby="navDropdown">
-            <a class="dropdown-item fa fa-cog" id="settings" href="/settings?section=main"> Einstellungen</a>
+            <a class="dropdown-item fa fa-cog<?= $dark ?>" id="settings" href="/settings?section=main"> Einstellungen</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/logout">Abmelden</a>
+            <a class="dropdown-item<?= $dark ?>" href="/logout">Abmelden</a>
         </div>
         </li>
         <?php
@@ -55,14 +55,14 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="help" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hilfe?</a>
             <div class="dropdown-menu<?= $dark ?>" aria-labelledby="hrlp">
-                <a class="dropdown-item fa fa-bug" id="bugtracker" target="_blank" href="https://github.com/Rindula/Schulseite/issues"> Bugtracker</a>
-                <a class="dropdown-item" target="_blank" href="https://discord.gg/wHYgQxU">
+                <a class="dropdown-item fa fa-bug<?= $dark ?>" id="bugtracker" target="_blank" href="https://github.com/Rindula/Schulseite/issues"> Bugtracker</a>
+                <a class="dropdown-item<?= $dark ?>" target="_blank" href="https://discord.gg/wHYgQxU">
                     <i class="fa fa-gamepad"></i>
                     <img class="img-fluid" src="/img/discord-banner-highres.gif" alt="Join my Discord Server">
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" id="datenschutz" href="/kontakt/datenschutz.php">Datenschutzerklärung</a>
-                <a class="dropdown-item" id="impressum" href="/kontakt/impressum.php">Impressum</a>
+                <a class="dropdown-item<?= $dark ?>" id="datenschutz" href="/kontakt/datenschutz.php">Datenschutzerklärung</a>
+                <a class="dropdown-item<?= $dark ?>" id="impressum" href="/kontakt/impressum.php">Impressum</a>
             </div>
         </li>
     </ul>
