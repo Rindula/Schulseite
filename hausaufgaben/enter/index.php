@@ -132,6 +132,7 @@ include "../../_hidden/mysqlconn.php";
                         </div>
                     </form>
                 </div>
+                <hr>
                 <?php
             }
             if ($canChange) {
@@ -175,6 +176,7 @@ include "../../_hidden/mysqlconn.php";
                         </div>
                     </form>
                 </div>
+                <hr>
             <?php
         }
         if ($canEnter) {
@@ -214,6 +216,7 @@ include "../../_hidden/mysqlconn.php";
                         </div>
                     </form>
                 </div>
+                <hr>
                 <?php
             }
             if ($canChange) {
@@ -264,6 +267,7 @@ include "../../_hidden/mysqlconn.php";
                         </div>
                     </form>
                 </div>
+                <hr>
             <?php
         }
         ?>
