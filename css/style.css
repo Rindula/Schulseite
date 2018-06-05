@@ -8,3 +8,10 @@
 body {
     background-image: url("/img/bgtile.png");
 }
+
+.dropdown-item, .nav-link {
+    transition: all linear .2s;
+}
+.dropdown-item:hover, .nav-link:hover {
+    text-shadow: 0 0 5px yellow;
+}
