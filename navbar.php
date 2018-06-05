@@ -1,3 +1,8 @@
+<?php
+    if ($darkMode) {
+        $dark = " bg-dark text-light";
+    };
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <a class="navbar-brand" href="#">rindula.de</div></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +16,7 @@
 </li>
 <li class="nav-item">
   <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Schule</a>
-  <div class="dropdown-menu" aria-labelledby="navDropdown">
+  <div class="dropdown-menu<?= $dark ?>" aria-labelledby="navDropdown">
     <a class="dropdown-item" id="hausaufgaben" href="/hausaufgaben">Hausaufgaben</a>
     <a class="dropdown-item" id="termine" href="/termine">Termine</a>
     <?php if ($loggedIn) { ?>
@@ -32,7 +37,7 @@
         ?>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?= $_SESSION["name"] ?></a>
-        <div class="dropdown-menu" aria-labelledby="navDropdown">
+        <div class="dropdown-menu<?= $dark ?>" aria-labelledby="navDropdown">
             <a class="dropdown-item fa fa-cog" id="settings" href="/settings?section=main"> Einstellungen</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/logout">Abmelden</a>
@@ -49,7 +54,7 @@
     ?>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="help" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hilfe?</a>
-            <div class="dropdown-menu" aria-labelledby="hrlp">
+            <div class="dropdown-menu<?= $dark ?>" aria-labelledby="hrlp">
                 <a class="dropdown-item fa fa-bug" id="bugtracker" target="_blank" href="https://github.com/Rindula/Schulseite/issues"> Bugtracker</a>
                 <a class="dropdown-item" target="_blank" href="https://discord.gg/wHYgQxU">
                     <i class="fa fa-gamepad"></i>
