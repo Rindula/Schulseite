@@ -69,7 +69,6 @@ include "../../_hidden/mysqlconn.php";
 <body class="container">
 <div id="content" class="">
 
-    <table class="table">
         <?php
         $result = $userConn->query("SELECT * from groups WHERE id = $gruppe");
         $perms = $result->fetch_assoc();
@@ -93,11 +92,10 @@ include "../../_hidden/mysqlconn.php";
         }
 
         ?>
-        <tr>
             <?php
             if ($canEnter) {
                 ?>
-                <td>
+                <div>
                     <h1 class="display-4">Hausaufgaben eintragen</h1>
                     <form enter-type="ha" class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="0" name="type"/>
@@ -133,12 +131,13 @@ include "../../_hidden/mysqlconn.php";
                         <button class="btn btn-outline-secondary" type="reset">Felder leeren</button>
                         </div>
                     </form>
-                </td>
+                </div>
+                <hr>
                 <?php
             }
             if ($canChange) {
                 ?>
-                <td>
+                <div>
                     <h1 class="display-4">Hausaufgaben ändern</h1>
                     <form class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="3" name="type"/>
@@ -176,12 +175,13 @@ include "../../_hidden/mysqlconn.php";
                             <?= ($canRemove) ? '<button class="btn btn-outline-danger" id="removeButtonHa" type="button" selectedId onclick="removeHA(this,'.$_SESSION['userid'].')">Entfernen</button>' : '<button class="btn btn-outline-danger disabled" id="removeButtonHa" type="button" selectedId disabled>Entfernen</button>' ; ?>
                         </div>
                     </form>
-                </td></tr>
+                </div>
+                <hr>
             <?php
         }
         if ($canEnter) {
             ?>
-            <tr><td>
+            <div>
                     <h1 class="display-4">Arbeiten eintragen</h1>
                     <form enter-type="ka" class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="1" name="type"/>
@@ -215,12 +215,13 @@ include "../../_hidden/mysqlconn.php";
                         <button class="btn btn-outline-secondary" type="reset">Felder leeren</button>
                         </div>
                     </form>
-                </td>
+                </div>
+                <hr>
                 <?php
             }
             if ($canChange) {
                 ?>
-                <td>
+                <div>
                     <h1 class="display-4">Arbeitthema ändern</h1>
                     <form class="form" target="_blank" action="../../_hidden/enterHW.php" method="post">
                         <input type="hidden" value="2" name="type"/>
@@ -265,11 +266,11 @@ include "../../_hidden/mysqlconn.php";
                             <?= ($canRemove) ? '<button class="btn btn-outline-danger" id="removeButtonKa" type="button" selectedId onclick="removeKA(this,'.$_SESSION['userid'].')">Entfernen</button>' : '<button class="btn btn-outline-danger disabled" id="removeButtonKa" type="button" selectedId disabled>Entfernen</button>' ; ?>
                         </div>
                     </form>
-                </td></tr>
+                </div>
+                <hr>
             <?php
         }
         ?>
-    </table>
 </div>
 <?php include "../../_hidden/bottomScripts.php" ?>
 </body>
