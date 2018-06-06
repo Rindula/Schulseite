@@ -15,3 +15,6 @@ body {
 .dropdown-item:hover:not(.disabled), .nav-link:hover:not(.disabled) {
     text-shadow: 0 0 5px yellow;
 }
+.dropdown-item.disabled, .nav-link.disabled {
+    cursor: default;
+}
