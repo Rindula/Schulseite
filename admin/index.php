@@ -1,40 +1,30 @@
 <?php
 $needVerify = true;
-$exitlink = "/login";
+$exitlink = "/settings?section=main";
 $title = "Einstellungen";
 
 // Verifikation des Clients
-include "../../_hidden/verify.php";
+include "../_hidden/verify.php";
 
-$page = "settings";
-include "../../navbar.php";
+include "../navbar.php";
 
 // Global Header
-include "../../header.php";
+include "../header.php";
 
 // Benötigte Variablen
-include "../../_hidden/vars.php";
-$dbname = "homeworks";
-include "../../_hidden/mysqlconn.php";
+include "../_hidden/vars.php";
 
 // CSS Controller
-// $styles[] = "settings";
-include "../../css/controller.php";
+include "../css/controller.php";
 
-
-if (!isset($_GET["section"])) {
-    header("Location: ?section=main");
-}
 ?>
-<body class="container">
-    <div class="content text-center">
-        <h1 class="display-4">Einstellungen<br><small>Willkommen, <?= $_SESSION["name"] ?></small></h1>
-        <div class="list-group">
-            <a class="list-group-item list-group-item-action" href="/settings">Einstellungen</a>
-            <a class="list-group-item list-group-item-action" href="/news/createNews.php">Nachrichten erstellen</a>
-        </div>
+<body class="content">
+    <h1 class="display-4">Einstellungen<br><small>Administrator Menü für <?= $_SESSION["name"] ?></small></h1>
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action" href="/settings?section=main">Einstellungen</a>
+        <a class="list-group-item list-group-item-action" href="/news/createNews.php">Nachrichten erstellen</a>
     </div>
 <?php
-include "../../_hidden/bottomScripts.php";
+include "../_hidden/bottomScripts.php";
 ?>
 
