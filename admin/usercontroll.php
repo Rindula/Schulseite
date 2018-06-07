@@ -42,10 +42,11 @@ include "../css/controller.php";
         foreach ($dbh->query('SELECT name, vorname, id, email, gruppe FROM users ORDER BY name') as $row) {
             echo "
             <li class='list-group-item'>
-                <div class='form-group float-left'>
+                <div class='form-group'>
                     <span id='name'>".$row["name"].", ".$row["vorname"]."</span><br>
                     <span id='email'>".$row["email"]."</span>
                 </div>
+                <div class='form-group'>
                 <select class='form-control' name='gruppe'>
             ";
             foreach ($gruppen as $value) {
@@ -53,6 +54,7 @@ include "../css/controller.php";
             }
             echo "
                 </select>
+                </div>
                 <button class='btn btn-outline-info float-right form-control' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
             </li>
             ";
