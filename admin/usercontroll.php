@@ -56,7 +56,9 @@ include "../css/controller.php";
                 echo "
                     </select>
                     </div>
-                    <button class='btn btn-outline-info float-right form-control' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
+                    <div class='form-group'>
+                        <button class='btn btn-outline-info float-right form-control' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
+                    </div>
                 </form>
             </li>
             ";
