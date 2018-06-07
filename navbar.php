@@ -40,6 +40,14 @@
         <div class="dropdown-menu<?= $dark ?>" aria-labelledby="navDropdown">
             <a class="dropdown-item fa fa-cog<?= $dark ?>" id="settings" href="/settings?section=main"> Einstellungen</a>
             <div class="dropdown-divider"></div>
+            <?php
+                if ($gruppe == 1) {
+            ?>
+            <a class="dropdown-item fa fa-cog<?= $dark ?>" id="admin" href="/admin"> Administrator funktionen</a>
+            <div class="dropdown-divider"></div>
+            <?php
+                }
+            ?>
             <a class="dropdown-item<?= $dark ?>" href="/logout">Abmelden</a>
         </div>
         </li>
