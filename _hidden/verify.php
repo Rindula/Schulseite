@@ -5,7 +5,7 @@ if ($agsdfv[0] == "schule" && $agsdfv[1] == "rindula" && $agsdfv[2] == "de") {
     $permittedToUse = true;
 }
 if (!$permittedToUse) {
-    die("<h1>Diebstahl ist ungern gesehen! auch wenn der Quellcode öffentlich ist, liegen die Rechte immernoch bei mir!</h1>");
+    die("<h1 class='display-4'>Diebstahl ist ungern gesehen! Auch wenn der Quellcode öffentlich ist, liegen die Rechte immernoch bei mir!</h1>");
 }
 
 //set cookie lifetime for 100 days (60sec * 60mins * 24hours * 1000days)
