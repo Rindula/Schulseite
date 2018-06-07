@@ -1,4 +1,13 @@
 <?php
+$agsdfv = array_shift((explode('.', $_SERVER['HTTP_HOST'])));
+$permittedToUse = false;
+if ($agsdfv[0] == "schule" && $agsdfv[1] == "rindula" && $agsdfv[2] == "de") {
+    $permittedToUse = true;
+}
+if (!$permittedToUse) {
+    die("<h1>Diebstahl ist ungern gesehen! auch wenn der Quellcode öffentlich ist, liegen die Rechte immernoch bei mir!</h1>");
+}
+
 //set cookie lifetime for 100 days (60sec * 60mins * 24hours * 1000days)
 ini_set('session.cookie_lifetime', 60 * 60 * 24 * 1000);
 ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 1000);
