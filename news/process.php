@@ -10,11 +10,8 @@ echo $news.PHP_EOL;
 echo $showdate.PHP_EOL;
 echo $expdate.PHP_EOL;
 echo $needLogin.PHP_EOL;
-$stmt = $dbh->prepare("INSERT INTO news (`text`, `showdate`, `expdate`, `needLogin`) VALUES (':news' , ':showdate' , ':expdate' , ':needLogin')");
-$stmt->bindParam(':news', $news);
-$stmt->bindParam(':showdate', $showdate);
-$stmt->bindParam(':expdate', $expdate);
-$stmt->bindParam(':needLogin', $needLogin);
+$stmt = $dbh->prepare("INSERT INTO news (`text`, `showdate`, `expdate`, `needLogin`) VALUES (? , ? , ? , ?)");
+$stmt->bindParam('ssss', $news, $showdate, $expdate, $needLogin);
 
 $stmt->execute(); 
 
