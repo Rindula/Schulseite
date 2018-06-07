@@ -6,11 +6,11 @@
 </head>
 
 <body class="container">
-<?php include "navbar.php" ?>
+<?php include "../navbar.php" ?>
 <div>
 <h2 class="display-2">Changelog</h2>
 <div id="changelog"></div>
 </div>
-<?php include "_hidden/bottomScripts.php" ?>
+<?php include "../_hidden/bottomScripts.php" ?>
 </body>
 </html>
