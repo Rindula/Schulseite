@@ -12,4 +12,6 @@ $news = $_post['news'];
 $showdate = $_post['showdate'];
 $expdate = $_post['expdate'];
 $needLogin = $_post['needLogin'];
-$stmt->execute(); ?>
+$stmt->execute(); 
+
+header("Location: ../hausaufgaben");?>
