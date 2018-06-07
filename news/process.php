@@ -19,6 +19,7 @@ $stmt->execute();
 
 echo $showdate.PHP_EOL;
 echo $expdate.PHP_EOL;
+print_r($_POST);
 
 // header("Location: ../hausaufgaben");
 
