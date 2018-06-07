@@ -26,7 +26,6 @@ include "../css/controller.php";
 <html lang="de">
     
     <body class="container">
-        <form class="form form-control" action="processUser.php" method="post">
         <ul class="list-group list-group-flush">
     <?php
     
@@ -43,26 +42,27 @@ include "../css/controller.php";
         foreach ($dbh->query('SELECT name, vorname, id, email, gruppe FROM users ORDER BY name') as $row) {
             echo "
             <li class='list-group-item'>
-                <div class='form-group'>
-                    <span id='name'>".$row["name"].", ".$row["vorname"]."</span><br>
-                    <span id='email'>".$row["email"]."</span>
-                </div>
-                <div class='form-group'>
-                <select class='form-control' name='gruppe'>
-            ";
-            foreach ($gruppen as $value) {
-                echo "<option".(($value[0] == $row["gruppe"]) ? " selected" : "")." value='".$value[0]."'>".$value[1]."</option>";
-            }
-            echo "
-                </select>
-                </div>
-                <button class='btn btn-outline-info float-right form-control' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
+                <form class='form form-control' action='processUser.php' method='post'>
+                    <div class='form-group'>
+                        <span id='name'>".$row["name"].", ".$row["vorname"]."</span><br>
+                        <span id='email'>".$row["email"]."</span>
+                    </div>
+                    <div class='form-group'>
+                    <select class='form-control' name='gruppe'>
+                ";
+                foreach ($gruppen as $value) {
+                    echo "<option".(($value[0] == $row["gruppe"]) ? " selected" : "")." value='".$value[0]."'>".$value[1]."</option>";
+                }
+                echo "
+                    </select>
+                    </div>
+                    <button class='btn btn-outline-info float-right form-control' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
+                </form>
             </li>
             ";
         }
         ?>
         </ul>
-        </form>
         <?php include "../_hidden/bottomScripts.php" ?>
     </body>
 </html>
