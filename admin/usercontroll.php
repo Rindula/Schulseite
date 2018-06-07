@@ -40,6 +40,9 @@ include "../css/controller.php";
         }
 
         foreach ($dbh->query('SELECT name, vorname, id, email, gruppe FROM users ORDER BY name') as $row) {
+            if ($_SESSION['userid'] == $row["id"]) {
+                continue;
+            }
             echo "
             <li class='list-group-item'>
                 <form class='form form-control' action='processUser.php' method='post'>
