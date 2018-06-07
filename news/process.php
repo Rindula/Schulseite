@@ -17,6 +17,8 @@ $stmt->bindParam(':needLogin', $needLogin);
 
 $stmt->execute(); 
 
-header("Location: ../hausaufgaben");
+print_r($_POST);
+
+// header("Location: ../hausaufgaben");
 
 ?>
