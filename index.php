@@ -18,7 +18,7 @@
 					txt += "<tr><td>" + myObj[x].commit.message + "</td><td>" + d + "</td></tr>";
 				}
 				txt += "</tbody></table>";
-				document.getElementById("changelog").innerHTML = txt;
+				document.getElementById("changelog").innerHTML = txt.replace(/\n/g, "<br />");
 			} else {
 				document.getElementById("changelog").innerHTML = "<h1>Fehler beim laden des Changelogs!</h1>";
 			}
