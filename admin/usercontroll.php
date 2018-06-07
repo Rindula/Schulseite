@@ -40,7 +40,7 @@ include "../css/controller.php";
         }
 
         foreach ($dbh->query('SELECT name, vorname, id, email, gruppe FROM users ORDER BY name') as $row) {
-            if ($_SESSION['userid'] == $row["id"]) {
+            if (1 == $row["id"]) {
                 continue;
             }
             echo "
