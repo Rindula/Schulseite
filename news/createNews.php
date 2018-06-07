@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Nachrichten Erstellen</title>
+<?php include "../css/controller.php" ?>
 </head>
 
 <body class="container">
