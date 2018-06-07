@@ -1,4 +1,4 @@
-<?php $needVerify = false; include "../_hidden/verify.php"; include "../_hidden/vars.php"; $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false; 
+<?php 
 list($user, $pass) = array('root', '74cb0A0kER');
 $dbh = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
 

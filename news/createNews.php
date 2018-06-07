@@ -20,7 +20,7 @@
 		<option value="0" selected>Nein</option>
 		<option value="1">Ja</option>
 	</select>
-    <input type="submit" value="absenden" />
+    <input class="btn btn-outline-success" type="submit" value="Eintragen" />
 </form>
 <?php include "../_hidden/bottomScripts.php" ?>
 </body>
