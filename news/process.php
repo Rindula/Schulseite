@@ -9,9 +9,9 @@ $needLogin = $_post['needLogin'];
 
 $stmt = $dbh->prepare("INSERT INTO news (text, showdate, expdate, needLogin) VALUES (:news , :showdate , :expdate , :needLogin)");
 $stmt->bindParam(':news', $news);
-$showdate = $showdate->format('YYYY-mm-dd HH:i:s');
+$showdate = str_replace("T", " ", $showdate);
 $stmt->bindParam(':showdate', $showdate);
-$expdate = $expdate->format('YYYY-mm-dd HH:i:s');
+$expdate = str_replace("T", " ", $expdate);
 $stmt->bindParam(':expdate', $expdate);
 $stmt->bindParam(':needLogin', $needLogin);
 
