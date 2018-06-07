@@ -18,7 +18,7 @@ include "../_hidden/vars.php";
 include "../css/controller.php";
 
 ?>
-<body class="content">
+<body class="container">
     <h1 class="display-4">Einstellungen<br><small>Administrator Menü für <?= $_SESSION["name"] ?></small></h1>
     <div class="list-group">
         <a class="list-group-item list-group-item-action" href="/settings?section=main">Einstellungen</a>
