@@ -14,9 +14,9 @@
 </div>
 <form class="form form-control" action="process.php" method="post">
     <label for="news">Nachrichten		:</label> <input type="text" id="news" name="news" class="form-control" />
-	<label for="showdate">Datum der Anzeige:</label> <input type="datetime" id="showdate" name="showdate" class="form-control" />
-	<label for="expdate">Enddatum			:</label> <input type="datetime" id="expdate" name="expdate" class="form-control" />
-	<label for="needLogin">Login Nötig		:</label> <select id="needLogin" name="needLogin" class="form-control" >
+	<label for="showdate">Datum der Anzeige:</label> <input type="datetime-local" id="showdate" name="showdate" class="form-control" />
+	<label for="expdate">Enddatum			:</label> <input type="datetime-local" id="expdate" name="expdate" class="form-control" />
+	<label for="needLogin">Login Notwendig		:</label> <select id="needLogin" name="needLogin" class="form-control" >
 		<option value="0" selected>Nein</option>
 		<option value="1">Ja</option>
 	</select>
