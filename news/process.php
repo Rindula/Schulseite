@@ -9,18 +9,12 @@ $needLogin = $_post['needLogin'];
 
 $stmt = $dbh->prepare("INSERT INTO news (text, showdate, expdate, needLogin) VALUES (:news , :showdate , :expdate , :needLogin)");
 $stmt->bindParam(':news', $news);
-$showdate = date("Y-m-d H:i:s", strtotime($showdate));
 $stmt->bindParam(':showdate', $showdate);
-$expdate = date("Y-m-d H:i:s", strtotime($expdate));
 $stmt->bindParam(':expdate', $expdate);
 $stmt->bindParam(':needLogin', $needLogin);
 
 $stmt->execute(); 
 
-echo $showdate.PHP_EOL;
-echo $expdate.PHP_EOL;
-print_r($_POST);
-
-// header("Location: ../hausaufgaben");
+header("Location: ../hausaufgaben");
 
 ?>
