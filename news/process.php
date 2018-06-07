@@ -2,10 +2,10 @@
 list($user, $pass) = array('root', '74cb0A0kER');
 $dbh = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
 
-$news = $_post['news'];
-$showdate = $_post['showdate'];
-$expdate = $_post['expdate'];
-$needLogin = $_post['needLogin'];
+$news = $_POST['news'];
+$showdate = $_POST['showdate'];
+$expdate = $_POST['expdate'];
+$needLogin = $_POST['needLogin'];
 echo $news.PHP_EOL;
 echo $showdate.PHP_EOL;
 echo $expdate.PHP_EOL;
