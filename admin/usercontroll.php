@@ -48,7 +48,7 @@ include "../css/controller.php";
                 <form class='form form-control' action='processUser.php' method='post'>
                     <div class='form-group'>
                         <span id='name'>".$row["name"].", ".$row["vorname"]."</span><br>
-                        <span id='email'><a href='mailto:".$row["email"]."'>".$row["email"]."</a></span>
+                        <span id='email'><a class='text-info' href='mailto:".$row["email"]."'>".$row["email"]."</a></span>
                     </div>
                     <div class='form-group'>
                     <select class='form-control' name='gruppe'>
