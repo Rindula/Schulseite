@@ -12,6 +12,9 @@ body {
 .dropdown-item, .nav-link {
     transition: all linear .2s;
 }
-.dropdown-item:hover, .nav-link:hover {
+.dropdown-item:hover:not(.disabled), .nav-link:hover:not(.disabled) {
     text-shadow: 0 0 5px yellow;
+}
+.dropdown-item.disabled, .nav-link.disabled {
+    cursor: default;
 }
