@@ -26,7 +26,7 @@
             echo "
             <li class='list-group-item'>
                 <div class='float-left'>
-                    <span id='name'>".$row["name"].", ".$row["vorname"]."</span>
+                    <span id='name'>".$row["name"].", ".$row["vorname"]."</span><br>
                     <span id='email'>".$row["email"]."</span>
                 </div>
                 <select name='gruppe'>
