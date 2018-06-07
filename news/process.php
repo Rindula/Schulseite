@@ -17,7 +17,8 @@ $stmt->bindParam(':needLogin', $needLogin);
 
 $stmt->execute(); 
 
-// print_r($_POST);
+echo $showdate.PHP_EOL;
+echo $expdate.PHP_EOL;
 
 // header("Location: ../hausaufgaben");
 
