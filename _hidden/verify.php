@@ -26,6 +26,10 @@ if (!isset($needVerify)) {
     $needVerify = true;
 }
 
+if (!isset($needAdmin)) {
+    $needAdmin = false;
+}
+
 if ($needVerify && !isset($_SESSION['userid'])) {
     if (isset($exitLink)) {
         die("<meta http-equiv='refresh' content='0; $exitLink'>");
@@ -181,5 +185,8 @@ if (file_exists($logfilename)) {
 }
 fclose($fh);
 
+if ($needAdmin && ($gruppe != 1)) {
+    die("<meta http-equiv='refresh' content='2; /hausaufgaben'><h1 style=\"cursor: pointer;\" title=\"Zum Login...\" onclick=\"location.assign('/hausaufgaben')\">Du musst eingeloggt sein, um auf diese Seite zugreifen zu dürfen!</h1>");
+}
 
 $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false;

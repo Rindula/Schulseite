@@ -1,6 +1,7 @@
 <?php
 //$exitLink = "/hausaufgaben/show";
-$needVerify = false;
+$needVerify = true;
+$needAdmin = true;
 
 // Verifikation des Clients
 include "../_hidden/verify.php";
@@ -25,7 +26,7 @@ include "../css/controller.php";
 <html lang="de">
     
     <body class="container">
-        <form class="form form-control" method="post">
+        <form class="form form-control" action="processUser.php" method="post">
         <ul class="list-group list-group-flush">
     <?php
     
