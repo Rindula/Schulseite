@@ -10,14 +10,16 @@ $needLogin = $_post['needLogin'];
 $stmt = $dbh->prepare("INSERT INTO news (text, showdate, expdate, needLogin) VALUES (:news , :showdate , :expdate , :needLogin)");
 $stmt->bindParam(':news', $news);
 $showdate = str_replace("T", " ", $showdate);
+$showdate .= ":00";
 $stmt->bindParam(':showdate', $showdate);
 $expdate = str_replace("T", " ", $expdate);
+$expdate .= ":00";
 $stmt->bindParam(':expdate', $expdate);
 $stmt->bindParam(':needLogin', $needLogin);
 
 $stmt->execute(); 
 
-print_r($_POST);
+// print_r($_POST);
 
 // header("Location: ../hausaufgaben");
 
