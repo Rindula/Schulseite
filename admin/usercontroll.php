@@ -20,7 +20,7 @@
             $gruppen[] = array($row["id"], $row["displayName"]);
         }
 
-        foreach ($dbh->query('SELECT u.name, u.vorname, u.id, u.email FROM user as u ORDER BY name') as $row) {
+        foreach ($dbh->query('SELECT name, vorname, id, email FROM users ORDER BY name') as $row) {
             echo "
             <li>
                 <span id='name'>".$row["name"].", ".$row["vorname"]."</span>
