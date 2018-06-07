@@ -2,7 +2,7 @@
 
 $name = $_GET["name"];
 $klasse= $_GET["klasse"];
-$lehrer .= join(", ", $_GET["lehrer"]);
+$lehrer .= join(",\n", $_GET["lehrer"]);
 $date_von = $_GET["von"];
 $date_bis = $_GET["bis"];
 $grund = $_GET["grund"];
@@ -53,7 +53,7 @@ $cor = imagecolorallocate($rImg, 0, 0, 0);
 
 imagettftext($rImg, 40, 0, 630, 290, $cor, "arial.ttf", $name);
 imagettftext($rImg, 40, 0, 680, 370, $cor, "arial.ttf", $klasse);
-imagettftext($rImg, 40, 0, 940, 370, $cor, "arial.ttf", $lehrer);
+imagettftext($rImg, 20, 0, 940, 370, $cor, "arial.ttf", $lehrer);
 imagettftext($rImg, 40, 0, 680, 450, $cor, "arial.ttf", date("d.m.Y", strtotime($date_von)));
 imagettftext($rImg, 40, 0, 1040, 450, $cor, "arial.ttf", date("d.m.Y", strtotime($date_bis)));
 imagettftext($rImg, 40, 0, 230, 570, $cor, "arial.ttf", $grund);
