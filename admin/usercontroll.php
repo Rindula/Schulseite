@@ -22,7 +22,7 @@
             $gruppen[] = array($row["id"], $row["displayName"]);
         }
 
-        foreach ($dbh->query('SELECT name, vorname, id, email FROM users ORDER BY name') as $row) {
+        foreach ($dbh->query('SELECT name, vorname, id, email, gruppe FROM users ORDER BY name') as $row) {
             echo "
             <li class='list-group-item'>
                 <div class='float-left'>
@@ -32,7 +32,7 @@
                 <select name='gruppe'>
             ";
             foreach ($gruppen as $value) {
-                echo "<option".(($value[0] == $row["id"]) ? " selected" : "")." value='".$value[0]."'>".$value[1]."</option>";
+                echo "<option".(($value[0] == $row["gruppe"]) ? " selected" : "")." value='".$value[0]."'>".$value[1]."</option>";
             }
             echo "
                 </select>
