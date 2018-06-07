@@ -29,14 +29,14 @@
                     <span id='name'>".$row["name"].", ".$row["vorname"]."</span><br>
                     <span id='email'>".$row["email"]."</span>
                 </div>
-                <select name='gruppe'>
+                <select class='form-control' name='gruppe'>
             ";
             foreach ($gruppen as $value) {
                 echo "<option".(($value[0] == $row["gruppe"]) ? " selected" : "")." value='".$value[0]."'>".$value[1]."</option>";
             }
             echo "
                 </select>
-                <button class='btn btn-outline-info float-right' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
+                <button class='btn btn-outline-info float-right form-control' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
             </li>
             ";
         }
