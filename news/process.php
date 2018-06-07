@@ -13,10 +13,10 @@ $stmt->bindParam(':showdate', $showdate);
 $stmt->bindParam(':expdate', $expdate);
 $stmt->bindParam(':needLogin', $needLogin);
 
-print($news);
-print($showdate);
-print($expdate);
-print($needLogin);
+echo($news.PHP_EOL);
+echo($showdate.PHP_EOL);
+echo($expdate.PHP_EOL);
+echo($needLogin.PHP_EOL);
 
 $stmt->execute(); 
 
