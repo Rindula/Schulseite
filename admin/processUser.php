@@ -13,3 +13,5 @@ $sth->bindParam(":gruppe", $g);
 $sth->bindParam(":userid", $u);
 
 $sth->execute();
+
+header("Location: usercontroll.php");
