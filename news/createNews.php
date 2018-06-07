@@ -8,10 +8,6 @@
 </head>
 <body class="container">
 <?php include "../navbar.php" ?>
-<div>
-<h2 class="display-2">Changelog</h2>
-<div id="changelog"></div>
-</div>
 <form class="form form-control" action="process.php" method="post">
     <label for="news">Nachrichten		:</label> <input type="text" id="news" name="news" class="form-control" />
 	<label for="showdate">Datum der Anzeige:</label> <input type="date" id="showdate" name="showdate" class="form-control" />
