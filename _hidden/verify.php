@@ -1,4 +1,16 @@
 <?php
+$agsdfv = (explode('.', $_SERVER['HTTP_HOST']));
+$permittedToUse = false;
+if ($agsdfv[0] == "schule" && $agsdfv[1] == "rindula" && $agsdfv[2] == "de") {
+    $permittedToUse = true;
+}
+if ($agsdfv[0] == "dev-schule" && $agsdfv[1] == "rindula" && $agsdfv[2] == "de") {
+    $permittedToUse = true;
+}
+if (!$permittedToUse) {
+    die("<h1 class='display-4'>Diebstahl ist ungern gesehen! Auch wenn der Quellcode öffentlich ist, liegen die Rechte immernoch bei mir!</h1>");
+}
+
 //set cookie lifetime for 100 days (60sec * 60mins * 24hours * 1000days)
 ini_set('session.cookie_lifetime', 60 * 60 * 24 * 1000);
 ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 1000);
@@ -24,6 +36,10 @@ function showErrors() {
 
 if (!isset($needVerify)) {
     $needVerify = true;
+}
+
+if (!isset($needAdmin)) {
+    $needAdmin = false;
 }
 
 if ($needVerify && !isset($_SESSION['userid'])) {
@@ -181,5 +197,8 @@ if (file_exists($logfilename)) {
 }
 fclose($fh);
 
+if ($needAdmin && ($gruppe != 1)) {
+    die("<meta http-equiv='refresh' content='2; /hausaufgaben'><h1 style=\"cursor: pointer;\" title=\"Zum Login...\" onclick=\"location.assign('/hausaufgaben')\">Du musst eingeloggt sein, um auf diese Seite zugreifen zu dürfen!</h1>");
+}
 
 $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false;

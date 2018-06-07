@@ -22,8 +22,8 @@ $(document).ready(function () {
         $(".list-group-item").addClass("list-group-item-dark");
         $("body").addClass("bg-dark");
         $("body").addClass("text-light");
-        $(".form-control, .modal-content").addClass("bg-dark");
-        $(".form-control").addClass("text-light");
+        $(".form-control, .modal-content").not(".btn").addClass("bg-dark");
+        $(".form-control").not(".btn").addClass("text-light");
         $(".bg-light").removeClass("bg-light").addClass("bg-dark");
         $(".navbar-light").removeClass("navbar-light").addClass("navbar-dark");
         $("choices").addClass("bg-dark");

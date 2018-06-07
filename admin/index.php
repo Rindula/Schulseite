@@ -23,6 +23,7 @@ include "../css/controller.php";
     <div class="list-group">
         <a class="list-group-item list-group-item-action" href="/settings?section=main">Einstellungen</a>
         <a class="list-group-item list-group-item-action" href="/news/createNews.php">Nachrichten erstellen</a>
+        <a class="list-group-item list-group-item-action" href="usercontroll.php">Benutzerverwaltung</a>
     </div>
 <?php
 include "../_hidden/bottomScripts.php";
