@@ -11,7 +11,7 @@ echo $showdate.PHP_EOL;
 echo $expdate.PHP_EOL;
 echo $needLogin.PHP_EOL;
 $stmt = $dbh->prepare("INSERT INTO news (`text`, `showdate`, `expdate`, `needLogin`) VALUES (? , ? , ? , ?)");
-$stmt->bindParam('ssss', $news, $showdate, $expdate, $needLogin);
+$stmt->bindParam('sssi', $news, $showdate, $expdate, $needLogin);
 
 $stmt->execute(); 
 
