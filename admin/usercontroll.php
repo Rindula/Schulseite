@@ -14,6 +14,7 @@
     
         list($user, $pass) = array('root', '74cb0A0kER');
         $dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
+        $dbh->query("SET NAMES utf8");
 
         $gruppen = array();
 
@@ -24,8 +25,10 @@
         foreach ($dbh->query('SELECT name, vorname, id, email FROM users ORDER BY name') as $row) {
             echo "
             <li class='list-group-item'>
-                <span id='name'>".$row["name"].", ".$row["vorname"]."</span>
-                <span id='email'>".$row["email"]."</span>
+                <div class='float-left'>
+                    <span id='name'>".$row["name"].", ".$row["vorname"]."</span>
+                    <span id='email'>".$row["email"]."</span>
+                </div>
                 <select name='gruppe'>
             ";
             foreach ($gruppen as $value) {
@@ -33,7 +36,7 @@
             }
             echo "
                 </select>
-                <button class='btn btn-outline-info' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
+                <button class='btn btn-outline-info float-right' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
             </li>
             ";
         }
