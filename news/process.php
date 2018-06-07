@@ -12,8 +12,8 @@ $stmt->bindParam(':news', $news);
 $stmt->bindParam(':showdate', $showdate);
 $stmt->bindParam(':expdate', $expdate);
 $stmt->bindParam(':needLogin', $needLogin);
-print_r($stmt);
-$stmt->execute(); 
+
+print_r($stmt->execute()); 
 
 // header("Location: ../hausaufgaben");
 
