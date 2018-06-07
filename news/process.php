@@ -13,7 +13,12 @@ $stmt->bindParam(':showdate', $showdate);
 $stmt->bindParam(':expdate', $expdate);
 $stmt->bindParam(':needLogin', $needLogin);
 
-print_r($stmt->execute()); 
+print($news);
+print($showdate);
+print($expdate);
+print($needLogin);
+
+$stmt->execute(); 
 
 // header("Location: ../hausaufgaben");
 
