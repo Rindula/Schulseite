@@ -14,7 +14,7 @@ foreach ($dbh->query('SELECT * FROM news WHERE expdate >= adddate(now(), interva
     if (isset($_COOKIE["message_".$news["id"]])) {
         setcookie("message_".$news["id"], "true", strtotime($news["expdate"]) + (60*60*22));
     }
-    if ($_COOKIE["message_".$news["id"]] != false) {
+    if ($_COOKIE["message_".$news["id"]] != "false") {
         echo "<div $onclick class='alert alert-info fade show' id='message_".$news["id"]."'><b>[".date("d.m.Y", strtotime($news["showdate"]))."]</b><br>" . replaceLink($news["text"]) . "</div>";
     }
 }
@@ -23,7 +23,7 @@ if ($loggedIn) {
         if (isset($_COOKIE["message_".$news["id"]])) {
             setcookie("message_".$news["id"], "true", strtotime($news["expdate"]) + (60*60*22));
         }
-        if ($_COOKIE["message_".$news["id"]] != false) {
+        if ($_COOKIE["message_".$news["id"]] != "false") {
             echo "<div $onclick class='alert alert-info fade show' id='message_".$news["id"]."'><b>[".date("d.m.Y", strtotime($news["showdate"]))."]</b><br>" . replaceLink($news["text"]) . "</div>";
         }
     }
