@@ -18,7 +18,6 @@
   <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Schule</a>
   <div class="dropdown-menu<?= $dark ?>" aria-labelledby="navDropdown">
     <a class="dropdown-item<?= $dark ?>" id="hausaufgaben" href="/hausaufgaben">Hausaufgaben / Klassenarbeiten</a>
-    <a class="dropdown-item<?= $dark ?>" id="termine" href="/termine">Termine</a>
     <?php if ($loggedIn) { ?>
     <a class="dropdown-item<?= $dark ?>" id="stundenplan" href="/stundenplan">Stundenplan</a>
     <?php } ?>
