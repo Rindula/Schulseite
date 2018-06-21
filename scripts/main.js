@@ -72,5 +72,5 @@ function getCookie(cname) {
 
 function removeNews(item) {
     setCookie(item.id, "false", 30);
-    item.classList.remove("aktiv");
+    item.classList.remove("show");
 }
