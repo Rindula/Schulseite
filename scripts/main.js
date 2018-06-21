@@ -35,7 +35,6 @@ $('body').ready(function () {
         var divHeight = $('nav').height();
         $('body').css('margin-top', divHeight + 'px');
         $('.topnav').css('margin-top', '-' + divHeight + 'px');
-        navLoaded();
     });
 });
 
@@ -72,6 +71,6 @@ function getCookie(cname) {
 }
 
 function removeNews(item) {
-    document.cookie = item.id + "=false";
+    setCookie(item.id, "false", 30);
     item.removeClass("aktiv");
 }
