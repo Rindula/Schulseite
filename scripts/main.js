@@ -130,3 +130,8 @@ function navLoaded() {
 
     render();
 }
+
+function removeNews(item) {
+    document.cookie = item.id + "=false";
+    item.parentElement.removeChild(item);
+}
