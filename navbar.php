@@ -141,17 +141,6 @@
         }
         xhr.open('GET', '/news.php', true);
         xhr.send(null);
-    }
-    function closeNews(id) {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == XMLHttpRequest.DONE) {
-                document.getElementById("message_" + id).classList.remove("aktiv");
-                alert(xhr.responseText);
-            }
-        }
-        xhr.open('GET', '/news.php?close='+id, true);
-        xhr.send(null);
-    }
+    };
     news();
 </script>
