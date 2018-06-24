@@ -19,51 +19,64 @@ body {
     cursor: default;
 }
 
-.text-effect {
+  header.header {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+  .glitched {
+    font-size: 8rem;
+    color: #222;
+    text-align: center;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  .glitch-window {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 100%;
+    color: #222;
+    text-shadow: 2px 0 #f9f8f8, -1px 0 yellow, -2px 0 green;
     overflow: hidden;
-    position: relative;
-    filter: contrast(110%) brightness(190%);
+    animation: crt-me 2500ms infinite linear alternate-reverse;
   }
-  .neon {
-    position: relative;
-    background: black;
-    color: transparent;
-  }
-  .neon::before, .neon::after {
-    content: attr(data-text);
-    color: white;
-    filter: blur(0.02em);
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-  }
-  .neon::after {
-    mix-blend-mode: difference;
-  }
-  .gradient, .spotlight {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    pointer-events: none;
-    z-index: 10;
-  }
-  .gradient {
-    background: linear-gradient(45deg, red, blue);
-    mix-blend-mode: multiply;
-  }
-  .spotlight {
-    animation: light 5s infinite linear;
-    background: radial-gradient(circle, white, transparent 25%) 0 0 / 25% 25%, radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
-    top: -100%;
-    left: -100%;
-    mix-blend-mode: color-dodge;
-  }
-  @keyframes light {
+  @keyframes crt-me {
+    0% {
+      clip: rect(31px, 9999px, 94px, 0);
+    }
+    10% {
+      clip: rect(112px, 9999px, 76px, 0);
+    }
+    20% {
+      clip: rect(85px, 9999px, 77px, 0);
+    }
+    30% {
+      clip: rect(27px, 9999px, 97px, 0);
+    }
+    40% {
+      clip: rect(64px, 9999px, 98px, 0);
+    }
+    50% {
+      clip: rect(61px, 9999px, 85px, 0);
+    }
+    60% {
+      clip: rect(99px, 9999px, 114px, 0);
+    }
+    70% {
+      clip: rect(34px, 9999px, 115px, 0);
+    }
+    80% {
+      clip: rect(98px, 9999px, 129px, 0);
+    }
+    90% {
+      clip: rect(43px, 9999px, 96px, 0);
+    }
     100% {
-      transform: translate3d(50%, 50%, 0);
+      clip: rect(82px, 9999px, 64px, 0);
     }
   }
   
