@@ -62,10 +62,9 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="help" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hilfe?</a>
             <div class="dropdown-menu<?= $dark ?>" aria-labelledby="hrlp">
-                <a class="dropdown-item fa fa-bug<?= $dark ?>" id="bugtracker" target="_blank" href="https://github.com/Rindula/Schulseite/issues"> Bugtracker</a>
+                <a class="dropdown-item fa fa-bug<?= $dark ?>" id="bugtracker" target="_blank" href="https://github.com/rindula-de/Schulseite/issues/new?template=bug_report.md"> Bug melden</a>
                 <a class="dropdown-item<?= $dark ?>" target="_blank" href="https://discord.gg/wHYgQxU">
-                    <i class="fa fa-gamepad"></i>
-                    <img class="img-fluid" src="/img/discord-banner-highres.gif" alt="Join my Discord Server">
+                    <img class="img-fluid" src="https://i.imgur.com/8vxTxZU.png" alt="Join my Discord Server">
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item<?= $dark ?>" id="datenschutz" href="/kontakt/datenschutz.php">Datenschutzerklärung</a>
