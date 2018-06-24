@@ -498,13 +498,7 @@ body {
     }
   }
   .glitch {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     color: #fff;
-    text-align: center;
     text-transform: uppercase;
     font: 15px "Michroma", helvetica, sans-serif;
     letter-spacing: 0.6em;
