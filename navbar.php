@@ -4,7 +4,7 @@
     };
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<header class="header"><h1 class="glitched">rindula.de</h1></header>
+<span class="glitch">rindula.de</span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

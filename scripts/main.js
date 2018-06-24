@@ -35,9 +35,6 @@ $('body').ready(function () {
         var divHeight = $('nav').height();
         $('body').css('margin-top', divHeight + 'px');
         $('.topnav').css('margin-top', '-' + divHeight + 'px');
-        $("header").append("<div class='glitch-window'></div>");
-        //fill div with clone of real header
-        $( "h1.glitched" ).clone().appendTo( ".glitch-window" );
     });
 });
 
