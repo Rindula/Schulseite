@@ -21,540 +21,480 @@ body {
 
 @-moz-keyframes glitch {
     0% {
-      -moz-transform: skew(-76deg);
-      transform: skew(-76deg);
+      -moz-transform: skew(6deg);
+      transform: skew(6deg);
     }
     5% {
-      -moz-transform: skew(3deg);
-      transform: skew(3deg);
+      -moz-transform: skew(45deg);
+      transform: skew(45deg);
     }
     10% {
-      -moz-transform: skew(2deg);
-      transform: skew(2deg);
+      -moz-transform: skew(6deg);
+      transform: skew(6deg);
     }
     15% {
-      -moz-transform: skew(72deg);
-      transform: skew(72deg);
+      -moz-transform: skew(-1deg);
+      transform: skew(-1deg);
     }
     20% {
-      -moz-transform: skew(-16deg);
-      transform: skew(-16deg);
+      -moz-transform: skew(48deg);
+      transform: skew(48deg);
     }
     25% {
-      -moz-transform: skew(-63deg);
-      transform: skew(-63deg);
-    }
-    30% {
-      -moz-transform: skew(33deg);
-      transform: skew(33deg);
-    }
-    35% {
-      -moz-transform: skew(90deg);
-      transform: skew(90deg);
-    }
-    40% {
-      -moz-transform: skew(-29deg);
-      transform: skew(-29deg);
-    }
-    45% {
-      -moz-transform: skew(39deg);
-      transform: skew(39deg);
-    }
-    50% {
-      -moz-transform: skew(22deg);
-      transform: skew(22deg);
-    }
-    55% {
       -moz-transform: skew(-55deg);
       transform: skew(-55deg);
     }
-    60% {
+    30% {
+      -moz-transform: skew(56deg);
+      transform: skew(56deg);
+    }
+    35% {
+      -moz-transform: skew(-70deg);
+      transform: skew(-70deg);
+    }
+    40% {
+      -moz-transform: skew(22deg);
+      transform: skew(22deg);
+    }
+    45% {
+      -moz-transform: skew(-65deg);
+      transform: skew(-65deg);
+    }
+    50% {
       -moz-transform: skew(-86deg);
       transform: skew(-86deg);
     }
+    55% {
+      -moz-transform: skew(9deg);
+      transform: skew(9deg);
+    }
+    60% {
+      -moz-transform: skew(-83deg);
+      transform: skew(-83deg);
+    }
     65% {
-      -moz-transform: skew(-54deg);
-      transform: skew(-54deg);
+      -moz-transform: skew(-31deg);
+      transform: skew(-31deg);
     }
     70% {
-      -moz-transform: skew(-69deg);
-      transform: skew(-69deg);
+      -moz-transform: skew(-53deg);
+      transform: skew(-53deg);
     }
     75% {
-      -moz-transform: skew(-78deg);
-      transform: skew(-78deg);
+      -moz-transform: skew(19deg);
+      transform: skew(19deg);
     }
     80% {
-      -moz-transform: skew(18deg);
-      transform: skew(18deg);
+      -moz-transform: skew(-5deg);
+      transform: skew(-5deg);
     }
     85% {
-      -moz-transform: skew(49deg);
-      transform: skew(49deg);
+      -moz-transform: skew(46deg);
+      transform: skew(46deg);
     }
     90% {
-      -moz-transform: skew(61deg);
-      transform: skew(61deg);
+      -moz-transform: skew(-1deg);
+      transform: skew(-1deg);
     }
     95% {
-      -moz-transform: skew(-49deg);
-      transform: skew(-49deg);
+      -moz-transform: skew(32deg);
+      transform: skew(32deg);
     }
   }
   @-webkit-keyframes glitch {
     0% {
-      -webkit-transform: skew(-72deg);
-      transform: skew(-72deg);
+      -webkit-transform: skew(75deg);
+      transform: skew(75deg);
     }
     5% {
-      -webkit-transform: skew(26deg);
-      transform: skew(26deg);
+      -webkit-transform: skew(-38deg);
+      transform: skew(-38deg);
     }
     10% {
-      -webkit-transform: skew(76deg);
-      transform: skew(76deg);
+      -webkit-transform: skew(77deg);
+      transform: skew(77deg);
     }
     15% {
-      -webkit-transform: skew(52deg);
-      transform: skew(52deg);
+      -webkit-transform: skew(-29deg);
+      transform: skew(-29deg);
     }
     20% {
-      -webkit-transform: skew(63deg);
-      transform: skew(63deg);
+      -webkit-transform: skew(28deg);
+      transform: skew(28deg);
     }
     25% {
-      -webkit-transform: skew(-15deg);
-      transform: skew(-15deg);
+      -webkit-transform: skew(27deg);
+      transform: skew(27deg);
     }
     30% {
-      -webkit-transform: skew(-76deg);
-      transform: skew(-76deg);
+      -webkit-transform: skew(32deg);
+      transform: skew(32deg);
     }
     35% {
-      -webkit-transform: skew(78deg);
-      transform: skew(78deg);
-    }
-    40% {
-      -webkit-transform: skew(-82deg);
-      transform: skew(-82deg);
-    }
-    45% {
-      -webkit-transform: skew(-16deg);
-      transform: skew(-16deg);
-    }
-    50% {
-      -webkit-transform: skew(15deg);
-      transform: skew(15deg);
-    }
-    55% {
-      -webkit-transform: skew(55deg);
-      transform: skew(55deg);
-    }
-    60% {
-      -webkit-transform: skew(-12deg);
-      transform: skew(-12deg);
-    }
-    65% {
-      -webkit-transform: skew(47deg);
-      transform: skew(47deg);
-    }
-    70% {
-      -webkit-transform: skew(-80deg);
-      transform: skew(-80deg);
-    }
-    75% {
-      -webkit-transform: skew(34deg);
-      transform: skew(34deg);
-    }
-    80% {
       -webkit-transform: skew(-89deg);
       transform: skew(-89deg);
     }
+    40% {
+      -webkit-transform: skew(-49deg);
+      transform: skew(-49deg);
+    }
+    45% {
+      -webkit-transform: skew(-25deg);
+      transform: skew(-25deg);
+    }
+    50% {
+      -webkit-transform: skew(-31deg);
+      transform: skew(-31deg);
+    }
+    55% {
+      -webkit-transform: skew(76deg);
+      transform: skew(76deg);
+    }
+    60% {
+      -webkit-transform: skew(6deg);
+      transform: skew(6deg);
+    }
+    65% {
+      -webkit-transform: skew(-70deg);
+      transform: skew(-70deg);
+    }
+    70% {
+      -webkit-transform: skew(86deg);
+      transform: skew(86deg);
+    }
+    75% {
+      -webkit-transform: skew(-57deg);
+      transform: skew(-57deg);
+    }
+    80% {
+      -webkit-transform: skew(-15deg);
+      transform: skew(-15deg);
+    }
     85% {
-      -webkit-transform: skew(79deg);
-      transform: skew(79deg);
+      -webkit-transform: skew(7deg);
+      transform: skew(7deg);
     }
     90% {
-      -webkit-transform: skew(88deg);
-      transform: skew(88deg);
+      -webkit-transform: skew(42deg);
+      transform: skew(42deg);
     }
     95% {
-      -webkit-transform: skew(-71deg);
-      transform: skew(-71deg);
+      -webkit-transform: skew(54deg);
+      transform: skew(54deg);
     }
   }
   @keyframes glitch {
     0% {
-      -moz-transform: skew(71deg);
-      -ms-transform: skew(71deg);
-      -webkit-transform: skew(71deg);
-      transform: skew(71deg);
+      -moz-transform: skew(48deg);
+      -ms-transform: skew(48deg);
+      -webkit-transform: skew(48deg);
+      transform: skew(48deg);
     }
     5% {
-      -moz-transform: skew(21deg);
-      -ms-transform: skew(21deg);
-      -webkit-transform: skew(21deg);
-      transform: skew(21deg);
+      -moz-transform: skew(-28deg);
+      -ms-transform: skew(-28deg);
+      -webkit-transform: skew(-28deg);
+      transform: skew(-28deg);
     }
     10% {
-      -moz-transform: skew(78deg);
-      -ms-transform: skew(78deg);
-      -webkit-transform: skew(78deg);
-      transform: skew(78deg);
+      -moz-transform: skew(23deg);
+      -ms-transform: skew(23deg);
+      -webkit-transform: skew(23deg);
+      transform: skew(23deg);
     }
     15% {
-      -moz-transform: skew(-11deg);
-      -ms-transform: skew(-11deg);
-      -webkit-transform: skew(-11deg);
-      transform: skew(-11deg);
+      -moz-transform: skew(24deg);
+      -ms-transform: skew(24deg);
+      -webkit-transform: skew(24deg);
+      transform: skew(24deg);
     }
     20% {
-      -moz-transform: skew(89deg);
-      -ms-transform: skew(89deg);
-      -webkit-transform: skew(89deg);
-      transform: skew(89deg);
+      -moz-transform: skew(-1deg);
+      -ms-transform: skew(-1deg);
+      -webkit-transform: skew(-1deg);
+      transform: skew(-1deg);
     }
     25% {
-      -moz-transform: skew(-38deg);
-      -ms-transform: skew(-38deg);
-      -webkit-transform: skew(-38deg);
-      transform: skew(-38deg);
+      -moz-transform: skew(61deg);
+      -ms-transform: skew(61deg);
+      -webkit-transform: skew(61deg);
+      transform: skew(61deg);
     }
     30% {
-      -moz-transform: skew(7deg);
-      -ms-transform: skew(7deg);
-      -webkit-transform: skew(7deg);
-      transform: skew(7deg);
+      -moz-transform: skew(-50deg);
+      -ms-transform: skew(-50deg);
+      -webkit-transform: skew(-50deg);
+      transform: skew(-50deg);
     }
     35% {
-      -moz-transform: skew(21deg);
-      -ms-transform: skew(21deg);
-      -webkit-transform: skew(21deg);
-      transform: skew(21deg);
+      -moz-transform: skew(16deg);
+      -ms-transform: skew(16deg);
+      -webkit-transform: skew(16deg);
+      transform: skew(16deg);
     }
     40% {
-      -moz-transform: skew(42deg);
-      -ms-transform: skew(42deg);
-      -webkit-transform: skew(42deg);
-      transform: skew(42deg);
+      -moz-transform: skew(38deg);
+      -ms-transform: skew(38deg);
+      -webkit-transform: skew(38deg);
+      transform: skew(38deg);
     }
     45% {
-      -moz-transform: skew(78deg);
-      -ms-transform: skew(78deg);
-      -webkit-transform: skew(78deg);
-      transform: skew(78deg);
+      -moz-transform: skew(4deg);
+      -ms-transform: skew(4deg);
+      -webkit-transform: skew(4deg);
+      transform: skew(4deg);
     }
     50% {
-      -moz-transform: skew(-57deg);
-      -ms-transform: skew(-57deg);
-      -webkit-transform: skew(-57deg);
-      transform: skew(-57deg);
+      -moz-transform: skew(-58deg);
+      -ms-transform: skew(-58deg);
+      -webkit-transform: skew(-58deg);
+      transform: skew(-58deg);
     }
     55% {
-      -moz-transform: skew(60deg);
-      -ms-transform: skew(60deg);
-      -webkit-transform: skew(60deg);
-      transform: skew(60deg);
+      -moz-transform: skew(86deg);
+      -ms-transform: skew(86deg);
+      -webkit-transform: skew(86deg);
+      transform: skew(86deg);
     }
     60% {
-      -moz-transform: skew(22deg);
-      -ms-transform: skew(22deg);
-      -webkit-transform: skew(22deg);
-      transform: skew(22deg);
+      -moz-transform: skew(0deg);
+      -ms-transform: skew(0deg);
+      -webkit-transform: skew(0deg);
+      transform: skew(0deg);
     }
     65% {
-      -moz-transform: skew(-57deg);
-      -ms-transform: skew(-57deg);
-      -webkit-transform: skew(-57deg);
-      transform: skew(-57deg);
+      -moz-transform: skew(67deg);
+      -ms-transform: skew(67deg);
+      -webkit-transform: skew(67deg);
+      transform: skew(67deg);
     }
     70% {
-      -moz-transform: skew(-24deg);
-      -ms-transform: skew(-24deg);
-      -webkit-transform: skew(-24deg);
-      transform: skew(-24deg);
+      -moz-transform: skew(-21deg);
+      -ms-transform: skew(-21deg);
+      -webkit-transform: skew(-21deg);
+      transform: skew(-21deg);
     }
     75% {
-      -moz-transform: skew(71deg);
-      -ms-transform: skew(71deg);
-      -webkit-transform: skew(71deg);
-      transform: skew(71deg);
+      -moz-transform: skew(32deg);
+      -ms-transform: skew(32deg);
+      -webkit-transform: skew(32deg);
+      transform: skew(32deg);
     }
     80% {
-      -moz-transform: skew(13deg);
-      -ms-transform: skew(13deg);
-      -webkit-transform: skew(13deg);
-      transform: skew(13deg);
+      -moz-transform: skew(6deg);
+      -ms-transform: skew(6deg);
+      -webkit-transform: skew(6deg);
+      transform: skew(6deg);
     }
     85% {
-      -moz-transform: skew(-75deg);
-      -ms-transform: skew(-75deg);
-      -webkit-transform: skew(-75deg);
-      transform: skew(-75deg);
+      -moz-transform: skew(86deg);
+      -ms-transform: skew(86deg);
+      -webkit-transform: skew(86deg);
+      transform: skew(86deg);
     }
     90% {
-      -moz-transform: skew(83deg);
-      -ms-transform: skew(83deg);
-      -webkit-transform: skew(83deg);
-      transform: skew(83deg);
+      -moz-transform: skew(55deg);
+      -ms-transform: skew(55deg);
+      -webkit-transform: skew(55deg);
+      transform: skew(55deg);
     }
     95% {
-      -moz-transform: skew(-27deg);
-      -ms-transform: skew(-27deg);
-      -webkit-transform: skew(-27deg);
-      transform: skew(-27deg);
+      -moz-transform: skew(-49deg);
+      -ms-transform: skew(-49deg);
+      -webkit-transform: skew(-49deg);
+      transform: skew(-49deg);
     }
   }
   @-moz-keyframes noise {
     0% {
-      background-position: 57px 35px;
+      background-position: -55px 24px;
     }
     10% {
-      background-position: -83px -11px;
+      background-position: -59px 20px;
     }
     20% {
-      background-position: 86px 87px;
+      background-position: -36px -74px;
     }
     30% {
-      background-position: 87px 85px;
+      background-position: 92px 4px;
     }
     40% {
-      background-position: 79px -23px;
+      background-position: 38px 10px;
     }
     50% {
-      background-position: -50px 68px;
+      background-position: -97px -29px;
     }
     60% {
-      background-position: 13px 35px;
+      background-position: -49px 80px;
     }
     70% {
-      background-position: 11px -79px;
+      background-position: -16px -85px;
     }
     80% {
-      background-position: 56px -22px;
+      background-position: -90px 76px;
     }
     90% {
-      background-position: 30px 42px;
+      background-position: -97px -53px;
     }
   }
   @-webkit-keyframes noise {
     0% {
-      background-position: 63px 62px;
+      background-position: -30px 81px;
     }
     10% {
-      background-position: 60px -82px;
+      background-position: 89px -11px;
     }
     20% {
-      background-position: 68px -30px;
+      background-position: 61px 61px;
     }
     30% {
-      background-position: -35px -63px;
+      background-position: 16px 25px;
     }
     40% {
-      background-position: -77px -9px;
+      background-position: 57px 42px;
     }
     50% {
-      background-position: 79px -62px;
+      background-position: -89px -63px;
     }
     60% {
-      background-position: 89px 21px;
+      background-position: -68px -45px;
     }
     70% {
-      background-position: -66px -34px;
+      background-position: 76px -35px;
     }
     80% {
-      background-position: 49px 26px;
+      background-position: 64px 89px;
     }
     90% {
-      background-position: -14px 31px;
+      background-position: 73px -85px;
     }
   }
   @keyframes noise {
     0% {
-      background-position: 89px -51px;
+      background-position: -40px 66px;
     }
     10% {
-      background-position: 22px -93px;
+      background-position: 7px 65px;
     }
     20% {
-      background-position: 1px -67px;
+      background-position: 23px -2px;
     }
     30% {
-      background-position: -14px -7px;
+      background-position: -75px 53px;
     }
     40% {
-      background-position: 24px -82px;
+      background-position: 62px -21px;
     }
     50% {
-      background-position: 13px -90px;
+      background-position: 3px -32px;
     }
     60% {
-      background-position: 82px -66px;
+      background-position: -61px -85px;
     }
     70% {
-      background-position: 53px -12px;
+      background-position: 37px -14px;
     }
     80% {
-      background-position: 5px -57px;
+      background-position: 83px -70px;
     }
     90% {
-      background-position: 9px -80px;
+      background-position: -67px 19px;
     }
   }
   @-moz-keyframes bar {
     0% {
-      height: 67px;
-      top: 48%;
-      opacity: 0.48;
-    }
-    10% {
-      height: 397px;
-      top: 56%;
-      opacity: 0.37;
-    }
-    20% {
-      height: 209px;
-      top: 29%;
-      opacity: 0.1;
-    }
-    30% {
-      height: 479px;
-      top: 42%;
-      opacity: 0.43;
-    }
-    40% {
-      height: 262px;
-      top: 20%;
-      opacity: 0.11;
-    }
-    50% {
-      height: 418px;
-      top: 37%;
-      opacity: 0.42;
-    }
-    60% {
-      height: 320px;
-      top: 58%;
-      opacity: 0.77;
-    }
-    70% {
-      height: 157px;
-      top: 22%;
-      opacity: 0.24;
-    }
-    80% {
-      height: 381px;
-      top: 27%;
       opacity: 0.06;
     }
+    10% {
+      opacity: 0.64;
+    }
+    20% {
+      opacity: 0.21;
+    }
+    30% {
+      opacity: 0.37;
+    }
+    40% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.38;
+    }
+    60% {
+      opacity: 0.65;
+    }
+    70% {
+      opacity: 0.8;
+    }
+    80% {
+      opacity: 0.77;
+    }
     90% {
-      height: 114px;
-      top: 88%;
-      opacity: 0.56;
+      opacity: 0.4;
     }
   }
   @-webkit-keyframes bar {
     0% {
-      height: 209px;
-      top: 31%;
-      opacity: 0.34;
+      opacity: 0.25;
     }
     10% {
-      height: 619px;
-      top: 34%;
       opacity: 0.48;
     }
     20% {
-      height: 242px;
-      top: 35%;
-      opacity: 0.02;
+      opacity: 0.64;
     }
     30% {
-      height: 185px;
-      top: 66%;
-      opacity: 0.22;
+      opacity: 0.04;
     }
     40% {
-      height: 361px;
-      top: 1%;
-      opacity: 0.16;
+      opacity: 0.55;
     }
     50% {
-      height: 121px;
-      top: 76%;
-      opacity: 0.53;
+      opacity: 0.55;
     }
     60% {
-      height: 348px;
-      top: 41%;
-      opacity: 0.43;
+      opacity: 0.78;
     }
     70% {
-      height: 34px;
-      top: 1%;
-      opacity: 0.76;
+      opacity: 0.65;
     }
     80% {
-      height: 344px;
-      top: 14%;
-      opacity: 0.29;
+      opacity: 0.71;
     }
     90% {
-      height: 575px;
-      top: 23%;
-      opacity: 0.25;
+      opacity: 0.31;
     }
   }
   @keyframes bar {
     0% {
-      height: 466px;
-      top: 79%;
-      opacity: 0.5;
+      opacity: 0.27;
     }
     10% {
-      height: 161px;
-      top: 42%;
-      opacity: 0.71;
+      opacity: 0.74;
     }
     20% {
-      height: 73px;
-      top: 81%;
-      opacity: 0.18;
+      opacity: 0.29;
     }
     30% {
-      height: 104px;
-      top: 13%;
-      opacity: 0.28;
+      opacity: 0.29;
     }
     40% {
-      height: 145px;
-      top: 36%;
-      opacity: 0.32;
+      opacity: 0.1;
     }
     50% {
-      height: 255px;
-      top: 28%;
-      opacity: 0.72;
+      opacity: 0.79;
     }
     60% {
-      height: 203px;
-      top: 9%;
-      opacity: 0.25;
+      opacity: 0.26;
     }
     70% {
-      height: 278px;
-      top: 9%;
-      opacity: 0.65;
+      opacity: 0.75;
     }
     80% {
-      height: 507px;
-      top: 22%;
-      opacity: 0.33;
+      opacity: 0.61;
     }
     90% {
-      height: 220px;
-      top: 65%;
-      opacity: 0.09;
+      opacity: 0.76;
     }
   }
   .glitch {
