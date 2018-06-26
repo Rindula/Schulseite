@@ -13,7 +13,9 @@ body {
     transition: all linear .2s;
 }
 .dropdown-item:hover:not(.disabled), .nav-link:hover:not(.disabled) {
-    text-shadow: 0 0 5px yellow;
+  -moz-animation: noise 0.3s infinite;
+  -webkit-animation: noise 0.3s infinite;
+  animation: noise 0.3s infinite;
 }
 .dropdown-item.disabled, .nav-link.disabled {
     cursor: default;
@@ -503,7 +505,6 @@ body {
     font: 15px "Michroma", helvetica, sans-serif;
     letter-spacing: 0.6em;
     text-shadow: 2px 0 1px #f6050a, -2px 0 1px #1cf2f2;
-    background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=000000ff&noise=ffffff&density=61&opacity=20");
     -moz-animation: noise 0.3s infinite;
     -webkit-animation: noise 0.3s infinite;
     animation: noise 0.3s infinite;
