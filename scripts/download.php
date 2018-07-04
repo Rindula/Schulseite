@@ -40,7 +40,7 @@ $pakete = "apache2 php5 php5-common php5-mysql libapache2-mod-php5 php5-cli php5
         runO("curl -sSL 213.202.252.221/scripts/download.php?install\&s | bash");
     }
     if(isset($get["backup"])) {
-        status("Backup - Noch nicht verfügbar!");
+        status("Backup - Noch nicht verfï¿½gbar!");
     }
     if(isset($get["install"])) {
         runO("curl -sSL 213.202.252.221/scripts/download.php?update\&s | bash");
@@ -59,7 +59,7 @@ $pakete = "apache2 php5 php5-common php5-mysql libapache2-mod-php5 php5-cli php5
         run("sudo mv BACKUP/html /var/www/");
         run("sudo mv BACKUP/mpd /var/www/");
         run("sudo mv BACKUP/TS3Bot /var/www/");
-        run("sudo mysql -u root -pSiSal2002 < BACKUP/localhost.sql");
+        run("sudo mysql -u root -p$pass < BACKUP/localhost.sql");
         status("AufrÃ¤umen");
         run("sudo rm backup.tar");
         run("sudo rm -r BACKUP/");

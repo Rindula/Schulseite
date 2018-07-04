@@ -1,6 +1,6 @@
 <?php
 	// Variablen initialisierung
-	$mySqlPassword = "SiSal2002";
+	$mySqlPassword = "Gen11!1y";
     define("BASEPATH", $_SERVER['DOCUMENT_ROOT']."/");
 
     setlocale (LC_ALL, 'de_DE@euro', 'de_DE.utf8', 'de', 'ge');

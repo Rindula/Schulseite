@@ -1,7 +1,7 @@
 <?php
 
 if (isset($dbname)) {
-$mysqli = new mysqli("localhost", "root", "74cb0A0kER", $dbname);
+$mysqli = new mysqli("localhost", "query", "Gen11!1y", $dbname);
 if ($mysqli->connect_errno) {
     die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
 }
@@ -12,7 +12,7 @@ $statement->execute();
     $mysqli = false;
 }
 
-$userConn = new mysqli("localhost", "root", "74cb0A0kER", "stats");
+$userConn = new mysqli("localhost", "query", "Gen11!1y", "stats");
 if ($userConn->connect_errno) {
     die("Userverbindung fehlgeschlagen: " . $userConn->connect_error);
 }
@@ -20,7 +20,7 @@ $sql = "SET NAMES 'utf8'";
 $userConn->query($sql);
 
 
-list($user, $pass) = array('root', '74cb0A0kER');
+list($user, $pass) = array('query', 'Gen11!1y');
 $dbs = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 
 

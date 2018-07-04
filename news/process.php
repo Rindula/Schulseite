@@ -1,5 +1,5 @@
 <?php 
-list($user, $pass) = array('root', '74cb0A0kER');
+list($user, $pass) = array('query', 'Gen11!1y');
 $dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 $dbh->query("SET NAMES utf8");
 

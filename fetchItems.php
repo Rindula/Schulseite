@@ -1,7 +1,7 @@
 <?php
 
-$gdvdv = new mysqli("localhost", "root", "WQeYt4S8G3", "homeworks");
-$edrhf = new mysqli("localhost", "root", "WQeYt4S8G3", "stats");
+$gdvdv = new mysqli("localhost", "query", "Gen11!1y", "homeworks");
+$edrhf = new mysqli("localhost", "query", "Gen11!1y", "stats");
 
 $ret = $gdvdv->query("SELECT * FROM flist ORDER BY fach");
 
