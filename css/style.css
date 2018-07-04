@@ -13,7 +13,9 @@ body {
     transition: all linear .2s;
 }
 .dropdown-item:hover:not(.disabled), .nav-link:hover:not(.disabled) {
-    text-shadow: 0 0 5px yellow;
+  -moz-animation: noise 0.3s infinite;
+  -webkit-animation: noise 0.3s infinite;
+  animation: noise 0.3s infinite;
 }
 .dropdown-item.disabled, .nav-link.disabled {
     cursor: default;
