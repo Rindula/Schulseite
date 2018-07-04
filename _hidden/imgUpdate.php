@@ -7,7 +7,7 @@
 	$value = $_GET["link"];
 	
 	// Datenbankverbindung herstellen
-    mysql_connect("localhost", "root", $mySqlPassword);
+    mysql_connect("localhost", "query", $mySqlPassword);
 	// Datenbank auswählen
 	mysql_select_db("myPasswords");
 	
