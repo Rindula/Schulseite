@@ -24,7 +24,7 @@
 			}
 		}
 	}
-	xhttp.open("GET", "https://api.github.com/repos/Rindula/Schulseite/commits", true);
+	xhttp.open("GET", "https://api.github.com/repos/Rindula/Schulseite/commits?page=1&per_page=1000", true);
 	xhttp.send(null);
 </script>
 </head>
