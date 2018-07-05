@@ -25,7 +25,7 @@ if (isset($_POST["resetPass"])) {
   $dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
   $dbh->query('SET NAMES utf8');
 
-  $sth = $dbh->prepare("UPDATE users SET password = :pass WHERE id = :userid");
+  $sth = $dbh->prepare("UPDATE users SET passwort = :pass WHERE id = :userid");
 
   $sth->bindParam(":pass", password_hash("default", PASSWORD_DEFAULT));
   $sth->bindParam(":userid", $u);
