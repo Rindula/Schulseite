@@ -39,10 +39,7 @@ include "../css/controller.php";
             $gruppen[] = array($row["id"], $row["displayName"]);
         }
 
-        foreach ($dbh->query('SELECT name, vorname, id, email, gruppe FROM users ORDER BY name') as $row) {
-            if (1 == $row["id"]) {
-                continue;
-            }
+        foreach ($dbh->query('SELECT name, vorname, id, email, gruppe FROM users ORDER BY gruppe,name') as $row) {
             echo "
             <li class='list-group-item'>
                 <form class='form form-control' action='processUser.php' method='post'>
@@ -50,6 +47,8 @@ include "../css/controller.php";
                         <span id='name'>".$row["name"].", ".$row["vorname"]."</span><br>
                         <span id='email'><a class='text-info' href='mailto:".$row["email"]."'>".$row["email"]."</a></span>
                     </div>
+                    <input type='hidden' name='email' value='".$row["email"]."'>
+                    <input type='hidden' name='name' value='".$row["vorname"]." ".$row["name"]."'>
                     <div class='form-group'>
                     <select class='form-control' name='gruppe'>
                 ";

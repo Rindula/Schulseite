@@ -5,7 +5,7 @@
 
     setlocale (LC_ALL, 'de_DE@euro', 'de_DE.utf8', 'de', 'ge');
 
-    function generate_password(){
+    function generate_password($length = 20){
         $alpha = "abcdefghijklmnopqrstuvwxyz";
         $alpha_upper = strtoupper($alpha);
         $numeric = "0123456789";
@@ -15,7 +15,7 @@
         $len = strlen($chars);
         $pw = '';
 
-        for ($i=0;$i<20;$i++)
+        for ($i=0;$i<$length;$i++)
                 $pw .= substr($chars, rand(0, $len-1), 1);
 
         // the finished password
