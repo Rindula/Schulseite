@@ -33,8 +33,9 @@ if (isset($_POST["resetPass"])) {
     $sth->bindParam(":userid", $u);
 
     $sth->execute();
+
     $empfaenger = $_POST["email"];
-    $betreff = 'Passwort zurückgesetzt |rindula.de';
+    $betreff = 'Passwort zurückgesetzt | rindula.de';
     $nachricht = 'Hallo '.$_POST["name"].",\n\ndein Passwort auf rindula.de wurde durch einen Administrator\rzurückgesetzt. Dein neues (temporäres) Passwort ist nun \"$tmpPass\"\r(ohne Anführungszeichen). Bitte ändere es,\rsobald du dich das nächste mal eingeloggt hast!\n\nServiceteam von rindula.de\n\nDiese Nachricht wurde automatisch durch unser System versandt\nund bedarf keiner Antwort.";
     $header = array(
         'From' => 'service@rindula.de',
