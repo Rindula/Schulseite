@@ -62,6 +62,9 @@ include "../css/controller.php";
                     <div class='form-group mt-1'>
                         <button class='btn btn-outline-info form-control' name='user' type='submit' value='".$row["id"]."'>Speichern</button>
                     </div>
+                    <div class='form-group mt-1'>
+                        <button class='btn btn-outline-danger form-control' name='resetPass' type='submit' value='".$row["id"]."'>Passwort zurücksetzen</button>
+                    </div>
                 </form>
             </li>
             ";
