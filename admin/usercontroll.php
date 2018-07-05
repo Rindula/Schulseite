@@ -39,7 +39,7 @@ include "../css/controller.php";
             $gruppen[] = array($row["id"], $row["displayName"]);
         }
 
-        foreach ($dbh->query('SELECT name, vorname, id, email, gruppe FROM users ORDER BY name') as $row) {
+        foreach ($dbh->query('SELECT name, vorname, id, email, gruppe FROM users ORDER BY gruppe,name') as $row) {
             echo "
             <li class='list-group-item'>
                 <form class='form form-control' action='processUser.php' method='post'>
