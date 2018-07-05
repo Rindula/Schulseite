@@ -50,6 +50,8 @@ include "../css/controller.php";
                         <span id='name'>".$row["name"].", ".$row["vorname"]."</span><br>
                         <span id='email'><a class='text-info' href='mailto:".$row["email"]."'>".$row["email"]."</a></span>
                     </div>
+                    <input type='hidden' name='email' value='".$row["email"]."'>
+                    <input type='hidden' name='name' value='".$row["vorname"]." ".$row["name"]."'>
                     <div class='form-group'>
                     <select class='form-control' name='gruppe'>
                 ";
