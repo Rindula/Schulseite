@@ -20,20 +20,22 @@ if (isset($_POST["user"])) {
 
 if (isset($_POST["resetPass"])) {
     $u = $_POST["resetPass"];
-
+    include "../_hidden/vars.php";
     list($user, $pass) = array('query', 'Gen11!1y');
     $dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
     $dbh->query('SET NAMES utf8');
 
     $sth = $dbh->prepare("UPDATE users SET passwort = :pass WHERE id = :userid");
 
-    $sth->bindParam(":pass", password_hash("default", PASSWORD_DEFAULT));
+    $tmpPass = generate_password(6);
+
+    $sth->bindParam(":pass", password_hash("$tmpPass", PASSWORD_DEFAULT));
     $sth->bindParam(":userid", $u);
 
     $sth->execute();
     $empfaenger = $_POST["email"];
     $betreff = 'Passwort zurückgesetzt |rindula.de';
-    $nachricht = 'Hallo '.$_POST["name"].",\n\ndein Passwort auf rindula.de wurde durch einen Administrator\rzurückgesetzt. Dein neues (temporäres) Passwort ist nun \"default\"\r(ohne Anführungszeichen). Bitte ändere es,\rsobald du dich das nächste mal eingeloggt hast!\n\nServiceteam von rindula.de\n\nDiese Nachricht wurde automatisch durch unser System versandt\nund bedarf keiner Antwort.";
+    $nachricht = 'Hallo '.$_POST["name"].",\n\ndein Passwort auf rindula.de wurde durch einen Administrator\rzurückgesetzt. Dein neues (temporäres) Passwort ist nun \"$tmpPass\"\r(ohne Anführungszeichen). Bitte ändere es,\rsobald du dich das nächste mal eingeloggt hast!\n\nServiceteam von rindula.de\n\nDiese Nachricht wurde automatisch durch unser System versandt\nund bedarf keiner Antwort.";
     $header = array(
         'From' => 'service@rindula.de',
         'Reply-To' => 'service@rindula.de',
