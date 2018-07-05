@@ -15,7 +15,7 @@
 				for (x in myObj) {
 					var date = new Date(myObj[x].commit.author.date)
 					var d = ("0" + date.getDate()).slice(-2) + "." + ("0" + (date.getMonth() + 1)).slice(-2) + "." + date.getFullYear() + ", " + ("0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2)
-					txt += "<tr><td><img title='"+myObj[x].commit.author.name+"' style='height: 20px; width: auto' src='"+myObj[x].author.avatar_url+"'></td><td>" + myObj[x].commit.message + "</td><td>" + d + "</td></tr>";
+					txt += "<tr><td><img title='"+myObj[x].commit.author.name+"' class='rounded-circle' height='25' src='"+myObj[x].author.avatar_url+"'></td><td>" + myObj[x].commit.message + "</td><td>" + d + "</td></tr>";
 				}
 				txt += "</tbody></table>";
 				document.getElementById("changelog").innerHTML = txt.replace(/\n/g, "<br />");
