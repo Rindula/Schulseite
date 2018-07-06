@@ -11,11 +11,11 @@
 		if (xhttp.readyState == XMLHttpRequest.DONE) {
 			if (xhttp.status == 200) {
 				myObj = JSON.parse(this.responseText);
-				txt = "<table class='table <?= ($darkMode) ? "table-dark" : "table-light"; ?> table-striped'><thead><tr><th>Änderung</th><th>Zeitpunkt</th></tr></thead><tbody>"
+				txt = "<table class='table <?= ($darkMode) ? "table-dark" : "table-light"; ?> table-striped'><thead><tr><th></th><th>Änderung</th><th>Zeitpunkt</th></tr></thead><tbody>"
 				for (x in myObj) {
 					var date = new Date(myObj[x].commit.author.date)
 					var d = ("0" + date.getDate()).slice(-2) + "." + ("0" + (date.getMonth() + 1)).slice(-2) + "." + date.getFullYear() + ", " + ("0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2)
-					txt += "<tr><td>" + myObj[x].commit.message + "</td><td>" + d + "</td></tr>";
+					txt += "<tr><td><img title='"+myObj[x].commit.author.name+"' class='rounded-circle' height='25' src='"+myObj[x].author.avatar_url+"'></td><td>" + myObj[x].commit.message + "</td><td>" + d + "</td></tr>";
 				}
 				txt += "</tbody></table>";
 				document.getElementById("changelog").innerHTML = txt.replace(/\n/g, "<br />");
@@ -24,7 +24,7 @@
 			}
 		}
 	}
-	xhttp.open("GET", "https://api.github.com/repos/Rindula/Schulseite/commits", true);
+	xhttp.open("GET", "https://api.github.com/repos/Rindula/Schulseite/commits?page=1&per_page=1000", true);
 	xhttp.send(null);
 </script>
 </head>
