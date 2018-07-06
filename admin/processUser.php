@@ -27,7 +27,7 @@ if (isset($_POST["resetPass"])) {
 
     $sth = $dbh->prepare("UPDATE users SET passwort = :pass WHERE id = :userid");
 
-    $tmpPass = generate_password(6);
+    $tmpPass = generate_password(10);
 
     $sth->bindParam(":pass", password_hash("$tmpPass", PASSWORD_DEFAULT));
     $sth->bindParam(":userid", $u);
