@@ -16,6 +16,11 @@ if (isset($_POST["type"])) {
         $mysqli->query($sql);
         $last_id = $mysqli->insert_id."";
         log_rin("ha_enter","Hausaufgaben (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
+        $tasks = "";
+        foreach (explode(";", $aufgabe) as $a) {
+            $tasks .= "\n```=> $a```";
+        }
+        postToDiscord("*Hausaufgabe*\nFach: _".$fach."_\nZu erledigen bis: *".strftime("%A, %d.%m.%G", strtotime($datum))."*" . ((!empty($tasks)) ? "\n\nAufgabe(n):$tasks" : ""));
     }
     if ($_POST["type"] == "1") {
         $sql = "INSERT INTO `arbeiten` (`fach`, `themen`, `datum`) VALUES ('$fach', '$aufgabe', '$datum')";
