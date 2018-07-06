@@ -18,15 +18,28 @@ if (isset($_POST["type"])) {
         log_rin("ha_enter","Hausaufgaben (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
         $tasks = "";
         foreach (explode(";", $aufgabe) as $a) {
-            $tasks .= "\n```=> $a```";
+            $tasks .= "\n=> $a";
         }
-        postToDiscord("*Hausaufgabe*\nFach: _".$fach."_\nZu erledigen bis: *".strftime("%A, %d.%m.%G", strtotime($datum))."*" . ((!empty($tasks)) ? "\n\nAufgabe(n):$tasks" : ""));
+        $fach = $mysqli->query("SELECT fach FROM flist WHERE id = $fach");
+        while ($f = $fach->fetch_assoc()) {
+            $fach = $f["fach"];
+        };
+        postToDiscord("**Hausaufgabe**\nFach: **".$fach."**\nZu erledigen bis: **".strftime("%A, %d.%m.%G", strtotime($datum))."**" . ((!empty($tasks)) ? "\n\nAufgabe(n):```$tasks```" : ""));
     }
     if ($_POST["type"] == "1") {
         $sql = "INSERT INTO `arbeiten` (`fach`, `themen`, `datum`) VALUES ('$fach', '$aufgabe', '$datum')";
         $mysqli->query($sql);
         $last_id = $mysqli->insert_id."";
         log_rin("ha_enter","Klassenarbeit (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
+        $tasks = "";
+        foreach (explode(";", $aufgabe) as $a) {
+            $tasks .= "\n=> $a";
+        }
+        $fach = $mysqli->query("SELECT fach FROM flist WHERE id = $fach");
+        while ($f = $fach->fetch_assoc()) {
+            $fach = $f["fach"];
+        };
+        postToDiscord("**Klassenarbeit**\nFach: **".$fach."**\nTermin am: **".strftime("%A, %d.%m.%G", strtotime($datum))."**" . ((!empty($tasks)) ? "\n\nThemen:```$tasks```" : ""));
     }
     if ($_POST["type"] == "2") {
         $sql = "UPDATE `arbeiten` SET themen='$aufgabe', datum='$datum' WHERE id='$fach'";
