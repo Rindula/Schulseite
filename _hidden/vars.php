@@ -129,7 +129,7 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
             break;
     }
 
-    $phrases = array("Iss dein essen! :fork_knife_plate:", "Ich hasse das rote Blinklicht :rotating_light:", "Gummienten planen die Welteroberung! :hatched_chick:", "Liebe deine Feinde, es macht sie wütend.", "Dicke Kinder sind schwerer zu Kidnappen", "Rettet die Bäume :evergreen_tree:, esst Bieber!", "Hahaha! Ich habs nicht kapiert...", "Komm auf die dunkle Seite... Wir haben Kekse.", "Ich bin eine Tomate", "Es heißt, harte Arbeit hat noch niemandem geschadet. Aber warum das Risiko auf sich nehmen.", "Das ist Bob. Bob mag scharfe Sachen. Ich empfehle dir vor Bob wegzulaufen.", "Nachts ist es kälter als draußen", "Ich kann denken!");
+    $phrases = array("Iss dein essen!", "Ich hasse das rote Blinklicht", "Gummienten planen die Welteroberung!", "Liebe deine Feinde, es macht sie wütend.", "Dicke Kinder sind schwerer zu Kidnappen", "Rettet die Bäume, esst Bieber!", "Hahaha! Ich habs nicht kapiert...", "Komm auf die dunkle Seite... Wir haben Kekse.", "Ich bin eine Tomate", "Es heißt, harte Arbeit hat noch niemandem geschadet. Aber warum das Risiko auf sich nehmen.", "Das ist Bob. Bob mag scharfe Sachen. Ich empfehle dir vor Bob wegzulaufen.", "Nachts ist es kälter als draußen", "Ich kann denken!");
 
     $phrase = $phrases[array_rand($phrases)];
 
@@ -144,6 +144,7 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
     $data["embeds"][0]["fields"][2]["name"] = "Aufgaben";
     $data["embeds"][0]["fields"][2]["value"] = $aufgaben;
     $data["embeds"][0]["footer"]["text"] = $phrase;
+    $data["embeds"][0]["timestamp"] = date("c");
     if (!is_null($color)) {
         $data["embeds"][0]["color"] = $color;
     }
