@@ -98,9 +98,12 @@ return $text;
 }
 }
 
-function postToDiscord($message)
+function postToDiscord($message, $color = null)
 {
     $data = array("content" => $message, "username" => "rindula.de");
+    if (!is_null($color)) {
+        $data["color"] = $color;
+    };
     $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
