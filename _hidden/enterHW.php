@@ -22,7 +22,7 @@ if (isset($_POST["type"])) {
         }
         $fach = $mysqli->query("SELECT fach FROM flist WHERE id = $fach");
         $fach = $fach->fetch_assoc();
-        postNewHomework(0, $fach["fach"], $tasks, strftime("%A, %d.%m.%G", strtotime($datum)), "1654195");
+        $ret = postNewHomework(0, $fach["fach"], $tasks, strftime("%A, %d.%m.%G", strtotime($datum)), "1654195");
     }
     if ($_POST["type"] == "1") {
         $sql = "INSERT INTO `arbeiten` (`fach`, `themen`, `datum`) VALUES ('$fach', '$aufgabe', '$datum')";
@@ -35,7 +35,7 @@ if (isset($_POST["type"])) {
         }
         $fach = $mysqli->query("SELECT fach FROM flist WHERE id = $fach");
         $fach = $fach->fetch_assoc();
-        postNewHomework(1, $fach["fach"], $tasks, strftime("%A, %d.%m.%G", strtotime($datum)), "15241746");
+        $ret = postNewHomework(1, $fach["fach"], $tasks, strftime("%A, %d.%m.%G", strtotime($datum)), "15241746");
     }
     if ($_POST["type"] == "2") {
         $sql = "UPDATE `arbeiten` SET themen='$aufgabe', datum='$datum' WHERE id='$fach'";
@@ -54,5 +54,5 @@ if (isset($_POST["type"])) {
 }
 
 
-echo '<script>window.close()</script>';
+echo '<script>alert("'.$ret.'"); window.close()</script>';
 ?>
