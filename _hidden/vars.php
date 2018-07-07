@@ -101,9 +101,9 @@ return $text;
 function postToDiscord($message, $color = null)
 {
     $data = array("username" => "rindula.de");
-    $data["embeds"]["title"] = $message;
+    $data["embeds"][0]["title"] = $message;
     if (!is_null($color)) {
-        $data["embeds"]["color"] = $color;
+        $data["embeds"][0]["color"] = $color;
     }
     $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
@@ -134,13 +134,18 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
     $phrase = $phrases[array_rand($phrases)];
 
     $data = array("username" => "rindula.de");
-    $data["embeds"]["title"] = $message;
-    $data["embeds"]["fields"][] = array("name" => "Fach", "value" => $fach, "inline" => true);
-    $data["embeds"]["fields"][] = array("name" => "Datum", "value" => $datum, "inline" => true);
-    $data["embeds"]["fields"][] = array("name" => "Aufgaben", "value" => $aufgaben);
-    $data["embeds"]["footer"]["text"] = $phrase;
+    $data["embeds"][0]["title"] = $message;
+    $data["embeds"][0]["fields"][0]["name"] = "Fach";
+    $data["embeds"][0]["fields"][0]["value"] = $fach;
+    $data["embeds"][0]["fields"][0]["inline"] = true;
+    $data["embeds"][0]["fields"][1]["name"] = "Datum";
+    $data["embeds"][0]["fields"][1]["value"] = $datum;
+    $data["embeds"][0]["fields"][1]["inline"] = true;
+    $data["embeds"][0]["fields"][2]["name"] = "Aufgaben";
+    $data["embeds"][0]["fields"][2]["value"] = $aufgaben;
+    $data["embeds"][0]["footer"]["text"] = $phrase;
     if (!is_null($color)) {
-        $data["embeds"]["color"] = $color;
+        $data["embeds"][0]["color"] = $color;
     }
 
     $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
