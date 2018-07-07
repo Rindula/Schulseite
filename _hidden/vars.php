@@ -102,7 +102,6 @@ function postToDiscord($message, $color = null)
 {
     $data = array("username" => "rindula.de");
     $data["embeds"]["title"] = $message;
-    $data["embeds"]["timestamp"] = date("YYYY-MM-DDTHH:MM:SS.MSSZ");
     if (!is_null($color)) {
         $data["embeds"]["color"] = $color;
     }
@@ -126,7 +125,7 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
             break;
         
         default:
-            $message = "Fehler...";
+            $message = $typ;
             break;
     }
 
