@@ -136,7 +136,7 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
 
     $data = array("username" => "rindula.de");
     $data["embeds"]["title"] = $message;
-    $data["embeds"]["timestamp"] = date("YYYY-MM-DDTHH:MM:SS.MSSZ");
+    $data["embeds"]["timestamp"] = date("c");
     $data["embeds"]["fields"][0]["name"] = "Fach";
     $data["embeds"]["fields"][0]["value"] = $fach;
     $data["embeds"]["fields"][0]["inline"] = true;
