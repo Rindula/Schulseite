@@ -23,6 +23,7 @@ if (isset($_POST["type"])) {
         $fach = $mysqli->query("SELECT fach FROM flist WHERE id = $fach");
         $fach = $fach->fetch_assoc();
         $ret = postNewHomework(0, $fach["fach"], $tasks, strftime("%A, %d.%m.%G", strtotime($datum)), "1654195");
+        postToDiscord("Testnachricht...", "15241746");
     }
     if ($_POST["type"] == "1") {
         $sql = "INSERT INTO `arbeiten` (`fach`, `themen`, `datum`) VALUES ('$fach', '$aufgabe', '$datum')";
