@@ -135,7 +135,6 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
 
     $data = array("username" => "rindula.de");
     $data["embeds"]["title"] = $message;
-    $data["embeds"]["timestamp"] = date("c");
     $data["embeds"]["fields"][0]["name"] = "Fach";
     $data["embeds"]["fields"][0]["value"] = $fach;
     $data["embeds"]["fields"][0]["inline"] = true;
@@ -149,7 +148,7 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
     if (!is_null($color)) {
         $data["embeds"]["color"] = $color;
     }
-    
+
     $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
