@@ -143,7 +143,6 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
     $data["embeds"]["fields"][1]["inline"] = true;
     $data["embeds"]["fields"][2]["name"] = "Aufgaben";
     $data["embeds"]["fields"][2]["value"] = $aufgaben;
-    $data["embeds"]["fields"][2]["inline"] = false;
     $data["embeds"]["footer"]["text"] = $phrase;
     if (!is_null($color)) {
         $data["embeds"]["color"] = $color;

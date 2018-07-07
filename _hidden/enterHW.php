@@ -54,5 +54,5 @@ if (isset($_POST["type"])) {
 }
 
 
-echo '<script>alert("'.$ret.'"); window.close()</script>';
+echo '<script>window.close()</script>';
 ?>
