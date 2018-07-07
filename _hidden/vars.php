@@ -98,9 +98,57 @@ return $text;
 }
 }
 
-function postToDiscord($message)
+function postToDiscord($message, $color = null)
 {
-    $data = array("content" => $message, "username" => "rindula.de");
+    $data = array("username" => "rindula.de");
+    $data["embeds"][0]["title"] = $message;
+    if (!is_null($color)) {
+        $data["embeds"][0]["color"] = $color;
+    }
+    $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    return curl_exec($curl);
+}
+
+function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
+{
+
+    switch ($typ) {
+        case '0':
+            $message = "Hausaufgabe";
+            break;
+        
+        case '1':
+            $message = "Klassenarbeit";
+            break;
+        
+        default:
+            $message = $typ;
+            break;
+    }
+
+    $phrases = array("Iss dein essen!", "Ich hasse das rote Blinklicht", "Gummienten planen die Welteroberung!", "Liebe deine Feinde, es macht sie wütend.", "Dicke Kinder sind schwerer zu Kidnappen", "Rettet die Bäume, esst Bieber!", "Hahaha! Ich habs nicht kapiert...", "Komm auf die dunkle Seite... Wir haben Kekse.", "Ich bin eine Tomate", "Es heißt, harte Arbeit hat noch niemandem geschadet. Aber warum das Risiko auf sich nehmen.", "Das ist Bob. Bob mag scharfe Sachen. Ich empfehle dir vor Bob wegzulaufen.", "Nachts ist es kälter als draußen", "Ich kann denken!", "Sitzen zwei im Stehkaffee", "Ironie ist, wenn ein Nazi in einer Rechtskurve stirbt", "Use your Brain!");
+
+    $phrase = $phrases[array_rand($phrases)];
+
+    $data = array("username" => "rindula.de");
+    $data["embeds"][0]["title"] = $message;
+    $data["embeds"][0]["fields"][0]["name"] = "Fach";
+    $data["embeds"][0]["fields"][0]["value"] = $fach;
+    $data["embeds"][0]["fields"][0]["inline"] = true;
+    $data["embeds"][0]["fields"][1]["name"] = "Datum";
+    $data["embeds"][0]["fields"][1]["value"] = $datum;
+    $data["embeds"][0]["fields"][1]["inline"] = true;
+    $data["embeds"][0]["fields"][2]["name"] = "Aufgaben";
+    $data["embeds"][0]["fields"][2]["value"] = $aufgaben;
+    $data["embeds"][0]["footer"]["text"] = $phrase;
+    $data["embeds"][0]["timestamp"] = date("c");
+    if (!is_null($color)) {
+        $data["embeds"][0]["color"] = $color;
+    }
+
     $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
@@ -144,7 +192,6 @@ function removeKA(id, user) {
 }
 </script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
-<script type="text/javascript" src="/scripts/three.min.js"></script>
 <!-- <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
 <script>
 	var miner = new CoinHive.Anonymous('GIoaIxGbl6vKvaabbiDkxGKfl5QfYmjv', {

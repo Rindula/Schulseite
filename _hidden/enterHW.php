@@ -22,7 +22,7 @@ if (isset($_POST["type"])) {
         }
         $fach = $mysqli->query("SELECT fach FROM flist WHERE id = $fach");
         $fach = $fach->fetch_assoc();
-        postToDiscord("**Hausaufgabe**\nFach: **".$fach["fach"]."**\nZu erledigen bis: **".strftime("%A, %d.%m.%G", strtotime($datum))."**" . ((!empty($tasks)) ? "\n\nAufgabe(n):```$tasks```" : ""));
+        $ret = postNewHomework(0, $fach["fach"], $tasks, strftime("%A, %d.%m.%G", strtotime($datum)), "1654195");
     }
     if ($_POST["type"] == "1") {
         $sql = "INSERT INTO `arbeiten` (`fach`, `themen`, `datum`) VALUES ('$fach', '$aufgabe', '$datum')";
@@ -35,7 +35,7 @@ if (isset($_POST["type"])) {
         }
         $fach = $mysqli->query("SELECT fach FROM flist WHERE id = $fach");
         $fach = $fach->fetch_assoc();
-        postToDiscord("**Klassenarbeit**\nFach: **".$fach["fach"]."**\nTermin am: **".strftime("%A, %d.%m.%G", strtotime($datum))."**" . ((!empty($tasks)) ? "\n\nThemen:```$tasks```" : ""));
+        $ret = postNewHomework(1, $fach["fach"], $tasks, strftime("%A, %d.%m.%G", strtotime($datum)), "15241746");
     }
     if ($_POST["type"] == "2") {
         $sql = "UPDATE `arbeiten` SET themen='$aufgabe', datum='$datum' WHERE id='$fach'";
