@@ -135,14 +135,9 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
 
     $data = array("username" => "rindula.de");
     $data["embeds"]["title"] = $message;
-    $data["embeds"]["fields"][0]["name"] = "Fach";
-    $data["embeds"]["fields"][0]["value"] = $fach;
-    $data["embeds"]["fields"][0]["inline"] = true;
-    $data["embeds"]["fields"][1]["name"] = "Datum";
-    $data["embeds"]["fields"][1]["value"] = $datum;
-    $data["embeds"]["fields"][1]["inline"] = true;
-    $data["embeds"]["fields"][2]["name"] = "Aufgaben";
-    $data["embeds"]["fields"][2]["value"] = $aufgaben;
+    $data["embeds"]["fields"][] = array("name" => "Fach", "value" => $fach, "inline" => true);
+    $data["embeds"]["fields"][] = array("name" => "Datum", "value" => $datum, "inline" => true);
+    $data["embeds"]["fields"][] = array("name" => "Aufgaben", "value" => $aufgaben);
     $data["embeds"]["footer"]["text"] = $phrase;
     if (!is_null($color)) {
         $data["embeds"]["color"] = $color;
