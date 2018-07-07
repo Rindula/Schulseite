@@ -100,10 +100,56 @@ return $text;
 
 function postToDiscord($message, $color = null)
 {
-    $data = array("content" => $message, "username" => "rindula.de");
+    $data = array("username" => "rindula.de");
+    $data["embeds"]["title"] = $message;
+    $data["embeds"]["timestamp"] = date("YYYY-MM-DDTHH:MM:SS.MSSZ");
     if (!is_null($color)) {
-        $data["color"] = $color;
-    };
+        $data["embeds"]["color"] = $color;
+    }
+    $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    return curl_exec($curl);
+}
+
+function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
+{
+
+    switch ($typ) {
+        case '0':
+            $message = "Hausaufgabe";
+            break;
+        
+        case '1':
+            $message = "Klassenarbeit";
+            break;
+        
+        default:
+            $message = "Fehler...";
+            break;
+    }
+
+    $phrases = array("Iss dein essen! :fork_knife_plate:", "Ich hasse das rote Blinklicht :rotating_light:", "Gummienten planen die Welteroberung! :hatched_chick:", "Liebe deine Feinde, es macht sie wütend.", "Dicke Kinder sind schwerer zu Kidnappen", "Rettet die Bäume :evergreen_tree:, esst Bieber!", "Hahaha! Ich habs nicht kapiert...", "Komm auf die dunkle Seite... Wir haben Kekse.", "Ich bin eine Tomate", "Es heißt, harte Arbeit hat noch niemandem geschadet. Aber warum das Risiko auf sich nehmen.", "Das ist Bob. Bob mag scharfe Sachen. Ich empfehle dir vor Bob wegzulaufen.", "Nachts ist es kälter als draußen", "Ich kann denken!");
+
+    $phrase = $phrases[array_rand($phrases)];
+
+    $data = array("username" => "rindula.de");
+    $data["embeds"]["title"] = $message;
+    $data["embeds"]["timestamp"] = date("YYYY-MM-DDTHH:MM:SS.MSSZ");
+    $data["embeds"]["fields"][0]["name"] = "Fach";
+    $data["embeds"]["fields"][0]["value"] = $fach;
+    $data["embeds"]["fields"][0]["inline"] = true;
+    $data["embeds"]["fields"][1]["name"] = "Datum";
+    $data["embeds"]["fields"][1]["value"] = $datum;
+    $data["embeds"]["fields"][1]["inline"] = true;
+    $data["embeds"]["fields"][2]["name"] = "Aufgaben";
+    $data["embeds"]["fields"][2]["value"] = $aufgaben;
+    $data["embeds"]["fields"][2]["inline"] = false;
+    $data["embeds"]["footer"]["text"] = $phrase;
+    if (!is_null($color)) {
+        $data["embeds"]["color"] = $color;
+    }
     $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
