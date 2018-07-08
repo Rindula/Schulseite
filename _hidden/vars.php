@@ -1,6 +1,6 @@
 <?php
 	// Variablen initialisierung
-	include_once "../../secrets.php";
+	include_once "../secrets.php";
 
     setlocale (LC_ALL, 'de_DE@euro', 'de_DE.utf8', 'de', 'ge');
 
