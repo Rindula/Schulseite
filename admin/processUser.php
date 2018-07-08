@@ -5,7 +5,7 @@ if (isset($_POST["user"])) {
     $g = $_POST["gruppe"];
     $u = $_POST["user"];
 
-    list($user, $pass) = array('query', 'Gen11!1y');
+    list($user, $pass) = array(DB_USER, DB_PASSWORD);
     $dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
     $dbh->query('SET NAMES utf8');
 
@@ -21,7 +21,7 @@ if (isset($_POST["user"])) {
 if (isset($_POST["resetPass"])) {
     $u = $_POST["resetPass"];
     include "../_hidden/vars.php";
-    list($user, $pass) = array('query', 'Gen11!1y');
+    list($user, $pass) = array(DB_USER, DB_PASSWORD);
     $dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
     $dbh->query('SET NAMES utf8');
 

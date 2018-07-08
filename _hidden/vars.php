@@ -1,6 +1,6 @@
 <?php
 	// Variablen initialisierung
-	$mySqlPassword = "Gen11!1y";
+	include "../../secrets.php";
     define("BASEPATH", $_SERVER['DOCUMENT_ROOT']."/");
 
     setlocale (LC_ALL, 'de_DE@euro', 'de_DE.utf8', 'de', 'ge');
@@ -105,7 +105,7 @@ function postToDiscord($message, $color = null)
     if (!is_null($color)) {
         $data["embeds"][0]["color"] = $color;
     }
-    $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
+    $curl = curl_init(DISCORD_HOOK);
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -129,7 +129,7 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
             break;
     }
 
-    list($user, $pass) = array('query', 'Gen11!1y');
+    list($user, $pass) = array(DB_USER, DB_PASSWORD);
     $dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
     $dbh->query('SET NAMES utf8');
 
@@ -156,7 +156,7 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
         $data["embeds"][0]["color"] = $color;
     }
 
-    $curl = curl_init("https://discordapp.com/api/webhooks/436499719162822687/BWIJJhCGq093SpRM4urjtWWBBw16Y-v4AGL-TqgY443AiUFlXC94M7ZYAMbVnX5iwubK");
+    $curl = curl_init(DISCORD_HOOK);
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

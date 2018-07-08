@@ -93,7 +93,7 @@ include "../css/controller.php";
             <select required multiple class="text-dark" placeholder="Lehrer auswählen" name="lehrer[]" id="lehrer">
                 <optgroup label="Männlich">
                     <?php
-                    list($user, $pass) = array('query', 'Gen11!1y');
+                    list($user, $pass) = array(DB_USER, DB_PASSWORD);
                     $dbh = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
                     $dbh->query("SET NAMES utf8");
                     

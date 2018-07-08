@@ -1,6 +1,6 @@
 <?php
 session_start();
-list($user, $pass) = array('query', 'Gen11!1y');
+list($user, $pass) = array(DB_USER, DB_PASSWORD);
 $pdo = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 
 if (isset($_GET['login'])) {

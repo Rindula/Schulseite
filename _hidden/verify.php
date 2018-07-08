@@ -156,7 +156,7 @@ global $bks, $cts, $frs, $pcs, $res, $sks;
 
 if ($loggedIn) {
     // Gruppe
-    $sbvfdyvyd = new mysqli("localhost", "query", "Gen11!1y", "stats");
+    $sbvfdyvyd = new mysqli("localhost", DB_USER, DB_PASSWORD, "stats");
     $sbvfdyvyd->query("SET NAMES 'utf8'");
     $ret = $sbvfdyvyd->query("SELECT gruppe FROM users WHERE id = '".$_SESSION["userid"]."'");
     $r = $ret->fetch_assoc();
