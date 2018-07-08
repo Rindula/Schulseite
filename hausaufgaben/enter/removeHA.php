@@ -11,7 +11,7 @@ include "../../_hidden/verify.php";
 
 $userVar = $_GET["user"];
 
-list($user, $pass) = array('query', 'Gen11!1y');
+list($user, $pass) = array(DB_USER, DB_PASSWORD);
 $dbh1 = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 
 $sth1 = $dbh1->prepare("SELECT g.canRemove from groups as g inner join users as u on u.gruppe = g.id WHERE u.id = :username");

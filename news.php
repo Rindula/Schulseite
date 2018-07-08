@@ -2,7 +2,7 @@
 
 include "_hidden/vars.php";
 
-list($user, $pass) = array('query', 'Gen11!1y');
+list($user, $pass) = array(DB_USER, DB_PASSWORD);
 $dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 
 $sql = "SET NAMES 'utf8'";

@@ -14,7 +14,7 @@ if (isset($_GET["mobil"])) {
     </tr>
 <?php
 
-list($user, $pass) = array('query', 'Gen11!1y');
+list($user, $pass) = array(DB_USER, DB_PASSWORD);
 $dbh = new PDO('mysql:host=rindula.de;dbname=stats', $user, $pass);
 
 foreach ($dbh->query('SELECT stunde, typ, note FROM vertretung WHERE datum BETWEEN adddate(now(), interval -1 day) AND adddate(now(), interval 0 day)') as $row) {

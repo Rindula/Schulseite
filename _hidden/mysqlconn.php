@@ -1,7 +1,8 @@
 <?php
+include_once "/var/www/vhosts/rindula.de/secrets.php";
 
 if (isset($dbname)) {
-$mysqli = new mysqli("localhost", "query", "Gen11!1y", $dbname);
+$mysqli = new mysqli("localhost", DB_USER, DB_PASSWORD, $dbname);
 if ($mysqli->connect_errno) {
     die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
 }
@@ -12,7 +13,7 @@ $statement->execute();
     $mysqli = false;
 }
 
-$userConn = new mysqli("localhost", "query", "Gen11!1y", "stats");
+$userConn = new mysqli("localhost", DB_USER, DB_PASSWORD, "stats");
 if ($userConn->connect_errno) {
     die("Userverbindung fehlgeschlagen: " . $userConn->connect_error);
 }
@@ -20,7 +21,7 @@ $sql = "SET NAMES 'utf8'";
 $userConn->query($sql);
 
 
-list($user, $pass) = array('query', 'Gen11!1y');
+list($user, $pass) = array(DB_USER, DB_PASSWORD);
 $dbs = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 
 
