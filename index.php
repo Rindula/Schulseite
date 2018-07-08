@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <?php $needVerify = false; include "_hidden/verify.php"; include "_hidden/vars.php"; $darkMode = ($_COOKIE["darkmode"] == "true") ? true : false; ?>
 <!doctype html>
 <html>

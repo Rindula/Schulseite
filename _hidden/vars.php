@@ -1,7 +1,6 @@
 <?php
 	// Variablen initialisierung
 	include_once "../../secrets.php";
-    define("BASEPATH", $_SERVER['DOCUMENT_ROOT']."/");
 
     setlocale (LC_ALL, 'de_DE@euro', 'de_DE.utf8', 'de', 'ge');
 
