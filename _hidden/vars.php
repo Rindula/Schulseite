@@ -97,13 +97,10 @@ return $text;
 }
 }
 
-function postToDiscord($message, $color = null)
+function postToDiscord($message)
 {
     $data = array("username" => "rindula.de");
-    $data["embeds"][0]["title"] = $message;
-    if (!is_null($color)) {
-        $data["embeds"][0]["color"] = $color;
-    }
+    $data["content"] = $message;
     $curl = curl_init(DISCORD_HOOK);
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
