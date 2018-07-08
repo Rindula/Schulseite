@@ -1,6 +1,5 @@
 <?php
-
-include_once "../../secrets.php";
+include_once "/var/www/vhosts/rindula.de/secrets.php";
 
 if (isset($dbname)) {
 $mysqli = new mysqli("localhost", DB_USER, DB_PASSWORD, $dbname);

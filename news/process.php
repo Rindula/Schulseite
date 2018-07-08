@@ -1,5 +1,5 @@
 <?php 
-include "../../secrets.php";
+include_once "/var/www/vhosts/rindula.de/secrets.php";
 list($user, $pass) = array(DB_USER, DB_PASSWORD);
 $dbh = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
 $dbh->query("SET NAMES utf8");

@@ -1,10 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-?>
-<?php
-include_once "../secrets.php";
+include_once "/var/www/vhosts/rindula.de/secrets.php";
 session_start();
 list($user, $pass) = array(DB_USER, DB_PASSWORD);
 $pdo = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
