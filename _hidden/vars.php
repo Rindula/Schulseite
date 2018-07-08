@@ -97,10 +97,11 @@ return $text;
 }
 }
 
-function postToDiscord($message)
+function postToDiscord($message, $tts = false)
 {
     $data = array("username" => "rindula.de");
     $data["content"] = $message;
+    $data["tts"] = $tts;
     $curl = curl_init(DISCORD_HOOK);
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
