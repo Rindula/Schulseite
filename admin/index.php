@@ -1,5 +1,6 @@
 <?php
 $needVerify = true;
+$needAdmin = true;
 $exitlink = "/settings?section=main";
 $title = "Einstellungen";
 
