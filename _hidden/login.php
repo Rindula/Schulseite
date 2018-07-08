@@ -1,5 +1,5 @@
 <?php
-include_once "../../secrets.php";
+include_once "../secrets.php";
 session_start();
 list($user, $pass) = array(DB_USER, DB_PASSWORD);
 $pdo = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
