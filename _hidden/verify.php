@@ -1,4 +1,5 @@
 <?php
+include_once "../../secrets.php";
 $agsdfv = (explode('.', $_SERVER['HTTP_HOST']));
 $permittedToUse = false;
 if ($agsdfv[0] == "schule" && $agsdfv[1] == "rindula" && $agsdfv[2] == "de") {
