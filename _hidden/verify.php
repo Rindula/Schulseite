@@ -1,6 +1,6 @@
 <?php
 include_once "../../secrets.php";
-echo get_included_files();
+print_r(get_included_files());
 $agsdfv = (explode('.', $_SERVER['HTTP_HOST']));
 $permittedToUse = false;
 if ($agsdfv[0] == "schule" && $agsdfv[1] == "rindula" && $agsdfv[2] == "de") {
