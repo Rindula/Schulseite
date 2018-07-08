@@ -1,5 +1,7 @@
 <?php
 
+include_once "../../secrets.php";
+
 if (isset($dbname)) {
 $mysqli = new mysqli("localhost", DB_USER, DB_PASSWORD, $dbname);
 if ($mysqli->connect_errno) {
