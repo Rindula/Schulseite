@@ -26,6 +26,7 @@ $id = $_GET["id"];
 $path = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/$id/";
 ?>
     <body class="container">
+        <a class="btn btn-primary btn-box">Lösung hochladen</a>
         <?php
         $lnk = 0;
         foreach (glob($path . '*') as $filename) {
