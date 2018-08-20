@@ -118,13 +118,9 @@ while ($ar = $result->fetch_assoc()) {
     $out .= "<td class='d-lg-none'><a class='btn btn-success' href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a></td>";
     $out .= "<td>";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
-        $lnk = 0;
-        foreach (glob($IMAGEPATH . '*') as $filename) {
-            if (is_image($filename)) {
-                $lnk++;
-                $out .= "<a data-title='".$ar["fach"]." Hausaufgabe bis zum ".strftime("%A", strtotime($ar["Datum"])).", $day.$month.$year<br><small>Keine Haftung für Fehler!</small>' data-lightbox='loesungen-" . $ar["ID"] . "' href='loesungen/" . $ar["ID"] . "/" . basename($filename) . "'>Lösung Seite " . $lnk . "</a><br>";
-            }
-        }
+        $out .= "<a class='btn btn-primary' href='/hausaufgaben/loesungen/?id=".$ar["ID"]."'>Lösungen ansehen</a>";
+    } else {
+        $out .= "<a class='btn btn-secondary' href='/hausaufgaben/loesungen/?id=".$ar["ID"]."'>Lösungen ansehen (Keine vorhanden)</a>";
     }
 
     $out .= "</td>";
