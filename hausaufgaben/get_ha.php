@@ -79,12 +79,14 @@ while ($ar = $result->fetch_assoc()) {
         $list = "list-group-item-danger";
     }
     $list .= ($darkMode) ? " list-group-item-dark" : "";
+    $title = "";
     $onclick = "";
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
         $classes = $classes . " imageAcc text-info";
+        $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
     }
-    $out .= "<tr data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'>";
-    $om .= "<div data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'><ul class='list-group'>";
+    $out .= "<tr title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'>";
+    $om .= "<div title='$title' data-toggle='collapse' href='#".$ar["ID"]."' aria-expanded='false' aria-controls='".$ar["ID"]."' class='$classes'><ul class='list-group'>";
 
     $datetime1 = date_create(date("Y-m-d"));
     $datetime2 = date_create($ar["Datum"]);
