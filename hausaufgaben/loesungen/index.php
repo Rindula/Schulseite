@@ -34,7 +34,7 @@ $path = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/$id/";
                 $out .= "<a data-title='".$ar["fach"]." Hausaufgabe bis zum ".strftime("%A", strtotime($ar["Datum"])).", $day.$month.$year<br><small>Keine Haftung für Fehler!</small>' data-lightbox='loesungen-$id' href='$id/" . basename($filename) . "'>Lösung Seite " . $lnk . "</a><br>";
             }
         }
-        
-        include "../_hidden/bottomScripts.php" ?>
+
+        include "../../_hidden/bottomScripts.php" ?>
     </body>
 </html>
