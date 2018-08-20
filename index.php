@@ -23,6 +23,9 @@
 							
 						}
 					}
+					if (message.length == 1) {
+						message[1] = "";
+					}
 
 					txt += "<tr><td><img title='"+myObj[x].commit.author.name+"' class='rounded-circle' height='25' src='"+myObj[x].author.avatar_url+"'></td><td><h2>" + message[0] + "</h2><br>" + message[1] + "</td><td>" + d + "</td></tr>";
 				}
