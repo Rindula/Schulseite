@@ -1,6 +1,6 @@
 <?php
 setlocale(LC_TIME, 'german', 'deu_deu', 'deu', 'de_DE', 'de');
-$pageTitle = "rindula.de";
+$pageTitle = "rindula.de"
 if (isset($title)) {
 	echo "
 	<head>
