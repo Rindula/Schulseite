@@ -1,4 +1,7 @@
 language: php
 php: 7.2.9
-script:
-  - if find . -name "*.php" ! -path "./vendor/*" -exec php -l {} \; | grep -v "No syntax errors detected"; then exit 1; fi
+jobs:
+  include:
+    - stage: LINT
+      script:
+      - if find . -name "*.php" ! -path "./vendor/*" -exec php -l {} \; | grep -v "No syntax errors detected"; then exit 1; fi
