@@ -2,5 +2,3 @@ log/
 npm_modules/*
 package-lock.json
 .vscode/launch.json
-
-/vendor/
