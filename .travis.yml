@@ -2,4 +2,4 @@ language: php
 include:
     # Lint code with PHP 7.0
     - php: 7.2.9
-      script: find {*} -name "*.php" -print0 | xargs -0 -n1 -P8 php -l
+      script: find . -name "*.php" -print0 | xargs -0 -n1 -P8 php -l
