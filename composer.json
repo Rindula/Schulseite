@@ -8,5 +8,8 @@
             "email": "contact@rindula.de"
         }
     ],
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "codacy/coverage": "dev-master"
+    }
 }
