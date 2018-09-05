@@ -1,5 +1,4 @@
 language: php
-include:
-    # Lint code with PHP 7.0
-    - php: 7.2.9
-      script: find . -name "*.php" -print0 | xargs -0 -n1 -P8 php -l
+php: 7.2.9
+script:
+  - if find . -name "*.php" ! -path "./vendor/*" -exec php -l {} \; | grep -v "No syntax errors detected"; then exit 1; fi
