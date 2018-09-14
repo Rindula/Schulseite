@@ -120,7 +120,7 @@ while ($ar = $result->fetch_assoc()) {
     if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
         $out .= "<a class='btn btn-primary' href='/hausaufgaben/loesungen/?id=".$ar["ID"]."'>Lösungen ansehen</a>";
     } else {
-        $out .= "<a class='btn btn-secondary' href='/hausaufgaben/loesungen/?id=".$ar["ID"]."'>Lösungen ansehen (Keine vorhanden)</a>";
+        $out .= "<a class='btn btn-secondary' href='/hausaufgaben/loesungen/upload.php?id=".$ar["ID"]."'>Lösungen hochladen</a>";
     }
 
     $out .= "</td>";

@@ -4,5 +4,4 @@
 
 <script>
     $('.dropdown-toggle').dropdown();
-    $('#<?php global $page; echo (isset($page)) ? $page : "startseite" ?>').tab("show");
 </script>
