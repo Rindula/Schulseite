@@ -74,9 +74,11 @@ if($upload) {
     
             <section>
                 <h2>Fortschritt:</h2>
-                <div>
-                    <progress max="1" value="0" id="fortschritt"></progress>
-                    <p id="fortschritt_txt"></p>
+                <div class="progress">
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1">
+                        </div>
+                    </div>
                 </div>
             </section>   
         </article>
