@@ -9,16 +9,12 @@ if ($_POST["register-user"] == "Registrieren") {
 
 foreach($_POST as $key=>$value) {
 	if(empty($_POST[$key])) {
-	$error_message = "Du musst alle Felder ausfüllen";
+		$error_message = "Du musst alle Felder ausfüllen";
 	break;
 	}
 }
 
 $email = $_POST["email"];
-
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-	$error_message = "E-Mail Addresse ungültig!";
-}
 
 // if (isset($_POST["secret"]) && isset($_POST["response"])) {
 // 	# Space for thoughts...
@@ -33,13 +29,12 @@ if($_POST['password'] != $_POST['confirm_password'] && !isset($error_message)){
 	$error_message = 'Die Passwörte sollten gleich sein!<br>'; 
 }
 
-/* Email Validation 
+/* Email Validation */
 if(!isset($error_message)) {
-	if (!filter_var($_POST["userEmail"], FILTER_VALIDATE_EMAIL)) {
-	$error_message = "Invalid Email Address";
+	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$error_message = "E-Mail Addresse ungültig!";
 	}
 }
-*/
 
 /* Validation to check if Terms and Conditions are accepted */
 if(!isset($error_message)) {
@@ -69,8 +64,7 @@ foreach ($dbs->query('SELECT * FROM reg_keys') as $r) {
 }
 if(!isset($error_message) && $valid) {
 
-	$query = "INSERT INTO users (email, vorname, name, passwort, gruppe) VALUES
-	('" . $email . "', '" . $_POST["firstName"] . "', '" . $_POST["lastName"] . "', '" . password_hash($_POST["password"], PASSWORD_DEFAULT) . "', '$init_group')";
+	$query = "INSERT INTO users (email, vorname, name, passwort, gruppe) VALUES ('" . $email . "', '" . $_POST["firstName"] . "', '" . $_POST["lastName"] . "', '" . password_hash($_POST["password"], PASSWORD_DEFAULT) . "', '$init_group')";
 	$result = $userConn->query($query);
 	if(!empty($result)) {
 		$error_message = "";
