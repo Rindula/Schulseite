@@ -74,7 +74,7 @@ if($upload) {
     
             <section>
                 <h2>Fortschritt:</h2>
-                <div>
+                <div class="progress">
                     <div class="progress progress-striped active">
                         <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1">
                         </div>
