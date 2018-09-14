@@ -36,37 +36,31 @@ include "../../_hidden/vars.php";
 $styles[] = "lightbox";
 include "../../css/controller.php";
 
-$id = $_GET["id"];
+$id = $_REQUEST["id"];
 $path = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/$id/";
 
-// Hausaufgaben Infos
-// select `h`.`ID` AS `ID`,`h`.`Aufgaben` AS `Aufgaben`,`h`.`Datum` AS `Datum`,`f`.`fach` AS `Fach` from (`homeworks`.`list` `h` join `homeworks`.`flist` `f` on((`h`.`Fach` = `f`.`id`))) where (`h`.`Datum` >= (now() + interval -(16) hour)) order by `h`.`Datum`
+if(isset($_GET["u"])) {
+    $upload = true;
+} else {
+    $upload = false;
+}
 
-$dbh = new PDO('mysql:host=localhost;dbname=homeworks', DB_USER, DB_PASSWORD);
-$dbh->query('SET NAMES utf8');
-
-$sql = "select `h`.`ID` AS `id`,`h`.`Aufgaben` AS `aufgaben`,`h`.`Datum` AS `datum`,`f`.`fach` AS `fach` from (`homeworks`.`list` `h` join `homeworks`.`flist` `f` on((`h`.`Fach` = `f`.`id`))) WHERE h.ID = :id order by `h`.`Datum`";
-
-$sth = $dbh->prepare($sql);
-$sth->bindParam(":id", $id);
-$sth->execute();
-$res = $sth->fetchAll();
-foreach ($res as $row) {
-    $fach = $row["fach"];
-    $datum = $row["datum"];
+if($upload) {
+    move_uploaded_file($_FILES["datei"]["tmp_name"], $path.$_FILES["datei"]["name"]);
 }
 
 ?>
     <body class="container">
-        <script src="http://malsup.github.io/jquery.form.js"></script>
+        <script src="/scripts/jquery.form.js"></script>
         <article>
             <header>
-                <h1>PHP 5.4 Datei-Upload mit Fortschrittanzeige</h1>
+                <h1>Lösungsuploader</h1>
             </header>
     
             <section>
-                <form action="upload.php" method="post" enctype="multipart/form-data" id="upload_form">
+                <form action="upload.php?u" method="post" enctype="multipart/form-data" id="upload_form">
                     <input type="hidden" name="<?php echo ini_get("session.upload_progress.name"); ?>" value="test">
+                    <input type="hidden" name="id" value="<?= $id ?>">
                     <div>
                         <label for="datei">Datei auswählen:</label>
                         <input type="file" name="file1" id="datei">
@@ -104,8 +98,8 @@ foreach ($res as $row) {
 
                             if(data)
                             {
-                                $('#fortschritt').val(data.bytes_processed / data.content_length);
-                                $('#fortschritt_txt').html('Fortschritt '+ Math.round((data.bytes_processed / data.content_length)*100) + '%');
+                                var val = data.bytes_processed / data.content_length;
+                                $('#fortschritt').css('width', val+'%').attr('aria-valuenow', val);
                             }
                         });
                     }, 100); //Zeitintervall auf 0.1s setzen
@@ -113,14 +107,12 @@ foreach ($res as $row) {
                     $('#upload_form').ajaxSubmit({    
                         success: function()
                         {
-                            $('#fortschritt').val('1');
-                            $('#fortschritt_txt').html('Fertig');
+                            $('#fortschritt').css('width', '100%').attr('aria-valuenow', "1");
                             clearInterval(intervalID);    
                         },                                                
                         error:    function()
                         {
-                            $('#fortschritt').val('1');
-                            $('#fortschritt_txt').html('Ein Fehler ist aufgetreten');
+                            $('#fortschritt').css('width', '100%').attr('aria-valuenow', "1");
                             clearInterval(intervalID);    
                         }
                     });
