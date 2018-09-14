@@ -50,8 +50,8 @@ include "../../css/controller.php";
 
     $(":submit").click(function(event) {
         event.preventDefault();
-        $(this).parent("form").submit();
-        $(this).parent("form").reset();
+        $(this).parents("form").submit();
+        $(this).parents("form").reset();
 
         if ($(this).parent("form").attr("enter-type") == "ha") {
             $("#ha_alert").alert();
