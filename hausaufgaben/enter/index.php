@@ -48,7 +48,8 @@ include "../../css/controller.php";
 
     }
 
-    $(":submit").click(function() {
+    $(":submit").click(function(event) {
+        event.preventDefault();
         $(this).parent("form").submit();
         $(this).parent("form").reset();
 
