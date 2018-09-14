@@ -59,7 +59,7 @@ foreach ($res as $row) {
 ?>
     <body class="container">
 
-        <a class="md-4 btn btn-primary btn-block disabled">Lösung hochladen</a>
+        <a href="upload.php?id=<?= $id ?>" class="md-4 btn btn-primary btn-block">Lösung hochladen</a>
 
         <div class="m-4 justify-content-center d-inline-block">
         <?php
