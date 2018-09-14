@@ -529,8 +529,8 @@ body {
     vertical-align: middle;
     position: relative;
     z-index: 1;
-    -moz-animation: glitch 3s infinite alternate;
+    /* -moz-animation: glitch 3s infinite alternate;
     -webkit-animation: glitch 3s infinite alternate;
-    animation: glitch 3s infinite alternate;
+    animation: glitch 3s infinite alternate; */
   }
   
