@@ -63,7 +63,7 @@ if($upload) {
                     <input type="hidden" name="id" value="<?= $id ?>">
                     <div>
                         <label for="datei">Datei auswählen:</label>
-                        <input type="file" name="file1" id="datei">
+                        <input type="file" name="datei" id="datei">
                     </div>
                     <div>
                         <input name="upload_start" type="submit" value="Hochladen">
