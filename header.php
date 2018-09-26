@@ -11,7 +11,7 @@ if (isset($title)) {
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		<title>$title | $pageTitle</title>
-		<meta name='theme-color' content='".$color."'>
+		<meta name='theme-color' content='$color'>
 		<link rel='shortcut icon' href='/favicon.ico'>
 	</head>";
 } else {
@@ -19,7 +19,7 @@ echo "
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		<title>$pageTitle</title>
-		<meta name="theme-color" content="$color">
+		<meta name='theme-color' content='$color'>
 		<link rel='shortcut icon' href='/favicon.ico'>
 	</head>";
 };
