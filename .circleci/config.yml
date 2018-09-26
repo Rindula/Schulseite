@@ -17,9 +17,6 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      filters:
-        branches:
-          only: master
       - checkout
 
       # run tests!
