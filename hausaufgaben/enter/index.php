@@ -48,9 +48,10 @@ include "../../css/controller.php";
 
     }
 
-    $(":submit").click(function() {
-        $(this).parent("form").submit();
-        $(this).parent("form").reset();
+    $(":submit").click(function(event) {
+        event.preventDefault();
+        $(this).parents("form").submit();
+        $(this).parents("form").reset();
 
         if ($(this).parent("form").attr("enter-type") == "ha") {
             $("#ha_alert").alert();
