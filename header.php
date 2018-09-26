@@ -12,6 +12,8 @@ if (isset($title)) {
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		<title>$title | $pageTitle</title>
 		<meta name='theme-color' content='$color'>
+		<meta name='msapplication-navbutton-color' content='$color'>
+		<meta name='apple-mobile-web-app-status-bar-style' content='$color'>
 		<link rel='shortcut icon' href='/favicon.ico'>
 	</head>";
 } else {
@@ -20,6 +22,8 @@ echo "
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		<title>$pageTitle</title>
 		<meta name='theme-color' content='$color'>
+		<meta name='msapplication-navbutton-color' content='$color'>
+		<meta name='apple-mobile-web-app-status-bar-style' content='$color'>
 		<link rel='shortcut icon' href='/favicon.ico'>
 	</head>";
 };
