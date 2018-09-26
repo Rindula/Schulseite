@@ -1,5 +1,5 @@
 <?php
-setlocale(LC_TIME, 'german', 'deu_deu', 'deu', 'de_DE', 'de');
+setlocale(LC_TIME, 'german', 'deu_deu', 'deu', 'de_DE', 'de')
 if ($darkMode) {
 	$color = "#343a40";
 } else {
