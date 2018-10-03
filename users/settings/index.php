@@ -64,13 +64,13 @@ if ($_GET["section"] == "lessons" && isset($_GET["change"]) && isset($_POST["con
     $pc = $_POST["lesson_pc"];
     $fr = $_POST["lesson_fr"];
     $re = $_POST["lesson_re"];
-    $tag = $_POST["lesson_tag"];
-    $userConn->query("UPDATE users SET bk = $bk, ct = $ct, sk = $sk, pc = $pc, fr = $fr, re = $re, tag = $tag WHERE id = " . $_SESSION["userid"]);
+    $lp = $_POST["lesson_lp"];
+    $userConn->query("UPDATE users SET bk = $bk, ct = $ct, sk = $sk, pc = $pc, fr = $fr, re = $re, lp = $lp WHERE id = " . $_SESSION["userid"]);
     echo "<code>Stunden werden übernommen...</code>";
 }
 
-$ret = $userConn->query("SELECT bk, ct, sk, pc, fr, re, tag FROM users WHERE id = '" . $_SESSION["userid"] . "'");
-list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re, $lesson_tag) = $ret->fetch_array();
+$ret = $userConn->query("SELECT bk, ct, sk, pc, fr, re, lp FROM users WHERE id = '" . $_SESSION["userid"] . "'");
+list($lesson_bk, $lesson_ct, $lesson_sk, $lesson_pc, $lesson_fr, $lesson_re, $lesson_lp) = $ret->fetch_array();
 
 if (isset($_GET["change"])) {
     echo '<meta http-equiv="refresh" content="1; URL=?section=' . $_GET["section"] . '">';
@@ -145,7 +145,7 @@ if ($sec == "lessons") {
                         </select>
                     </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>Seminarkurs</td>
                     <td>
                         <select class="form-control" name="lesson_sk" id="">
@@ -153,7 +153,7 @@ if ($sec == "lessons") {
                             <option <?= ($lesson_sk == 1) ? "selected" : ""; ?> value="1">Gewählt</option>
                         </select>
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Physik/Chemie</td>
                     <td>
@@ -184,11 +184,12 @@ if ($sec == "lessons") {
                     </td>
                 </tr>
                 <tr>
-                    <td>Theater AG</td>
+                    <td>Literatur / Philosophie</td>
                     <td>
-                        <select class="form-control" name="lesson_tag" id="">
-                            <option <?= ($lesson_tag == 0) ? "selected" : ""; ?> value="0">Nicht dabei</option>
-                            <option <?= ($lesson_tag == 1) ? "selected" : ""; ?> value="1">Verrückt genug mitzumachen</option>
+                        <select class="form-control" name="lesson_lp" id="">
+                            <option <?= ($lesson_lp == 0) ? "selected" : ""; ?> value="0">Nicht gewählt</option>
+                            <option <?= ($lesson_lp == 1) ? "selected" : ""; ?> value="1">Literatur</option>
+                            <option <?= ($lesson_lp == 2) ? "selected" : ""; ?> value="2">Philosophie</option>
                         </select>
                     </td>
                 </tr>
