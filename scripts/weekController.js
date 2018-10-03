@@ -19,10 +19,17 @@ function onLoad() {
 
     var result = getWeekNumber(new Date(new Date().getTime() + 24 * 60 * 60 * 1000));
 
-    if (result[1] % 2 != 1) {
-        gerade.innerHTML = "";
-    } else {
-        ungerade.innerHTML = "";
+    var weekRequestor = new XMLHttpRequest();
+    weekRequestor.onreadystatechange = function() {
+        if (weekRequestor.readyState == XMLHttpRequest.DONE) {
+            if (result[1] % 2 != weekRequestor.responseText) {
+                gerade.innerHTML = "";
+            } else {
+                ungerade.innerHTML = "";
+            }
+        }
     }
+    weekRequestor.open('GET', '/scripts/weekcheck,php', true);
+    weekRequestor.send(null);
 }
 window.onload = onLoad;
