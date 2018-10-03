@@ -46,6 +46,9 @@ function sonderfach($fach) {
     if ($fach == "lp") {
         return $lps;
     }
+    if ($fach == "") {
+        return "";
+    }
 
     return "FEHLER!";
 }
