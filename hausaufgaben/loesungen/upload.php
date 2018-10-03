@@ -13,7 +13,7 @@ function is_image($path) {
 }
 
 //$exitLink = "/hausaufgaben/show";
-$needVerify = false;
+$needVerify = true;
 
 // Verifikation des Clients
 include "../../_hidden/verify.php";
