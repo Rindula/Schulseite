@@ -8,6 +8,9 @@ if ($agsdfv[0] == "schule" && $agsdfv[1] == "rindula" && $agsdfv[2] == "de") {
 if ($agsdfv[0] == "dev-schule" && $agsdfv[1] == "rindula" && $agsdfv[2] == "de") {
     $permittedToUse = true;
 }
+if ($agsdfv[0] == "localhost" || $agsdfv[0] == "127.0.0.1") {
+    $permittedToUse = true;
+}
 if (!$permittedToUse) {
     die("<h1 class='display-4'>Diebstahl ist ungern gesehen! Auch wenn der Quellcode öffentlich ist, liegen die Rechte immernoch bei mir!</h1>");
 }
