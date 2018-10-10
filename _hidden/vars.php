@@ -154,7 +154,7 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
         $data["embeds"][0]["color"] = $color;
     }
 
-    $curl = curl_init(DISCORD_HOOK);
+    $curl = curl_init(DISCORD_HOOK_NEW_HOMEWORK);
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
