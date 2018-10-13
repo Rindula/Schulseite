@@ -22,14 +22,14 @@ function onLoad() {
     var weekRequestor = new XMLHttpRequest();
     weekRequestor.onreadystatechange = function() {
         if (weekRequestor.readyState == XMLHttpRequest.DONE) {
-            if (result[1] % 2 != weekRequestor.responseText) {
+            if (result[1] % 2 == weekRequestor.responseText) {
                 gerade.innerHTML = "";
             } else {
                 ungerade.innerHTML = "";
             }
         }
     }
-    weekRequestor.open('GET', '/scripts/weekcheck,php', true);
+    weekRequestor.open('GET', '/scripts/weekcheck.php', true);
     weekRequestor.send(null);
 }
 window.onload = onLoad;
