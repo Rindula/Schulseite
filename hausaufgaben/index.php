@@ -39,7 +39,7 @@ function newHa(title = "Neue Hausaufgaben", text = "") {
 
 function callPageH(id)
 {
-document.getElementById("table_ha").innerHTML = "Lade...";
+document.getElementById("table_ha").innerHTML = "Lade Hausaufgaben...";
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -52,7 +52,7 @@ xhr.send(null);
 
 function callPageK(id)
 {
-document.getElementById("table_ka").innerHTML = "Lade...";
+document.getElementById("table_ka").innerHTML = "Lade Klassenarbeiten...";
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -101,7 +101,7 @@ include_once "../_hidden/mysqlconn.php";
             ?>
         </select>
         </div>
-        <div id="table_ha"><h1>Bitte aktiviere Javascript, um die Website nutzen zu können!</h1>
+        <div id="table_ha">
         </div>
         
         <h1 class="display-4">Arbeiten</h1>
@@ -124,7 +124,7 @@ include_once "../_hidden/mysqlconn.php";
             ?>
         </select>
         </div>
-        <div id="table_ka"><h1>Bitte aktiviere Javascript, um die Website nutzen zu können!</h1>
+        <div id="table_ka">
         </div>
     </div>
     <?php include "../_hidden/bottomScripts.php" ?>
