@@ -16,7 +16,7 @@ if (isset($_GET['login'])) {
     if ($user !== false && password_verify($passwort, $user['passwort'])) {
         $_SESSION['userid'] = $user['id'];
         $_SESSION['group'] = $user['gruppe'];
-        $_SESSION['name'] = $user['vorname'] . " " . $user["name"];
+        $_SESSION['name'] = $name = $user['vorname'] . " " . $user["name"];
         $_SESSION['vorname'] = $user['vorname'];
         $_SESSION['nachname'] = $user["name"];
         $success = '1';
@@ -27,9 +27,10 @@ if (isset($_GET['login'])) {
         header("Location: /hausaufgaben");
     }
     $log = "Details: " . $_SERVER['REMOTE_ADDR'] . ' - ' . date("F j, Y, g:i a") . PHP_EOL .
-            "Attempt: " . ($success == '1' ? 'Erfolgreich' : '<<Fehlgeschlagen>>') . PHP_EOL .
-            "User: " . $name . PHP_EOL .
-            ($success != '1' ? 'Pass: # correct #' : 'Pass: ' . $passwort) . PHP_EOL .
+            "Versuch: " . ($success == '1' ? 'Erfolgreich' : '<<Fehlgeschlagen>>') . PHP_EOL .
+            "E-Mail: " . $email . PHP_EOL .
+            "Name: " . $name . PHP_EOL .
+            ($success == '1' ? 'Pass: # Korrekt #' : 'Pass: ' . $passwort) . PHP_EOL .
             "-------------------------" . PHP_EOL;
     file_put_contents('../log/loginlog_' . date("Y-m-d") . '.txt', $log, FILE_APPEND);
 } else {
