@@ -57,7 +57,7 @@ function sonderfach($fach) {
 echo "<body class='container'>";
 
 // Tabelle erstellen
-echo "<div class='ungerade'><table class='table table-striped'><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
+echo "<div class='ungerade'><table class='table table-striped table-bordered'><tr><th>Uhrzeit</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th></tr>";
 
 //Zeilen zusammenfügen
 $sqlM = "SELECT * FROM timetable_u ORDER BY id Asc;";
