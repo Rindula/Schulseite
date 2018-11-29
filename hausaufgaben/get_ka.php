@@ -47,7 +47,7 @@ while ($ar = $result->fetch_assoc()) {
     $tasks = "";
     if ($ar["themen"] != "") {
         foreach (explode(";", $ar["themen"]) as $a) {
-            $aufgaben .= "<li class='list-group-item $list'>$a</li>";
+            $aufgaben .= "<li class='list-group-item $list'>".replaceLink($a)."</li>";
             $tasks .= "\n```=> $a```";
         }
     }
