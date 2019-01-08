@@ -10,10 +10,8 @@ exemptLabels:
 staleLabel: wontfix
 # Comment to post when marking an issue as stale. Set to `false` to disable
 markComment: >
-  Dieses Problem wurde automatisch als veraltet markiert,
-  da es in letzter Zeit keine Aktivität mehr gab.
-  Es wird geschlossen, wenn keine weiteren Aktivitäten stattfinden.
-  
-  Danke für Ihre Beiträge.
+  This issue has been automatically marked as stale because it has not had
+  recent activity. It will be closed if no further activity occurs. Thank you
+  for your contributions.
 # Comment to post when closing a stale issue. Set to `false` to disable
 closeComment: true
