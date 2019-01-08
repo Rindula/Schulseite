@@ -31,7 +31,7 @@ $result = $mysqli->query($sql);
 $dbh = new PDO('mysql:host=localhost;dbname=homeworks', DB_USER, DB_PASSWORD);
 $dbh->query('SET NAMES utf8');
 while ($ar = $result->fetch_assoc()) {
-    foreach ($dbh->query('SELECT COUNT(id) as cnt FROM loesungen WHERE id = "'.$ar["ID"].'"') as $row) {
+    foreach ($dbh->query('SELECT COUNT(id) as cnt FROM loesungen WHERE hid = "'.$ar["ID"].'"') as $row) {
         $cnt = $row["cnt"];
     }
     
