@@ -18,6 +18,7 @@ $om = "";
 $dbname = "homeworks";
 include "../_hidden/mysqlconn.php";
 include "../_hidden/vars.php";
+include "../../secrets.php";
 
 if($query === "all") {
     $sql = "SELECT h.ID, h.Aufgaben, h.Datum, f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Datum >= adddate(now(), interval -16 hour) ORDER BY h.Datum, f.fach Asc";
@@ -26,46 +27,17 @@ if($query === "all") {
     $sql = "SELECT h.ID, h.Aufgaben, h.Datum, f.fach FROM list as h inner join flist as f on h.Fach = f.id WHERE h.Fach = '$query' AND h.Datum >= adddate(now(), interval -16 hour) ORDER BY h.Datum, f.fach Asc";
 }
 
-function removeDir($dir) {
-    foreach (glob($dir . '*') as $filename) {
-        unlink($filename);
-    }
-    if (is_dir($dir))
-        rmdir($dir);
-}
-function is_dir_empty($dir) {
-    if (!is_readable($dir))
-        return NULL;
-    $handle = opendir($dir);
-    while (false !== ($entry = readdir($handle))) {
-        if ($entry != "." && $entry != "..") {
-            return FALSE;
-        }
-    }
-    return TRUE;
-}
-function is_image($path) {
-    $a = getimagesize($path);
-    $image_type = $a[2];
-
-    if (in_array($image_type, array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_BMP))) {
-        return true;
-    }
-    return false;
-}
-
 $result = $mysqli->query($sql);
+$dbh = new PDO('mysql:host=localhost;dbname=homeworks', DB_USER, DB_PASSWORD);
+$dbh->query('SET NAMES utf8');
 while ($ar = $result->fetch_assoc()) {
-    $IMAGEPATH = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/" . $ar["ID"] . "/";
-
+    foreach ($dbh->query('SELECT COUNT(id) as cnt FROM loesungen WHERE id = "'.$ar["ID"].'"') as $row) {
+        $cnt = $row["cnt"];
+    }
+    
     $today = strtotime(date("Y-m-d"));
     $expiration_date = strtotime($ar["Datum"]);
     list($year, $month, $day) = explode("-", $ar["Datum"]);
-    if ($expiration_date < ($today - (86400 * 7))) {
-        removeDir($IMAGEPATH);
-    }
-    if (!is_dir($IMAGEPATH))
-        mkdir($IMAGEPATH);
 
 
     if ($expiration_date > $today + (1 * 60 * 60 * 24)) {
@@ -81,7 +53,7 @@ while ($ar = $result->fetch_assoc()) {
     $list .= ($darkMode) ? " list-group-item-dark" : "";
     $title = "";
     $onclick = "";
-    if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
+    if ($cnt > 0) {
         $classes = $classes . " imageAcc text-info";
         $title = "Anklicken, um die Lösungen Ein-/Auszublenden";
     }
@@ -117,7 +89,7 @@ while ($ar = $result->fetch_assoc()) {
     $text = "whatsapp://send?text=".whatsNewLine("*Hausaufgabe*\nFach: _".$ar["fach"]."_\nZu erledigen bis: *".strftime("%A", strtotime($ar["Datum"])).", $day.$month.$year*" . ((!empty($tasks)) ? "\n\nAufgabe(n):$tasks" : ""));
     $out .= "<td class='d-lg-none'><a class='btn btn-success' href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a></td>";
     $out .= "<td>";
-    if (is_dir($IMAGEPATH) == 1 && !is_dir_empty($IMAGEPATH)) {
+    if ($cnt > 0) {
         $out .= "<a class='btn btn-primary' href='/hausaufgaben/loesungen/?id=".$ar["ID"]."'>Lösungen ansehen</a>";
     } else {
         $out .= "<a class='btn btn-secondary' href='/hausaufgaben/loesungen/upload.php?id=".$ar["ID"]."'>Lösungen hochladen</a>";
