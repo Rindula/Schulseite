@@ -2,12 +2,12 @@
 <url>
 <loc>https://schule.rindula.de/</loc>
 <lastmod>2018-10-09T14:30:56+00:00</lastmod>
-<priority>1.00</priority>
+<priority>0.90</priority>
 </url>
 <url>
 <loc>https://schule.rindula.de/hausaufgaben/</loc>
-<lastmod>2018-10-09T14:30:56+00:00</lastmod>
-<priority>0.80</priority>
+<lastmod>2019-01-08T19:30:00+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
 <loc>https://schule.rindula.de/kontakt/datenschutz.php</loc>
@@ -17,6 +17,6 @@
 <url>
 <loc>https://schule.rindula.de/kontakt/impressum.php</loc>
 <lastmod>2018-10-09T14:30:56+00:00</lastmod>
-<priority>0.80</priority>
+<priority>0.70</priority>
 </url>
 </urlset>
