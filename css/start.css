@@ -3,10 +3,7 @@
 @media screen{
 li {
 	float: left;
-	padding-top: 10px;
-	padding-right: 10px;
-	padding-left: 10px;
-	padding-bottom: 10px;
+	padding: 10px;
 	border: medium groove rgba(255,255,255,1.00);
 	margin: 5px;
 	border-radius: 5px;
