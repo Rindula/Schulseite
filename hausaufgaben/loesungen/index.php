@@ -37,7 +37,6 @@ $styles[] = "lightbox";
 include "../../css/controller.php";
 
 $id = $_GET["id"];
-$path = $_SERVER['DOCUMENT_ROOT'] . "/hausaufgaben/loesungen/$id/";
 
 // Hausaufgaben Infos
 // select `h`.`ID` AS `ID`,`h`.`Aufgaben` AS `Aufgaben`,`h`.`Datum` AS `Datum`,`f`.`fach` AS `Fach` from (`homeworks`.`list` `h` join `homeworks`.`flist` `f` on((`h`.`Fach` = `f`.`id`))) where (`h`.`Datum` >= (now() + interval -(16) hour)) order by `h`.`Datum`
@@ -64,10 +63,13 @@ foreach ($res as $row) {
         <div class="m-4 justify-content-center d-inline-block">
         <?php
         list($year, $month, $day) = explode("-", $datum);
-        foreach (glob($path . '*') as $filename) {
-            if (is_image($filename)) {
-                echo "<a class='p-4' data-title='$fach Hausaufgabe bis zum ".strftime("%A", strtotime($datum)).", $day.$month.$year<br><small>Keine Haftung für Fehler!</small>' data-lightbox='loesungen-$id' href='$id/" . basename($filename) . "'><img class='img-thumbnail w-25' src='$id/" . basename($filename) . "'></a>";
-            }
+        $sql = "SELECT loesungen.data FROM loesungen INNER JOIN list ON loesungen.hid = list.ID WHERE loesungen.hid = :id";
+        $sth = $dbh->prepare($sql);
+        $sth->bindParam(":id", $id);
+        $sth->execute();
+        $res = $sth->fetchAll();
+        foreach ($res as $row) {
+            echo "<a class='p-4' data-title='$fach Hausaufgabe bis zum ".strftime("%A", strtotime($datum)).", $day.$month.$year<br><small>Keine Haftung für Fehler!</small>' data-lightbox='loesungen-$id' href='data:image/gif;base64," . $row["data"] . "'><img class='img-thumbnail w-25' src='data:image/gif;base64," . $row["data"] . "'></a>";
         }
         ?>
         </div>
