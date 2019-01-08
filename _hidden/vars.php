@@ -90,10 +90,10 @@ function replaceLink($text = "") {
 $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
 if(preg_match($reg_exUrl, $text, $url)) {
 // make the urls hyper links
-return preg_replace($reg_exUrl, '<a href="'.$url[0].'" rel="nofollow" target="_blank">'.$url[0].'</a>', $text);
+return preg_replace($reg_exUrl, '<a href="'.$url[0].'" rel="nofollow" target="_blank">'.nl2br($url[0]).'</a>', $text);
 } else {
 // if no urls in the text just return the text
-return $text;
+return nl2br($text);
 }
 }
 
