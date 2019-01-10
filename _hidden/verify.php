@@ -15,10 +15,10 @@ if (!$permittedToUse) {
     die("<h1 class='display-4'>Diebstahl ist ungern gesehen! Auch wenn der Quellcode öffentlich ist, liegen die Rechte immernoch bei mir!</h1>");
 }
 
-//set cookie lifetime for 100 days (60sec * 60mins * 24hours * 1000days)
-ini_set('session.cookie_lifetime', 60 * 60 * 24 * 1000);
-ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 1000);
-session_set_cookie_params(60 * 60 * 24 * 1000, '/', "schule.rindula.de", true, true);
+//set cookie lifetime for 100 days (60sec * 60mins * 24hours)
+ini_set('session.cookie_lifetime', 60 * 60 * 24);
+ini_set('session.gc_maxlifetime', 60 * 60 * 24);
+session_set_cookie_params(60 * 60 * 24, '/', "schule.rindula.de", true, true);
 session_start();
 
 //$now = time();
