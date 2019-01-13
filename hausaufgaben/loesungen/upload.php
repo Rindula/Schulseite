@@ -54,7 +54,7 @@ if($upload) {
     $sth = $dbh->prepare($sql);
     $sth->bindParam(":id", $id);
     $sth->bindParam(":data", $img);
-    $sth->bindParam(":ext", pathinfo($_FILES["datei"]["tmp_name"], PATHINFO_EXTENSION));
+    $sth->bindParam(":ext", $_FILES["datei"]["type"]);
     $sth->execute();
 }
 
