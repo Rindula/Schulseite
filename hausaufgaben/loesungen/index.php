@@ -69,7 +69,7 @@ foreach ($res as $row) {
         $sth->execute();
         $res = $sth->fetchAll();
         foreach ($res as $row) {
-            echo "<a class='p-4' data-title='$fach Hausaufgabe bis zum ".strftime("%A", strtotime($datum)).", $day.$month.$year<br><small>Keine Haftung für Fehler!</small>' data-lightbox='loesungen-$id' href='data:image/gif;base64," . $row["data"] . "'><img class='img-thumbnail w-25' src='data:image/gif;base64," . $row["data"] . "'></a>";
+            echo "<a data-title='$fach Hausaufgabe bis zum ".strftime("%A", strtotime($datum)).", $day.$month.$year<br><small>Keine Haftung für Fehler!</small>' data-lightbox='loesungen-$id' href='data:image/gif;base64," . $row["data"] . "'><img class='img-thumbnail w-25 m-4' src='data:image/gif;base64," . $row["data"] . "'></a>";
         }
         ?>
         </div>
