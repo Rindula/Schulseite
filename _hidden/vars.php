@@ -23,14 +23,15 @@
     }
 
 
-    function log_rin($filename, $loggingtext) {
-        $date = new DateTime();
-        $date = $date->format("d.m.Y H:i:s");
-        $logText = "[".$date."] ".$loggingtext;
-
-        $fpLog = fopen($_SERVER['DOCUMENT_ROOT']."/log/" . $filename . ".log", 'a');
-        fwrite($fpLog, $logText . "\n");
-        fclose($fpLog);
+    function log_rin($type, $loggingtext) {
+        $dbh = new PDO('mysql:host=localhost;dbname=stats', DB_USER, DB_PASSWORD);
+        $dbh->query('SET NAMES utf8');
+        
+        $sql = "INSERT INTO log (type, logtext) VALUES (:type, :data)";
+        $sth = $dbh->prepare($sql);
+        $sth->bindParam(":type", $type);
+        $sth->bindParam(":data", $loggingtext);
+        $sth->execute();
     }
     
 
@@ -87,7 +88,7 @@ function whatsNewLine($text) {
 
 function replaceLink($text = "") {
 // The Regular Expression filter
-$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
+$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*[^\)])?/";
 if(preg_match($reg_exUrl, $text, $url)) {
 // make the urls hyper links
 return preg_replace($reg_exUrl, '<a href="'.$url[0].'" rel="nofollow" target="_blank">'.nl2br($url[0]).'</a>', $text);
