@@ -50,10 +50,11 @@ if($upload) {
     $dbh = new PDO('mysql:host=localhost;dbname=homeworks', DB_USER, DB_PASSWORD);
     $dbh->query('SET NAMES utf8');
     
-    $sql = "INSERT INTO loesungen (hid, data) VALUES (:id, :data)";
+    $sql = "INSERT INTO loesungen (hid, data, extension) VALUES (:id, :data, :ext)";
     $sth = $dbh->prepare($sql);
     $sth->bindParam(":id", $id);
     $sth->bindParam(":data", $img);
+    $sth->bindParam(":ext", pathinfo($_FILES["datei"]["tmp_name"], PATHINFO_EXTENSION));
     $sth->execute();
 }
 

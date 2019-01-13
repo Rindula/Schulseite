@@ -63,13 +63,13 @@ foreach ($res as $row) {
         <div class="m-4 justify-content-center d-inline-block">
         <?php
         list($year, $month, $day) = explode("-", $datum);
-        $sql = "SELECT loesungen.data FROM loesungen INNER JOIN list ON loesungen.hid = list.ID WHERE loesungen.hid = :id";
+        $sql = "SELECT loesungen.data, loesungen.extension as ext FROM loesungen INNER JOIN list ON loesungen.hid = list.ID WHERE loesungen.hid = :id";
         $sth = $dbh->prepare($sql);
         $sth->bindParam(":id", $id);
         $sth->execute();
         $res = $sth->fetchAll();
         foreach ($res as $row) {
-            echo "<a data-title='$fach Hausaufgabe bis zum ".strftime("%A", strtotime($datum)).", $day.$month.$year<br><small>Keine Haftung für Fehler!</small>' data-lightbox='loesungen-$id' href='data:image/gif;base64," . $row["data"] . "'><img class='img-thumbnail w-25 m-4' src='data:image/gif;base64," . $row["data"] . "'></a>";
+            echo "<a data-title='$fach Hausaufgabe bis zum ".strftime("%A", strtotime($datum)).", $day.$month.$year<br><small>Keine Haftung für Fehler!</small>' data-lightbox='loesungen-$id' href='data:image/".$row["ext"].";base64," . $row["data"] . "'><img class='img-thumbnail w-25 m-4' src='data:image/".$row["ext"].";base64," . $row["data"] . "'></a>";
         }
         ?>
         </div>
