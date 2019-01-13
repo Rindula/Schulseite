@@ -92,6 +92,7 @@ if($upload) {
         </article>
         <script>
             var intervalID = 0;
+            solId = <?= $id ?>;
             
             $(document).ready(function(e) {
 
@@ -119,6 +120,7 @@ if($upload) {
                         {
                             $('#fortschritt').css('width', '100%').attr('aria-valuenow', "1");
                             clearInterval(intervalID);    
+                            $(location).attr('href', '/hausaufgaben/loesungen/?id=' + solId);
                         },                                                
                         error:    function()
                         {
