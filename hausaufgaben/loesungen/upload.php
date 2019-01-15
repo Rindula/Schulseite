@@ -126,12 +126,12 @@ if($upload) {
                         {
                             $('#fortschritt').css('width', '100%').attr('aria-valuenow', "1");
                             clearInterval(intervalID);    
-                        }
-                    }).done(function()
+                        },
+                        complete: function()
                         {
                             $(location).attr('href', '/hausaufgaben/loesungen/?id=' + solId);
                         }
-                    );    
+                    });    
                     e.preventDefault(); //Event Abbrechen
 
                 });
