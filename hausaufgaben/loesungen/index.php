@@ -63,7 +63,7 @@ foreach ($res as $row) {
         <div class="m-4 justify-content-center d-inline-block">
         <?php
         list($year, $month, $day) = explode("-", $datum);
-        $sql = "SELECT loesungen.data, loesungen.extension as ext FROM loesungen INNER JOIN list ON loesungen.hid = list.ID WHERE loesungen.hid = :id";
+        $sql = "SELECT loesungen.data, loesungen.extension as ext FROM loesungen INNER JOIN list ON loesungen.hid = list.ID WHERE loesungen.hid = :id AND loesungen.extension LIKE 'image/%'";
         $sth = $dbh->prepare($sql);
         $sth->bindParam(":id", $id);
         $sth->execute();
