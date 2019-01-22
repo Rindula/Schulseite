@@ -1,0 +1,6 @@
+User-Agent: * 
+Disallow: /_hidden 
+Disallow: /hausaufgaben/enter 
+Disallow: /admin 
+Disallow: /entschuldigungen 
+Disallow: /kontakt/lehrer 
