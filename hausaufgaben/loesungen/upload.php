@@ -93,7 +93,7 @@ if($upload) {
         </article>
         <script>
             var intervalID = 0;
-            solId = <?= $id ?>;
+            solId = <?= ltrim($id, '0') ?>;
             
             $(document).ready(function(e) {
 
