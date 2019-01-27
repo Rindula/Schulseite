@@ -70,13 +70,13 @@ if($upload) {
                 <form action="upload.php?u" method="post" enctype="multipart/form-data" id="upload_form">
                     <input type="hidden" name="<?php echo ini_get("session.upload_progress.name"); ?>" value="test">
                     <input type="hidden" name="id" value="<?= $id ?>">
-                    <div>
-                        <label for="datei">Datei auswählen:</label>
-                        <input type="file" name="datei" id="datei">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="datei" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Datei auswählen</label>
                     </div>
-                    <div>
-                        <input name="upload_start" type="submit" value="Hochladen">
-                        <input name="abbrechen" type="button" value="Abbrechen" id="abbrechen">
+                    <div class="btn-group">
+                        <input class="btn btn-success" name="upload_start" type="submit" value="Hochladen">
+                        <input class="btn btn-danger" name="abbrechen" type="button" value="Abbrechen" id="abbrechen">
                     </div>
                 </form>
             </section>
@@ -84,8 +84,8 @@ if($upload) {
             <section>
                 <h2>Fortschritt:</h2>
                 <div>
-                    <div class="progress progress-striped active">
-                        <div id="fortschritt" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1">
+                    <div class="progress">
+                        <div id="fortschritt" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1">
                         </div>
                     </div>
                 </div>
