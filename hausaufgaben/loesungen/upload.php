@@ -70,9 +70,9 @@ if($upload) {
                 <form action="upload.php?u" method="post" enctype="multipart/form-data" id="upload_form">
                     <input type="hidden" name="<?php echo ini_get("session.upload_progress.name"); ?>" value="test">
                     <input type="hidden" name="id" value="<?= $id ?>">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="datei" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="inputGroupFile01">Datei auswählen</label>
+                    <div>
+                        <label for="datei">Datei auswählen:</label>
+                        <input type="file" name="datei" id="datei">
                     </div>
                     <div class="btn-group">
                         <input class="btn btn-success" name="upload_start" type="submit" value="Hochladen">
