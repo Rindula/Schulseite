@@ -1,5 +1,6 @@
 <?php
 include_once "/var/www/vhosts/rindula.de/secrets.php";
+include_once "vars.php";
 session_start();
 list($user, $pass) = array(DB_USER, DB_PASSWORD);
 $pdo = new PDO('mysql:host=localhost;dbname=stats', $user, $pass);
@@ -32,7 +33,7 @@ if (isset($_GET['login'])) {
             "Name: " . $name . PHP_EOL .
             ($success == '1' ? 'Pass: # Korrekt #' : 'Pass: ' . $passwort) . PHP_EOL .
             "-------------------------" . PHP_EOL;
-    file_put_contents('../log/loginlog_' . date("Y-m-d") . '.txt', $log, FILE_APPEND);
+    log_rin("login",$log);
 } else {
     die("<h1>Fehler bei der Datenverarbeitung</h1>");
 }
