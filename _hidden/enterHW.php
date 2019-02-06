@@ -28,7 +28,7 @@ if (isset($_POST["type"])) {
         $sql = "INSERT INTO `arbeiten` (`fach`, `themen`, `datum`) VALUES ('$fach', '$aufgabe', '$datum')";
         $mysqli->query($sql);
         $last_id = $mysqli->insert_id."";
-        log_rin("ha_enter","Klassenarbeit (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
+        log_rin("ka_enter","Klassenarbeit (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
         $tasks = "";
         foreach (explode(";", $aufgabe) as $a) {
             $tasks .= "\n=> $a";
@@ -49,7 +49,7 @@ if (isset($_POST["type"])) {
         $sql = "INSERT INTO `termine` (`raum`, `typ`, `datum`) VALUES ('$fach', '$aufgabe', '$datum $zeit')";
         $mysqli->query($sql);
         $last_id = $mysqli->insert_id."";
-        log_rin("ha_enter","Termin (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
+        log_rin("t_enter","Termin (ID: ". $last_id .") eingetragen von " . $_SESSION["name"]);
     }
 }
 
