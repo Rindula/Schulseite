@@ -31,8 +31,7 @@ if (isset($_GET['login'])) {
             "Versuch: " . ($success == '1' ? 'Erfolgreich' : '<<Fehlgeschlagen>>') . PHP_EOL .
             "E-Mail: " . $email . PHP_EOL .
             "Name: " . $name . PHP_EOL .
-            ($success == '1' ? 'Pass: # Korrekt #' : 'Pass: ' . $passwort) . PHP_EOL .
-            "-------------------------" . PHP_EOL;
+            ($success == '1' ? 'Pass: # Korrekt #' : 'Pass: ' . $passwort);
     log_rin("login",$log);
 } else {
     die("<h1>Fehler bei der Datenverarbeitung</h1>");
