@@ -149,7 +149,7 @@ function postNewHomework($typ, $fach, $aufgaben, $datum, $color = null)
     $data["embeds"][0]["fields"][2]["name"] = "Aufgaben";
     $data["embeds"][0]["fields"][2]["value"] = $aufgaben;
     $data["embeds"][0]["footer"]["text"] = $phrase;
-    $data["embeds"][0]["footer"]["icon_url"] = "https://schule.rindula.de/img/next.png";
+    $data["embeds"][0]["footer"]["icon_url"] = "https://cdn3.iconfinder.com/data/icons/web-15/128/RSSvgSpeechBubble-2-512.png";
     $data["embeds"][0]["timestamp"] = date("c");
     if (!is_null($color)) {
         $data["embeds"][0]["color"] = $color;
