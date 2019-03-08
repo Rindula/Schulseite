@@ -63,10 +63,15 @@ foreach ($dbs->query('SELECT * FROM reg_keys') as $r) {
 }
 }
 if(!isset($error_message) && $valid) {
-
-	$query = "INSERT INTO users (email, vorname, name, passwort, gruppe) VALUES ('" . $email . "', '" . $_POST["firstName"] . "', '" . $_POST["lastName"] . "', '" . password_hash($_POST["password"], PASSWORD_DEFAULT) . "', '$init_group')";
-	$result = $userConn->query($query);
-	if(!empty($result)) {
+	$query = "INSERT INTO users (email, vorname, name, passwort, gruppe) VALUES (:email, :firstName, :lastName, :passwort, '$init_group')";
+	$stmt = $dbs->prepare($query);
+	$result = $stmt->execute(array(
+		":email" => $email,
+		":firstName" => $_POST["firstName"],
+		":lastName" => $_POST["lastName"],
+		":passwort" => password_hash($_POST["password"], PASSWORD_DEFAULT)
+	));
+	if($result) {
 		$error_message = "";
 		$success_message = "Du hast dich erfolgreich registriert! Deine E-Mail ($email) ist aktiviert. <a href=\"/hausaufgaben\">Zurück zu den Hausaufgaben</a>";
 		unset($_POST);
