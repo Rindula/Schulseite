@@ -25,32 +25,39 @@ include_once "../_hidden/mysqlconn.php";
 
 function sonderfach($fach) {
     global $bks, $cts, $frs, $pcs, $res, $sks, $lps;
-    if ($fach == "bk") {
-        return $bks;
+    switch ($fach) {
+        case 'bk':
+            return $bks;
+            break;
+        
+        case 'ct':
+            return $cts;
+            break;
+        
+        case 'fr':
+            return $frs;
+            break;
+        
+        case 'pc':
+            return $pcs;
+            break;
+        
+        case 're':
+            return $res;
+            break;
+        
+        case 'sk':
+            return $sks;
+            break;
+        
+        case 'lp':
+            return $lps;
+            break;
+        
+        default:
+            return "";
+            break;
     }
-    if ($fach == "ct") {
-        return $cts;
-    }
-    if ($fach == "fr") {
-        return $frs;
-    }
-    if ($fach == "pc") {
-        return $pcs;
-    }
-    if ($fach == "re") {
-        return $res;
-    }
-    if ($fach == "sk") {
-        return $sks;
-    }
-    if ($fach == "lp") {
-        return $lps;
-    }
-    if ($fach == "") {
-        return "";
-    }
-
-    return "FEHLER!";
 }
 
 // Container
