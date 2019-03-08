@@ -2,8 +2,9 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Startseite</title>
+	<meta charset="utf-8">
+	<title>Startseite</title>
+	<meta name="google-site-verification" content="Je2chFzpwnsYGfFP1WVL_-uM0rY4SDWX50MTL5ZviuY" />
 <?php include "css/controller.php" ?>
 <script>
 	var xhttp = new XMLHttpRequest();

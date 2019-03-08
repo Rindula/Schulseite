@@ -21,8 +21,10 @@
     
     $dbname = "homeworks";
     include "../../_hidden/mysqlconn.php";
-
-    echo "<table><tr><th>Name</th><th>Vorname</th><th>E-Mail</th></tr>";
+?>
+<body class="container<?= ($darkMode) ? " bg-dark text-light" : ""?>">
+<?php
+    echo "<table class='table table-striped'><tr><th>Name</th><th>Vorname</th><th>E-Mail</th></tr>";
     $sql = "SELECT * FROM lehrer ORDER BY name Asc";
     $statement = $mysqli->prepare($sql);
     $statement->execute();
@@ -31,8 +33,9 @@
     {
         $vorname = sonderzeichen($ar["vorname"]);
         $name = sonderzeichen($ar["name"]);
-        $email = strtolower($vorname).".".strtolower($name)."@friedrich-hecker-schule.de";
+        $email = strtolower($vorname).".".strtolower($name)."@fhs-sinsheim.de";
         echo "<tr><td>".$ar["name"]."</td><td>".$ar["vorname"]."</td><td><a href='mailto:".$email."'>".$email."</a></td></tr>";
     }
     echo "</table>";
-?>
+    include "../_hidden/bottomScripts.php" ?>
+</body>

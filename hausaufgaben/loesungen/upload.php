@@ -54,7 +54,7 @@ if($upload) {
     $sth = $dbh->prepare($sql);
     $sth->bindParam(":id", $id);
     $sth->bindParam(":data", $img);
-    $sth->bindParam(":ext", pathinfo($_FILES["datei"]["tmp_name"], PATHINFO_EXTENSION));
+    $sth->bindParam(":ext", $_FILES["datei"]["type"]);
     $sth->execute();
 }
 
@@ -74,9 +74,9 @@ if($upload) {
                         <label for="datei">Datei auswählen:</label>
                         <input type="file" name="datei" id="datei">
                     </div>
-                    <div>
-                        <input name="upload_start" type="submit" value="Hochladen">
-                        <input name="abbrechen" type="button" value="Abbrechen" id="abbrechen">
+                    <div class="btn-group">
+                        <input class="btn btn-success" name="upload_start" type="submit" value="Hochladen">
+                        <input class="btn btn-danger" name="abbrechen" type="button" value="Abbrechen" id="abbrechen">
                     </div>
                 </form>
             </section>
@@ -84,8 +84,8 @@ if($upload) {
             <section>
                 <h2>Fortschritt:</h2>
                 <div>
-                    <div class="progress progress-striped active">
-                        <div id="fortschritt" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1">
+                    <div class="progress">
+                        <div id="fortschritt" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1">
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ if($upload) {
         </article>
         <script>
             var intervalID = 0;
-            solId = <?= $id ?>;
+            solId = <?= ltrim($id, '0') ?>;
             
             $(document).ready(function(e) {
 
@@ -126,12 +126,12 @@ if($upload) {
                         {
                             $('#fortschritt').css('width', '100%').attr('aria-valuenow', "1");
                             clearInterval(intervalID);    
-                        }
-                    }).done(function()
+                        },
+                        complete: function()
                         {
                             $(location).attr('href', '/hausaufgaben/loesungen/?id=' + solId);
                         }
-                    );    
+                    });    
                     e.preventDefault(); //Event Abbrechen
 
                 });

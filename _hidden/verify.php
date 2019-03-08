@@ -185,22 +185,6 @@ if ($loggedIn) {
     $lps = ($lp == 0) ? "" : (($lp == 1) ? "Literatur" : "Philosophie");
 }
 
-// Access Logging
-$date = new DateTime();
-$date = $date->format("d.m.Y H:i:s");
-$logText = "[".$date."] Zugriff von ".$_SERVER['REMOTE_ADDR']." auf ".$_SERVER['REQUEST_URI']." | OS: ".$user_os." | Browser: ".$user_browser."\n";
-
-$logfilename = $_SERVER['DOCUMENT_ROOT']."/log/accesslog_" . date("Y-m-d") . ".txt";
-
-if (file_exists($logfilename)) {
-    $fh = fopen($logfilename, 'a');
-    fwrite($fh, $logText);
-} else {
-    $fh = fopen($logfilename, 'wb');
-    fwrite($fh, $logText);
-}
-fclose($fh);
-
 if ($needAdmin && ($gruppe != 1)) {
     die("<meta http-equiv='refresh' content='2; /hausaufgaben'><h1 style=\"cursor: pointer;\" title=\"Zum Login...\" onclick=\"location.assign('/hausaufgaben')\">Du musst eingeloggt sein, um auf diese Seite zugreifen zu dürfen!</h1>");
 }
