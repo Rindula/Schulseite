@@ -1,10 +1,11 @@
 <?php
-
+ob_start();
 include "verify.php";
 include "vars.php";
 $sql = "";
 $dbname = "homeworks";
 include "mysqlconn.php";
+ob_end_clean();
 
 list($fach, $aufgabe, $datum, $zeit) = array($mysqli->real_escape_string($_POST["fach"]), $mysqli->real_escape_string($_POST["aufgaben"]), $mysqli->real_escape_string($_POST["datum"]), $mysqli->real_escape_string($_POST["time"]));
 
@@ -56,5 +57,5 @@ if (isset($_POST["type"])) {
 }
 
 
-echo '<script>window.close()</script>';
+echo json_encode(array("datum" => strftime("%A, %d.%m.%G", strtotime($datum))));
 ?>

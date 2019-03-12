@@ -48,26 +48,33 @@ include "../../css/controller.php";
 
     }
 
-    $(":submit").click(function(event) {
-        event.preventDefault();
-        $(this).parents("form").submit();
-        $(this).parents("form").reset();
+    $(document).ready(function () {
+        $(":submit").click(function(event) {
+            event.preventDefault();
+            submit($(this).parents("form"));
+            $(this).parents("form").reset();
+        });
 
-        if ($(this).parent("form").attr("enter-type") == "ha") {
-            $("#ha_alert").alert();
+        function submit(elem) {
+            $.ajax({
+                type: "POST",
+                url: "/_hidden/enterHW.php",
+                data: $(elem).serialize(),
+                dataType: "json",
+                success: function (response) {
+                    $("#alerts").append("<div class=\"alert alert-success\" role=\"alert\">Hausaufgabe für den " + response.datum + " eingetragen<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>")
+                }
+            });
         }
-
-        if ($(this).parent("form").attr("enter-type") == "ka") {
-            $("#ha_alert").alert();            
-        }
-    });
-
+    })
+    
 </script>
 <?php
 $dbname = "homeworks";
 include "../../_hidden/mysqlconn.php";
 ?>
 <body class="container">
+<div id="alerts"></div>
 <div id="content" class="">
 
         <?php
@@ -125,7 +132,7 @@ include "../../_hidden/mysqlconn.php";
                         <br>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-calendar"></span>
-                        <input class="form-control" required type="date" id="datum" name="datum" min="<?php echo date('Y-m-d'); ?>" />
+                        <input class="form-control" required type="date" id="datum" name="datum" min="<?= date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
                         <button class="btn btn-primary" type="submit">Eintragen</button>
@@ -169,7 +176,7 @@ include "../../_hidden/mysqlconn.php";
                         </div><br>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-calendar"></span>
-                        <input class="form-control" required type="date" id="datum3" name="datum" min="<?php echo date('Y-m-d'); ?>" />
+                        <input class="form-control" required type="date" id="datum3" name="datum" min="<?= date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
                             <button class="btn btn-primary" type="submit">Ändern</button>
@@ -209,7 +216,7 @@ include "../../_hidden/mysqlconn.php";
                         </div><br>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-calendar"></span>
-                        <input class="form-control" required type="date" id="datum" name="datum" min="<?php echo date('Y-m-d'); ?>" />
+                        <input class="form-control" required type="date" id="datum" name="datum" min="<?= date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
                         <button class="btn btn-primary" type="submit">Eintragen</button>
@@ -260,7 +267,7 @@ include "../../_hidden/mysqlconn.php";
                         </div><br>
                         <div class="input-group">
                         <span class="input-group-addon fa fa-calendar"></span>
-                        <input class="form-control" required type="date" id="datum2" name="datum" min="<?php echo date('Y-m-d'); ?>" />
+                        <input class="form-control" required type="date" id="datum2" name="datum" min="<?= date('Y-m-d'); ?>" />
                         </div><br>
                         <div class="btn-group" role="group">
                             <button class="btn btn-primary" type="submit">Ändern</button>
