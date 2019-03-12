@@ -51,7 +51,8 @@ include "../../css/controller.php";
     $(document).ready(function () {
         $(":submit").click(function(event) {
             event.preventDefault();
-            submit($(this).parents("form"));
+            $(this).prop("disabled", true);
+            submit($(this));
             $(this).parents("form").reset();
         });
 
@@ -59,9 +60,11 @@ include "../../css/controller.php";
             $.ajax({
                 type: "POST",
                 url: "/_hidden/enterHW.php",
-                data: $(elem).serialize(),
+                data: $(elem).parents("form").serialize(),
+                context: elem,
                 dataType: "json",
                 success: function (response) {
+                    $(this).prop("disabled", false);
                     $("#alerts").append("<div class=\"alert alert-success\" role=\"alert\">Hausaufgabe für den " + response.datum + " eingetragen<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>")
                 }
             });
