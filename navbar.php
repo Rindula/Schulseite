@@ -24,6 +24,7 @@
     <div class="dropdown-divider"></div>
     <?php if ($loggedIn) { ?>
     <a class="dropdown-item<?= $dark ?>" id="entschuldigungen" href="/entschuldigungen">Entschuldigung ausfüllen</a>
+    <a class="dropdown-item<?= $dark ?>" id="lehrerliste" href="/kontakt/lehrer">Lehrerliste</a>
     <?php } ?>
     <a class="dropdown-item<?= $dark ?>" id="files" href="/files">Wichtige Materialien</a>
   </div>

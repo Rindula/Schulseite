@@ -69,8 +69,3 @@ function getCookie(cname) {
     }
     return "";
 }
-
-function removeNews(item) {
-    setCookie(item.id, "false", 30);
-    item.classList.remove("show");
-}
