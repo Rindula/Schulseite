@@ -25,7 +25,7 @@
 <body class="container<?= ($darkMode) ? " bg-dark text-light" : ""?>">
 <?php
     echo "<table class='table table-striped'><tr><th>Name</th><th>Vorname</th><th>E-Mail</th></tr>";
-    $sql = "SELECT * FROM lehrer ORDER BY name Asc";
+    $sql = "SELECT lehrer.name, lehrer.vorname, lehrer.geschlecht FROM lehrer WHERE lehrer.name != \"\" AND lehrer.vorname != \"\" ORDER BY lehrer.name";
     $statement = $mysqli->prepare($sql);
     $statement->execute();
     $result = $statement->get_result();
