@@ -37,5 +37,5 @@
         echo "<tr><td>".$ar["name"]."</td><td>".$ar["vorname"]."</td><td><a href='mailto:".$email."'>".$email."</a></td></tr>";
     }
     echo "</table>";
-    include "../_hidden/bottomScripts.php" ?>
+    include "../../_hidden/bottomScripts.php" ?>
 </body>
