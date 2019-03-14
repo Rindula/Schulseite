@@ -87,7 +87,7 @@ while ($ar = $result->fetch_assoc()) {
     $out .= "<td class='aufgaben'><ul class='list-group'>" . $aufgaben . "</ul></td>";
     $out .= "<td class='datum'>".strftime("%A", strtotime($ar["Datum"])).", $day.$month.$year ($days)</td>";
     $text = "whatsapp://send?text=".whatsNewLine("*Hausaufgabe*\nFach: _".$ar["fach"]."_\nZu erledigen bis: *".strftime("%A", strtotime($ar["Datum"])).", $day.$month.$year*" . ((!empty($tasks)) ? "\n\nAufgabe(n):$tasks" : ""));
-    $out .= "<td class='d-lg-none'><div class='btn-group' role='group'><a class='btn btn-success' href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a>";
+    $out .= "<td class='d-lg-none'><div class='btn-group-vertical' role='group'><a class='btn btn-success' href=\"$text\" data-action=\"share/whatsapp/share\">Auf Whatsapp teilen</a>";
     if ($cnt > 0) {
         $out .= "<a class='btn btn-primary' href='/hausaufgaben/loesungen/?id=".$ar["ID"]."'>Lösungen ansehen</a>";
     } else {
