@@ -33,7 +33,7 @@
     {
         $vorname = sonderzeichen($ar["vorname"]);
         $name = sonderzeichen($ar["name"]);
-        $email = strtolower($vorname).".".strtolower($name)."@fhs-sinsheim.de";
+        $email = strtolower($vorname).".".strtolower($name)."&#64;fhs-sinsheim.de";
         echo "<tr><td>".$ar["name"]."</td><td>".$ar["vorname"]."</td><td><a class='btn btn-info btn-block' href='mailto:".$email."?body=Hallo%20".(($ar["geschlecht"] == "m") ? "Herr" : "Frau")." ".$ar["name"].",%0D%0A%0D%0A'>".(($ar["geschlecht"] == "m") ? "Herrn" : "Frau")." ".$ar["name"]." anschreiben</a></td></tr>";
     }
     echo "</table>";
