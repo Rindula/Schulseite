@@ -65,7 +65,7 @@ include "../../css/controller.php";
                 dataType: "json",
                 success: function (response) {
                     $(this).prop("disabled", false);
-                    $("#alerts").append("<div class=\"alert alert-success\" role=\"alert\">Hausaufgabe für den " + response.datum + " eingetragen<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>")
+                    $("#alerts").append("<div class=\"alert alert-success\" role=\"alert\">"+response.type+" für den " + response.datum + " "+response.modification+"<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>")
                 }
             });
         }
