@@ -34,7 +34,7 @@ if (isset($_POST["resetPass"])) {
     $sth->execute();
 
     $empfaenger = $_POST["email"];
-    $betreff = 'Passwort zurückgesetzt | rindula.de';
+    $betreff = '=?UTF-8?B?'.base64_encode('Passwort zurückgesetzt | rindula.de').'?=';
     $nachricht = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
